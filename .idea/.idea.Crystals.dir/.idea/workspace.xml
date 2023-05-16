@@ -246,7 +246,6 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Fall/Fall.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" />
         <option value="$PROJECT_DIR$/Helpers/Pathfinding.cs" />
-        <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/EnemyPumpkinBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/LeaflingBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/NatureSlimeBanner.cs" />
@@ -256,6 +255,7 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/OvergrownWarriorBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Menus/ForestaMystica.cs" />
         <option value="$PROJECT_DIR$/Helpers/VisualHelper.cs" />
+        <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
       </list>
     </option>
@@ -784,7 +784,7 @@
       <workItem from="1684139982444" duration="7496000" />
       <workItem from="1684171813488" duration="14670000" />
       <workItem from="1684190725001" duration="4279000" />
-      <workItem from="1684235956798" duration="194000" />
+      <workItem from="1684235956798" duration="1586000" />
     </task>
     <servers />
   </component>
@@ -813,10 +813,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684194692630" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1684236154270">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1684237516501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684236154270" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684237516501" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1677168171699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

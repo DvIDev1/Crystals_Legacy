@@ -4,6 +4,8 @@
     <e p="C:\Users\User\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\User\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
     <e p="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals" t="IncludeRecursive">
+      <e p=".gitattributes" t="Include" />
+      <e p=".gitignore" t="Include" />
       <e p="Assets" t="Include">
         <e p="Foresta" t="Include">
           <e p="Shaders" t="Include">
@@ -434,6 +436,7 @@
         <e p="StructureHelper.dll" t="Include" />
         <e p="WebmilioCommons.dll" t="Include" />
       </e>
+      <e p="LICENSE" t="Include" />
       <e p="Localization" t="Include">
         <e p="en-US.hjson" t="Include" />
         <e p="en-US.hjson.new" t="Include" />
