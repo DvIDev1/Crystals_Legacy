@@ -55,10 +55,10 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
                 new FlavorTextBestiaryInfoElement(
-                    "The knight may have thought he was right," +
-                    "But his actions caused pain and plight. " +
-                    "For protecting the wrong is not noble or true, " +
-                    "Justice and honor demand what is due.")
+                    "He guarded the wrong people with care," +
+                    "Unaware of the harm they caused out there." +
+                    "The people outside cried out in fear," +
+                    "Their calls for justice fell on deaf ears.")
             });
         }
 
@@ -114,7 +114,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             target.AddBuff(ModContent.BuffType<GreenMark>(), 5 * 60);
             if (target.HasBuff<GreenMark>())
             {
-                modifiers.FinalDamage.Flat *= 1.20f;
+                modifiers.FinalDamage *= 1.20f;
             }
         }
 

@@ -118,7 +118,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             else
             {
                 hostile = false;
-                NPC.rotation += NPC.velocity.Length() * 0.1f;
+                NPC.rotation += NPC.velocity.X * 0.1f;
                 if (NPC.velocity == Vector2.Zero)
                 {
                     NPC.rotation = 0;
@@ -141,7 +141,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
                 if (!attacking)
                 {
-                    StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 2f));
+                    StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 1.5f));
                 }
                 else
                 {
@@ -165,7 +165,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                 isFalling = false;
                                 NPC.noGravity = false;
                                 stomp = false;
-                                StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 2f));
+                                StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 1.5f));
                                 NPC.ai[0] = 0;
                             }
 
@@ -504,7 +504,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             else
             {
                 hostile = false;
-                NPC.rotation += NPC.velocity.Length() * 0.1f;
+                NPC.rotation += NPC.velocity.X * 0.1f;
                 if (NPC.velocity == Vector2.Zero)
                 {
                     NPC.rotation = 0;
@@ -527,7 +527,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
                 if (!attacking)
                 {
-                    StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 2f));
+                    StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y));
                 }
                 else
                 {
@@ -551,7 +551,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                 isFalling = false;
                                 NPC.noGravity = false;
                                 stomp = false;
-                                StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 2f));
+                                StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y));
                                 NPC.ai[0] = 0;
                             }
 
@@ -888,7 +888,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             else
             {
                 hostile = false;
-                NPC.rotation += NPC.velocity.Length() * 0.1f;
+                NPC.rotation += NPC.velocity.X * 0.1f;
                 if (NPC.velocity == Vector2.Zero)
                 {
                     NPC.rotation = 0;

@@ -4,6 +4,7 @@
     <e p="C:\Users\User\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
     <e p="C:\Users\User\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
     <e p="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals" t="IncludeRecursive">
+      <e p=".git\info\exclude" t="IncludeRecursive" />
       <e p=".gitattributes" t="Include" />
       <e p=".gitignore" t="Include" />
       <e p="Assets" t="Include">
@@ -295,6 +296,11 @@
               <e p="EnemyPumpkin" t="Include">
                 <e p="EnemyPumpkin.cs" t="Include" />
                 <e p="EnemyPumpkin.png" t="Include" />
+                <e p="EnemyPumpkin_Glow.png" t="Include" />
+                <e p="SquashlerAggresive.png" t="Include" />
+                <e p="SquashlerAggresive_Glow.png" t="Include" />
+                <e p="SquashlerScary.png" t="Include" />
+                <e p="SquashlerScary_Glow.png" t="Include" />
               </e>
               <e p="Leafling" t="Include">
                 <e p="Gold" t="Include">

@@ -1,5 +1,5 @@
 displayName = [i/p1525:1525] [c/6ec61b:Crystals] [i/p1525:1525]
-author = SN Company,DvlUp
+author = DvlUp
 version = 0.1
 dllReferences = DiscordRPC
 homepage = https://discord.gg/9UCaDSmVdx

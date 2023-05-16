@@ -6,6 +6,24 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="BuildServerSettings">
     <treeState key="changes">
       <selectedPath>
@@ -33,7 +51,17 @@
     </treeState>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="" />
+    <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +73,9 @@
         <option value="XML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
@@ -197,7 +228,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A6EE7C16-23AB-4D3C-85FA-5B58B8720A0A/fd/330d0c51/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Items/Weapons/Book_Of_Leaves.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Projectiles/LeafEnergyProj.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/Systems/DiscordSystem/DiscordRPC.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Systems/DiscordSystem/DiscordRPC.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8182973A-2A2E-4F77-8B4D-D366C8DB8D02/0d/cfcc1554/Entity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F5366A6A-40B7-4B33-B589-4619A2C34850/96/11de6844/ModPlayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CE96E025-2F03-4B9D-8470-DB427911550B/82/a3414a02/Utils.cs" root0="SKIP_HIGHLIGHTING" />
@@ -206,7 +237,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Carmine/RainbowLaser.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Incaen/Incaen.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Leafling.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Gold/GoldenLeafling.cs" />
@@ -253,10 +283,11 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/EnemyPumpkinBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
+        <option value="$PROJECT_DIR$/build.txt" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
       </list>
     </option>
   </component>
@@ -264,12 +295,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27Fe6TWHlx8nODc9IdLGh0aKtEs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -784,7 +818,8 @@
       <workItem from="1684139982444" duration="7496000" />
       <workItem from="1684171813488" duration="14670000" />
       <workItem from="1684190725001" duration="4279000" />
-      <workItem from="1684235956798" duration="11287000" />
+      <workItem from="1684235956798" duration="11889000" />
+      <workItem from="1684259640933" duration="3562000" />
     </task>
     <servers />
   </component>
@@ -793,6 +828,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
@@ -871,19 +917,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs</url>
-          <line>35</line>
-          <properties documentPath="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\Content\Foresta\Npcs\Enemies\EnemyPumpkin\EnemyPumpkin.cs" initialLine="35">
-            <startOffsets>
-              <option value="1055" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1056" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

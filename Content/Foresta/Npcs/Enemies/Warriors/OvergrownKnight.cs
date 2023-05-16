@@ -149,7 +149,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                     NPC.frameCounter += 1.0;
                     var frame = (int) (NPC.frameCounter / 8.0);
                     NPC.frame.Y = 1 + frame * frameHeight;
-                    if (frame >= Main.npcFrameCount[NPC.type])
+                    if (frame >= Main.npcFrameCount[NPC.type] - 1 )
                     {
                         NPC.frame.Y = 2 * frameHeight;
                         NPC.frameCounter = 8 * 2;
@@ -200,7 +200,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             
             if (target.HasBuff<GreenMark>())
             {
-                modifiers.FinalDamage.Flat *= 1.20f;
+                modifiers.FinalDamage *= 1.20f;
             }
 
             target.AddBuff(ModContent.BuffType<GreenMark>(), 5 * 60);

@@ -284,7 +284,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             target.AddBuff(ModContent.BuffType<GreenMark>(), 5 * 60);
             if (target.HasBuff<GreenMark>())
             {
-                modifiers.FinalDamage.Flat *= 1.20f;
+                modifiers.FinalDamage *= 1.20f;
             }
         }
         
