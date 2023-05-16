@@ -896,14 +896,14 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
         {
             if (NPC.ai[0] < 1f || NPC.collideY)
             {
-                NPC.ai[0] += 0.03f;
+                NPC.ai[0] += 0.025f;
                 NPC.noGravity = true;
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
                         Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.easeInBack(NPC.ai[0]))) * 4f; 
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
-                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, Single.MaxValue);
+                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, 55);
             }
             else
             {

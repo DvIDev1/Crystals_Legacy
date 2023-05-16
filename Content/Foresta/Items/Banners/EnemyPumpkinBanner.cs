@@ -15,7 +15,7 @@ namespace Crystals.Content.Foresta.Items.Banners
         public override void SetDefaults()
         {
             Item.rare = ItemRarityID.Orange;
-            Item.DefaultToPlaceableTile(ModContent.TileType<Misc.Tiles.Banners>() , 6);
+            Item.DefaultToPlaceableTile(ModContent.TileType<Misc.Tiles.Banners>() , 7);
         }
     }
 }

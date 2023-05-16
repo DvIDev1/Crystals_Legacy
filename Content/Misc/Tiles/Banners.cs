@@ -64,7 +64,11 @@ namespace Crystals.Content.Misc.Tiles
                     break;
                 case 5:
                     Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
-                        ModContent.ItemType<OvergrownKnightBanner>());
+                        ModContent.ItemType<OvergrownArcherBanner>());
+                    break;
+                case 7:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
+                        ModContent.ItemType<EnemyPumpkinBanner>());
                     break;
                 default:
                     return;
@@ -103,7 +107,7 @@ namespace Crystals.Content.Misc.Tiles
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<OvergrownArcher>()] = true;
                         Main.SceneMetrics.hasBanner = true;
                         break;
-                    case 6:
+                    case 7:
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<EnemyPumpkin>()] = true;
                         Main.SceneMetrics.hasBanner = true;
                         break;

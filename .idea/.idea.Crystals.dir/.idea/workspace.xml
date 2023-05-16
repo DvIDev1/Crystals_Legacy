@@ -246,7 +246,6 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Fall/Fall.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" />
         <option value="$PROJECT_DIR$/Helpers/Pathfinding.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/EnemyPumpkinBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/LeaflingBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/NatureSlimeBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/NatureZombieBanner.cs" />
@@ -255,6 +254,7 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/OvergrownWarriorBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Menus/ForestaMystica.cs" />
         <option value="$PROJECT_DIR$/Helpers/VisualHelper.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/EnemyPumpkinBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
       </list>
@@ -784,7 +784,7 @@
       <workItem from="1684139982444" duration="7496000" />
       <workItem from="1684171813488" duration="14670000" />
       <workItem from="1684190725001" duration="4279000" />
-      <workItem from="1684235956798" duration="3600000" />
+      <workItem from="1684235956798" duration="4744000" />
     </task>
     <servers />
   </component>
@@ -861,13 +861,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs</url>
-          <line>96</line>
+          <line>100</line>
           <properties documentPath="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\Content\Misc\Tiles\Banners.cs" initialLine="96">
             <startOffsets>
-              <option value="4311" />
+              <option value="4531" />
             </startOffsets>
             <endOffsets>
-              <option value="4317" />
+              <option value="4537" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
