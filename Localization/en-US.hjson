@@ -345,6 +345,8 @@ Mods: {
 			OvergrownKnight.DisplayName: Overgrown Knight
 			OvergrownPaladin.DisplayName: Overgrown Paladin
 			EnemyPumpkin.DisplayName: Squashler
+			SquashlerAggresive.DisplayName: Squashler Aggresive
+			SquashlerScary.DisplayName: Squashler Scary
 		}
 
 		Tiles.Banners.MapEntry: Banner
