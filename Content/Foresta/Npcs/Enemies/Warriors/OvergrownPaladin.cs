@@ -19,7 +19,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[NPC.type] = 21;
+            Main.npcFrameCount[NPC.type] = 29;
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
@@ -36,7 +36,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             NPC.height = 73;
             NPC.defense = 14;
             NPC.damage = 30;
-            NPC.lifeMax = 215;
+            NPC.lifeMax = 170;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 14, 7);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit1;

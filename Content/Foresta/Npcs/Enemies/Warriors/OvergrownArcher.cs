@@ -63,7 +63,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             NPC.height = 66;
             NPC.defense = 4;
             NPC.damage = 50;
-            NPC.lifeMax = 150;
+            NPC.lifeMax = 120;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 10, 9);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit1;
@@ -103,14 +103,12 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             var target = Main.player[NPC.target];
 
             Fleeing = FleeTime >= 0;
-
-            if(!target.active || target.dead) CancelAiming(); 
-
+            
             if (!target.dead && target.active)
             {
                 NPC.spriteDirection = NPC.direction = Math.Sign(target.Center.X - NPC.Center.X);
             }
-            else if (NPC.Distance(target.Center + target.velocity) >= 1000)
+            else if (NPC.Distance(target.Center + target.velocity) >= 1000 || target.dead || !target.active)
             {
                 CancelAiming();
                 NPC.EncourageDespawn(5 * 60);

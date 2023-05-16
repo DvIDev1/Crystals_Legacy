@@ -7,6 +7,7 @@ using Crystals.Core.Systems.CameraShake;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -275,6 +276,40 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             transforming = true;
         }
 
+        public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
+                AssetRequestMode.ImmediateLoad).Value;
+            SpriteEffects effect = SpriteEffects.None;
+            
+            if (NPC.spriteDirection != -1)
+            {
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else
+            {
+                effect = SpriteEffects.None;
+            }
+            
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    NPC.position.X - Main.screenPosition.X + NPC.frame.Width * 0.5f,
+                    NPC.position.Y - Main.screenPosition.Y + NPC.frame.Height - NPC.frame.Height * 0.5f + 2f
+                ),
+                NPC.frame,
+                Color.White,
+                NPC.rotation,
+                NPC.frame.Size() * 0.5f,
+                NPC.scale,
+                effect,
+                0f
+            );
+        }
+
+
         public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             /*Rectangle frame =
@@ -282,17 +317,29 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             
             Main.NewText(frame);*/
 
+            
             if (isFalling && NPC.velocity != Vector2.Zero)
             {
             
                 Main.instance.LoadNPC(NPC.type);
                 Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
+                
+                SpriteEffects effect = SpriteEffects.None;
+            
+                if (NPC.spriteDirection != -1)
+                {
+                    effect = SpriteEffects.FlipHorizontally;
+                }
+                else
+                {
+                    effect = SpriteEffects.None;
+                }
             
                 Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
                 for (int k = 0; k < NPC.oldPos.Length; k++) {
                     Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
                     Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
-                    Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, SpriteEffects.None, 0);
+                    Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
                 }
             }
 
@@ -540,6 +587,39 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             StartTransformation();
             attacking = true;
         }
+        
+        public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
+                AssetRequestMode.ImmediateLoad).Value;
+            SpriteEffects effect = SpriteEffects.None;
+            
+            if (NPC.spriteDirection != -1)
+            {
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else
+            {
+                effect = SpriteEffects.None;
+            }
+            
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    NPC.position.X - Main.screenPosition.X + NPC.frame.Width * 0.5f,
+                    NPC.position.Y - Main.screenPosition.Y + NPC.frame.Height - NPC.frame.Height * 0.5f + 2f
+                ),
+                NPC.frame,
+                Color.White,
+                NPC.rotation,
+                NPC.frame.Size() * 0.5f,
+                NPC.scale,
+                effect,
+                0f
+            );
+        }
 
         public override void OnHitByProjectile(Projectile projectile, NPC.HitInfo hit, int damageDone)
         {
@@ -622,17 +702,29 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             
             Main.NewText(frame);*/
 
+            
             if (isFalling && NPC.velocity != Vector2.Zero)
             {
             
                 Main.instance.LoadNPC(NPC.type);
                 Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
+                
+                SpriteEffects effect = SpriteEffects.None;
+            
+                if (NPC.spriteDirection != -1)
+                {
+                    effect = SpriteEffects.FlipHorizontally;
+                }
+                else
+                {
+                    effect = SpriteEffects.None;
+                }
             
                 Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
                 for (int k = 0; k < NPC.oldPos.Length; k++) {
                     Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
                     Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
-                    Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, SpriteEffects.None, 0);
+                    Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
                 }
             }
 
@@ -940,6 +1032,39 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             }
 
         }
+        
+        public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
+                AssetRequestMode.ImmediateLoad).Value;
+            SpriteEffects effect = SpriteEffects.None;
+            
+            if (NPC.spriteDirection != -1)
+            {
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else
+            {
+                effect = SpriteEffects.None;
+            }
+            
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    NPC.position.X - Main.screenPosition.X + NPC.frame.Width * 0.5f,
+                    NPC.position.Y - Main.screenPosition.Y + NPC.frame.Height - NPC.frame.Height * 0.5f + 2f
+                ),
+                NPC.frame,
+                Color.White,
+                NPC.rotation,
+                NPC.frame.Size() * 0.5f,
+                NPC.scale,
+                effect,
+                0f
+            );
+        }
 
         private void StartAttack(Vector2 Position)
         {
@@ -961,17 +1086,29 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             
             Main.NewText(frame);*/
 
+            
             if (isFalling && NPC.velocity != Vector2.Zero)
             {
             
                 Main.instance.LoadNPC(NPC.type);
                 Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
+                
+                SpriteEffects effect = SpriteEffects.None;
+            
+                if (NPC.spriteDirection != -1)
+                {
+                    effect = SpriteEffects.FlipHorizontally;
+                }
+                else
+                {
+                    effect = SpriteEffects.None;
+                }
             
                 Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
                 for (int k = 0; k < NPC.oldPos.Length; k++) {
                     Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
                     Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
-                    Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, SpriteEffects.None, 0);
+                    Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
                 }
             }
 

@@ -231,15 +231,11 @@
         <option value="$PROJECT_DIR$/Localization/en-US.hjson" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Items/PickUps/NaturaPower.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPalladin.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword.cs" />
         <option value="$PROJECT_DIR$/Helpers/MathFunctions.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Gaia_ArmorSet.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/ForestaRecipes.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Consumables/Food/CursedSalad/CursedSalad.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
         <option value="$PROJECT_DIR$/Helpers/EaseFunctions.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Summoner/GuardianFlame.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
@@ -257,6 +253,10 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/EnemyPumpkinBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
       </list>
     </option>
   </component>
@@ -784,7 +784,7 @@
       <workItem from="1684139982444" duration="7496000" />
       <workItem from="1684171813488" duration="14670000" />
       <workItem from="1684190725001" duration="4279000" />
-      <workItem from="1684235956798" duration="4744000" />
+      <workItem from="1684235956798" duration="11287000" />
     </task>
     <servers />
   </component>
@@ -809,10 +809,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="379" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1680392944318" />
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1684194692630">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1684246202620">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684194692630" />
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684246202620" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1684237516501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -871,6 +871,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\Content\Foresta\Npcs\Enemies\EnemyPumpkin\EnemyPumpkin.cs" initialLine="35">
+            <startOffsets>
+              <option value="1055" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1056" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

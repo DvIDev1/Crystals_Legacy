@@ -47,9 +47,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             NPC.GivenName = "Overgrown Knight";
             NPC.width = 54;
             NPC.height = 56;
-            NPC.defense = 8;
+            NPC.defense = 6;
             NPC.damage = 32;
-            NPC.lifeMax = 200;
+            NPC.lifeMax = 150;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 12, 3);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit1;
@@ -147,12 +147,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 if (NPC.velocity != Vector2.Zero)
                 {
                     NPC.frameCounter += 1.0;
-                    if (chase)
-                        NPC.frameCounter %= 22.5;
-                    else
-                        NPC.frameCounter %= 45.0;
                     var frame = (int) (NPC.frameCounter / 8.0);
                     NPC.frame.Y = 1 + frame * frameHeight;
+                    if (frame >= Main.npcFrameCount[NPC.type])
+                    {
+                        NPC.frame.Y = 2 * frameHeight;
+                        NPC.frameCounter = 8 * 2;
+                    }
                 }
             }
             else

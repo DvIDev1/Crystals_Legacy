@@ -41,7 +41,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             NPC.height = 58;
             NPC.defense = 4;
             NPC.damage = 15;
-            NPC.lifeMax = 100;
+            NPC.lifeMax = 90;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 7, 10);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit1;
@@ -66,7 +66,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                     "And his attacks on the innocent came with a terrible cost.")
             });
         }
-
+        
         public override void AI()
         {
             NPC.TargetClosest();
@@ -127,12 +127,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 if (NPC.velocity != Vector2.Zero)
                 {
                     NPC.frameCounter += 1.0;
-                    if (chase)
-                        NPC.frameCounter %= 22.5;
-                    else
-                        NPC.frameCounter %= 45.0;
                     var frame = (int) (NPC.frameCounter / 8.0);
                     NPC.frame.Y = 1 + frame * frameHeight;
+                    if (frame >= Main.npcFrameCount[NPC.type])
+                    {
+                        NPC.frame.Y = 2 * frameHeight;
+                        NPC.frameCounter = 8 * 2;
+                    }
                 }
             }
             else
