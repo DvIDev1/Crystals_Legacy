@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>Crystals</AssemblyName>
+    <TargetFramework>net6.0</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DiscordRPC, Version=1.0.175.1, Culture=neutral, PublicKeyToken=null">
+      <HintPath>lib\DiscordRPC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Foresta\Shaders\Misc\RainbowLaser10.png" />
+    <Content Include="Assets\Foresta\Shaders\Misc\RainbowLaser10Start.png" />
+    <Content Include="Assets\Foresta\Shaders\Misc\RainbowLaser5.png" />
+    <Content Include="Assets\Foresta\Shaders\Misc\RainbowLaser5Start.png" />
+    <Content Include="Assets\Foresta\Textures\Menus\CrystalTitle.png" />
+    <Content Include="Assets\Foresta\Textures\UI\CurseSword.png" />
+    <Content Include="Assets\Foresta\Textures\Weapons\Carmine\CarminePassive.png" />
+    <Content Include="Assets\Foresta\Textures\Weapons\Carmine\CarmineUse.png" />
+    <Content Include="Assets\Other\FX\SoftGlow.png" />
+    <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\NaturaPower.png" />
+    <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\NatureHeart.png" />
+    <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\StarNature.png" />
+    <Content Include="Content\Foresta\Items\Banners\image.png" />
+    <Content Include="Content\Foresta\Items\Banners\OvergrownArcherBanner.png" />
+    <Content Include="Content\Foresta\Items\Banners\OvergrownKnightBanner.png" />
+    <Content Include="Content\Foresta\Items\Banners\OvergrownWarriorBanner.png" />
+    <Content Include="Content\Foresta\Items\Banners\NatureZombieBanner.png" />
+    <Content Include="Content\Foresta\Items\Consumables\Food\CursedSalad\CursedSalad.png" />
+    <Content Include="Content\Foresta\Items\Consumables\Food\Salad\Salad.png" />
+    <Content Include="Content\Foresta\Items\ForestEnergy.png" />
+    <Content Include="Content\Foresta\Items\Weapons\Magic\Carmine\Carmine.png" />
+    <Content Include="Content\Foresta\Items\Weapons\Melee\Crusolium\CrusoSlash.png" />
+    <Content Include="Content\Foresta\Items\Weapons\Melee\Crusolium\Slash.png" />
+    <Content Include="Content\Foresta\Items\Weapons\Summoner\GuardianFlameBuff.png" />
+    <Content Include="Content\Foresta\Items\Weapons\Summoner\GuardianFlameSummon.png" />
+    <Content Include="Content\Foresta\Items\Weapons\Summoner\GuardianFlame.png" />
+    <Content Include="Content\Foresta\Npcs\Enemies\Leafling\Gold\GoldenLeafling.png" />
+    <Content Include="Content\Foresta\Npcs\Enemies\Leafling\LeaflingLeafGore.png" />
+    <Content Include="Content\Foresta\Npcs\Enemies\Leafling\LeaflingWoodGore1.png" />
+    <Content Include="Content\Foresta\Npcs\Enemies\Leafling\LeaflingWoodGore2.png" />
+    <Content Include="Content\Foresta\Npcs\Enemies\Warriors\OvergrownPaladin.png" />
+    <Content Include="Content\Foresta\Npcs\Enemies\Warriors\OvergrownArcher.png" />
+    <Content Include="Content\Foresta\Npcs\Enemies\Warriors\OvergrownKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Foresta\Textures\NPCs\Gores" />
+    <Folder Include="Core\Systems\BuffShakeSystem" />
+    <Folder Include="Sounds\Items\Feracor" />
+  </ItemGroup>
+</Project>

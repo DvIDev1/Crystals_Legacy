@@ -1,0 +1,9 @@
+displayName = [i/p1525:1525] [c/6ec61b:Crystals] [i/p1525:1525]
+author = SN Company,DvlUp
+version = 0.1
+dllReferences = DiscordRPC
+homepage = https://discord.gg/9UCaDSmVdx
+noCompile = true;
+hideCode = true;
+hideResources = true;
+includeSource = false;

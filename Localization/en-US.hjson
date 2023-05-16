@@ -1,0 +1,359 @@
+Mods: {
+	Crystals: {
+		UI: {
+			PumpkinMan: {
+				Button: Anathema
+				Button2: Curse
+			}
+		}
+
+		Dialogue: {
+			PumpkinMan: {
+				Poor1: I dislike poor people!
+				Poor2: These arent for free you know?
+				Poor3: Im here to sell not talk
+				Poor4: The Homeless Shelter is the Other way
+				Poor5: Come back when you got your Pocket Money
+				Poor6: If you dont have a dime get out of my line
+				Common1: Hello there would you like some nice Potions Spells or perhaps Curses?
+				Common2: Curses now 25% OFF!
+				Common3: Can you live with the Consequences of what you want to Buy?
+				Common4: Some call me Trader some call me Scammer some call me douche
+				Common5: A Fun time can be worth a Dime
+				Common6: One Gold for one live Sold
+				Common7: Did you ever want to be wealthier than your Annoying Siblings the buy a CURSE
+				Common8: If you have a Purse you can get a Curse
+			}
+		}
+
+		Buffs: {
+			NatureBoost: {
+				DisplayName: Nature Boost
+				Description: Increases your Crit Chance
+			}
+
+			LeafActive: {
+				DisplayName: Gaia Passive
+				Description: Increases Damage by 1% of your current Health
+			}
+
+			LeafCooldown: {
+				DisplayName: Gaia Passive Cooldown
+				Description: Its a Cooldown
+			}
+
+			GoldenBoots: {
+				DisplayName: Golden Boots
+				Description: Makes the User faster but also attracts more foes
+			}
+
+			Bealux: {
+				DisplayName: Bealux!
+				Description: Gives you the Energy of the Light
+			}
+
+			Flammable: {
+				DisplayName: Flammable
+				Description: If you get damaged again you will burn
+			}
+
+			GreenMark: {
+				DisplayName: Green Mark
+				Description: Marks Enemies marked enemies get 50% more damage
+			}
+
+			Empowered: {
+				DisplayName: Empowered
+				Description: Mods.Crystals.Buffs.Empowered.Description
+			}
+
+			NaturePower: {
+				DisplayName: Crystal of the Forest
+				Description: Mods.Crystals.Buffs.NaturePower.Description
+			}
+
+			GuardianFlameBuff: {
+				DisplayName: Guardian Flame Buff
+				Description: Mods.Crystals.Buffs.GuardianFlameBuff.Description
+			}
+		}
+
+		Items: {
+			CrusoShield: {
+				DisplayName: Crusolium Shield
+				Tooltip: Gives you life regen when low on Health and Damage Reduction when high on health
+			}
+
+			Crystal: {
+				DisplayName: Crystal of The Forest
+				Tooltip: It holds something together...
+			}
+
+			Gaia_Hat: {
+				DisplayName: Gaia Hat
+				Tooltip:
+					'''
+					Increased Armor Penetration by 3% 
+					Increased maximum mana by 10 
+					Increased Magic damage by 2%
+					'''
+			}
+
+			Gaia_Robe: {
+				DisplayName: Gaia Robe
+				Tooltip:
+					'''
+					Increased Armor Penetration by 5% 
+					Increased maximum mana by 15 
+					Increased Magic damage by 5%
+					'''
+			}
+
+			Gaia_Skirt: {
+				DisplayName: Gaia Skirt
+				Tooltip:
+					'''
+					Increased Armor Penetration by 1% 
+					Increased maximum mana by 20 
+					Increased Magic damage by 3%
+					'''
+			}
+
+			NatureSlimeBanner: {
+				DisplayName: Nature Slime Banner
+				Tooltip: ""
+			}
+
+			ForestGel: {
+				DisplayName: Forest Gel
+				Tooltip: Its Gross
+			}
+
+			GoldenLeaf: {
+				DisplayName: Golden Leaf
+				Tooltip: An Main Component
+			}
+
+			Leaf: {
+				DisplayName: Essence of The Forest
+				Tooltip: ""
+			}
+
+			MW_Axe: {
+				DisplayName: Mage Wood Axe
+				Tooltip: ""
+			}
+
+			Feracor: {
+				DisplayName: Feracor
+				Tooltip:
+					'''
+					An Ancient Staff that uses the Power of Nature to to Charge up 
+					Hold the Item to Charge At max Charge shoot an Embowered Projectile
+					'''
+			}
+
+			Incaen: {
+				DisplayName: Incaen
+				Tooltip: ""
+			}
+
+			Photosynthesia: {
+				DisplayName: Photosynthesia
+				Tooltip:
+					'''
+					An Ancient book from The Witch that allows you to control Leaves 
+					Leaves return automatically when mana is missing or when you Reached 12 leaves
+					Right Click to return Leaves
+					'''
+			}
+
+			CrusoSpear: {
+				DisplayName: Crusolium Spear
+				Tooltip: A Powerful Spear when fully charged right click for an powerful strike
+			}
+
+			CrusoSword: {
+				DisplayName: Crusolium Sword
+				Tooltip:
+					'''
+					Infused with Two Powers 
+					Every three hits the Sword is Empowered
+					'''
+			}
+
+			Sunwirl: {
+				DisplayName: Sunwirl
+				Tooltip: An Yo-Yo infused with Sun Energy ignites enemies
+			}
+
+			Crusolium_Bow: {
+				DisplayName: Crusolium Bow
+				Tooltip: Reliable and Efficient
+			}
+
+			Fall: {
+				DisplayName: Fall
+				Tooltip: An Bow only used by the most skilled Huntresses
+			}
+
+			MaidDress: {
+				DisplayName: Dragon Maid Dress
+				Tooltip: ""
+			}
+
+			MaidHat: {
+				DisplayName: Dragon Maid Bonnet
+				Tooltip: It has Horns
+			}
+
+			MaidSkirt: {
+				DisplayName: Dragon Maid Skirt
+				Tooltip: ""
+			}
+
+			CrusoChestplate: {
+				DisplayName: Cruso Chestplate
+				Tooltip: ""
+			}
+
+			CrusoGreaves: {
+				DisplayName: Cruso Greaves
+				Tooltip: ""
+			}
+
+			CrusoHelmet: {
+				DisplayName: Cruso Helmet
+				Tooltip: ""
+			}
+
+			LeaflingBanner: {
+				DisplayName: Leafling Banner
+				Tooltip: ""
+			}
+
+			ForestShard: {
+				DisplayName: Forest Shard
+				Tooltip: ""
+			}
+
+			MW_Hammer: {
+				DisplayName: M W_ Hammer
+				Tooltip: ""
+			}
+
+			NatureZombieBanner: {
+				DisplayName: Nature Zombie Banner
+				Tooltip: ""
+			}
+
+			OvergrownKnightBanner: {
+				DisplayName: Overgrown Knight Banner
+				Tooltip: ""
+			}
+
+			OvergrownWarriorBanner: {
+				DisplayName: Overgrown Warrior Banner
+				Tooltip: ""
+			}
+
+			CursedSalad: {
+				DisplayName: Cursed Salad
+				Tooltip: ""
+			}
+
+			Salad: {
+				DisplayName: Salad
+				Tooltip: ""
+			}
+
+			ForestEnergy: {
+				DisplayName: Forest Energy
+				Tooltip: ""
+			}
+
+			Carmine: {
+				DisplayName: Carmine
+				Tooltip: ""
+			}
+
+			NatureHeart: {
+				DisplayName: Nature Heart
+				Tooltip: ""
+			}
+
+			StarNature: {
+				DisplayName: Star Nature
+				Tooltip: ""
+			}
+
+			NaturaPower: {
+				DisplayName: Natura Power
+				Tooltip: ""
+			}
+
+			OvergrownArcherBanner: {
+				DisplayName: Overgrown Archer Banner
+				Tooltip: ""
+			}
+
+			GuardianFlame: {
+				DisplayName: Guardian Flame
+				Tooltip: ""
+			}
+
+			EnemyPumpkinBanner: {
+				DisplayName: Squashler Banner
+				Tooltip: ""
+			}
+		}
+
+		Projectiles: {
+			BigEnergyBlast.DisplayName: Big Energy Blast
+			EnergyBlast.DisplayName: Energy Blast
+			FireLeaves.DisplayName: Fire Leaves
+			MagicLeaves.DisplayName: Magic Leaves
+			CrusoSpearProj.DisplayName: Spear
+			Slice.DisplayName: Slice
+			Swipe.DisplayName: Swipe
+			SunwirlYoyo.DisplayName: Sunwirl Yoyo
+			Smoke.DisplayName: Black Smoke
+			White_Smoke.DisplayName: White Smoke
+			Crusolium_Arrow.DisplayName: Crusolium Arrow
+			LeafArrow.DisplayName: Leaf Arrow
+			NeonArrow.DisplayName: Neon Arrow
+			Flore.DisplayName: Flore
+			FeracorHeld.DisplayName: Feracor Held
+			CrusoSwordSwing.DisplayName: Cruso Sword Swing
+			HostileCrusolium_Arrow.DisplayName: Hostile Crusolium_ Arrow
+			RainbowLaser.DisplayName: Rainbow Laser
+			Slash.DisplayName: Slash
+			CrusoSlash.DisplayName: Cruso Slash
+			GuardianFlameSummon.DisplayName: Guardian Flame Summon
+			FireAura.DisplayName: Fire Aura
+		}
+
+		NPCs: {
+			Leafling.DisplayName: Leafling
+			Nature_Slime.DisplayName: Nature Slime
+			OvergrownWarrior.DisplayName: Overgrown Warrior
+			GoldenLeafling.DisplayName: Golden Leafling
+			Nature_Zombie.DisplayName: Nature_ Zombie
+			Nature_Zombie2.DisplayName: Nature_ Zombie2
+			Nature_Zombie3.DisplayName: Nature_ Zombie3
+			OvergrownArcher.DisplayName: Overgrown Archer
+			OvergrownKnight.DisplayName: Overgrown Knight
+			OvergrownPaladin.DisplayName: Overgrown Paladin
+			EnemyPumpkin.DisplayName: Squashler
+		}
+
+		Tiles.Banners.MapEntry: Banner
+		Prefixes.KratosPrefix.DisplayName: Kratos Prefix
+		SaladWarning4: This salad doesn't belong to you, you will pay for that!
+		SaladWarning3: I Hope you choke on that
+		SaladWarning2: Someone's Kid Could have been in there
+		SaladWarning1: This was on the Ground
+		SaladWarning: You shouldn't have done this
+		RecipeConditions.InForest: In Forest
+	}
+}

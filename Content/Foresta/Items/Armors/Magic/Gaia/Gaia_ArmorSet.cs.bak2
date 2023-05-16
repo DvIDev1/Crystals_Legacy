@@ -1,0 +1,341 @@
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.GameContent.Creative;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
+{
+    public class Gaia_ArmorSet : ModPlayer
+    {
+        public Projectile Flower;
+
+        public bool hasGaiaArmorSet()
+        {
+            return Player.armor[0].type == ModContent.ItemType<Gaia_Hat>()
+                   && Player.armor[1].type == ModContent.ItemType<Gaia_Robe>()
+                   && Player.armor[2].type == ModContent.ItemType<Gaia_Skirt>();
+        }
+
+        public override void PreUpdate()
+        {
+            if (hasGaiaArmorSet())
+            {
+                if (Player.ownedProjectileCounts[ModContent.ProjectileType<Flore>()] == 0)
+                {
+                    Flower = Projectile.NewProjectileDirect(Terraria.Entity.GetSource_None(),
+                        Player.Center - new Vector2(0, Player.height), Vector2.Zero, ModContent.ProjectileType<Flore>(),
+                        0, 0, Player.whoAmI);
+                }
+                else
+                {
+                    Flower.Center = Player.Center - new Vector2(0, Player.height + 10) + Player.velocity;
+                    Flower.active = true;
+                    Flower.timeLeft += 10;
+                }
+            }
+            else
+            {
+                Flower?.Kill();
+            }
+        }
+
+        public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit)
+        {
+            if (hasGaiaArmorSet())
+                Main.NewText(Flower.ai[1]);
+                if (Player.ownedProjectileCounts[ModContent.ProjectileType<Flore>()] == 1)
+                    if (crit)
+                        Flower.ai[1] += (float)damage;
+        }
+
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit)
+        {
+            if (hasGaiaArmorSet())
+                Main.NewText(Flower.ai[1]);
+                if (Player.ownedProjectileCounts[ModContent.ProjectileType<Flore>()] == 1)
+                    if (crit)
+                        Flower.ai[1] += (float)damage;
+        }
+
+        [AutoloadEquip(EquipType.Head)]
+        public class Gaia_Hat : ModItem
+        {
+            public float armorPen = 0.03f; //Armor Penetration the Player gets when this Armor Piece gets Equipped
+            public float MagicDamage = 0.02f; //Increased Magic damage by Percent
+            public int manaIncrease = 10; //Increased Mana when Armor is Equipped
+
+            public override void SetStaticDefaults()
+            {
+                // DisplayName.SetDefault("Gaia Hat");
+                // Tooltip.SetDefault("Increased Armor Penetration by 3% \nIncreased maximum mana by 10 \nIncreased Magic damage by 2%");
+
+                CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            }
+
+            public override void SetDefaults()
+            {
+                Item.width = 40;
+                Item.height = 40;
+                Item.defense = 3;
+                Item.rare = ItemRarityID.Green;
+            }
+
+            public override void UpdateEquip(Player player)
+            {
+                player.statManaMax2 += manaIncrease;
+                player.GetArmorPenetration(DamageClass.Generic) += armorPen;
+                player.GetDamage(DamageClass.Magic) += MagicDamage;
+            }
+
+            public override bool MagicPrefix()
+            {
+                return true;
+            }
+
+            public override void UpdateArmorSet(Player player)
+            {
+            }
+
+            public override bool IsArmorSet(Item head, Item body, Item legs)
+            {
+                return body.type == ModContent.ItemType<Gaia_Robe>() && legs.type == ModContent.ItemType<Gaia_Skirt>();
+            }
+
+            /*public override void AddRecipes()
+            {
+                Recipe mod = CreateRecipe(1);
+                mod.AddIngredient<Leaf>(15);
+                mod.AddIngredient(ItemID.JungleHat, 1);
+                mod.AddIngredient(ItemID.Wood, 20);
+                mod.AddTile(TileID.LivingLoom);
+                mod.Register();
+            }*/
+        }
+
+        [AutoloadEquip(EquipType.Body)]
+        public class Gaia_Robe : ModItem
+        {
+            public float armorPen = 0.05f; //Armor Penetration the Player gets when this Armor Piece gets Equipped
+            public float MagicDamage = 0.05f; //Increased Magic damage by Percent
+            public int manaIncrease = 15; //Increased Mana when Armor is Equipped
+
+            public override void SetStaticDefaults()
+            {
+                // DisplayName.SetDefault("Gaia Robe");
+                // Tooltip.SetDefault("Increased Armor Penetration by 5% \nIncreased maximum mana by 15 \nIncreased Magic damage by 5%");
+
+                CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            }
+
+
+            public override void SetDefaults()
+            {
+                Item.width = 40;
+                Item.height = 40;
+                Item.defense = 4;
+                Item.rare = ItemRarityID.Green;
+            }
+
+            public override bool MagicPrefix()
+            {
+                return true;
+            }
+
+            public override void UpdateEquip(Player player)
+            {
+                player.statManaMax2 += manaIncrease;
+                player.GetArmorPenetration(DamageClass.Generic) += armorPen;
+                player.GetDamage(DamageClass.Magic) += MagicDamage;
+            }
+
+
+            public override void UpdateArmorSet(Player player)
+            {
+            }
+
+            public override bool IsArmorSet(Item head, Item body, Item legs)
+            {
+                return head.type == ModContent.ItemType<Gaia_Hat>() && legs.type == ModContent.ItemType<Gaia_Skirt>();
+            }
+
+            /*public override void AddRecipes()
+            {
+                Recipe mod = CreateRecipe(1);
+                mod.AddIngredient<Leaf>(15);
+                mod.AddIngredient(ItemID.JungleHat, 1);
+                mod.AddIngredient(ItemID.Wood, 20);
+                mod.AddTile(TileID.LivingLoom);
+                mod.Register();
+            }*/
+        }
+
+        [AutoloadEquip(EquipType.Legs)]
+        public class Gaia_Skirt : ModItem
+        {
+            public float armorPen = 0.05f; //Armor Penetration the Player gets when this Armor Piece gets Equipped
+            public float MagicDamage = 0.03f; //Increased Magic damage by Percent
+            public int manaIncrease = 15; //Increased Mana when Armor is Equipped
+
+            public override void SetStaticDefaults()
+            {
+                // DisplayName.SetDefault("Gaia Skirt");
+                // Tooltip.SetDefault("Increased Armor Penetration by 1% \nIncreased maximum mana by 20 \nIncreased Magic damage by 3%");
+
+                CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
+            }
+
+
+            public override void SetDefaults()
+            {
+                Item.width = 32;
+                Item.height = 32;
+                Item.defense = 3;
+                Item.rare = ItemRarityID.Green;
+            }
+
+            public override void UpdateEquip(Player player)
+            {
+                player.statManaMax2 += manaIncrease;
+                player.GetArmorPenetration(DamageClass.Generic) += armorPen;
+                player.GetDamage(DamageClass.Magic) += MagicDamage;
+            }
+
+            public override bool MagicPrefix()
+            {
+                return true;
+            }
+
+            public override void UpdateArmorSet(Player player)
+            {
+            }
+
+
+            public override bool IsArmorSet(Item head, Item body, Item legs)
+            {
+                return head.type == ModContent.ItemType<Gaia_Hat>() && body.type == ModContent.ItemType<Gaia_Robe>();
+            }
+
+            /*public override void AddRecipes()
+            {
+                Recipe mod = CreateRecipe(1);
+                mod.AddIngredient<Leaf>(15);
+                mod.AddIngredient(ItemID.JungleHat, 1);
+                mod.AddIngredient(ItemID.Wood, 20);
+                mod.AddTile(TileID.LivingLoom);
+                mod.Register();
+            }*/
+        }
+
+        private class LeafCooldown : ModBuff
+        {
+            public override void SetStaticDefaults()
+            {
+                // DisplayName.SetDefault("Gaia Passive Cooldown");
+                // Description.SetDefault("Its a Cooldown");
+                Main.debuff[Type] = true;
+                BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
+            }
+        }
+
+        private class LeafActive : ModBuff
+        {
+            public override void SetStaticDefaults()
+            {
+                // DisplayName.SetDefault("Gaia Passive");
+                // Description.SetDefault("Increases Damage by 1% of your current Health");
+                BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
+            }
+        }
+
+        private class Flore : ModProjectile
+        {
+            public override void SetStaticDefaults()
+            {
+                Main.projFrames[Projectile.type] = 6;
+            }
+
+            public override void SetDefaults()
+            {
+                Projectile.Size = new Vector2(66, 66);
+                Projectile.ignoreWater = true;
+                Projectile.tileCollide = false;
+                Projectile.friendly = true;
+            }
+
+            private bool FlowerOpened;
+            
+            public override void AI()
+            {
+                if (FlowerOpened)
+                {
+                    if (Projectile.ai[1] >= 0)
+                    {
+                        Projectile.ai[1]--;
+                    }
+                    else
+                    {
+                        CloseFlower();
+                    }
+                }
+                
+                if (Projectile.ai[1] >= 200f & !FlowerOpened)
+                {
+                    if (++Projectile.frameCounter >= 2)
+                    {
+                        Projectile.frameCounter = 0;
+                        Main.NewText(Projectile.frame);
+                        if (++Projectile.frame >= Main.projFrames[Projectile.type] - 1)
+                        {
+                            OpenFlower();
+                        }
+                    }
+                }
+
+                if (Projectile.ai[1] == 0 && FlowerOpened)
+                {
+                    if (--Projectile.frameCounter >= 3)
+                    {
+                        Main.NewText(Projectile.frame);
+                        Projectile.frameCounter = 0;
+                        if (--Projectile.frame <= 0)
+                        {
+                            CloseFlower();
+                        }
+                    }
+                }
+            }
+
+            public void OpenFlower()
+            {
+                FlowerOpened = true;
+            }
+
+            public void CloseFlower()
+            {
+                FlowerOpened = false;
+                Main.NewText("Close Flower");
+            }
+
+            public override bool PreKill(int timeLeft)
+            {
+                return false;
+            }
+
+            public override bool? CanHitNPC(NPC target)
+            {
+                return false;
+            }
+
+            public override bool CanHitPvp(Player target)
+            {
+                return false;
+            }
+
+            public override bool CanHitPlayer(Player target)
+            {
+                return false;
+            }
+        }
+    }
+}
