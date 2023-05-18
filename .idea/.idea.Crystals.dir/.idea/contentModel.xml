@@ -81,12 +81,7 @@
                 <e p="CrusoShield_Shield.png" t="Include" />
               </e>
               <e p="Crystal" t="Include">
-                <e p="Crystal.cs" t="Include" />
-                <e p="Crystal.cs.bak" t="Include" />
-                <e p="Crystal.cs.bak2" t="Include" />
-                <e p="Crystal.cs.bak3" t="Include" />
-                <e p="Crystal.png" t="Include" />
-                <e p="CrystalProj.png" t="Include" />
+                <e p="Crystal_Forest.cs" t="Include" />
               </e>
             </e>
             <e p="Armors" t="Include">

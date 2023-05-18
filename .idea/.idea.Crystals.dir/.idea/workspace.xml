@@ -52,15 +52,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs.bak2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs.bak3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/CrystalProj.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +237,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Incaen/Incaen.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Leafling.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Gold/GoldenLeafling.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Sunwirl/Sunwirl.cs" />
@@ -288,6 +287,7 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" />
       </list>
     </option>
   </component>
@@ -819,7 +819,7 @@
       <workItem from="1684171813488" duration="14670000" />
       <workItem from="1684190725001" duration="4279000" />
       <workItem from="1684235956798" duration="11889000" />
-      <workItem from="1684259640933" duration="3562000" />
+      <workItem from="1684259640933" duration="4451000" />
     </task>
     <servers />
   </component>
@@ -867,6 +867,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1677168171699" />
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1684266687521">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1684266687521" />
     <state x="752" y="378" key="scopes" timestamp="1678317743628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
