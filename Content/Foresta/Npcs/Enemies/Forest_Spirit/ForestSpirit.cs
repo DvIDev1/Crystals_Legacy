@@ -10,8 +10,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
 {
     public class ForestSpirit : ModNPC
     {
-        // test
-        
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 3;
@@ -111,8 +109,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             #endregion
 
         }
-
-        //You here?
+        
         public void StartDash(Vector2 position)
         {
             dash = true;
