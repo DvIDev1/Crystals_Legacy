@@ -85,11 +85,14 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             {
                 dashCooldown--;
             }
+            
+            Lighting.AddLight(NPC.Center , 0 , .500f , 0);
+            NPC.rotation = NPC.velocity.ToRotation() + MathHelper.ToRadians(-360f/4f);
 
             if (!canDash)
             {
                 NPC.velocity += NPC.DirectionTo(target.Center);
-                NPC.velocity = Vector2.Clamp(NPC.velocity , new Vector2(-5) , new Vector2(5));
+                NPC.velocity = Vector2.Clamp(NPC.velocity , new Vector2(-1f - dashCooldown * 0.04f) , new Vector2(1f + dashCooldown * 0.04f));
             }
             else
             {
@@ -101,6 +104,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
                     }
                     else
                     {
+                        targetPos = target.Center;
                         Dash();
                     }
                 }
@@ -122,16 +126,16 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
         {
             if (NPC.ai[0] < 1f)
             {
-                NPC.ai[0] += 0.05f;
+                NPC.ai[0] += 0.01f;
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.easeInBack(NPC.ai[0]))) 
-                    * attackStartPos.Distance(targetPos) * 0.0175f;
+                        Vector2.SmoothStep(attackStartPos, targetPos, (float) EaseFunctions.easeInBack(NPC.ai[0]))) * 0.2f;
             }
             else
             {
                 dashCooldown = 60 * 3;
                 dash = false;
+                NPC.velocity = Vector2.Zero;
             }
         }
         

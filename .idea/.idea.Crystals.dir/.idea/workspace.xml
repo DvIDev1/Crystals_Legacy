@@ -52,8 +52,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,6 +190,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/ef/8b996180/ModItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AB7A9F4-50CC-4832-97B1-D78997179E8D/3e/65660c9e/SpawnCondition.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Crystals.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A6EE7C16-23AB-4D3C-85FA-5B58B8720A0A/19/a72a912a/MathHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Common/GlobalNPCs/ExampleNPCHappiness.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Buffs/Debuffs/Overgrown/Overgrown.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/b8/49f4f2a6/ModBlockType.cs" root0="SKIP_HIGHLIGHTING" />
@@ -817,6 +820,7 @@
       <workItem from="1684235956798" duration="11889000" />
       <workItem from="1684259640933" duration="4451000" />
       <workItem from="1684412800828" duration="9526000" />
+      <workItem from="1684446070775" duration="6005000" />
     </task>
     <servers />
   </component>
