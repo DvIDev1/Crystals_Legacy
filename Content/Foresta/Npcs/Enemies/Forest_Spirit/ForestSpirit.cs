@@ -10,7 +10,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
 {
     public class ForestSpirit : ModNPC
     {
-        
+        // test
         
         public override void SetStaticDefaults()
         {
