@@ -297,6 +297,9 @@
                 <e p="SquashlerScary.png" t="Include" />
                 <e p="SquashlerScary_Glow.png" t="Include" />
               </e>
+              <e p="Forest_Spirit" t="Include">
+                <e p="ForestSpirit.cs" t="Include" />
+              </e>
               <e p="Leafling" t="Include">
                 <e p="Gold" t="Include">
                   <e p="GoldenLeafling.cs" t="Include" />

@@ -52,15 +52,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs.bak2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs.bak3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/CrystalProj.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +166,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5DEBC4E-344C-4CB9-8E47-A47C98F45475/d2/03a79f7a/Recipe.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Weapons/ExampleShootingSword.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/UI/ExampleUI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Enemies/Spirit_of_The_Forest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Enemies/Spirit_of_The_Forest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/NatureWall.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Weapons/ExampleGun.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5DEBC4E-344C-4CB9-8E47-A47C98F45475/ac/64b71949/Mod.cs" root0="SKIP_HIGHLIGHTING" />
@@ -237,7 +233,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Leafling.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Gold/GoldenLeafling.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Sunwirl/Sunwirl.cs" />
         <option value="$PROJECT_DIR$/Crystals.cs" />
@@ -288,6 +283,7 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" />
       </list>
     </option>
   </component>
@@ -295,17 +291,20 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27Fe6TWHlx8nODc9IdLGh0aKtEs" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Settings.AsciiDoc.Preview" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Crystals: TerrariaServer">
@@ -820,6 +819,7 @@
       <workItem from="1684190725001" duration="4279000" />
       <workItem from="1684235956798" duration="11889000" />
       <workItem from="1684259640933" duration="4451000" />
+      <workItem from="1684412800828" duration="7851000" />
     </task>
     <servers />
   </component>
@@ -838,8 +838,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -855,30 +857,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="379" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1680392944318" />
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1684246202620">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1684415952679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684246202620" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1684237516501">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684415952679" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1684417778991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684237516501" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684417778991" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1677168171699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1677168171699" />
-    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1684266687521">
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1684417504619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1684266687521" />
+    <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1684417504619" />
     <state x="752" y="378" key="scopes" timestamp="1678317743628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="378" key="scopes/0.0.1920.1040@0.0.1920.1040" timestamp="1678317743628" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1682021937683">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1684417786561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1682021937683" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1684417786561" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
