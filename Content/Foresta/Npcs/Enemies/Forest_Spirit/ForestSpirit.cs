@@ -1,10 +1,15 @@
 using System;
+using Crystals.Content.Foresta.Items;
+using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
+using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Utilities;
 
 namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
 {
@@ -17,13 +22,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             NPCID.Sets.TrailCacheLength[NPC.type] = 3;
             NPCID.Sets.TrailingMode[NPC.type] = 4;
         }
-        
+
         public override void SetDefaults()
         {
             NPC.width = 32;
             NPC.height = 34;
             NPC.defense = 3;
-            NPC.damage = 26;
+            NPC.damage = 13;
             NPC.lifeMax = 35;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 6, 8);
             NPC.aiStyle = -1;
@@ -33,8 +38,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             NPC.noTileCollide = true;
             NPC.knockBackResist = 1f;
         }
-        
-        
+
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
@@ -45,99 +50,45 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             });
         }
 
-        public override void FindFrame(int frameHeight)
-        {
-            NPC.frameCounter += 1.0;
-            var frame = (int) (NPC.frameCounter / 8.0);
-            NPC.frame.Y = 1 + frame * frameHeight;
-            if (frame >= Main.npcFrameCount[NPC.type] - 1 )
-            {
-                NPC.frame.Y = frameHeight;
-                NPC.frameCounter = 0;
-            }
-        }
-        
-        private Vector2 targetPos = Vector2.Zero;
-
-        private Vector2 attackStartPos = Vector2.Zero;
-
-        private bool canDash;
-
-        private bool dash = false;
-
-        private float dashCooldown = 60 * 3;
-
         public override void AI()
         {
-
-            #region Detection
-
-            NPC.TargetClosest();
-            var target = Main.player[NPC.target];
-
-            canDash = (target.Distance(target.Center) < 1000f) && dashCooldown <= 0;
-
-            #endregion
-
-            #region Attack Behaviour
-
-            if (dashCooldown > 0)
-            {
-                dashCooldown--;
-            }
             
-            Lighting.AddLight(NPC.Center , 0 , .500f , 0);
-            NPC.rotation = NPC.velocity.ToRotation() + MathHelper.ToRadians(-360f/4f);
-
-            if (!canDash)
-            {
-                NPC.velocity += NPC.DirectionTo(target.Center);
-                NPC.velocity = Vector2.Clamp(NPC.velocity , new Vector2(-1f - dashCooldown * 0.04f) , new Vector2(1f + dashCooldown * 0.04f));
-            }
-            else
-            {
-                if (canDash)
-                {
-                    if (!dash)
-                    {
-                        StartDash(target.Center);
-                    }
-                    else
-                    {
-                        targetPos = target.Center;
-                        Dash();
-                    }
-                }
-            }
-
-            #endregion
-
+            //Dungeon Spirit AI (THANK LOORRD)
+            NPC.TargetClosest();
+            
+            Vector2 vector109 = new Vector2(NPC.Center.X, NPC.Center.Y);
+            float num872 = Main.player[NPC.target].Center.X - vector109.X;
+            float num873 = Main.player[NPC.target].Center.Y - vector109.Y;
+            float num874 = (float) Math.Sqrt(num872 * num872 + num873 * num873);
+            float num875 = 10f;
+            num874 = num875 / num874;
+            num872 *= num874;
+            num873 *= num874;
+            
+            NPC.velocity.X *= (100f + num872) / 101f;
+            NPC.velocity.Y *= (100f + num873) / 101f;
+            NPC.rotation = (float) Math.Atan2(num873, num872) - 1.57f;
+            NPC.position += NPC.netOffset;
+            
+            int num876 = Dust.NewDust(NPC.position, NPC.width, NPC.height, 61);
+            Dust dust = Main.dust[num876];
+            dust.velocity *= 0.1f;
+            Main.dust[num876].scale = 1.3f;
+            Main.dust[num876].noGravity = true;
+            NPC.position -= NPC.netOffset;
         }
         
-        public void StartDash(Vector2 position)
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            dash = true;
-            targetPos = position;
-            NPC.ai[0] = 0f;
-            attackStartPos = NPC.Center;
+            if (spawnInfo.Player.ZoneForest) return SpawnCondition.OverworldNightMonster.Chance * 0.12f;
+            return base.SpawnChance(spawnInfo);
         }
 
-        public void Dash()
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            if (NPC.ai[0] < 1f)
-            {
-                NPC.ai[0] += 0.01f;
-                NPC.velocity +=
-                    NPC.DirectionTo(
-                        Vector2.SmoothStep(attackStartPos, targetPos, (float) EaseFunctions.easeInBack(NPC.ai[0]))) * 0.2f;
-            }
-            else
-            {
-                dashCooldown = 60 * 3;
-                dash = false;
-                NPC.velocity = Vector2.Zero;
-            }
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 2, 1, 5));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<Salad>(), 100, 1));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<CursedSalad>(), 100, 1));
         }
-        
     }
 }

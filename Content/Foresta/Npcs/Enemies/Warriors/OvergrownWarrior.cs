@@ -1,6 +1,9 @@
 using System;
+using Crystals.Content.Foresta.Items;
 using Crystals.Content.Foresta.Items.Armors.Crusolium;
 using Crystals.Content.Foresta.Items.Banners;
+using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
+using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
@@ -103,18 +106,20 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 if (NPC.collideX || NPC.collideY) hitted = false;
             }
         }
-
-        //Loot and Banner
+        
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (NPC.downedBoss1)
                 if (spawnInfo.Player.ZoneForest)
-                    return SpawnCondition.OverworldNight.Chance * 0.05f;
+                    return SpawnCondition.OverworldNight.Chance * 0.075f;
             return base.SpawnChance(spawnInfo);
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 4, 1, 3));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<Salad>(), 100, 1));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<CursedSalad>(), 100, 1));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Cruso_ArmorSet.CrusoHelmet>(), 500));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Cruso_ArmorSet.CrusoChestplate>(), 500));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Cruso_ArmorSet.CrusoGreaves>(), 500));

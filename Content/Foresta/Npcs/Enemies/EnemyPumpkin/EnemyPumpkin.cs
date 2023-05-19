@@ -24,7 +24,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
     public class EnemyPumpkin : ModNPC
     {
         
-        //ToDo Add Variants
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 21;
@@ -410,7 +409,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
     public class SquashlerAggresive : ModNPC
     {
-        //ToDo Add Variants
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 21;
@@ -794,7 +792,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
     public class SquashlerScary : ModNPC
     {
-        //ToDo Add Variants
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 21;

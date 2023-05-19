@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Crystals.Content.Foresta.Items;
 using Crystals.Content.Foresta.Items.Armors.Crusolium;
 using Crystals.Content.Foresta.Items.Banners;
+using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
+using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
 using Crystals.Core.Systems.SoundSystem;
 using Crystals.Helpers;
@@ -127,13 +130,14 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             {
                 StartAiming();
             }
-            else if (NPC.Distance(target.Center + target.velocity) <= 250 && !aiming && !Fleeing)
+            else if (NPC.Distance(target.Center + target.velocity) <= 250 && !aiming || Fleeing)
             {
                 NPC.spriteDirection = NPC.direction = -Math.Sign(target.Center.X - NPC.Center.X);
                 CancelAiming();
             }
 
             if (FleeTime >= 0) { FleeTime--; }
+            
 
             if (aiming) UpdateAiming();
 
@@ -161,6 +165,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 4, 1, 3));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<Salad>(), 100, 1));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<CursedSalad>(), 100, 1));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Cruso_ArmorSet.CrusoHelmet>(), 500));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Cruso_ArmorSet.CrusoChestplate>(), 500));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Cruso_ArmorSet.CrusoGreaves>(), 500));
@@ -182,11 +189,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             var target = Main.player[NPC.target];
             SoundEngine.PlaySound(SoundID.Item5, NPC.Center);
             Projectile.NewProjectile(Terraria.Entity.GetSource_None(), NPC.Center,
-                NPC.DirectionTo(target.Top) * 32f + (target.velocity + target.oldVelocity) / 2,
+                NPC.DirectionTo(target.Top) * 16f,
                 ModContent.ProjectileType<HostileCrusolium_Arrow>(), NPC.damage / 4, KnockbackValue.Averageknockback);
             AimProgress = 0;
-            if (NPC.Distance(target.Center + target.velocity) >= 1000) CancelAiming();
-            if (NPC.Distance(target.Center + target.velocity) <= 250) CancelAiming();
+            FleeTime = 60;
+            CancelAiming();
         }
 
         public void StartAiming()
@@ -228,7 +235,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 positions.AddRange(new[] { NPC.Top , NPC.TopLeft , NPC.TopRight , NPC.BottomLeft , 
                     NPC.BottomRight , NPC.Left , NPC.Right , NPC.Bottom});
                 Player target = Main.player[NPC.target];
-                Vector2 targetHittingPoint = NPC.DirectionTo(target.Top) * 32f + (target.velocity + target.oldVelocity) / 2;
+                Vector2 targetHittingPoint = NPC.DirectionTo(target.Top) * 16f;
                 if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint , positions).Equals(NPC.Top))
                 {
                     NPC.frame.Y = 19 * frameHeight;
@@ -263,7 +270,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         {
             if (aiming)
             {
-                FleeTime = 30;
+                FleeTime = 60;
             }
             CancelAiming();
             hitted = true;
@@ -273,7 +280,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         {
             if (aiming)
             {
-                FleeTime = 30;
+                FleeTime = 60;
             }
             CancelAiming();
             hitted = true;

@@ -121,7 +121,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (spawnInfo.Player.ZoneForest) return SpawnCondition.OverworldNightMonster.Chance * 0.12f;
+            if (spawnInfo.Player.ZoneForest) return SpawnCondition.OverworldNightMonster.Chance * 0.25f;
             return base.SpawnChance(spawnInfo);
         }
 

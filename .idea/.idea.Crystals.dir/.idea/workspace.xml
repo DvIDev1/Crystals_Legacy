@@ -52,10 +52,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,23 +164,23 @@
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Weapons/ExampleMinigun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Tiles/ExampleBar.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/612E7388-9DD7-4A16-8C16-6D84877553BD/bd/79282fe2/MathHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D7C72413-0D33-47A1-9409-F95014D5B3E8/02/270f4311/CommonDrop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8A43C6A-9282-4CA2-A408-4F64AFFF069A/cc/5003b8da/ModItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8A43C6A-9282-4CA2-A408-4F64AFFF069A/ed/4720cf0c/NPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5DEBC4E-344C-4CB9-8E47-A47C98F45475/d2/03a79f7a/Recipe.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Weapons/ExampleShootingSword.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/UI/ExampleUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Enemies/Spirit_of_The_Forest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/NatureWall.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Weapons/ExampleGun.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5DEBC4E-344C-4CB9-8E47-A47C98F45475/ac/64b71949/Mod.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C13F4999-0BF3-4D18-B209-C4F451026A97/46/Math.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Buffs/Resurrection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/c6/19c07a38/ModItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Bosses/MagicAcorn.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/AI_003_Fighters--.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7800928E-0823-4CCE-B13B-BE9B1C9D8418/60/d9a2d2fd/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/9a/db4e1079/GoreID.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/ad/054f34f5/SpawnCondition.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D7C72413-0D33-47A1-9409-F95014D5B3E8/c3/ea3b6967/NPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/92/ac47ba3e/MoonShader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/21/2227cae9/NetworkText.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Enemies/Nature_Slime.cs" root0="FORCE_HIGHLIGHTING" />
@@ -203,7 +207,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/bc/de844e52/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8182973A-2A2E-4F77-8B4D-D366C8DB8D02/20/10bdb642/ModItem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/NPCs/PuritySpirit/PuritySpirit.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/AI--.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/NPCs/Octopus.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/CrystPlayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" root0="FORCE_HIGHLIGHTING" />
@@ -264,7 +267,6 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Summoner/GuardianFlame.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Fall/Fall.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" />
         <option value="$PROJECT_DIR$/Helpers/Pathfinding.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/LeaflingBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/NatureSlimeBanner.cs" />
@@ -276,13 +278,14 @@
         <option value="$PROJECT_DIR$/Helpers/VisualHelper.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/EnemyPumpkinBanner.cs" />
         <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
         <option value="$PROJECT_DIR$/build.txt" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" />
       </list>
     </option>
@@ -821,6 +824,8 @@
       <workItem from="1684259640933" duration="4451000" />
       <workItem from="1684412800828" duration="9526000" />
       <workItem from="1684446070775" duration="6005000" />
+      <workItem from="1684494629126" duration="1167000" />
+      <workItem from="1684498322379" duration="10587000" />
     </task>
     <servers />
   </component>
@@ -858,10 +863,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="379" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1680392944318" />
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1684415952679">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1684510071832">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684415952679" />
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684510071832" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1684417778991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -878,40 +883,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="378" key="scopes/0.0.1920.1040@0.0.1920.1040" timestamp="1678317743628" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1684417786561">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1684506519820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1684417786561" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1684506519820" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$USER_HOME$/Downloads/AI--.cs</url>
-          <line>1536</line>
-          <properties documentPath="C:\Users\User\Downloads\AI--.cs" initialLine="1536">
-            <startOffsets>
-              <option value="39869" />
-            </startOffsets>
-            <endOffsets>
-              <option value="39870" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs</url>
-          <line>65</line>
-          <properties documentPath="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\Content\Foresta\Npcs\Enemies\Nature_Zombie\Nature_Zombie.cs" initialLine="63">
-            <startOffsets>
-              <option value="2196" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2197" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs</url>
           <line>100</line>
