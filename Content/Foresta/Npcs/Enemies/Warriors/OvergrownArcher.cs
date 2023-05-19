@@ -192,8 +192,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 NPC.DirectionTo(target.Top) * 16f,
                 ModContent.ProjectileType<HostileCrusolium_Arrow>(), NPC.damage / 4, KnockbackValue.Averageknockback);
             AimProgress = 0;
-            FleeTime = 60;
-            CancelAiming();
         }
 
         public void StartAiming()
@@ -235,7 +233,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 positions.AddRange(new[] { NPC.Top , NPC.TopLeft , NPC.TopRight , NPC.BottomLeft , 
                     NPC.BottomRight , NPC.Left , NPC.Right , NPC.Bottom});
                 Player target = Main.player[NPC.target];
-                Vector2 targetHittingPoint = NPC.DirectionTo(target.Top) * 16f;
+                Vector2 targetHittingPoint = NPC.DirectionTo(target.Top) * 32f;
                 if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint , positions).Equals(NPC.Top))
                 {
                     NPC.frame.Y = 19 * frameHeight;

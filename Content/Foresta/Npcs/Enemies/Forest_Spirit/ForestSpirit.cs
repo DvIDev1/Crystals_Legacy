@@ -32,6 +32,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             NPC.lifeMax = 35;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 6, 8);
             NPC.aiStyle = -1;
+            AnimationType = NPCID.DungeonSpirit;
             NPC.HitSound = SoundID.NPCHit36;
             NPC.DeathSound = SoundID.NPCDeath39;
             NPC.noGravity = true;
@@ -65,8 +66,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             num872 *= num874;
             num873 *= num874;
             
-            NPC.velocity.X *= (100f + num872) / 101f;
-            NPC.velocity.Y *= (100f + num873) / 101f;
+            NPC.velocity.X = (NPC.velocity.X * 100f + num872) / 101f;
+            NPC.velocity.Y = (NPC.velocity.Y * 100f + num873) / 101f;
             NPC.rotation = (float) Math.Atan2(num873, num872) - 1.57f;
             NPC.position += NPC.netOffset;
             
