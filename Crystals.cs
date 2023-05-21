@@ -18,7 +18,7 @@ namespace Crystals
 	public class Crystals : Mod
 	{
 		//Todo Recode item Tooltips and Names 
-
+		//TEST -PHOTONIC0
 		public static Crystals Instance { get; set; }
 
 		public Crystals()
