@@ -32,6 +32,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             NPC.lifeMax = 35;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 6, 8);
             NPC.aiStyle = -1;
+            //ToDo Fix Animation
             AnimationType = NPCID.DungeonSpirit;
             NPC.HitSound = SoundID.NPCHit36;
             NPC.DeathSound = SoundID.NPCDeath39;

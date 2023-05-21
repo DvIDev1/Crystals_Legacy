@@ -65,7 +65,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             NPC.width = 62;
             NPC.height = 66;
             NPC.defense = 4;
-            NPC.damage = 50;
+            NPC.damage = 21;
             NPC.lifeMax = 120;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 10, 9);
             NPC.aiStyle = -1;
@@ -177,7 +177,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         public void UpdateAiming()
         {
             AimProgress++;
-            if (AimProgress == 60) 
+            if (AimProgress == 60f) 
             {
                 SoundEngine.PlaySound(SoundSystem.ChargeBow);
             }
@@ -189,7 +189,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             var target = Main.player[NPC.target];
             SoundEngine.PlaySound(SoundID.Item5, NPC.Center);
             Projectile.NewProjectile(Terraria.Entity.GetSource_None(), NPC.Center,
-                NPC.DirectionTo(target.Top) * 16f,
+                NPC.DirectionTo(target.Top) * 8f,
                 ModContent.ProjectileType<HostileCrusolium_Arrow>(), NPC.damage / 4, KnockbackValue.Averageknockback);
             AimProgress = 0;
         }
@@ -260,7 +260,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         {
             if (NPC.downedBoss1)
                 if (spawnInfo.Player.ZoneForest)
-                    return SpawnCondition.OverworldNight.Chance * 0.5f;
+                    return SpawnCondition.OverworldNight.Chance * 0.25f;
             return base.SpawnChance(spawnInfo);
         }
 
@@ -341,7 +341,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
                 if (target.HasBuff(ModContent.BuffType<GreenMark>()))
                 {
-                    modifiers.FinalDamage.Flat += modifiers.FinalDamage.Flat / 2;
+                    modifiers.FinalDamage += modifiers.FinalDamage.Flat / 2;
                 }
                 else
                 {

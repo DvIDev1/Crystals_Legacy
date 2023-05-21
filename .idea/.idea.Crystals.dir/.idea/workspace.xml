@@ -53,6 +53,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
     </list>
@@ -260,7 +261,6 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Consumables/Food/CursedSalad/CursedSalad.cs" />
         <option value="$PROJECT_DIR$/Helpers/EaseFunctions.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Summoner/GuardianFlame.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Fall/Fall.cs" />
         <option value="$PROJECT_DIR$/Helpers/Pathfinding.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Banners/LeaflingBanner.cs" />
@@ -280,6 +280,7 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" />
       </list>
@@ -821,7 +822,8 @@
       <workItem from="1684446070775" duration="6005000" />
       <workItem from="1684494629126" duration="1167000" />
       <workItem from="1684498322379" duration="10587000" />
-      <workItem from="1684530208856" duration="1274000" />
+      <workItem from="1684530208856" duration="3489000" />
+      <workItem from="1684627157468" duration="950000" />
     </task>
     <servers />
   </component>

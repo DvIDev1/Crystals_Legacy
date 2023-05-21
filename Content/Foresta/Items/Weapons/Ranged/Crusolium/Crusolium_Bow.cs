@@ -99,6 +99,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             Player player = Main.player[Projectile.owner];
+            modifiers.FinalDamage += (int) player.Distance(target.Center) / 100f;
             if (target.HasBuff(ModContent.BuffType<GreenMark>()))
             {
                 modifiers.FinalDamage *= 1.5f;
@@ -108,7 +109,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
                 target.AddBuff(ModContent.BuffType<GreenMark>() , 60 * 7);
                 Projectile.Kill();
             }
-            modifiers.FinalDamage.Flat += (int)player.Distance(target.Center) / 100;
         }
 
         public override bool PreAI()
