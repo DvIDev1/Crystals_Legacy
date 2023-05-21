@@ -222,7 +222,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.easeInBack(NPC.ai[0]))) * 2.5f; 
+                        Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.EaseInBack(NPC.ai[0]))) * 2.5f; 
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, Single.MaxValue);
             }
@@ -251,7 +251,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.ai[0] += 0.0075f;
                 NPC.velocity +=
                     NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos, 
-                            (float) EaseFunctions.easeOutBack(NPC.ai[0])));
+                            (float) EaseFunctions.EaseOutBack(NPC.ai[0])));
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, -15f, 15f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -15f, 15f);
             }
@@ -640,7 +640,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.easeInBack(NPC.ai[0]))) * 2.5f; 
+                        Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.EaseInBack(NPC.ai[0]))) * 2.5f; 
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, Single.MaxValue);
             }
@@ -669,7 +669,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.ai[0] += 0.0075f;
                 NPC.velocity +=
                     NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos, 
-                            (float) EaseFunctions.easeOutBack(NPC.ai[0])));
+                            (float) EaseFunctions.EaseOutBack(NPC.ai[0])));
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, -10f, 10f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, 10f);
             }
@@ -990,7 +990,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.easeInBack(NPC.ai[0]))) * 4f; 
+                        Vector2.Lerp(attackStartPos, targetPos, (float) EaseFunctions.EaseInBack(NPC.ai[0]))) * 4f; 
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, 55);
             }
@@ -1019,7 +1019,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.ai[0] += 0.0075f;
                 NPC.velocity +=
                     NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos, 
-                            (float) EaseFunctions.easeOutBack(NPC.ai[0])));
+                            (float) EaseFunctions.EaseOutBack(NPC.ai[0])));
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, -20f, 20f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -20f, 20f);
             }

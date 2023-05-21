@@ -209,7 +209,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 for (int k = 16; k > 0; k--)
                 {
                     float progress = 1 - (float)((16 - k) / (float)16);
-                    Color color = lightColor * EaseFunctions.easeInOutQuad(progress) * 0.1f;
+                    Color color = lightColor * EaseFunctions.EaseInOutQuad(progress) * 0.1f;
                     if (k > 0 && k < oldRotation.Count)
                         Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, color, oldRotation[k] + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
                 }

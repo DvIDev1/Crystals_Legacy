@@ -5,16 +5,16 @@ namespace Crystals.Helpers
 {
     public class EaseFunctions
     {
-        public static float easeIn(float t)
+        public static float EaseIn(float t)
         {
             return t * t;
         }
         
-        public static float easeInOutQuad(float x) {
+        public static float EaseInOutQuad(float x) {
             return x < 0.5 ? 2 * x * x : 1 - (float)Math.Pow(-2 * x + 2, 2) / 2;
         }
         
-        public static float easeOutBounce(float x) {
+        public static float EaseOutBounce(float x) {
             const float n1 = 7.5625f;
             const float d1 = 2.75f;
 
@@ -29,7 +29,7 @@ namespace Crystals.Helpers
             }
         }
         
-        public static double easeInOutBack(double x){
+        public static double EaseInOutBack(double x){
             const double c1 = 1.70158f;
             const double c2 = c1 * 1.525f;
 
@@ -38,14 +38,14 @@ namespace Crystals.Helpers
                 : (Math.Pow(2 * x - 2, 2) * ((c2 + 1) * (x * 2 - 2) + c2) + 2) / 2f;
         }
         
-        public static double easeOutBack(double x) {
+        public static double EaseOutBack(double x) {
             const double c1 = 1.70158;
             const double c3 = c1 + 1;
 
             return 1 + c3 * Math.Pow(x - 1, 3) + c1 * Math.Pow(x - 1, 2);
         }
         
-        public static double easeOutElastic(double x) {
+        public static double EaseOutElastic(double x) {
             const double c4 = (2 * Math.PI) / 3;
 
             return x == 0
@@ -55,7 +55,7 @@ namespace Crystals.Helpers
                     : Math.Pow(2, -10 * x) * Math.Sin((x * 10 - 0.75) * c4) + 1;
         }
         
-        public static double easeInOutExpo(double x){
+        public static double EaseInOutExpo(double x){
             return x == 0
                 ? 0
                 : x == 1
@@ -64,15 +64,15 @@ namespace Crystals.Helpers
                         : (2 - Math.Pow(2, -20 * x + 10)) / 2;
         }
         
-        public static double easeInBack(double x) {
+        public static double EaseInBack(double x) {
             const double c1 = 1.70158;
             const double c3 = c1 + 1;
 
             return c3 * x * x * x - c1 * x * x;
         }
 
-        public static float easeInBounce(float x){
-            return 1 - easeOutBounce(1 - x);
+        public static float EaseInBounce(float x){
+            return 1 - EaseOutBounce(1 - x);
         }
         
     }
