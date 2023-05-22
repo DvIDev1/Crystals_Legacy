@@ -29,7 +29,7 @@ namespace Crystals.Core.Systems.ParticleSystemAttempt
         }
         public override void PostDrawTiles(){
 
-            Main.spriteBatch.Begin(SpriteSortMode.Texture, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.Transform);
+            Main.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.Rasterizer, null, Main.Transform);
             for (int i = 0; i < MaxParticles; i++)
             {
                 if (particles[i].Active)
