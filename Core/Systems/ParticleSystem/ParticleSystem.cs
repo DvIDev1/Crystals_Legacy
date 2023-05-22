@@ -1,13 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.ModLoader;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.GameContent;
-using Terraria.ID;
-using ReLogic.Content;
+using Terraria.ModLoader;
 
-namespace Crystals
+namespace Crystals.Core.Systems.ParticleSystemAttempt
 {
 	public class ParticleSystem : ModSystem
     {

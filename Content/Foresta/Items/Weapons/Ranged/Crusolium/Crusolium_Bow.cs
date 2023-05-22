@@ -43,7 +43,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             Item.autoReuse = false;
             Item.crit = 14;
             Item.value = Item.sellPrice(0, 2, 0, 0);
-            Item.buyPrice(0, 3, 75, 0);//this doesn't set the actual item's value it just returns an int wtf are you doing? -Photonic0
+            //Item.buyPrice(0, 3, 75, 0);//this doesn't set the actual item's value it just returns an int wtf are you doing? -Photonic0
         }
 
         public override bool CanUseItem(Player player) => player.ownedProjectileCounts[ModContent.ProjectileType<CrusoliumBowHeldProj>()] < 9999;//TEST REMOVE 9999 LATER
