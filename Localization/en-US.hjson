@@ -306,6 +306,11 @@ Mods: {
 				DisplayName: Squashler Banner
 				Tooltip: ""
 			}
+
+			TestItem: {
+				DisplayName: Test Item
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
@@ -331,6 +336,8 @@ Mods: {
 			CrusoSlash.DisplayName: Cruso Slash
 			GuardianFlameSummon.DisplayName: Guardian Flame Summon
 			FireAura.DisplayName: Fire Aura
+			CrusoliumArrow.DisplayName: Crusolium Arrow
+			CrusoliumBowHeldProj.DisplayName: Crusolium Bow Held Proj
 		}
 
 		NPCs: {

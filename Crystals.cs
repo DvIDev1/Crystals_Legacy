@@ -17,24 +17,22 @@ namespace Crystals
 {
 	public class Crystals : Mod
 	{
-		//Todo Recode item Tooltips and Names 
-		//TEST -PHOTONIC0
-		public static Crystals Instance { get; set; }
-
+        //Todo Recode item Tooltips and Names 
+        public static Crystals Instance { get; set; }
 		public Crystals()
 		{
 			Instance = this;
 		}
-
 		public override void Unload()
 		{
+			for (int i = 0; i < ParticleSystem.particles.Length; i++)
+			{
+				ParticleSystem.particles[i] = null;
+			}
 			if (!Main.dedServ)
 			{
 				Instance = null;
 			}
-
-
 		}
-
 	}
 }
