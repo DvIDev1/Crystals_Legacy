@@ -259,11 +259,13 @@
               </e>
               <e p="Ranged" t="Include">
                 <e p="Crusolium" t="Include">
-                  <e p="Crusolium_Arrow.png" t="Include" />
                   <e p="Crusolium_Bow.cs" t="Include" />
                   <e p="Crusolium_Bow.cs.bak" t="Include" />
                   <e p="Crusolium_Bow.cs.bak2" t="Include" />
                   <e p="Crusolium_Bow.png" t="Include" />
+                  <e p="CrusoliumArrow.png" t="Include" />
+                  <e p="CrusoliumBowHeldProj.cs" t="Include" />
+                  <e p="CrusoliumBowHeldProj.png" t="Include" />
                   <e p="GreenMark.png" t="Include" />
                 </e>
                 <e p="Fall" t="Include">
@@ -409,6 +411,13 @@
           <e p="DiscordSystem" t="Include">
             <e p="DiscordRPC.cs" t="Include" />
           </e>
+          <e p="ParticleSystem" t="Include">
+            <e p="BlurParticle.cs" t="Include" />
+            <e p="Particle.cs" t="Include" />
+            <e p="ParticleSystem.cs" t="Include" />
+            <e p="RingParticle.cs" t="Include" />
+            <e p="SparkleParticle.cs" t="Include" />
+          </e>
           <e p="SoundSystem" t="Include">
             <e p="SoundSystem.cs" t="Include" />
           </e>
@@ -480,6 +489,7 @@
           </e>
         </e>
       </e>
+      <e p="TelegraphEffects.cs" t="Include" />
     </e>
   </component>
 </project>
