@@ -172,9 +172,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                             {
                                 if (Main.player.Any(player => player.Distance(NPC.Center) < 1000f))
                                 {
-                                    ShakeSystem.power = 10;
-                                    ShakeSystem.MaxTime = 10;
-                                    ShakeSystem.WeakShake = true;
+                                    Shake.active = true;
+                                    Shake.power = 10;
+                                    Shake.time = 10;
                                 }
                                 VisualHelper.CreateGroundExplosion(NPC , 7 , 20, 20 , 0 ,10 , 5);
                                 SoundEngine.PlaySound(SoundID.DD2_MonkStaffGroundImpact, NPC.Center);
@@ -557,9 +557,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                             {
                                 if (Main.player.Any(player => player.Distance(NPC.Center) < 1000f))
                                 {
-                                    ShakeSystem.power = 20;
-                                    ShakeSystem.MaxTime = 10;
-                                    ShakeSystem.WeakShake = true;
+                                    Shake.active = true;
+                                    Shake.power = 20;
+                                    Shake.time = 10;
                                 }
                                 VisualHelper.CreateGroundExplosion(NPC , 14 , 40, 40 , 0 ,20 , 10);
                                 SoundEngine.PlaySound(SoundID.DD2_MonkStaffGroundImpact, NPC.Center);
@@ -940,9 +940,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                             {
                                 if (Main.player.Any(player => player.Distance(NPC.Center) < 1000f))
                                 {
-                                    ShakeSystem.power = 5;
-                                    ShakeSystem.MaxTime = 10;
-                                    ShakeSystem.WeakShake = true;
+                                    Shake.active = true;
+                                    Shake.power = 5;
+                                    Shake.time = 10;
                                 }
                                 VisualHelper.CreateGroundExplosion(NPC , 4 , 10, 10 , 0 ,5 , 5);
                                 SoundEngine.PlaySound(SoundID.DD2_MonkStaffGroundImpact, NPC.Center);

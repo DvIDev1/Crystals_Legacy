@@ -403,7 +403,7 @@
             <e p="ShakingBuff.cs" t="Include" />
           </e>
           <e p="CameraShake" t="Include">
-            <e p="ShakeSystem.cs" t="Include" />
+            <e p="Shake.cs" t="Include" />
           </e>
           <e p="DamageVisuals" t="Include">
             <e p="DamageVisualsSystem.cs" t="Include" />

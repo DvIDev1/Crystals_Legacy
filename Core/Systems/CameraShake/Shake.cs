@@ -4,40 +4,37 @@ using Terraria.ModLoader;
 
 namespace Crystals.Core.Systems.CameraShake
 {
-    public class ShakeSystem : ModPlayer
+    public class Shake : ModPlayer
     {
-        public static bool WeakShake;
-        public static bool makeTimerWork;
-        public static int MaxTime = 10;
+        public static bool active;
+        public static int time = 10;
         public static int power = 6;
-        private int timer;
+        private float timer;
 
 
         public override void ModifyScreenPosition()
         {
-            if (WeakShake) makeTimerWork = true;
 
-            if (makeTimerWork)
+            if (active)
             {
                 var random = new Vector2(Main.rand.Next(-power, power), Main.rand.Next(-power, power));
 
                 timer++;
                 if (timer > 0) Main.screenPosition += random;
 
-                if (timer >= MaxTime)
+                if (timer >= time)
                 {
                     timer = 0;
-                    makeTimerWork = false;
+                    active = false;
                 }
             }
         }
 
         public override void ResetEffects()
         {
-            if (!makeTimerWork)
+            if (!active)
             {
-                MaxTime = 10;
-                WeakShake = false;
+                time = 10;
             }
         }
     }
