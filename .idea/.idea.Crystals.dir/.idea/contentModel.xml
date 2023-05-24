@@ -417,6 +417,7 @@
             <e p="ParticleSystem.cs" t="Include" />
             <e p="RingParticle.cs" t="Include" />
             <e p="SparkleParticle.cs" t="Include" />
+            <e p="TelegraphEffects.cs" t="Include" />
           </e>
           <e p="SoundSystem" t="Include">
             <e p="SoundSystem.cs" t="Include" />
@@ -489,7 +490,6 @@
           </e>
         </e>
       </e>
-      <e p="TelegraphEffects.cs" t="Include" />
     </e>
   </component>
 </project>
