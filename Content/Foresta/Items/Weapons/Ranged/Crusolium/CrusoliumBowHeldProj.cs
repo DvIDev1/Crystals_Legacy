@@ -88,10 +88,10 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         public override bool PreDraw(ref Color lightColor)
         {
             //UNFINISHED
-            Vector2 offsetToStringTip = new(0, 16);
+            Vector2 offsetToStringTip = new Vector2(0, 16);
             Vector2[] bezierPoints = new Vector2[4];
-            List<Vector2> listForPoints = new();
-            List<float> listForRotations = new();
+            List<Vector2> listForPoints = new List<Vector2>();
+            List<float> listForRotations = new List<float>();
             float[] bezierXOffsets = new float[] { 0, -1, -1, 0 };
             for (float i = 0; i < 4; i++)
             {
@@ -105,7 +105,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
                 listForPoints.Add(CubicBezier(bezierPoints, (float)i / maxPoints));
                 listForRotations.Add((CubicBezier(bezierPoints, (float)(i + 0.03f) / maxPoints) - CubicBezier(bezierPoints, (float)(i - 0.03f) / maxPoints)).ToRotation());
             }
-            VertexStrip bowString = new();
+            VertexStrip bowString = new VertexStrip();
             bowString.PrepareStrip(listForPoints.ToArray(), listForRotations.ToArray(), ColorFunction, WidthFunction, -Main.screenPosition, includeBacksides: true);
             bowString.DrawTrail();
             Texture2D texture = TextureAssets.Projectile[Type].Value;

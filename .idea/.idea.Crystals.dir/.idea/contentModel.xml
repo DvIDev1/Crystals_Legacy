@@ -82,6 +82,7 @@
               </e>
               <e p="Crystal" t="Include">
                 <e p="Crystal_Forest.cs" t="Include" />
+                <e p="Crystal_Forest.png" t="Include" />
               </e>
             </e>
             <e p="Armors" t="Include">
