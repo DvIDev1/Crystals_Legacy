@@ -106,6 +106,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             var target = Main.player[NPC.target];
 
             Fleeing = FleeTime >= 0;
+
+            if (target.dead)
+            {
+                CancelAiming();
+            }
             
             if (!target.dead && target.active)
             {
@@ -126,7 +131,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             
             
             if (NPC.Distance(target.Center + target.velocity) <= 750 
-                && NPC.Distance(target.Center + target.velocity) >= 250 && grounded && !Fleeing)
+                && NPC.Distance(target.Center + target.velocity) >= 250 && grounded && !Fleeing && !target.dead)
             {
                 StartAiming();
             }
@@ -338,10 +343,10 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
             public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
             {
-
+                
                 if (target.HasBuff(ModContent.BuffType<GreenMark>()))
                 {
-                    modifiers.FinalDamage += modifiers.FinalDamage.Flat / 2;
+                    modifiers.FinalDamage *= 1.5f;
                 }
                 else
                 {

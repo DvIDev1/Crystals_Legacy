@@ -69,6 +69,9 @@ namespace Crystals.Content.Foresta.Items.Accessories.Crystal
                     DamageToTime *= 60f;
                     
                     //TODO Add animation
+
+                    Projectile.NewProjectile(Player.GetSource_Death(null), Player.Center, Vector2.Zero, ModContent.ProjectileType<CrystalVFX>(), 0, 0 , Player.whoAmI);
+                    
                     SoundEngine.PlaySound(SoundID.Item4);
                     playSound = false;
                     genGore = false;
@@ -84,10 +87,59 @@ namespace Crystals.Content.Foresta.Items.Accessories.Crystal
             
         }
 
-        /*class CrystalVFX : ModProjectile
+        class CrystalVFX : ModProjectile
         {
-            
-        }*/
+            public override void SetStaticDefaults()
+            {
+                Main.projFrames[Projectile.type] = 14;
+            }
+
+            public override void SetDefaults()
+            {
+                Projectile.Size = new Vector2(26, 112);
+                Projectile.ignoreWater = true;
+                Projectile.tileCollide = false;
+                Projectile.friendly = true;
+            }
+
+            public  int maxcount = 4;
+
+            public override bool? CanCutTiles()
+            {
+                return false;
+            }
+
+            public override void AI()
+            {
+                var owner = Main.player[Projectile.owner];
+
+                Lighting.AddLight(Projectile.Center , TorchID.Green);
+                
+                if (owner.dead)
+                {
+                    for (int i = 0; i < 14; i++)
+                    {
+                        Dust.NewDustPerfect(Projectile.Center, DustID.GreenFairy, Main.rand.NextVector2Circular(i, i));
+                    }
+                    Projectile.Kill();
+                }
+                
+                Projectile.Center = new Vector2(owner.Center.X , owner.Center.Y - 50);
+
+                
+                
+                if (++Projectile.frameCounter >= maxcount)
+                {
+                    Projectile.frameCounter = 0;
+                    if (++Projectile.frame >= Main.projFrames[Projectile.type])
+                    {
+                        maxcount = 6;
+                        Projectile.frameCounter = 0;
+                        Projectile.frame = 9;
+                    }
+                }
+            }
+        }
          
         
     }

@@ -71,12 +71,16 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             NPC.velocity.Y = (NPC.velocity.Y * 100f + num873) / 101f;
             NPC.rotation = (float) Math.Atan2(num873, num872) - 1.57f;
             NPC.position += NPC.netOffset;
-            
-            int num876 = Dust.NewDust(NPC.position, NPC.width, NPC.height, 61);
-            Dust dust = Main.dust[num876];
-            dust.velocity *= 0.1f;
-            Main.dust[num876].scale = 1.3f;
-            Main.dust[num876].noGravity = true;
+
+            if (Main.rand.NextBool())
+            {
+                int num876 = Dust.NewDust(NPC.position, NPC.width, NPC.height, 61);
+                Dust dust = Main.dust[num876];
+                dust.velocity *= 0.1f;
+                Main.dust[num876].scale = 1.3f;
+                Main.dust[num876].noGravity = true;
+            }
+
             NPC.position -= NPC.netOffset;
         }
         

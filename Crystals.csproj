@@ -38,7 +38,6 @@
     <Content Include="Content\Foresta\Items\Consumables\Food\Salad\Salad.png" />
     <Content Include="Content\Foresta\Items\ForestEnergy.png" />
     <Content Include="Content\Foresta\Items\Weapons\Magic\Carmine\Carmine.png" />
-    <Content Include="Content\Foresta\Items\Weapons\Melee\Crusolium\CrusoSlash.png" />
     <Content Include="Content\Foresta\Items\Weapons\Melee\Crusolium\Slash.png" />
     <Content Include="Content\Foresta\Items\Weapons\Summoner\GuardianFlameBuff.png" />
     <Content Include="Content\Foresta\Items\Weapons\Summoner\GuardianFlameSummon.png" />

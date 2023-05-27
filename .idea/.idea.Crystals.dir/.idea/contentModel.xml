@@ -83,6 +83,7 @@
               <e p="Crystal" t="Include">
                 <e p="Crystal_Forest.cs" t="Include" />
                 <e p="Crystal_Forest.png" t="Include" />
+                <e p="CrystalVFX.png" t="Include" />
               </e>
             </e>
             <e p="Armors" t="Include">
@@ -229,23 +230,13 @@
               </e>
               <e p="Melee" t="Include">
                 <e p="Crusolium" t="Include">
-                  <e p="Bealux.png" t="Include" />
-                  <e p="CrusoSlash.png" t="Include" />
-                  <e p="CrusoSpear.cs" t="Include" />
-                  <e p="CrusoSpear.cs.bak" t="Include" />
-                  <e p="CrusoSpear.cs.bak2" t="Include" />
-                  <e p="CrusoSpear.png" t="Include" />
-                  <e p="CrusoSpearProj.png" t="Include" />
                   <e p="CrusoSword.cs" t="Include" />
                   <e p="CrusoSword.cs.bak" t="Include" />
                   <e p="CrusoSword.cs.bak2" t="Include" />
                   <e p="CrusoSword.cs.bak3" t="Include" />
                   <e p="CrusoSword.png" t="Include" />
                   <e p="CrusoSwordSwing.png" t="Include" />
-                  <e p="GoldenBoots.png" t="Include" />
                   <e p="Slash.png" t="Include" />
-                  <e p="Slice.png" t="Include" />
-                  <e p="Swipe.png" t="Include" />
                 </e>
                 <e p="Sunwirl" t="Include">
                   <e p="FlameWave.png" t="Include" />
