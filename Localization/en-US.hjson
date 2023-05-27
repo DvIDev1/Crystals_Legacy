@@ -76,6 +76,11 @@ Mods: {
 				DisplayName: Guardian Flame Buff
 				Description: Mods.Crystals.Buffs.GuardianFlameBuff.Description
 			}
+
+			Reanimate: {
+				DisplayName: Reanimate
+				Description: Mods.Crystals.Buffs.Reanimate.Description
+			}
 		}
 
 		Items: {

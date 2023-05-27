@@ -13,7 +13,7 @@ namespace Crystals.GlobalBuffs.ShakingBuff
     {
         public override bool PreDraw(SpriteBatch spriteBatch, int type, int buffIndex, ref BuffDrawParams drawParams)
         {
-            if (type == ModContent.BuffType<NaturePower>())
+            if (type == ModContent.BuffType<Reanimate>())
             {
                 var shake = new Vector2(Main.rand.Next(-1, 1), Main.rand.Next(-1, 1));
 

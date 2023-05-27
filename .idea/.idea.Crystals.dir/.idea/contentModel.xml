@@ -62,8 +62,8 @@
           <e p="Buffs" t="Include">
             <e p="NaturePower" t="Include">
               <e p="NatureBoost.cs.bak" t="Include" />
-              <e p="NaturePower.cs" t="Include" />
-              <e p="NaturePower.png" t="Include" />
+              <e p="Reanimate.cs" t="Include" />
+              <e p="Reanimate.png" t="Include" />
             </e>
           </e>
           <e p="Events" t="Include">
