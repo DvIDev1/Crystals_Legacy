@@ -123,7 +123,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
                 Vector2 extraOffset = new Vector2( 10 * ChargeProgressWithEasing - 8, 0).RotatedBy(Projectile.rotation);
                 Projectile proj = new Projectile();
                 proj.type = GetProjIDToShoot();
-                Color color = proj.GetAlpha(Color.White);//I did this to compensate for arrows that are transparent like jester's and holy, so that they look like the actual projectile when released
+                Color color = proj.GetAlpha(Color.White);
+                //I did this to compensate for arrows that are transparent like jester's and holy, so that they look like the actual projectile when released
                 Main.EntitySpriteDraw(texture, Projectile.Center - Main.screenPosition - extraOffset, null, color, Projectile.rotation + MathF.PI / 2, texture.Size() / 2, 1, SpriteEffects.None);
             }
             texture = TextureAssets.Projectile[Type].Value;
