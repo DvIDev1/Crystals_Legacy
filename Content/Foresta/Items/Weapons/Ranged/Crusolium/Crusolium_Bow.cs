@@ -144,6 +144,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         }
         
         public override void Kill(int timeLeft) {
+            
             Collision.HitTiles(Projectile.Center, Projectile.velocity, Projectile.width, Projectile.height);
             //set maxinstances to 0 (infinite) to make the sound not cut itself off when more than 1 plays at once -Photonic0
             SoundEngine.PlaySound(SoundID.Item10 with { MaxInstances = 0 }, Projectile.position);

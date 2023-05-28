@@ -76,6 +76,11 @@ Mods: {
 				DisplayName: Guardian Flame Buff
 				Description: Mods.Crystals.Buffs.GuardianFlameBuff.Description
 			}
+
+			Reanimate: {
+				DisplayName: Reanimate
+				Description: Mods.Crystals.Buffs.Reanimate.Description
+			}
 		}
 
 		Items: {
@@ -311,6 +316,11 @@ Mods: {
 				DisplayName: Test Item
 				Tooltip: ""
 			}
+
+			Crystal_Forest: {
+				DisplayName: Crystal of the Forest
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
@@ -338,6 +348,7 @@ Mods: {
 			FireAura.DisplayName: Fire Aura
 			CrusoliumArrow.DisplayName: Crusolium Arrow
 			CrusoliumBowHeldProj.DisplayName: Crusolium Bow Held Proj
+			CrystalVFX.DisplayName: Crystal V F X
 		}
 
 		NPCs: {
@@ -345,9 +356,9 @@ Mods: {
 			Nature_Slime.DisplayName: Nature Slime
 			OvergrownWarrior.DisplayName: Overgrown Warrior
 			GoldenLeafling.DisplayName: Golden Leafling
-			Nature_Zombie.DisplayName: Nature_ Zombie
-			Nature_Zombie2.DisplayName: Nature_ Zombie2
-			Nature_Zombie3.DisplayName: Nature_ Zombie3
+			Nature_Zombie.DisplayName: Nature Zombie
+			Nature_Zombie2.DisplayName: Nature Zombie2
+			Nature_Zombie3.DisplayName: Nature Zombie3
 			OvergrownArcher.DisplayName: Overgrown Archer
 			OvergrownKnight.DisplayName: Overgrown Knight
 			OvergrownPaladin.DisplayName: Overgrown Paladin

@@ -25,6 +25,7 @@
     <Content Include="Assets\Foresta\Textures\Weapons\Carmine\CarminePassive.png" />
     <Content Include="Assets\Foresta\Textures\Weapons\Carmine\CarmineUse.png" />
     <Content Include="Assets\Other\FX\SoftGlow.png" />
+    <Content Include="Content\Foresta\Items\Accessories\Crystal\Crystal_Forest.png" />
     <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\NaturaPower.png" />
     <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\NatureHeart.png" />
     <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\StarNature.png" />
@@ -37,7 +38,6 @@
     <Content Include="Content\Foresta\Items\Consumables\Food\Salad\Salad.png" />
     <Content Include="Content\Foresta\Items\ForestEnergy.png" />
     <Content Include="Content\Foresta\Items\Weapons\Magic\Carmine\Carmine.png" />
-    <Content Include="Content\Foresta\Items\Weapons\Melee\Crusolium\CrusoSlash.png" />
     <Content Include="Content\Foresta\Items\Weapons\Melee\Crusolium\Slash.png" />
     <Content Include="Content\Foresta\Items\Weapons\Summoner\GuardianFlameBuff.png" />
     <Content Include="Content\Foresta\Items\Weapons\Summoner\GuardianFlameSummon.png" />

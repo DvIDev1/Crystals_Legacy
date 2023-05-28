@@ -52,10 +52,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Systems/CameraShake/ShakeSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Systems/CameraShake/Shake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/PlayerHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/PlayerHelper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,13 +89,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AB7A9F4-50CC-4832-97B1-D78997179E8D/53/51192061/WorldGen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AB7A9F4-50CC-4832-97B1-D78997179E8D/19/a87471d7/IModType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/Items/Accessories/ManaHeart.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../CrystalsOld/Items/Accesories/Crystal_of_The_Forest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../CrystalsOld/Items/Accesories/Crystal_of_The_Forest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC7EFCF9-07BA-4E94-BF2B-CC22BDCB7AAC/91/ad2a650d/ModNPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Projectiles/LeafFireProj.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2235B6C7-BC19-4054-89BC-9EE8571A1853/f9/542e6afa/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Common/Players/ExampleAccessorySlot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/B8EE30BF-8084-4B1D-AF05-38035758583C/9a/e842ddb6/System.Core.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Projectiles/LeafProj.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B235C304-7BBE-4ED4-8BB8-2C27AE52E1B7/0d/89822724/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA2A681D-5316-4757-B20B-39E42FC67437/d4/d1daca34/Void.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AB7A9F4-50CC-4832-97B1-D78997179E8D/1a/f4628e68/ILoadable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Feracor/Feracor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -104,6 +104,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/295677CC-AB3A-40D9-B2A9-4A7F6D2853A5/ba/e9f6b156/Utils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C13F4999-0BF3-4D18-B209-C4F451026A97/45/Math.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/8f/72b02afd/NPCID.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/842BE1A8-2021-4BBB-AC54-537FFFDF29D4/ee/19f90b7a/On_Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2235B6C7-BC19-4054-89BC-9EE8571A1853/77/75fe996b/CommonDrop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5D3EC05-734B-4A29-84DD-A8A889BE3758/8b/754f1659/CreativeItemSacrificesCatalog.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A4D453F0-D08F-4F22-97AC-0DE56238E494/0a/c492c333/PlayerSleepingHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,12 +113,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0BBF5215-AA32-4654-826E-924F193161EB/7b/3173d0ef/Entity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Projectiles/LeavesProjectile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Slime/Nature_Slime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78A59354-3C4C-4EE2-AE74-2DA8F7A8BC26/93/8ee50bb7/Item.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/45/d4db1373/NPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Projectiles/FallProjectile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Projectiles/LeafClusterProj.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C9A0C299-0FFB-4936-87E6-D3829FE5A44C/f3/7404d5d9/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Armor/ExampleBreastplate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Systems/SoundSystem/SoundSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1EFEA33A-A1A2-43D5-BB57-C779920B9035/79/cc4c7c81/RichPresenceResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/91/7a512ca7/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/ExamplePlayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/f5/b493e379/CoinsRule.cs" root0="SKIP_HIGHLIGHTING" />
@@ -138,11 +141,13 @@
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/AutoCam/AutoCamSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17880299-2863-4487-9DE4-3BF8806CD090/ba/dce8300d/NPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Consumables/PlanteraItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1EFEA33A-A1A2-43D5-BB57-C779920B9035/8e/40d8677c/Secrets.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/84/8c66f849/Entity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/NPCs/MinionBoss/MinionBossMinion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Consumables/MinionBossBag.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/NPCs/MinionBoss/MinionBossBody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Feracor/FeracorHeld.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1EFEA33A-A1A2-43D5-BB57-C779920B9035/1c/4ab1814c/Party.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A845D55E-0CC8-4F52-B800-C706A6CEC18A/f1/27b42d9f/SoundEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Consumables/MinionBossSummonItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Bosses/Witch_Of_The_Forest.cs" root0="SKIP_HIGHLIGHTING" />
@@ -176,12 +181,14 @@
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Bosses/MagicAcorn.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7800928E-0823-4CCE-B13B-BE9B1C9D8418/60/d9a2d2fd/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/9a/db4e1079/GoreID.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1EFEA33A-A1A2-43D5-BB57-C779920B9035/ae/8dea466b/DiscordRpcClient.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/ad/054f34f5/SpawnCondition.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D7C72413-0D33-47A1-9409-F95014D5B3E8/c3/ea3b6967/NPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/92/ac47ba3e/MoonShader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/21/2227cae9/NetworkText.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Enemies/Nature_Slime.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Items/ForestGel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B235C304-7BBE-4ED4-8BB8-2C27AE52E1B7/bd/b47b6e2b/ProjectileID.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/48/7018d1a7/Recipe.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Items/Leaf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/NPCs/FallenSoul.cs" root0="SKIP_HIGHLIGHTING" />
@@ -233,15 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Sunwirl/Sunwirl.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Items/PickUps/Natureheart.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Items/PickUps/NatureHeart.cs" />
-        <option value="$PROJECT_DIR$/Helpers/PosHelper.cs" />
-        <option value="$PROJECT_DIR$/Helpers/PlayerHelper.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Items/PickUps/StarNature.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSpear.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Feracor/Feracor.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Photosynthesia/Photosynthesia.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/SoundSystem/SoundSystem.cs" />
         <option value="$PROJECT_DIR$/Helpers/PathfindingHelper.cs" />
@@ -249,7 +247,6 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Buffs/NatureBoost/NaturePower.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/DamageVisuals/DamageVisualsSystem.cs" />
-        <option value="$PROJECT_DIR$/Core/Systems/BuffShakeSystem/ShakingBuff.cs" />
         <option value="$PROJECT_DIR$/Localization/en-US.hjson" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Items/PickUps/NaturaPower.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPalladin.cs" />
@@ -273,17 +270,27 @@
         <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
         <option value="$PROJECT_DIR$/build.txt" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" />
         <option value="$PROJECT_DIR$/Helpers/EaseFunctions.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
         <option value="$PROJECT_DIR$/Crystals.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/CameraShake/Shake.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
+        <option value="$PROJECT_DIR$/Core/Systems/DiscordSystem/DiscordRPC.cs" />
+        <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/TelegraphEffects.cs" />
+        <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/SparkleParticle.cs" />
+        <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/ParticleSystem.cs" />
+        <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/Particle.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" />
+        <option value="$PROJECT_DIR$/Core/Systems/BuffShakeSystem/ShakingBuff.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Buffs/NaturePower/Reanimate.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSpear.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
+        <option value="$PROJECT_DIR$/Helpers/PlayerHelper.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" />
       </list>
     </option>
   </component>
@@ -827,7 +834,14 @@
       <workItem from="1684627157468" duration="2358000" />
       <workItem from="1684780332094" duration="1209000" />
       <workItem from="1684790676059" duration="1845000" />
-      <workItem from="1684850111866" duration="3433000" />
+      <workItem from="1684850111866" duration="5087000" />
+      <workItem from="1684863088658" duration="1197000" />
+      <workItem from="1684929077224" duration="828000" />
+      <workItem from="1684933727159" duration="4367000" />
+      <workItem from="1685121205638" duration="5991000" />
+      <workItem from="1685203162732" duration="10584000" />
+      <workItem from="1685219005323" duration="1651000" />
+      <workItem from="1685290043363" duration="4575000" />
     </task>
     <servers />
   </component>
@@ -865,10 +879,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="379" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1680392944318" />
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1684853197178">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1685210222892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1684853197178" />
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685210222892" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1684417778991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -877,6 +891,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1677168171699" />
+    <state x="-248" y="346" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1685206120944">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-248" y="346" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685206120944" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1684417504619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

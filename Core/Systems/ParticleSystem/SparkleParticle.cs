@@ -12,8 +12,8 @@ namespace Crystals.Core.Systems.ParticleSystemAttempt
         {
             scale ??= Vector2.One;
             fatness ??= Vector2.One;
-            Vector2 scaleX = new(fatness.Value.X * 0.5f, scale.Value.X);
-            Vector2 scaleY = new(fatness.Value.Y * 0.5f, scale.Value.Y);
+            Vector2 scaleX = new Vector2(fatness.Value.X * 0.5f, scale.Value.X);
+            Vector2 scaleY = new Vector2(fatness.Value.Y * 0.5f, scale.Value.Y);
             Particle particle = GetFreeParticleAndSetValues(position, ownerIndex, duration, velocity, opacity, scaleY, color, rotation, angularVelocity, 15);
             particle.drawFunction = particle.SparkleDrawSingleAxis;
             particle.updateFunction = particle.SparkleUpdate;
@@ -53,8 +53,8 @@ namespace Crystals.Core.Systems.ParticleSystemAttempt
             float intensityMultiplier = MathF.Cos(TimeLeft * 0.4f) * 0.25f + 0.75f;
             outerColor *= intensityMultiplier;
             innerColor *= intensityMultiplier;
-            Vector2 scaleX = new(0.5f * Scale.X, Scale.X);
-            Vector2 scaleY = new(0.5f * Scale.Y, Scale.Y);       
+            Vector2 scaleX = new Vector2(0.5f * Scale.X, Scale.X);
+            Vector2 scaleY = new Vector2(0.5f * Scale.Y, Scale.Y);       
             Main.EntitySpriteDraw(texture, drawpos, null, outerColor, MathF.PI * 0.5f + Rotation, origin,scaleX * intensityMultiplier, SpriteEffects.None, 0);
             Main.EntitySpriteDraw(texture, drawpos, null, outerColor, Rotation, origin, scaleX * intensityMultiplier, SpriteEffects.None, 0);
             Main.EntitySpriteDraw(texture, drawpos, null, innerColor, Rotation, origin, scaleY * intensityMultiplier * 0.6f, SpriteEffects.None, 0);

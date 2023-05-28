@@ -15,7 +15,7 @@ namespace Crystals.Core.Systems.ParticleSystemAttempt
         {
             for (int i = 0; i < particles.Length; i++)
             {
-                particles[i] = new();
+                particles[i] = new Particle();
             }
         }
         public override void PostUpdateProjectiles()  

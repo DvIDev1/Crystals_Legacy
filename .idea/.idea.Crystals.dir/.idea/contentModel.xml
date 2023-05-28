@@ -62,8 +62,8 @@
           <e p="Buffs" t="Include">
             <e p="NaturePower" t="Include">
               <e p="NatureBoost.cs.bak" t="Include" />
-              <e p="NaturePower.cs" t="Include" />
-              <e p="NaturePower.png" t="Include" />
+              <e p="Reanimate.cs" t="Include" />
+              <e p="Reanimate.png" t="Include" />
             </e>
           </e>
           <e p="Events" t="Include">
@@ -82,6 +82,8 @@
               </e>
               <e p="Crystal" t="Include">
                 <e p="Crystal_Forest.cs" t="Include" />
+                <e p="Crystal_Forest.png" t="Include" />
+                <e p="CrystalVFX.png" t="Include" />
               </e>
             </e>
             <e p="Armors" t="Include">
@@ -228,23 +230,13 @@
               </e>
               <e p="Melee" t="Include">
                 <e p="Crusolium" t="Include">
-                  <e p="Bealux.png" t="Include" />
-                  <e p="CrusoSlash.png" t="Include" />
-                  <e p="CrusoSpear.cs" t="Include" />
-                  <e p="CrusoSpear.cs.bak" t="Include" />
-                  <e p="CrusoSpear.cs.bak2" t="Include" />
-                  <e p="CrusoSpear.png" t="Include" />
-                  <e p="CrusoSpearProj.png" t="Include" />
                   <e p="CrusoSword.cs" t="Include" />
                   <e p="CrusoSword.cs.bak" t="Include" />
                   <e p="CrusoSword.cs.bak2" t="Include" />
                   <e p="CrusoSword.cs.bak3" t="Include" />
                   <e p="CrusoSword.png" t="Include" />
                   <e p="CrusoSwordSwing.png" t="Include" />
-                  <e p="GoldenBoots.png" t="Include" />
                   <e p="Slash.png" t="Include" />
-                  <e p="Slice.png" t="Include" />
-                  <e p="Swipe.png" t="Include" />
                 </e>
                 <e p="Sunwirl" t="Include">
                   <e p="FlameWave.png" t="Include" />
@@ -417,6 +409,7 @@
             <e p="ParticleSystem.cs" t="Include" />
             <e p="RingParticle.cs" t="Include" />
             <e p="SparkleParticle.cs" t="Include" />
+            <e p="TelegraphEffects.cs" t="Include" />
           </e>
           <e p="SoundSystem" t="Include">
             <e p="SoundSystem.cs" t="Include" />
@@ -489,7 +482,6 @@
           </e>
         </e>
       </e>
-      <e p="TelegraphEffects.cs" t="Include" />
     </e>
   </component>
 </project>
