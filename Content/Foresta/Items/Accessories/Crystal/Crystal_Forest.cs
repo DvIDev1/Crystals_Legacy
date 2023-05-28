@@ -1,4 +1,5 @@
 using Crystals.Content.Foresta.Buffs.NaturePower;
+using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
@@ -46,7 +47,7 @@ namespace Crystals.Content.Foresta.Items.Accessories.Crystal
             public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genGore,
                 ref PlayerDeathReason damageSource)
             {
-                bool canReanimate = !Player.HasBuff<Reanimate>();
+                bool canReanimate = !Player.HasBuff<Reanimate>() && PlayerHelper.HasAccessoryEquipped(Player ,  ModContent.ItemType<Crystal_Forest>());
 
                 if (damageSource.SourceCustomReason == Player.name + " Decayed")
                 {
@@ -114,7 +115,6 @@ namespace Crystals.Content.Foresta.Items.Accessories.Crystal
                 var owner = Main.player[Projectile.owner];
 
                 Lighting.AddLight(Projectile.Center , TorchID.Green);
-                
                 if (owner.dead)
                 {
                     for (int i = 0; i < 14; i++)
