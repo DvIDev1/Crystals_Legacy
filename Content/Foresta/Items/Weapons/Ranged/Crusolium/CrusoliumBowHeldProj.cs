@@ -37,31 +37,49 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 
         public float MaxCharge { get => Projectile.ai[0]; }
         public float ChargeProgress { get => Projectile.ai[1] / Projectile.ai[0]; }
-        public float ChargeProgressWithEasing { get => (float)Helpers.EaseFunctions.EaseInOutBack(Projectile.ai[1] / Projectile.ai[0]); }
+        public float ChargeProgressWithEasing { get => Helpers.EaseFunctions.EaseOutBack(Projectile.ai[1] / Projectile.ai[0]); }
+
+        public List<short> pierceExceptions = new List<short>();
+
         public override void AI()
         {
             //UNFINISHED
             Player player = Main.player[Projectile.owner];
-            if (player.HeldItem.type != ModContent.ItemType<Crusolium_Bow>())
+            
+            pierceExceptions.AddRange( new []{ ProjectileID.JestersArrow ,ProjectileID.HellfireArrow });
+            
+            if ((player.HeldItem.type != ModContent.ItemType<Crusolium_Bow>()) || player.dead)
                 Projectile.Kill();
-            if (ChargeAmount < MaxCharge)
-                ChargeAmount = !player.channel ? 0 : ChargeAmount + 1 > MaxCharge ? MaxCharge : ChargeAmount + 1;
-            if (!player.channel && ChargeAmount >= MaxCharge)
+            if (!player.channel && ChargeAmount != 0)
             {
-                ChargeAmount = 0;
                 int ammoIdToShoot = GetProjIDToShoot();
                 if (ammoIdToShoot != 0)
                 {
-                    Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.Center - Projectile.rotation.ToRotationVector2() * 4, Projectile.Center.DirectionTo(Main.MouseWorld) * 10, ammoIdToShoot, Projectile.damage, Projectile.knockBack, Projectile.owner).netUpdate = true;
+                    Projectile proj = Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(),
+                        Projectile.Center - Projectile.rotation.ToRotationVector2() * 4,
+                        Projectile.Center.DirectionTo(Main.MouseWorld) * 10f * ChargeProgressWithEasing, ammoIdToShoot,
+                        (int) (Projectile.damage * ChargeProgressWithEasing),
+                        Projectile.knockBack * ChargeProgressWithEasing, Projectile.owner);
+                    proj.netUpdate = true;
+                    if ((ChargeAmount >= MaxCharge) && !pierceExceptions.Contains( (short) ammoIdToShoot))
+                    {
+                        proj.penetrate++;
+                    }
+
+                    proj.usesLocalNPCImmunity = true;
+                    proj.localNPCHitCooldown = 10;
+                    
                     SoundEngine.PlaySound(SoundID.Item5 with { MaxInstances = 0 }, Projectile.position);
                     Shake.active = true;
                     Shake.power = 1;
                     Shake.time = 10;
                 }
-                    
-                    
-                //fire arrow here
+                
+                ChargeAmount = 0;
             }
+            
+            if (ChargeAmount < MaxCharge)
+                ChargeAmount = !player.channel ? 0 : ChargeAmount + 1 > MaxCharge ? MaxCharge : ChargeAmount + 1;
 
             //Dust.NewDustPerfect(Projectile.Center, DustID.GreenFairy, Vector2.Zero);//DEBUG DUST
                 
@@ -71,6 +89,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             Projectile.rotation = Projectile.ai[2];//multiplayer terribleness
             player.direction = (Projectile.rotation > -MathHelper.PiOver2 && Projectile.rotation < MathHelper.PiOver2) ? 1 : -1;
             Projectile.Center = player.Center - new Vector2(player.direction * 3,2) + new Vector2(23,0).RotatedBy(Projectile.rotation);
+            Projectile.position.Y += player.gfxOffY;
             player.SetCompositeArmFront(true, ProgressToStretchAmount( 1 - ChargeProgressWithEasing), Projectile.rotation - MathF.PI / 2);
             
             if (ChargeAmount >= MaxCharge)
@@ -85,12 +104,24 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         {
             int ammoIdToShoot = 0;
             Player player = Main.player[Projectile.owner];
+
+            bool chosen = false;
+            
             for (int i = 0; i < player.inventory.Length; i++)
             {
                 if (player.inventory[i].ammo == AmmoID.Arrow)
                 {
-                    ammoIdToShoot = player.inventory[i].shoot;
-                    break;
+                    
+                    if (i > 53 && i < 58 && !player.inventory[i].IsAir)
+                    {
+                        ammoIdToShoot = player.inventory[i].shoot;
+                        break;
+                    }
+                    else if(!chosen)
+                    {    
+                        chosen = true;
+                        ammoIdToShoot = player.inventory[i].shoot;
+                    }
                 }
             }
             ammoIdToShoot = ammoIdToShoot == ProjectileID.WoodenArrowFriendly ? ModContent.ProjectileType<CrusoliumArrow>() : ammoIdToShoot;

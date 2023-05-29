@@ -26,17 +26,17 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         {
             Item.channel = true;
             Item.keepTime = 80;
-            Item.damage = 13;
+            Item.damage = 18;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 28;
             Item.height = 48;
             Item.maxStack = 1;
-            Item.useTime = Item.useAnimation = 35;
+            Item.useTime = Item.useAnimation = 40;
             Item.useStyle = 5;//USE ID CLASSES DAMMIT -Photonic0
             Item.knockBack = 2;
             Item.rare = ItemRarityID.Green;
             Item.noMelee = true;
-            Item.shoot = 1;//USE ID CLASSES DAMMIT -Photonic0
+            Item.shoot = 1;
             Item.useAmmo = AmmoID.Arrow;
             Item.noUseGraphic = true;
             Item.shootSpeed = 32f;
@@ -96,21 +96,19 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         /// do this so you can actually sync time when you call netupdate -Photonic0
         /// </summary>
         public int Time { get => (int)Projectile.ai[0]; set => Projectile.ai[0] = value; }
-        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+
+        private Vector2 startPos = Vector2.Zero;
+        
+        public override void OnSpawn(IEntitySource source)
         {
-            Player player = Main.player[Projectile.owner];
-            if (hit.Crit)
-            {
-                hit.Crit = false;//??? -Photonic0
-                player.Heal(1);
-                Projectile.penetrate++;
-            }
+            startPos = Projectile.Center;
         }
 
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             Player player = Main.player[Projectile.owner];
-            modifiers.FinalDamage += player.Distance(target.Center) * 0.001f;
+            modifiers.DisableCrit();
+            modifiers.FinalDamage += player.Distance(startPos) * 0.001f;
             if (target.HasBuff(ModContent.BuffType<GreenMark>()))
                 modifiers.FinalDamage *= 1.5f;
             else

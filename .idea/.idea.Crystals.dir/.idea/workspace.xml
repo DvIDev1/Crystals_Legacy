@@ -52,20 +52,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher_Glow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior_Glow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/EaseFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/EaseFunctions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B235C304-7BBE-4ED4-8BB8-2C27AE52E1B7/0d/89822724/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA2A681D-5316-4757-B20B-39E42FC67437/d4/d1daca34/Void.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AB7A9F4-50CC-4832-97B1-D78997179E8D/1a/f4628e68/ILoadable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF51C732-DC43-4A95-94D5-07216012C8CE/06/5de89ae0/Item.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Feracor/Feracor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FF51C732-DC43-4A95-94D5-07216012C8CE/5b/dad7ca35/Utils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9AB7A9F4-50CC-4832-97B1-D78997179E8D/e5/568fc3e5/Collision.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/295677CC-AB3A-40D9-B2A9-4A7F6D2853A5/ba/e9f6b156/Utils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C13F4999-0BF3-4D18-B209-C4F451026A97/45/Math.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
@@ -301,8 +298,8 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" />
         <option value="$PROJECT_DIR$/Helpers/EaseFunctions.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" />
       </list>
     </option>
   </component>
@@ -323,7 +320,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="Settings.AsciiDoc.Preview" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Crystals: TerrariaServer">
@@ -358,8 +355,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue=".NET Launch Settings Profile.Crystals: Terraria" />
       <item itemvalue=".NET Launch Settings Profile.Crystals: TerrariaServer" />
+      <item itemvalue=".NET Launch Settings Profile.Crystals: Terraria" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -856,6 +853,10 @@
       <workItem from="1685290043363" duration="6295000" />
       <workItem from="1685303022728" duration="5490000" />
       <workItem from="1685313781546" duration="9001000" />
+      <workItem from="1685362546313" duration="8726000" />
+      <workItem from="1685391422214" duration="2624000" />
+      <workItem from="1685398724175" duration="231000" />
+      <workItem from="1685399086925" duration="3913000" />
     </task>
     <servers />
   </component>
@@ -893,22 +894,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="379" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1680392944318" />
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1685310048351">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1685365045792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685310048351" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1684417778991">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685365045792" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1685398923173">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1684417778991" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1685398923173" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1677168171699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1677168171699" />
-    <state x="-248" y="346" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1685206120944">
+    <state x="-248" y="346" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1685364100023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-248" y="346" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685206120944" />
+    <state x="-248" y="346" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685364100023" />
     <state x="777" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1684417504619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -917,10 +918,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="378" key="scopes/0.0.1920.1040@0.0.1920.1040" timestamp="1678317743628" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1684506519820">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1685368420957">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1684506519820" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1685368420957" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
