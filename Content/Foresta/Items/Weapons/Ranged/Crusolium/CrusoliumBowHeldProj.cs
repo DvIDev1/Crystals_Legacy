@@ -9,6 +9,8 @@ using Terraria.Graphics;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using System.IO;
+using Crystals.Core.Systems.CameraShake;
+using Terraria.Audio;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 {
@@ -32,9 +34,10 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         }
         public float MaxTimer { get => Projectile.ai[2]; set => Projectile.ai[2] = value; }//MIGHT NOT NEED THIS ACTUALLY
         public float ChargeAmount { get => Projectile.ai[1]; set => Projectile.ai[1] = value; }
+
         public float MaxCharge { get => Projectile.ai[0]; }
         public float ChargeProgress { get => Projectile.ai[1] / Projectile.ai[0]; }
-        public float ChargeProgressWithEasing { get => (float)Helpers.EaseFunctions.EaseOutBack(Projectile.ai[1] / Projectile.ai[0]); }
+        public float ChargeProgressWithEasing { get => (float)Helpers.EaseFunctions.EaseInOutBack(Projectile.ai[1] / Projectile.ai[0]); }
         public override void AI()
         {
             //UNFINISHED
@@ -48,12 +51,20 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
                 ChargeAmount = 0;
                 int ammoIdToShoot = GetProjIDToShoot();
                 if (ammoIdToShoot != 0)
+                {
                     Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.Center - Projectile.rotation.ToRotationVector2() * 4, Projectile.Center.DirectionTo(Main.MouseWorld) * 10, ammoIdToShoot, Projectile.damage, Projectile.knockBack, Projectile.owner).netUpdate = true;
+                    SoundEngine.PlaySound(SoundID.Item5 with { MaxInstances = 0 }, Projectile.position);
+                    Shake.active = true;
+                    Shake.power = 1;
+                    Shake.time = 10;
+                }
+                    
+                    
                 //fire arrow here
             }
 
-            if (ChargeAmount > MaxCharge)
-                Dust.NewDustPerfect(Projectile.Center, DustID.GreenFairy, Vector2.Zero);//DEBUG DUST
+            //Dust.NewDustPerfect(Projectile.Center, DustID.GreenFairy, Vector2.Zero);//DEBUG DUST
+                
             if (Main.myPlayer == Projectile.owner)
                 Projectile.ai[2] = ( Main.MouseWorld - player.Center).ToRotation();
             Projectile.netUpdate = true;
@@ -61,6 +72,14 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             player.direction = (Projectile.rotation > -MathHelper.PiOver2 && Projectile.rotation < MathHelper.PiOver2) ? 1 : -1;
             Projectile.Center = player.Center - new Vector2(player.direction * 3,2) + new Vector2(23,0).RotatedBy(Projectile.rotation);
             player.SetCompositeArmFront(true, ProgressToStretchAmount( 1 - ChargeProgressWithEasing), Projectile.rotation - MathF.PI / 2);
+            
+            if (ChargeAmount >= MaxCharge)
+            {
+                var power = 0.5f;
+                Vector2 random = new Vector2(Main.rand.NextFloat(-power, power), Main.rand.NextFloat(-power, power));
+                Projectile.position += random;
+            }
+            
         }
         int GetProjIDToShoot()
         {

@@ -14,6 +14,16 @@ namespace Crystals.Helpers
             return x < 0.5 ? 2 * x * x : 1 - (float)Math.Pow(-2 * x + 2, 2) / 2;
         }
         
+        public static float EaseInOutQuint(float x) {
+            return x < 0.5 ? 16 * x * x * x * x * x : 1 - (float )Math.Pow(-2 * x + 2, 5) / 2;
+        }
+        
+        public static float EaseInOutCirc(float x){
+            return x < 0.5
+                ? (1 - (float) Math.Sqrt(1 - (float) Math.Pow(2 * x, 2))) / 2
+                : ((float) Math.Sqrt(1 - (float) Math.Pow(-2 * x + 2, 2)) + 1) / 2;
+        }
+        
         public static float EaseOutBounce(float x) {
             const float n1 = 7.5625f;
             const float d1 = 2.75f;
@@ -29,44 +39,44 @@ namespace Crystals.Helpers
             }
         }
         
-        public static double EaseInOutBack(double x){
-            const double c1 = 1.70158f;
-            const double c2 = c1 * 1.525f;
+        public static float EaseInOutBack(float x){
+            const float c1 = 1.70158f;
+            const float c2 = c1 * 1.525f;
 
-            return x < 0.5
-                ? (Math.Pow(2 * x, 2) * ((c2 + 1) * 2 * x - c2)) / 2f
-                : (Math.Pow(2 * x - 2, 2) * ((c2 + 1) * (x * 2 - 2) + c2) + 2) / 2f;
+            return x < 0.5f
+                ? ((float) Math.Pow(2f * x, 2f) * ((c2 + 1f) * 2f * x - c2)) / 2f
+                : ((float) Math.Pow(2f * x - 2f, 2f) * ((c2 + 1f) * (x * 2f - 2f) + c2) + 2f) / 2f;
         }
         
-        public static double EaseOutBack(double x) {
-            const double c1 = 1.70158;
-            const double c3 = c1 + 1;
+        public static float EaseOutBack(float x) {
+            const float c1 = 1.70158f;
+            const float c3 = c1 + 1f;
 
-            return 1 + c3 * Math.Pow(x - 1, 3) + c1 * Math.Pow(x - 1, 2);
+            return 1 + c3 * (float) Math.Pow(x - 1, 3) + c1 * (float) Math.Pow(x - 1, 2);
         }
         
-        public static double EaseOutElastic(double x) {
-            const double c4 = (2 * Math.PI) / 3;
+        public static float EaseOutElastic(float x) {
+            const float c4 = (2 * (float) Math.PI) / 3;
 
-            return x == 0
-                ? 0
-                : x == 1
-                    ? 1
-                    : Math.Pow(2, -10 * x) * Math.Sin((x * 10 - 0.75) * c4) + 1;
+            return x == 0f
+                ? 0f
+                : x == 1f
+                    ? 1f
+                    : (float) Math.Pow(2f, -10f * x) * (float) Math.Sin((x * 10f - 0.75f) * c4) + 1f;
         }
         
-        public static double EaseInOutExpo(double x){
-            return x == 0
-                ? 0
-                : x == 1
-                    ? 1
-                    : x < 0.5 ? Math.Pow(2, 20 * x - 10) / 2
-                        : (2 - Math.Pow(2, -20 * x + 10)) / 2;
+        public static float EaseInOutExpo(float x){
+            return x == 0f
+                ? 0f
+                : x == 1f
+                    ? 1f
+                    : x < 0.5f ? (float) Math.Pow(2f, 20f * x - 10f) / 2f
+                        : (2f - (float) Math.Pow(2f, -20f * x + 10f)) / 2f;
         }
         
-        public static double EaseInBack(double x) {
-            const double c1 = 1.70158;
-            const double c3 = c1 + 1;
+        public static float EaseInBack(float x) {
+            const float c1 = 1.70158f;
+            const float c3 = c1 + 1f;
 
             return c3 * x * x * x - c1 * x * x;
         }
@@ -75,5 +85,9 @@ namespace Crystals.Helpers
             return 1 - EaseOutBounce(1 - x);
         }
         
+        public static float easeOutQuint(float x) {
+            return 1f - (float) Math.Pow(1f - x, 5f);
+        }
+
     }
 }

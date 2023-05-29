@@ -7,6 +7,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
+using Crystals.Core.Systems.SoundSystem;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 {
@@ -30,17 +31,17 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             Item.width = 28;
             Item.height = 48;
             Item.maxStack = 1;
-            Item.useTime = Item.useAnimation = 25;
+            Item.useTime = Item.useAnimation = 35;
             Item.useStyle = 5;//USE ID CLASSES DAMMIT -Photonic0
             Item.knockBack = 2;
             Item.rare = ItemRarityID.Green;
-            Item.UseSound = SoundID.Item5;
             Item.noMelee = true;
             Item.shoot = 1;//USE ID CLASSES DAMMIT -Photonic0
             Item.useAmmo = AmmoID.Arrow;
             Item.noUseGraphic = true;
             Item.shootSpeed = 32f;
             Item.autoReuse = false;
+            Item.UseSound = SoundSystem.ChargeBow;
             Item.crit = 14;
             Item.value = Item.sellPrice(0, 2, 0, 0);
             //Item.buyPrice(0, 3, 75, 0);//this doesn't set the actual item's value it just returns an int wtf are you doing? -Photonic0
@@ -84,7 +85,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             Projectile.DamageType = DamageClass.Ranged;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = true;
-            Projectile.aiStyle = ProjAIStyleID.Arrow;
             Projectile.penetrate = 2;
 
             //my brother in christ please actuallly remember to make your piercing projectiles have local iframes - Photonic0
@@ -102,21 +102,20 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             if (hit.Crit)
             {
                 hit.Crit = false;//??? -Photonic0
-                player.statLife++;//use player.Heal!! -Photonic0
+                player.Heal(1);
                 Projectile.penetrate++;
-                player.HealEffect(1);//use player.Heal!! READ METHOD SUMMARIES!! -Photonic0
             }
         }
 
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             Player player = Main.player[Projectile.owner];
-            modifiers.FinalDamage += (int) player.Distance(target.Center) / 100f;
+            modifiers.FinalDamage += player.Distance(target.Center) * 0.001f;
             if (target.HasBuff(ModContent.BuffType<GreenMark>()))
                 modifiers.FinalDamage *= 1.5f;
             else
             {
-                target.AddBuff(ModContent.BuffType<GreenMark>() , 60 * 7);
+                target.AddBuff(ModContent.BuffType<GreenMark>(), 60 * 7);
                 Projectile.Kill();
             }
         }

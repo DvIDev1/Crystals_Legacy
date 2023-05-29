@@ -12,6 +12,7 @@ using Crystals.Core.Systems.SoundSystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -62,7 +63,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         public override void SetDefaults()
         {
             NPC.GivenName = "Overgrown Archer";
-            NPC.width = 62;
+            NPC.width = 54;
             NPC.height = 66;
             NPC.defense = 4;
             NPC.damage = 21;
@@ -211,6 +212,39 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             AimProgress = 0;
         }
 
+
+        /*public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
+                AssetRequestMode.ImmediateLoad).Value;
+            SpriteEffects effect = SpriteEffects.None;
+            
+            if (NPC.spriteDirection != -1)
+            {
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else
+            {
+                effect = SpriteEffects.None;
+            }
+            
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    NPC.position.X - Main.screenPosition.X + NPC.frame.Width * 0.5f,
+                    NPC.position.Y - Main.screenPosition.Y + NPC.frame.Height - NPC.frame.Height * 0.5f + 2f
+                ),
+                NPC.frame,
+                Color.White,
+                NPC.rotation,
+                NPC.frame.Size() * 0.5f,
+                NPC.scale,
+                effect,
+                0f
+            );
+        }*/
 
         public override void FindFrame(int frameHeight)
         {

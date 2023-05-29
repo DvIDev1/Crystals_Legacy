@@ -333,11 +333,16 @@
                 <e p="NatureZombieLeg.png" t="Include" />
                 <e p="NatureZombieTorso.png" t="Include" />
               </e>
+              <e p="Sunny" t="Include">
+                <e p="Sunny.cs" t="Include" />
+                <e p="Sunny.png" t="Include" />
+              </e>
               <e p="Warriors" t="Include">
                 <e p="HostileCrusolium_Arrow.png" t="Include" />
                 <e p="OvergrownArcher.cs" t="Include" />
                 <e p="OvergrownArcher.cs.bak" t="Include" />
                 <e p="OvergrownArcher.png" t="Include" />
+                <e p="OvergrownArcher_Glow.png" t="Include" />
                 <e p="OvergrownArcherSmall.png" t="Include" />
                 <e p="OvergrownKnight.cs" t="Include" />
                 <e p="OvergrownKnight.cs.bak" t="Include" />
@@ -347,6 +352,7 @@
                 <e p="OvergrownWarrior.cs" t="Include" />
                 <e p="OvergrownWarrior.cs.bak" t="Include" />
                 <e p="OvergrownWarrior.png" t="Include" />
+                <e p="OvergrownWarrior_Glow.png" t="Include" />
                 <e p="OvergrownWarriorsGore.cs" t="Include" />
                 <e p="WarriorArm.png" t="Include" />
                 <e p="WarriorArm2.png" t="Include" />

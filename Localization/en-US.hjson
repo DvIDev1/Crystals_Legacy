@@ -366,6 +366,7 @@ Mods: {
 			SquashlerAggresive.DisplayName: Squashler Aggresive
 			SquashlerScary.DisplayName: Squashler Scary
 			ForestSpirit.DisplayName: Forest Spirit
+			Sunny.DisplayName: Sunny
 		}
 
 		Tiles.Banners.MapEntry: Banner

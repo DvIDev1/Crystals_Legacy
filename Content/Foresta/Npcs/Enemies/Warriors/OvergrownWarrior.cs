@@ -7,6 +7,8 @@ using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Content;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
@@ -115,6 +117,39 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             return base.SpawnChance(spawnInfo);
         }
 
+        /*public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
+                AssetRequestMode.ImmediateLoad).Value;
+            SpriteEffects effect = SpriteEffects.None;
+            
+            if (NPC.spriteDirection != -1)
+            {
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else
+            {
+                effect = SpriteEffects.None;
+            }
+            
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    NPC.position.X - Main.screenPosition.X + NPC.frame.Width * 0.5f,
+                    NPC.position.Y - Main.screenPosition.Y + NPC.frame.Height - NPC.frame.Height * 0.5f + 2f
+                ),
+                NPC.frame,
+                Color.White,
+                NPC.rotation,
+                NPC.frame.Size() * 0.5f,
+                NPC.scale,
+                effect,
+                0f
+            );
+        }*/
+        
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 4, 1, 3));

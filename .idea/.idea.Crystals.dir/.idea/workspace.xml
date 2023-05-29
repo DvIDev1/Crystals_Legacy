@@ -52,10 +52,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher_Glow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior_Glow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/PlayerHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/PlayerHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/EaseFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/EaseFunctions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +145,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F5E4932-93E5-4761-9CBC-52DFB691EB66/c6/b8d3cb99/ModProjectile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/Tiles/MonsterBanner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/b1/e3889967/Item.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21C66BC3-96F6-4297-AB10-980937D21159/f2/7140e4f7/IOrderedEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/StateSystem/PlayerStatesSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/NPCs/PartyZombie.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48666772-7775-4A4C-BC55-E88D9EB3F63E/70/1cea19ed/SpawnCondition.cs" root0="SKIP_HIGHLIGHTING" />
@@ -174,6 +185,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/UI/ExampleUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/NPCS/Enemies/Spirit_of_The_Forest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/Items/Weapons/ExampleGun.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/21C66BC3-96F6-4297-AB10-980937D21159/23/OrderBy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5DEBC4E-344C-4CB9-8E47-A47C98F45475/ac/64b71949/Mod.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C13F4999-0BF3-4D18-B209-C4F451026A97/46/Math.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Buffs/Resurrection.cs" root0="SKIP_HIGHLIGHTING" />
@@ -240,7 +252,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Photosynthesia/Photosynthesia.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/SoundSystem/SoundSystem.cs" />
         <option value="$PROJECT_DIR$/Helpers/PathfindingHelper.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Buffs/NatureBoost/NatureBoost.cs" />
@@ -270,27 +281,28 @@
         <option value="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" />
         <option value="$PROJECT_DIR$/build.txt" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Zombie/Nature_Zombie.cs" />
-        <option value="$PROJECT_DIR$/Helpers/EaseFunctions.cs" />
         <option value="$PROJECT_DIR$/Crystals.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/CameraShake/Shake.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/DiscordSystem/DiscordRPC.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/TelegraphEffects.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/SparkleParticle.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/ParticleSystem.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/ParticleSystem/Particle.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" />
         <option value="$PROJECT_DIR$/Core/Systems/BuffShakeSystem/ShakingBuff.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Buffs/NaturePower/Reanimate.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSpear.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
         <option value="$PROJECT_DIR$/Helpers/PlayerHelper.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Accessories/Crystal/Crystal_Forest.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" />
+        <option value="$PROJECT_DIR$/Helpers/EaseFunctions.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
       </list>
     </option>
   </component>
@@ -841,7 +853,9 @@
       <workItem from="1685121205638" duration="5991000" />
       <workItem from="1685203162732" duration="10584000" />
       <workItem from="1685219005323" duration="1651000" />
-      <workItem from="1685290043363" duration="4575000" />
+      <workItem from="1685290043363" duration="6295000" />
+      <workItem from="1685303022728" duration="5490000" />
+      <workItem from="1685313781546" duration="9001000" />
     </task>
     <servers />
   </component>
@@ -879,10 +893,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="379" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1680392944318" />
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1685210222892">
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog" timestamp="1685310048351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685210222892" />
+    <state x="682" y="127" width="811" height="588" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1685310048351" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1684417778991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
