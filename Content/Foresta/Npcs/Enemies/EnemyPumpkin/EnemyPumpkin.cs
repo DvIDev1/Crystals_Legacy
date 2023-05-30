@@ -17,7 +17,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
-using Vector2 = Microsoft.Xna.Framework.Vector2;
+using Vector2 = Microsoft.Xna.Framework.Vector2; // balls
 
 namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 {
