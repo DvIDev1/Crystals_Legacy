@@ -52,15 +52,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crystals.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Crystals.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +138,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F5E4932-93E5-4761-9CBC-52DFB691EB66/c6/b8d3cb99/ModProjectile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Old/Tiles/MonsterBanner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7237C9EA-A5DA-4113-857F-A81D612D11DB/b1/e3889967/Item.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21C66BC3-96F6-4297-AB10-980937D21159/f2/7140e4f7/IOrderedEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21C66BC3-96F6-4297-AB10-980937D21159/f2/7140e4f7/IOrderedEnumerable`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/StateSystem/PlayerStatesSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../tModLoader-1.4/ExampleMod/Content/NPCs/PartyZombie.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48666772-7775-4A4C-BC55-E88D9EB3F63E/70/1cea19ed/SpawnCondition.cs" root0="SKIP_HIGHLIGHTING" />
@@ -298,8 +294,8 @@
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" />
         <option value="$PROJECT_DIR$/Helpers/EaseFunctions.cs" />
-        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
         <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" />
+        <option value="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/Crusolium_Bow.cs" />
       </list>
     </option>
   </component>
@@ -856,7 +852,8 @@
       <workItem from="1685362546313" duration="8726000" />
       <workItem from="1685391422214" duration="2624000" />
       <workItem from="1685398724175" duration="231000" />
-      <workItem from="1685399086925" duration="3913000" />
+      <workItem from="1685399086925" duration="4443000" />
+      <workItem from="1685450377077" duration="1686000" />
     </task>
     <servers />
   </component>

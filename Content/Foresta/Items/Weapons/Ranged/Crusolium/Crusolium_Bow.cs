@@ -63,6 +63,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             }
             return false;
         }
+
+        public override bool CanConsumeAmmo(Item ammo, Player player) => false;
     }
 
 

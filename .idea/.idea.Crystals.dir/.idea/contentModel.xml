@@ -362,6 +362,10 @@
                 <e p="WarriorTorso.png" t="Include" />
               </e>
             </e>
+            <e p="Friendly" t="Include">
+              <e p="PumpkinMan" t="Include" />
+              <e p="ShroomMan" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Misc" t="Include">

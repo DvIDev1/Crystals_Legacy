@@ -47,8 +47,15 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             Player player = Main.player[Projectile.owner];
             
             pierceExceptions.AddRange( new []{ ProjectileID.JestersArrow ,ProjectileID.HellfireArrow });
+
+            bool isHoldingBow = player.HeldItem.type == ModContent.ItemType<Crusolium_Bow>(); 
             
-            if ((player.HeldItem.type != ModContent.ItemType<Crusolium_Bow>()) || player.dead)
+            if (isHoldingBow)
+            {
+                Projectile.timeLeft = 30; 
+            }
+            
+            if (!isHoldingBow || player.dead || GetProjIDToShoot() == 0) 
                 Projectile.Kill();
             if (!player.channel && ChargeAmount != 0)
             {
@@ -60,12 +67,15 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
                         Projectile.Center.DirectionTo(Main.MouseWorld) * 10f * ChargeProgressWithEasing, ammoIdToShoot,
                         (int) (Projectile.damage * ChargeProgressWithEasing),
                         Projectile.knockBack * ChargeProgressWithEasing, Projectile.owner);
+                    RemoveItemShot();
                     proj.netUpdate = true;
                     if ((ChargeAmount >= MaxCharge) && !pierceExceptions.Contains( (short) ammoIdToShoot))
                     {
                         proj.penetrate++;
                     }
-
+                    
+                    
+                    
                     proj.usesLocalNPCImmunity = true;
                     proj.localNPCHitCooldown = 10;
                     
@@ -78,7 +88,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
                 ChargeAmount = 0;
             }
             
-            if (ChargeAmount < MaxCharge)
+            if (ChargeAmount < MaxCharge && GetProjIDToShoot() != 0)
                 ChargeAmount = !player.channel ? 0 : ChargeAmount + 1 > MaxCharge ? MaxCharge : ChargeAmount + 1;
 
             //Dust.NewDustPerfect(Projectile.Center, DustID.GreenFairy, Vector2.Zero);//DEBUG DUST
@@ -100,6 +110,34 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             }
             
         }
+
+        void RemoveItemShot()
+        {
+            Item? itemShot = null;
+            Player player = Main.player[Projectile.owner];
+            bool chosen = false;
+            
+            for (int i = 0; i < player.inventory.Length; i++)
+            {
+                if (player.inventory[i].ammo == AmmoID.Arrow)
+                {
+                    
+                    if (i > 53 && i < 58 && !player.inventory[i].IsAir)
+                    {
+                        itemShot = player.inventory[i];
+                        break;
+                    }
+                    else if(!chosen)
+                    {    
+                        chosen = true;
+                        itemShot = player.inventory[i];
+                    }
+                }
+            }
+            
+            itemShot.stack--;
+        }
+        
         int GetProjIDToShoot()
         {
             int ammoIdToShoot = 0;
