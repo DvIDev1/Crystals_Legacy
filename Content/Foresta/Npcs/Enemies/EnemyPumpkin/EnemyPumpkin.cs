@@ -990,9 +990,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, (EaseFunctions.EaseInBack(NPC.ai[0]))) * 4f); 
+                        Vector2.Lerp(attackStartPos, targetPos, EaseFunctions.EaseInBack(NPC.ai[0]))) * 4f; 
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
-                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, 55);
+                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -5f, 55f);
             }
             else
             {

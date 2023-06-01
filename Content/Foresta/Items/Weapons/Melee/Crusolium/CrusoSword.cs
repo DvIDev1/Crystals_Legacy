@@ -91,7 +91,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             
             private float StartRotation = 0f;
             private float EndRotation = 0f;
-            private int AttackTime;
+            private float AttackTime;
             
             private List<float> oldRotation = new List<float>();
 
@@ -112,16 +112,16 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             }
 
             public override void SetDefaults() {
-                Projectile.width = 54; // Hitbox width of projectile
-                Projectile.height = 64; // Hitbox height of projectile
-                Projectile.friendly = true; // Projectile hits enemies
-                Projectile.timeLeft = 100; // Time it takes for projectile to expire
-                Projectile.penetrate = -1; // Projectile pierces infinitely
-                Projectile.tileCollide = false; // Projectile does not collide with tiles
-                Projectile.usesLocalNPCImmunity = true; // Uses local immunity frames
-                Projectile.localNPCHitCooldown = -1; // We set this to -1 to make sure the projectile doesn't hit twice
-                Projectile.ownerHitCheck = true; // Make sure the owner of the projectile has line of sight to the target (aka can't hit things through tile).
-                Projectile.DamageType = DamageClass.Melee; // Projectile is a melee projectile
+                Projectile.width = 54; 
+                Projectile.height = 64;
+                Projectile.friendly = true; 
+                Projectile.timeLeft = 100; 
+                Projectile.penetrate = -1; 
+                Projectile.tileCollide = false; 
+                Projectile.usesLocalNPCImmunity = true; 
+                Projectile.localNPCHitCooldown = -1;
+                Projectile.ownerHitCheck = true; 
+                Projectile.DamageType = DamageClass.Melee;
             }
 
             public override void OnSpawn(IEntitySource source)
@@ -158,78 +158,12 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                         AttackTime = 60;
                         break;
                 }
-                
-               
-
             }
 
             public override void AI()
             {
-                
-                Projectile.Center = Main.GetPlayerArmPosition(Projectile);
-                Projectile.ai[1] += 15f / AttackTime;
-                Projectile.rotation = MathHelper.Lerp(StartRotation, EndRotation,
-                    Projectile.ai[1]);
-                    
-                oldRotation.Add(Projectile.rotation);
-                
-                Owner.ChangeDir(FacingRight ? 1 : -1);
-
-                float wrappedRotation = MathHelper.WrapAngle(Projectile.rotation);
-
-                if (FacingRight)
-                    Owner.itemRotation = MathHelper.Clamp(wrappedRotation, -1.57f, 1.57f);
-                else if (wrappedRotation > 0)
-                    Owner.itemRotation = MathHelper.Clamp(wrappedRotation, 1.57f, 4.71f);
-                else
-                    Owner.itemRotation = MathHelper.Clamp(wrappedRotation, -1.57f, -4.71f);
-                Owner.itemRotation = MathHelper.WrapAngle(Owner.itemRotation - (FacingRight ? 0 : MathHelper.Pi));
-                Owner.itemAnimation = Owner.itemTime = 5;
-
-                if (Projectile.rotation == EndRotation)
-                {
-                    Projectile.Kill();
-                }
-
+                base.AI();
             }
-            
-            public override bool PreDraw(ref Color lightColor)
-            {
-                Texture2D tex = ModContent.Request<Texture2D>(Texture).Value;
-
-                bool flip = false;
-                SpriteEffects effects = SpriteEffects.None;
-
-                var origin = new Vector2(0, tex.Height);
-
-                Vector2 scaleVec = Vector2.One;
-                Main.instance.LoadProjectile(Projectile.type);
-                Texture2D texture = TextureAssets.Projectile[Projectile.type].Value;
-                
-                for (int k = 16; k > 0; k--)
-                {
-                    float progress = 1 - (float)((16 - k) / (float)16);
-                    Color color = lightColor * EaseFunctions.EaseInOutQuad(progress) * 0.1f;
-                    if (k > 0 && k < oldRotation.Count)
-                        Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, color, oldRotation[k] + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
-                }
-                Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
-                return false;
-            }
-            
-
-            public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
-            {
-
-                float collisionPoint = 0f;
-
-                if (Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), Projectile.Center, Projectile.Center + 54 * Projectile.rotation.ToRotationVector2(), 20, ref collisionPoint))
-                    return true;
-
-                return false;
-            }
-
-
         }
         
     }

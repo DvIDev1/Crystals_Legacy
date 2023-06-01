@@ -1,6 +1,5 @@
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\bin\Debug\net6.0\Crystals.deps.json
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\bin\Debug\net6.0\Crystals.dll
-C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\bin\Debug\net6.0\ref\Crystals.dll
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\bin\Debug\net6.0\Crystals.pdb
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\bin\Debug\net6.0\Basic.Reference.Assemblies.Net60.dll
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\bin\Debug\net6.0\CsvHelper.dll
@@ -179,3 +178,4 @@ C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\obj\Deb
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\obj\Debug\net6.0\Crystals.dll
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\obj\Debug\net6.0\ref\Crystals.dll
 C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\obj\Debug\net6.0\Crystals.pdb
+C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\obj\Debug\net6.0\refint\Crystals.dll

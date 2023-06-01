@@ -60,7 +60,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             NPC.noGravity = false;
             NPC.noTileCollide = false;
             NPC.knockBackResist = 0.45f;
-
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();
         }

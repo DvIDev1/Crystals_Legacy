@@ -73,13 +73,12 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
                     {
                         proj.penetrate++;
                     }
-                    
-                    
-                    
+
+
                     proj.usesLocalNPCImmunity = true;
                     proj.localNPCHitCooldown = 10;
-                    
-                    SoundEngine.PlaySound(SoundID.Item5 with { MaxInstances = 0 }, Projectile.position);
+
+                    SoundEngine.PlaySound(SoundID.Item5 with { MaxInstances = 0}, Projectile.position);
                     Shake.active = true;
                     Shake.power = 1;
                     Shake.time = 10;

@@ -2950,13 +2950,13 @@
             <br/> Defaults to <see langword="false"/>.
             </summary>
             <remarks>
-            To make a torch placable underwater, use <see cref="F:Terraria.ID.ItemID.Sets.WaterTorches"/>.
+            To make a torch placable underwater, use <see cref="F:Terraria.ID.ItemID.Sets.WaterTorches"/> as well.
             </remarks>
         </member>
         <member name="F:Terraria.ID.ItemID.Sets.WaterTorches">
             <summary>
             If <see langword="true"/> for a given item type (<see cref="F:Terraria.Item.type"/>), then that item is a water torch.
-            <br/> Funtionally identical to <see cref="F:Terraria.ID.ItemID.Sets.Torches"/>, but items in this set also function whilst underwater.
+            <br/> Funtionally identical to <see cref="F:Terraria.ID.ItemID.Sets.Torches"/>, but items in this set also function whilst underwater. Make sure to set <see cref="F:Terraria.ID.ItemID.Sets.Torches"/> as well if using this.
             <br/> Defaults to <see langword="false"/>.
             </summary>
         </member>
@@ -2981,6 +2981,13 @@
             For <see cref="T:Terraria.ModLoader.ModItem"/>s, you can simply use <see cref="M:Terraria.ModLoader.ModItem.CanRightClick"/> or <see cref="M:Terraria.ModLoader.GlobalItem.CanRightClick(Terraria.Item)"/> instead of this set.
             <br/> If you need to check if any item is right-clickable, use <see cref="M:Terraria.ModLoader.ItemLoader.CanRightClick(Terraria.Item)"/>.
             </remarks>
+        </member>
+        <member name="F:Terraria.ID.ItemID.Sets.Glowsticks">
+            <summary>
+            If <see langword="true"/> for a given item type (<see cref="F:Terraria.Item.type"/>), then that item is a glowstick.
+            <br/> Glowsticks work underwater and will be auto-selected by Smart Cursor when the cursor is far away from the player.
+            <br/> Defaults to <see langword="false"/>.
+            </summary>
         </member>
         <member name="F:Terraria.ID.ItemID.Sets.PreHardmodeLikeBossBag">
             <summary>
@@ -4366,8 +4373,12 @@
         </member>
         <member name="F:Terraria.ID.NPCID.Sets.ActsLikeTownNPC">
             <summary>
-            Whether or not a given NPC will act like a town NPC in terms of AI, animations, and attacks, but not in other regards, such as having a happiness button or appearing
-            on the minimap, like the bone merchant in vanilla.
+            Whether or not a given NPC will act like a town NPC in terms of AI, animations, and attacks, but not in other regards, such as appearing on the minimap, like the bone merchant in vanilla.
+            </summary>
+        </member>
+        <member name="F:Terraria.ID.NPCID.Sets.NoTownNPCHappiness">
+            <summary>
+            If true, the given NPC will not count towards town NPC happiness and won't have a happiness button. Pets (<see cref="F:Terraria.ID.NPCID.Sets.IsTownPet"/>) do not need to set this.
             </summary>
         </member>
         <member name="F:Terraria.ID.NPCID.Sets.SpawnsWithCustomName">
@@ -5821,7 +5832,11 @@
             <summary> Whether or not this tile is a valid spawn point. </summary>
         </member>
         <member name="F:Terraria.ID.TileID.Sets.Torch">
-            <summary> Whether or not this tile behaves like a torch. If you are making a torch tile, then setting this to true is necessary in order for tile placement, tile framing, and the item's smart selection to work properly. </summary>
+            <summary> Whether or not this tile behaves like a torch. If you are making a torch tile, then setting this to true is necessary in order for tile placement, tile framing, and the item's smart selection to work properly. Each item that places torch tiles should also set <see cref="F:Terraria.ID.ItemID.Sets.Torches"/>.</summary>
+        </member>
+        <member name="F:Terraria.ID.TileID.Sets.Campfire">
+            <summary> Whether or not this tile behaves like a campfire. Campfires must be 3x2 and need to follow the vanilla layout with the on state being at the top of the texture. Padding must also be present in the same manner, resulting in a 54x36 section for each style. The animation, however, can be done with a separate flame texture if desired. <br/>
+            Necessary for block swap and Marshmallow on a Stick features.</summary>
         </member>
         <member name="F:Terraria.ID.TileID.Sets.Clock">
             <summary> Whether or not this tile is a clock. </summary>
@@ -7170,6 +7185,81 @@
             <br/> <b>NOTE:</b> The accessed values are stored per item type, not per item instance. You're recommended to only use the setter in load-time hooks, like <see cref="M:Terraria.ModLoader.ModType.SetStaticDefaults"/>.
             </summary>
         </member>
+        <member name="M:Terraria.Lang.CreateDialogFilter(System.String,System.Object)">
+            <summary>
+            Filters LocalizedText objects by checking if their key starts with the provided <paramref name="startsWith"/> parameter and if the conditions embedded into the LocalizedText are all satisfied by the data in <paramref name="substitutions"/>. See <see cref="M:Terraria.Localization.LocalizedText.CanFormatWith(System.Object)"/> for more information about conditions embedded in localization text. <br/><br/>
+            When passed into <see cref="M:Terraria.Localization.Language.FindAll(Terraria.Localization.LanguageSearchFilter)"/>, all LocalizedText with keys starting with <paramref name="startsWith"/> that satisfy <paramref name="substitutions"/> will be returned. When passed into <see cref="M:Terraria.Localization.Language.SelectRandom(Terraria.Localization.LanguageSearchFilter,Terraria.Utilities.UnifiedRandom)"/>, a single random LocalizedText with key starting with <paramref name="startsWith"/> that satisfies <paramref name="substitutions"/> will be returned.<br/><br/>
+            </summary>
+            <param name="startsWith"></param>
+            <param name="substitutions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terraria.Lang.CreateDialogFilter(System.String)">
+            <summary>
+            Filters LocalizedText objects by checking if their key starts with the provided <paramref name="startsWith"/> parameter.<br/><br/>
+            When passed into <see cref="M:Terraria.Localization.Language.FindAll(Terraria.Localization.LanguageSearchFilter)"/>, all LocalizedText with keys starting with <paramref name="startsWith"/> will be returned. When passed into <see cref="M:Terraria.Localization.Language.SelectRandom(Terraria.Localization.LanguageSearchFilter,Terraria.Utilities.UnifiedRandom)"/>, a single random LocalizedText with key starting with <paramref name="startsWith"/> will be returned.<br/><br/>
+            </summary>
+            <param name="startsWith"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Terraria.Localization.Language">
+            <summary>
+            Contains methods to access or retrieve localization values. The <see href="https://github.com/tModLoader/tModLoader/wiki/Localization">Localization Guide</see> teaches more about localization.
+            </summary>
+        </member>
+        <member name="M:Terraria.Localization.Language.GetText(System.String)">
+            <summary>
+            Retrieves a LocalizedText object for a specified localization key. The actual text value can be retrieved from LocalizedText by accessing the <see cref="P:Terraria.Localization.LocalizedText.Value"/> property or by using the <see cref="M:Terraria.Localization.Language.GetTextValue(System.String)"/> method directly.<br/><br/>
+            Using LocalizedText instead of string is prefered when the value is stored. If the user switches languages or if resource packs or mods change text, the LocalizedText will automatically receive the new value. In turn, mods using those LocalizedText will also start displaying the updated values.<br/><br/>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terraria.Localization.Language.GetTextValue(System.String)">
+            <summary>
+            Retrieves the text value for a specified localization key. The text returned will be for the currently selected language.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terraria.Localization.Language.GetTextValue(System.String,System.Object)">
+            <inheritdoc cref="M:Terraria.Localization.LocalizedText.Format(System.Object[])"/>
+        </member>
+        <member name="M:Terraria.Localization.Language.GetTextValue(System.String,System.Object,System.Object)">
+            <inheritdoc cref="M:Terraria.Localization.LocalizedText.Format(System.Object[])"/>
+        </member>
+        <member name="M:Terraria.Localization.Language.GetTextValue(System.String,System.Object,System.Object,System.Object)">
+            <inheritdoc cref="M:Terraria.Localization.LocalizedText.Format(System.Object[])"/>
+        </member>
+        <member name="M:Terraria.Localization.Language.GetTextValue(System.String,System.Object[])">
+            <inheritdoc cref="M:Terraria.Localization.LocalizedText.Format(System.Object[])"/>
+        </member>
+        <member name="M:Terraria.Localization.Language.GetTextValueWith(System.String,System.Object)">
+            <inheritdoc cref="M:Terraria.Localization.LocalizedText.FormatWith(System.Object)"/>
+        </member>
+        <member name="M:Terraria.Localization.Language.Exists(System.String)">
+            <summary>
+            Checks if a LocalizedText with the provided key has been registered or not. This can be used to avoid retrieving dummy values from <see cref="M:Terraria.Localization.Language.GetText(System.String)"/> and <see cref="M:Terraria.Localization.Language.GetTextValue(System.String)"/> and instead load a fallback value or do other logic. If the key should be created if it doesn't exist, <see cref="M:Terraria.Localization.Language.GetOrRegister(System.String,System.Func{System.String})"/> can be used instead.
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terraria.Localization.Language.FindAll(Terraria.Localization.LanguageSearchFilter)">
+            <summary>
+            Finds all LocalizedText that satisfy the <paramref name="filter"/> parameter. Typically used with <see cref="M:Terraria.Lang.CreateDialogFilter(System.String)"/> or <see cref="M:Terraria.Lang.CreateDialogFilter(System.String,System.Object)"/> as the <paramref name="filter"/> argument to find all LocalizedText that have a specific key prefix and satisfy provided conditions.
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terraria.Localization.Language.SelectRandom(Terraria.Localization.LanguageSearchFilter,Terraria.Utilities.UnifiedRandom)">
+            <summary>
+            Selects a single random LocalizedText that satisfies the <paramref name="filter"/> parameter. Typically used with <see cref="M:Terraria.Lang.CreateDialogFilter(System.String)"/> or <see cref="M:Terraria.Lang.CreateDialogFilter(System.String,System.Object)"/> as the <paramref name="filter"/> argument to find a random LocalizedText that has a specific key prefix and satisfies the provided conditions.
+            </summary>
+            <param name="filter"></param>
+            <param name="random"></param>
+            <returns></returns>
+        </member>
         <member name="M:Terraria.Localization.Language.GetOrRegister(System.String,System.Func{System.String})">
             <summary>
             Returns a LocalizedText for a given key.
@@ -7177,6 +7267,43 @@
             </summary>
             <param name="key">The localization key</param>
             <param name="makeDefaultValue">A factory method for creating the default value, used to update localization files with missing entries</param>
+            <returns></returns>
+        </member>
+        <member name="T:Terraria.Localization.LocalizedText">
+            <summary>
+            Contains the localization value corresponding to a key for the current game language. Automatically updates as language, mods, and resource packs change. The <see href="https://github.com/tModLoader/tModLoader/wiki/Localization">Localization Guide</see> teaches more about localization.
+            </summary>
+        </member>
+        <member name="P:Terraria.Localization.LocalizedText.Value">
+            <summary>
+            Retrieves the text value. This is the actual text the user should see.
+            </summary>
+        </member>
+        <member name="M:Terraria.Localization.LocalizedText.FormatWith(System.Object)">
+            <summary>
+            Creates a string from this LocalizedText populated with data from the provided <paramref name="obj"/> parameter. The properties of the provided object are substituted by name into the placeholders of the original text. For example, when used with <see cref="M:Terraria.Lang.CreateDialogSubstitutionObject(Terraria.NPC)"/>, the text "{Nurse}" will be replaced with the first name of the Nurse in the world. Modded substitutions are not currently supported. <br/><br/>
+            When used in conjuction with <see cref="M:Terraria.Localization.Language.SelectRandom(Terraria.Localization.LanguageSearchFilter,Terraria.Utilities.UnifiedRandom)"/> and <see cref="M:Terraria.Lang.CreateDialogFilter(System.String,System.Object)"/>, simple boolean conditions expressed in each LocalizedText can be used to filter a collection of LocalizedText.  <br/><br/>
+            <see cref="M:Terraria.Localization.LocalizedText.Format(System.Object[])"/> is more commonly used to format LocalizedText placeholders. That method replaces placeholders such as "{0}", "{1}", etc with the string representation of the corresponding objects provided.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terraria.Localization.LocalizedText.CanFormatWith(System.Object)">
+            <summary>
+            Checks if the conditions embedded in this LocalizedText are satisfied by the <paramref name="obj"/> argument.
+            For example when used with <see cref="M:Terraria.Lang.CreateDialogSubstitutionObject(Terraria.NPC)"/> as the <paramref name="obj"/> argument, "{?Rain}" at the start of a LocalizedText value will cause false to be returned if it is not raining. "{?!Rain}" would do the opposite. If all conditions are satisfied, true is returned.<br/>
+            The method is typically used indirectly by using <see cref="M:Terraria.Lang.CreateDialogFilter(System.String,System.Object)"/>.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Terraria.Localization.LocalizedText.Format(System.Object[])">
+            <summary>
+            Creates a string from this LocalizedText populated with data from the provided <paramref name="args"/> arguments. Formats the string in the same manner as <see href="https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=net-6.0">string.Format</see>. Placeholders such as "{0}", "{1}", etc will be replaced with the string representation of the corresponding objects provided.<br/>
+            Additionally, pluralization is supported as well. The <see href="https://github.com/tModLoader/tModLoader/wiki/Contributing-Localization#placeholders">Contributing Localization Guide</see> teaches more about placeholders and plural support.
+            
+            </summary>
+            <param name="args"></param>
             <returns></returns>
         </member>
         <member name="M:Terraria.Localization.LocalizedText.WithFormatArgs(System.Object[])">
@@ -7350,6 +7477,9 @@
         <member name="F:Terraria.Main.tileFrameImportant">
             <summary> Set to true if this is not a typical Terrain tile. Terrain tiles are 1x1 tiles that automatically adjust their frame values to nearby tiles. They don't have a TileObjectData.
             <br/> All non-1x1 tiles should set this to true. All 1x1 tiles that have a TileObjectData or that shoud preserve frame data should set this to true. </summary>
+        </member>
+        <member name="F:Terraria.Main.tileFlame">
+            <summary>If true, indicates that a tile has a flame texture that will draw over the tile. Modded tiles should not use this. <see cref="M:Terraria.ModLoader.ModBlockType.PostDraw(System.Int32,System.Int32,Microsoft.Xna.Framework.Graphics.SpriteBatch)"/> can be used to manually draw a flame texture.</summary>
         </member>
         <member name="F:Terraria.Main.npcCatchable">
             <summary>
@@ -7751,22 +7881,64 @@
             This attribute hints that changing the value of the annotated property or field will put the config in a state that requires a reload. An overridden ModConfig.NeedsReload can further validate if more complex logic is needed.
             </summary>
         </member>
-        <member name="T:Terraria.ModLoader.Config.LabelAttribute">
+        <member name="T:Terraria.ModLoader.Config.LabelKeyAttribute">
             <summary>
-            This attribute sets a label for the property, field, or class for use in the ModConfig UI.
-            Starting the label with $ means the label should be interpreted as a Localization key.
+            A label is the text shown to the user in the ModConfig UI. <br/>
+            This attribute sets a custom localization key for the label of the annotated property, field, or class. <br/>
+            The provided localization key must start with "$". <br/>
+            Without this attribute, the localization key "Mods.{ModName}.Configs.{ConfigName}.{MemberName}.Label" will be assumed for members of ModConfig classes. <br/>
+            Annotations on members of non-ModConfig classes need to supply a custom localization key using this attribute to be localized, otherwise they will appear as the member name directly. <br/>
+            If the translation value of a property or field that is an object is an empty string, the label of the class will be used instead. <br/>
+            Values can be interpolated into the resulting label text using <see cref="T:Terraria.ModLoader.Config.LabelArgsAttribute"/>. <br/>
             </summary>
         </member>
-        <member name="T:Terraria.ModLoader.Config.TooltipAttribute">
+        <member name="T:Terraria.ModLoader.Config.LabelArgsAttribute">
             <summary>
-            This attribute sets a hover tooltip for the annotated property or field to be shown in the ModConfig UI. This can be longer and more descriptive than Label.
-            Starting the tooltip with $ means the tooltip should be interpreted as a Localization key.
+            Use to provide values to be interpolated into the label of the annotated property or field.<br/>
+            string arguments starting with "$" are interpreted as localization keys.<br/>
+            Interpolating values can be useful for reusing common labels to keep localization files clean and organized.<br/>
+            For example, if a mod provides toggles for several features, a common label could be used for each with only the provided value being different.<br/>
+            The <see href="https://github.com/tModLoader/tModLoader/wiki/Localization#string-formatting">string formatting section of the Localization wiki page</see> explains this concept further.<br/>
+            <see href="https://github.com/tModLoader/tModLoader/wiki/Localization#scope-simplification">Scope simplification</see> can be used to shorten localization keys passed in.<br/>
+            </summary>
+        </member>
+        <member name="T:Terraria.ModLoader.Config.TooltipKeyAttribute">
+            <summary>
+            A tooltip is the text shown to the user in the ModConfig UI next to the cursor when they hover over the annotated member (property, field, or class). This can be longer and more descriptive than the Label. <br/>
+            This attribute sets a custom localization key for the tooltip of the annotated property, field, or class. <br/>
+            The provided localization key must start with "$". <br/>
+            Without this attribute, the localization key "Mods.{ModName}.Configs.{ConfigName}.{MemberName}.Tooltip" will be assumed for members of ModConfig classes. <br/>
+            Annotations on members of non-ModConfig classes need to supply a custom localization key using this attribute to be localized, no localization key is assumed.
+            If the translation value of a property or field that is an object is an empty string, the tooltip of the class will be used instead.
+            Passing in just "$" will result in no tooltip entry being added to the localization files.<br/>
+            Values can be interpolated into the resulting label text using <see cref="T:Terraria.ModLoader.Config.TooltipArgsAttribute"/>. <br/>
+            </summary>
+        </member>
+        <member name="T:Terraria.ModLoader.Config.TooltipArgsAttribute">
+            <summary>
+            Use to provide values to be interpolated into the tooltip of the annotated property or field.<br/>
+            string arguments starting with "$" are interpreted as localization keys.<br/>
+            Interpolating values can be useful for reusing common tooltips to keep localization files clean and organized.<br/>
+            For example, if a mod provides toggles for several features, a common tooltip could be used for each with only the provided value being different.<br/>
+            The <see href="https://github.com/tModLoader/tModLoader/wiki/Localization#string-formatting">string formatting section of the Localization wiki page</see> explains this concept further.<br/>
+            <see href="https://github.com/tModLoader/tModLoader/wiki/Localization#scope-simplification">Scope simplification</see> can be used to shorten localization keys passed in.<br/>
+            </summary>
+        </member>
+        <member name="T:Terraria.ModLoader.Config.ShowDespiteJsonIgnoreAttribute">
+            <summary>
+            This attribute indicates that the field or property should be shown in the ModConfig UI despite having a <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> annotation.
             </summary>
         </member>
         <member name="T:Terraria.ModLoader.Config.HeaderAttribute">
             <summary>
-            This attribute adds a label above this property or field in the ModConfig UI that acts as a header. Use this to delineate sections within your config.
-            Note that fields will be in order, and properties will be in order, but fields and properties will not be interleaved together in the source code order.
+            This attribute adds a label above this property or field in the ModConfig UI that acts as a header. Use this to delineate sections within your config. <br/>
+            Note that fields will be in order, and properties will be in order, but fields and properties will not be interleaved together in the source code order. <br/>
+            <br/>
+            Header accept either a translation key or an identifier. <br/>
+            To use a translation key, the value passed in must start with "$". <br/>
+            A value passed in that does not start with "$" is interpreted as an identifier. The identifier is used to construct the localization key "Mods.{ModName}.Configs.{ConfigName}.Headers.{Identifier}" <br/>
+            No spaces are allowed in translation keys, so avoid spaces <br/>
+            Annotations on members of non-ModConfig classes need to supply a localization key using this attribute to be localized, no localization key can be correctly assumed using just an identifier. <br/>
             </summary>
         </member>
         <member name="T:Terraria.ModLoader.Config.CustomModConfigItemAttribute">
@@ -12350,7 +12522,8 @@
         </member>
         <member name="M:Terraria.ModLoader.Mod.Load">
             <summary>
-            Override this method to add most of your content to your mod. Here you will call other methods such as AddItem. This is guaranteed to be called after all content has been autoloaded.
+            Override this method to run code after all content has been autoloaded. Here additional content can be manually loaded and Mod-wide tasks and setup can be done. For organization, it may be more suitable to split some things into various <see cref="M:Terraria.ModLoader.ModType.Load"/> methods, such as in <see cref="T:Terraria.ModLoader.ModSystem"/> classes, instead of doing everything here. <br/>
+            Beware that mod content has not finished loading here, things like ModContent lookup tables or ID Sets are not fully populated. Use <see cref="M:Terraria.ModLoader.Mod.PostSetupContent"/> for any logic that needs to act on all content being fully loaded.
             </summary>
         </member>
         <member name="M:Terraria.ModLoader.Mod.PostSetupContent">
@@ -12535,6 +12708,16 @@
             This class represents a biome added by a mod. It exists to centralize various biome related hooks, handling a lot of biome boilerplate, such as netcode.
             <br/>To check if a player is in the biome, use <see cref="M:Terraria.Player.InModBiome``1"/>.
             <br/>Unlike <see cref="T:Terraria.ModLoader.ModSceneEffect"/>, this defaults <see cref="P:Terraria.ModLoader.ModBiome.Music"/> to 0 and <see cref="P:Terraria.ModLoader.ModBiome.Priority"/> to <see cref="F:Terraria.ModLoader.SceneEffectPriority.BiomeLow"/>.
+            </summary>
+        </member>
+        <member name="P:Terraria.ModLoader.ModBiome.BiomeTorchItemType">
+            <summary>
+            The torch item type that will be placed when under the effect of biome torches
+            </summary>
+        </member>
+        <member name="P:Terraria.ModLoader.ModBiome.BiomeCampfireItemType">
+            <summary>
+            The campfire item type that will be placed when under the effect of biome torches
             </summary>
         </member>
         <member name="P:Terraria.ModLoader.ModBiome.DisplayName">
@@ -14105,14 +14288,6 @@
             <param name="extractinatorBlockType">Which Extractinator tile is being used, <see cref="F:Terraria.ID.TileID.Extractinator"/> or <see cref="F:Terraria.ID.TileID.ChlorophyteExtractinator"/>.</param>
             <param name="resultType">Type of the result.</param>
             <param name="resultStack">The result stack.</param>
-        </member>
-        <member name="M:Terraria.ModLoader.ModItem.AutoLightSelect(System.Boolean@,System.Boolean@,System.Boolean@)">
-            <summary>
-            Allows you to tell the game whether this item is a torch that cannot be placed in liquid, a torch that can be placed in liquid, or a glowstick. This information is used for when the player is holding down the auto-select keybind.
-            </summary>
-            <param name="dryTorch">if set to <c>true</c> [dry torch].</param>
-            <param name="wetTorch">if set to <c>true</c> [wet torch].</param>
-            <param name="glowstick">if set to <c>true</c> [glowstick].</param>
         </member>
         <member name="M:Terraria.ModLoader.ModItem.CaughtFishStack(System.Int32@)">
             <summary>
@@ -18508,7 +18683,7 @@
         </member>
         <member name="T:Terraria.ModLoader.RecipeLoader">
             <summary>
-            This is where all Recipe and GlobalRecipe hooks are gathered and called.
+            This is where all Recipe hooks are gathered and called.
             </summary>
         </member>
         <member name="F:Terraria.ModLoader.RecipeLoader.ConsumedItems">
@@ -20220,6 +20395,12 @@
             The final scale of the item, after the Titan Glove effect and all modded calculations.
             </returns>
         </member>
+        <member name="M:Terraria.Player.UpdateMaxTurrets">
+            <summary>
+            Kills <see cref="F:Terraria.Projectile.sentry"/> projectiles exceeding the players current <see cref="F:Terraria.Player.maxTurrets"/>. The oldest projectiles, determined by <see cref="F:Terraria.Projectile.timeLeft"/>, are killed. <br/>
+            Call this method immediately after spawning a <see cref="F:Terraria.Projectile.sentry"/> projectile.<br/>
+            </summary>
+        </member>
         <member name="M:Terraria.Player.HasAmmo(Terraria.Item)">
             <summary>
             Whether or not the player has ammunition available for the given weapon.
@@ -21027,6 +21208,14 @@
             <br/> Defaults to 0.
             </summary>
         </member>
+        <member name="F:Terraria.Projectile.sentry">
+            <summary>
+            Indicates that this projectile is a sentry
+            <br/> Defaults to <see langword="false"/>.
+            <br/> All sentries should set <see cref="F:Terraria.Projectile.timeLeft"/> to <see cref="F:Terraria.Projectile.SentryLifeTime"/>.
+            <br/> When a sentry is spawned, <see cref="M:Terraria.Player.UpdateMaxTurrets"/> should be called immediately after.
+            </summary>
+        </member>
         <member name="F:Terraria.Projectile.owner">
             <summary>
             The index of the player who owns this projectile. In Multiplayer, Clients "own" projectiles that they shoot, while the Server "owns" projectiles spawned by NPCs and the World.
@@ -21519,7 +21708,7 @@
         </member>
         <member name="M:Terraria.Recipe.ApplyConditionsAsDecraftConditions">
             <summary>
-            Adds every condition from Recipie.Condtions to Recipie.DecraftContions, checking for duplicates.
+            Adds every condition from Recipe.Condtions to Recipe.DecraftContions, checking for duplicates.
             </summary>
         </member>
         <member name="M:Terraria.Recipe.DisableDecraft">

@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Foresta\Textures\NPCs\Gores" />
-    <Folder Include="Content\Foresta\Npcs\Friendly\PumpkinMan" />
     <Folder Include="Content\Foresta\Npcs\Friendly\ShroomMan" />
     <Folder Include="Core\Systems\BuffShakeSystem" />
     <Folder Include="Sounds\Items\Feracor" />
