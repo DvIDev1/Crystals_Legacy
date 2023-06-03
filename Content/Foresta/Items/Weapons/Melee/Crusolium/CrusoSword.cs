@@ -45,7 +45,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             Item.noMelee = true;
         }
 
-        public int attackType = 0; 
+        public int attackType = 0;
         public int comboExpireTimer = 0;
 
 
@@ -54,7 +54,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
         {
             Projectile.NewProjectile(source, position, velocity, type, damage, knockback, Main.myPlayer, attackType);
             attackType = (attackType + 1) % 2;
-            Main.NewText(attackType);
             return false;
         }
 
@@ -74,97 +73,141 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 
             return true;
         }
-        
 
-        public override bool MeleePrefix() {
-            return true; 
+
+        public override bool MeleePrefix()
+        {
+            return true;
         }
 
         class CrusoSwordSwing : ModProjectile
         {
-            private enum AttackType 
+            private enum AttackType
             {
                 Down,
                 Up,
                 Empowered
             }
-            
-            private float StartRotation = 0f;
-            private float EndRotation = 0f;
-            private float AttackTime;
-            
+
+            private float startRotation = 0f;
+            private float endRotation = 0f;
+            private float attackTime;
+
             private List<float> oldRotation = new List<float>();
 
-            public override string Texture => "Crystals/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword"; // Use texture of item as projectile texture
+            public override string Texture =>
+                "Crystals/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword"; // Use texture of item as projectile texture
+
             private Player Owner => Main.player[Projectile.owner];
-            
+
             private bool FacingRight;
-            
-            private AttackType CurrentAttack {
+
+            private AttackType CurrentAttack
+            {
                 get => (AttackType)Projectile.ai[0];
-                set => Projectile.ai[0] = (float) value;
+                set => Projectile.ai[0] = (float)value;
             }
 
-            public override void SetStaticDefaults() {
+            private float Timer
+            {
+                get => Projectile.localAI[0];
+                set => Projectile.localAI[0] = value;
+            }
+
+            public override void SetStaticDefaults()
+            {
                 ProjectileID.Sets.HeldProjDoesNotUsePlayerGfxOffY[Type] = true;
                 ProjectileID.Sets.TrailCacheLength[Projectile.type] = 4;
-                ProjectileID.Sets.TrailingMode[Projectile.type] = 0;
+                ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
             }
 
-            public override void SetDefaults() {
-                Projectile.width = 54; 
+            public override void SetDefaults()
+            {
+                Projectile.width = 54;
                 Projectile.height = 64;
-                Projectile.friendly = true; 
-                Projectile.timeLeft = 100; 
-                Projectile.penetrate = -1; 
-                Projectile.tileCollide = false; 
-                Projectile.usesLocalNPCImmunity = true; 
+                Projectile.friendly = true;
+                Projectile.timeLeft = 100;
+                Projectile.penetrate = -1;
+                Projectile.tileCollide = false;
+                Projectile.usesLocalNPCImmunity = true;
                 Projectile.localNPCHitCooldown = -1;
-                Projectile.ownerHitCheck = true; 
+                Projectile.ownerHitCheck = true;
                 Projectile.DamageType = DamageClass.Melee;
             }
 
             public override void OnSpawn(IEntitySource source)
             {
-                //Sword Pos
-                Projectile.velocity = Vector2.Zero;
-                Owner.heldProj = Projectile.whoAmI;
-                
+                var owner = Main.player[Projectile.owner];
 
-                if (Owner.DirectionTo(Main.MouseWorld).X > 0)
-                    FacingRight = true;
-                else
-                    FacingRight = false;
+                startRotation = Projectile.rotation = Owner.DirectionTo(Main.MouseWorld).ToRotation();
                 
-                //Swing Rotaion
-                float rotation = Owner.DirectionTo(Main.MouseWorld).ToRotation();
-                
-                EndRotation = rotation - 1f * Owner.direction;
-                
-                StartRotation = EndRotation;
-
                 switch (CurrentAttack)
                 {
                     case AttackType.Down:
-                        EndRotation = rotation + 2f * Owner.direction;
-                        AttackTime = 120;
+                        endRotation = startRotation + 2f * Owner.direction;
+                        attackTime = 60;
                         break;
                     case AttackType.Up:
-                        EndRotation = rotation - 2f * Owner.direction;
-                        AttackTime = 120;
+                        endRotation = startRotation - 2f * Owner.direction;
+                        attackTime = 60;
                         break;
                     case AttackType.Empowered: 
-                        EndRotation = rotation + 2f * Owner.direction;
-                        AttackTime = 60;
+                        endRotation = startRotation + 2f * Owner.direction;
+                        attackTime = 15;
                         break;
                 }
+                
             }
 
             public override void AI()
             {
-                base.AI();
+                var owner = Main.player[Projectile.owner];
+
+                Timer += 1f / attackTime;
+                
+                owner.direction =
+                    (Projectile.rotation > -MathHelper.PiOver2 && Projectile.rotation < MathHelper.PiOver2) ? 1 : -1;
+                Projectile.Center = owner.Center - new Vector2(owner.direction * 3, 2) +
+                                    new Vector2(23, 0).RotatedBy(Projectile.rotation);
+                Projectile.position.Y += owner.gfxOffY;
+                owner.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full,
+                    Projectile.rotation - MathF.PI / 2);
+
+                Projectile.rotation = MathHelper.Lerp(startRotation, endRotation, MathFunctions.EaseFunctions.EaseInOutQuad(Timer));
+
+                if (Timer >= 1f)
+                {
+                    Projectile.Kill();
+                }
+                
             }
+            
+            public override bool PreDraw(ref Color lightColor)
+            {
+                //DrawTrail(Main.spriteBatch);
+                Texture2D tex = ModContent.Request<Texture2D>(Texture).Value;
+
+                SpriteEffects effect = SpriteEffects.None;
+
+                bool flip = false;
+                SpriteEffects effects = SpriteEffects.None;
+
+                var origin = new Vector2(0, tex.Height);
+
+                Vector2 scaleVec = Vector2.One;
+                for (int k = 16; k > 0; k--)
+                {
+
+                    float progress = 1 - (float)((16 - k) / (float)16);
+                    Color color = lightColor * MathFunctions.EaseFunctions.EaseInOutQuad(progress) * 0.1f;
+                    if (k > 0 && k < oldRotation.Count)
+                        Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, color, oldRotation[k] + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
+                }
+
+                Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
+                return false;
+            }
+            
         }
-        
     }
 }

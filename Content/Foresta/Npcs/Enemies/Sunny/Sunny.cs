@@ -54,6 +54,14 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
                     if (Timer >= 180f)
                     {
                         Timer = 0;
+                        state = States.HalfCircle;
+                    }
+                    break;
+                case States.HalfCircle:
+                    Charge();
+                    if (Timer >= 120f)
+                    {
+                        Timer = 0;
                         state = States.Idle;
                     }
                     break;
@@ -62,7 +70,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
             #endregion
         }
 
-        public void Idle()
+        private void Idle()
         {
             NPC.ai[1]++;
             NPC.TargetClosest();
@@ -71,6 +79,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
             NPC.velocity = NPC.DirectionTo(new Vector2(target.Center.X , target.Center.Y - 250f));
 
             NPC.velocity.Y += MathFunctions.SineWave(2f, 1f, NPC.ai[1] / 15);
+        }
+
+        private void Charge()
+        {
+            
         }
         
     }

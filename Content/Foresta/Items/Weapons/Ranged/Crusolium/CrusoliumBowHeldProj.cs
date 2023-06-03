@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
 using System.IO;
 using Crystals.Core.Systems.CameraShake;
+using Crystals.Helpers;
 using Terraria.Audio;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
@@ -37,7 +38,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 
         public float MaxCharge { get => Projectile.ai[0]; }
         public float ChargeProgress { get => Projectile.ai[1] / Projectile.ai[0]; }
-        public float ChargeProgressWithEasing { get => Helpers.EaseFunctions.EaseOutBack(Projectile.ai[1] / Projectile.ai[0]); }
+        public float ChargeProgressWithEasing { get => MathFunctions.EaseFunctions.EaseOutBack(Projectile.ai[1] / Projectile.ai[0]); }
 
         public List<short> pierceExceptions = new List<short>();
 

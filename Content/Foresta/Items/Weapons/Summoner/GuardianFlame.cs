@@ -394,7 +394,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                 {
                     Player player = Main.player[Projectile.owner];
                     Projectile.ai[0] += 2f / 360f;
-                    Projectile.scale = MathHelper.SmoothStep(0f, 1f, (float) EaseFunctions.EaseInOutBack(Projectile.ai[0]));
+                    Projectile.scale = MathHelper.Lerp(0f, 1f, (float) MathFunctions.EaseFunctions.EaseInOutBack(Projectile.ai[0]));
                     if (Projectile.Distance(player.Center) <= 91f)
                     {
                         player.AddBuff(BuffID.Campfire , Projectile.timeLeft);

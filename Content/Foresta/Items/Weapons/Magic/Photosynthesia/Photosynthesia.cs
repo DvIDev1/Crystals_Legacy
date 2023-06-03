@@ -215,6 +215,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Photosynthesia
             public List<Vector2> oldPositions = new List<Vector2>();
             public override bool PreDraw(ref Color lightColor)
             {
+                
                 Main.spriteBatch.End();
                 Main.spriteBatch.Begin(SpriteSortMode.Deferred, null , null, null, null, null, Main.GameViewMatrix.ZoomMatrix);
 
