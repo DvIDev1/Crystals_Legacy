@@ -94,13 +94,9 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
             }
 
             // Here you can decide if your minion breaks things like grass or pots
-            public override bool? CanCutTiles() {
-                return false;
-            }
-            
-            public override bool MinionContactDamage() {
-                return true;
-            }
+            public override bool? CanCutTiles() => false;
+
+            public override bool MinionContactDamage() => true;
 
             private Attack CurrentAttack = Attack.FireShots;
 
@@ -241,7 +237,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                     {
                         Projectile.NewProjectile(Projectile.GetSource_FromAI(null),
                             Projectile.Top, Projectile.Top.DirectionTo(Pos + Velocity / 2f) * 16, 15,
-                            Projectile.damage / (int)1.5, KnockbackValue.Averageknockback);
+                            (int) (Projectile.damage * 1.5f), KnockbackValue.Averageknockback);
                     }
 
                     Projectile.velocity = Projectile.DirectionTo(targetCenter) * 2;
@@ -382,6 +378,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                     Projectile.friendly = true;
                     Projectile.penetrate = -1;
                     Projectile.scale = 1f;
+                    Projectile.usesLocalNPCImmunity = true;
                     Projectile.DamageType = DamageClass.Summon;
                 }
 
@@ -393,8 +390,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                 public override void AI()
                 {
                     Player player = Main.player[Projectile.owner];
-                    Projectile.ai[0] += 2f / 360f;
-                    Projectile.scale = MathHelper.Lerp(0f, 1f, (float) MathFunctions.EaseFunctions.EaseInOutBack(Projectile.ai[0]));
+                    Projectile.ai[0] += 1f / 360f;
+                    Projectile.scale = MathHelper.SmoothStep(0f, 1f, (float) MathFunctions.EaseFunctions.EaseInOutQuad(Projectile.ai[0]));
                     if (Projectile.Distance(player.Center) <= 91f)
                     {
                         player.AddBuff(BuffID.Campfire , Projectile.timeLeft);

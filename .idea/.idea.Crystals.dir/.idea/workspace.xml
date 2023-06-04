@@ -53,22 +53,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Photosynthesia/Photosynthesia.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Photosynthesia/Photosynthesia.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Ranged/Crusolium/CrusoliumBowHeldProj.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Summoner/GuardianFlame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Summoner/GuardianFlame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/EnemyPumpkin/EnemyPumpkin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crystals.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Crystals.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/EaseFunctions.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Helpers/MathFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/MathFunctions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,28 +80,8 @@
     <option name="defaultAccountId" value="0b82547d-b538-4fa9-8876-aa05fe0eca51" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F5E4932-93E5-4761-9CBC-52DFB691EB66/68/1f0825d8/Recipe.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F5E4932-93E5-4761-9CBC-52DFB691EB66/77/532ced06/Entity.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F5E4932-93E5-4761-9CBC-52DFB691EB66/c6/b8d3cb99/ModProjectile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/45/d4db1373/NPC.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/a3/a8a4b953/StatModifier.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/bc/de844e52/Player.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/c6/19c07a38/ModItem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33275498-4C83-4855-AE32-3032A37A686C/d5/e61b3416/DamageClassData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/28/084afd34/ModItem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/73/cfd4ae16/MusicLoader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/84/8c66f849/Entity.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/ad/054f34f5/SpawnCondition.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3AE6E3D4-80C5-437C-A4D7-3C103FEE0134/b3/95201480/NPC.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5D3EC05-734B-4A29-84DD-A8A889BE3758/8b/754f1659/CreativeItemSacrificesCatalog.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5DEBC4E-344C-4CB9-8E47-A47C98F45475/ac/64b71949/Mod.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A5DEBC4E-344C-4CB9-8E47-A47C98F45475/d2/03a79f7a/Recipe.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8A43C6A-9282-4CA2-A408-4F64AFFF069A/79/8862c99a/NPCID.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8A43C6A-9282-4CA2-A408-4F64AFFF069A/cc/5003b8da/ModItem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8A43C6A-9282-4CA2-A408-4F64AFFF069A/ed/4720cf0c/NPC.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8A43C6A-9282-4CA2-A408-4F64AFFF069A/f2/6c177157/Item.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C9A0C299-0FFB-4936-87E6-D3829FE5A44C/f3/7404d5d9/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/B8EE30BF-8084-4B1D-AF05-38035758583C/9a/e842ddb6/System.Core.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c13f49990bf34d18b209c4f451026a97a226b0/70/4d8673c7/0200008Dpdb69.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7e584c6425e49b4ecbb37645d90d799522422596e708598fcf881c111f8d1/Math.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/AutoCam/AutoCamSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/StateSystem/PlayerStatesSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" root0="FORCE_HIGHLIGHTING" />
@@ -805,7 +773,8 @@
       <workItem from="1685619415928" duration="52000" />
       <workItem from="1685734666803" duration="955000" />
       <workItem from="1685745005282" duration="6267000" />
-      <workItem from="1685833046289" duration="753000" />
+      <workItem from="1685833046289" duration="5776000" />
+      <workItem from="1685905389469" duration="7799000" />
     </task>
     <servers />
   </component>

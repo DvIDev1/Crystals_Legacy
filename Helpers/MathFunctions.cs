@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
 namespace Crystals.Helpers
@@ -125,6 +126,49 @@ namespace Crystals.Helpers
             {
                 return 1f - (float)Math.Pow(1f - x, 5f);
             }
+        }
+        
+        public class BezierCurve
+        {
+            
+            private float t;
+
+            private Vector2 p0;
+            
+            private Vector2 p1;
+            
+            private Vector2 p2;
+            
+            private Vector2 p3;
+
+            public BezierCurve(float t, Vector2 p0, Vector2 p1, Vector2 p2, Vector2 p3)
+            {
+                this.t = t;
+                this.p0 = p0;
+                this.p1 = p1;
+                this.p2 = p2;
+                this.p3 = p3;
+            }
+
+            public Vector2 GetPoint()
+            {
+                float cx = 3 * (p1.X - p0.X);
+                float cy = 3 * (p1.Y - p0.Y);
+                float bx = 3 * (p2.X - p1.X) - cx;
+                float by = 3 * (p2.Y - p1.Y) - cy;
+                float ax = p3.X - p0.X - cx - bx;
+                float ay = p3.Y - p0.Y - cy - by;
+                float Cube = t * t * t;
+                float Square = t * t;
+
+                float resX = (ax * Cube) + (bx * Square) + (cx * t) + p0.X;
+                float resY = (ay * Cube) + (by * Square) + (cy * t) + p0.Y;
+
+                return new Vector2(resX, resY);
+            }
+            
+            
+            
         }
     }
 }
