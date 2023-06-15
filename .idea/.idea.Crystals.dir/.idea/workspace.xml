@@ -52,10 +52,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/SunnyPetals.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Summoner/GuardianFlame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Summoner/GuardianFlame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helpers/MathFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/MathFunctions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -775,6 +774,9 @@
       <workItem from="1685745005282" duration="6267000" />
       <workItem from="1685833046289" duration="5776000" />
       <workItem from="1685905389469" duration="7799000" />
+      <workItem from="1685966084500" duration="3931000" />
+      <workItem from="1686513327253" duration="600000" />
+      <workItem from="1686595058502" duration="2673000" />
     </task>
     <servers />
   </component>

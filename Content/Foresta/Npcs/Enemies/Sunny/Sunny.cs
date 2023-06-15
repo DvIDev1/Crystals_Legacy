@@ -57,7 +57,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
             #region Behaviour
             
             NPC.spriteDirection = NPC.direction = Math.Sign(target.Center.X - NPC.Center.X);
-            
+
             Timer++;
             switch (state)
             {
@@ -73,7 +73,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
                 case States.HalfCircle:
                     if (!charging)
                     {
-                        StartCharge(NPC.Center , new Vector2(target.Bottom.X , target.Bottom.Y + target.height * 2) , new Vector2(target.Bottom.X , target.Bottom.Y + target.height*2), new Vector2(target.Center.X + NPC.direction * 150 , target.Center.Y - 250));
+                        StartCharge(NPC.Center , new Vector2(target.Bottom.X , target.Bottom.Y + target.height * 2) , new Vector2(target.Bottom.X , target.Bottom.Y + target.height*2), new Vector2(target.Center.X + NPC.direction * 150 , target.Center.Y - 125));
                     }
                     else
                     {
@@ -83,9 +83,12 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
                     {
                         charging = false;
                         Timer = 0;
-                        state = States.Idle;
+                        state = States.SpinShot;
                         NPC.ai[1] = 0;
                     }
+                    break;
+                case States.SpinShot:
+                    state = States.Idle;
                     break;
             }
 
@@ -98,7 +101,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
             NPC.TargetClosest();
             var target = Main.player[NPC.target];
 
-            NPC.velocity = NPC.DirectionTo(new Vector2(target.Center.X , target.Center.Y - 250f));
+            NPC.velocity = NPC.DirectionTo(new Vector2(target.Center.X , target.Center.Y - 125));
 
             NPC.velocity.Y += MathFunctions.SineWave(2f, 1f, NPC.ai[1] / 15);
         }
@@ -128,9 +131,34 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
             NPC.TargetClosest();
             var target = Main.player[NPC.target];
             Vector2 dest = new MathFunctions.BezierCurve(MathFunctions.EaseFunctions.EaseInOutBack(NPC.ai[1]) , startPos , midPos1 , midPos2 , endPos).GetPoint();
-            float speed = NPC.Distance(dest) * 0.185f;
+            PetalRot += NPC.ai[1];
+            float speed = NPC.Distance(dest) * 0.125f;
             NPC.velocity = NPC.DirectionTo(dest) * speed;
         }
-        
+
+        private void SpinShot()
+        {
+            
+        }
+
+        public float PetalRot;
+
+        public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            
+            Texture2D texture = ModContent.Request<Texture2D>("Crystals/Content/Foresta/Npcs/Enemies/Sunny/SunnyPetals").Value;
+            Rectangle frame = new Rectangle(0, 0, 48, 48);
+            Vector2 drawOrigin = new Vector2(frame.Width * 0.5f, frame.Height * 0.5f);
+            Vector2 drawPos = (NPC.Center - Main.screenPosition) + new Vector2(0f, NPC.gfxOffY + 2);
+
+
+            SpriteEffects effects = SpriteEffects.None;
+            if (NPC.spriteDirection == -1)
+            {
+                effects = SpriteEffects.FlipHorizontally;
+            }
+            
+            spriteBatch.Draw(texture, drawPos, frame, Color.White, PetalRot, drawOrigin, NPC.scale, effects, 0);
+        }
     }
 }
