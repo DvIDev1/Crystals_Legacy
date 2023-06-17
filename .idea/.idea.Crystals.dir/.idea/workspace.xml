@@ -52,17 +52,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/CursedEnergy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/CursedEnergy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/CursedSpirit/CursedSpirit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/CursedSpirit/CursedSpirit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/NPCSets.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/BrokenCrusoSet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Forest_Spirit/ForestSpirit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Gaia_ArmorSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Gaia_ArmorSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/CursedEnergy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/CursedEnergy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +87,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/c13f49990bf34d18b209c4f451026a97a226b0/70/4d8673c7/0200008Dpdb69.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/16/d9653d94/NPCID.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/1a/f7180b58/ModContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/29/f83cd3af/NPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7e584c6425e49b4ecbb37645d90d799522422596e708598fcf881c111f8d1/Math.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/AutoCam/AutoCamSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -786,7 +786,7 @@
       <workItem from="1685966084500" duration="3931000" />
       <workItem from="1686513327253" duration="600000" />
       <workItem from="1686595058502" duration="2673000" />
-      <workItem from="1686956148730" duration="4561000" />
+      <workItem from="1686956148730" duration="6893000" />
     </task>
     <servers />
   </component>

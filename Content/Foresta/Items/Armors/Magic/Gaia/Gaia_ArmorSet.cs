@@ -331,6 +331,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
                         (float) MathFunctions.SineWave(4, 0.5f, (int) Projectile.ai[2]++ / 25f);
                 }
 
+                Projectile.position.Y += player.gfxOffY;
+
                 if(Projectile.ai[0] >= 60*5)
                 {
                     if (Projectile.alpha <= 255)

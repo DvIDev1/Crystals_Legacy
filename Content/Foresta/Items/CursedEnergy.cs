@@ -15,8 +15,8 @@ public class CursedEnergy : ModItem
     public override void SetDefaults()
     {
         Item.maxStack = 99;
-        Item.width = 26;
-        Item.height = 26;
+        Item.width = 28;
+        Item.height = 28;
         Item.rare = ItemRarityID.Purple;
         Item.material = true;
         Item.value = ValueHelper.GetCoinValue(0 ,0 , 0 , 0);

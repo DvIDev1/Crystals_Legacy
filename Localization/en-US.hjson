@@ -326,6 +326,26 @@ Mods: {
 				DisplayName: Cursed Energy
 				Tooltip: ""
 			}
+
+			BrokenBoots: {
+				DisplayName: Broken Boots
+				Tooltip: ""
+			}
+
+			BrokenChest: {
+				DisplayName: Broken Chest
+				Tooltip: ""
+			}
+
+			BrokenHelmet: {
+				DisplayName: Broken Helmet
+				Tooltip: ""
+			}
+
+			CrusoliumFragment: {
+				DisplayName: Crusolium Fragment
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
