@@ -1,38 +1,37 @@
 using System;
 using Crystals.Content.Foresta.Items;
 using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
-using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.Utilities;
 
-namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
+namespace Crystals.Content.Foresta.Npcs.Enemies.CursedSpirit;
+
+public class CursedSpirit : ModNPC
 {
-    public class ForestSpirit : ModNPC
-    {
-        public override void SetStaticDefaults()
+     public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 6;
 
-            NPCID.Sets.TrailCacheLength[NPC.type] = 3;
-            NPCID.Sets.TrailingMode[NPC.type] = 4;
+            NPCID.Sets.TrailCacheLength[NPC.type] = 6;
+            NPCID.Sets.TrailingMode[NPC.type] = 3;
         }
 
         public override void SetDefaults()
         {
             NPC.width = 32;
             NPC.height = 34;
-            NPC.defense = 3;
-            NPC.damage = 13;
-            NPC.lifeMax = 35;
-            NPC.value = ValueHelper.GetCoinValue(0, 0, 6, 8);
+            NPC.defense = 0;
+            NPC.damage = 33;
+            NPC.lifeMax = 45;
+            NPC.value = ValueHelper.GetCoinValue(0, 0, 14, 9);
             NPC.aiStyle = -1;
-
+            
             NPC.HitSound = SoundID.NPCHit36;
             NPC.DeathSound = SoundID.NPCDeath39;
             NPC.noGravity = true;
@@ -41,13 +40,12 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
         }
 
 
+        //Todo Beastiary 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
             {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
-                new FlavorTextBestiaryInfoElement(
-                    "Suffering souls yearning for the release from the witch's snare")
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime
             });
         }
 
@@ -72,7 +70,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
 
             if (Main.rand.NextBool())
             {
-                int num876 = Dust.NewDust(NPC.position, NPC.width, NPC.height, 61);
+                int num876 = Dust.NewDust(NPC.position, NPC.width, NPC.height, DustID.CorruptTorch);
                 Dust dust = Main.dust[num876];
                 dust.velocity *= 0.1f;
                 Main.dust[num876].scale = 1.3f;
@@ -80,6 +78,32 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
             }
 
             NPC.position -= NPC.netOffset;
+        }
+        
+        public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            Main.instance.LoadNPC(NPC.type);
+            Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
+                
+            SpriteEffects effect = SpriteEffects.None;
+            
+            if (NPC.spriteDirection != -1)
+            {
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else
+            {
+                effect = SpriteEffects.None;
+            }
+            
+            Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
+            for (int k = 0; k < NPC.oldPos.Length; k++) {
+                Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
+                Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
+                Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
+            }
+
+            return true;
         }
 
         public override void FindFrame(int frameHeight)
@@ -96,18 +120,10 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
                 NPC.frame.Y = 0;
             }
         }
-
-        public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
-            if (spawnInfo.Player.ZoneForest) return SpawnCondition.OverworldNightMonster.Chance * 0.12f;
-            return base.SpawnChance(spawnInfo);
-        }
-
+        
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 2, 1, 5));
-            npcLoot.Add(new CommonDrop(ModContent.ItemType<Salad>(), 100, 1));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 2, 1, 4));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<CursedSalad>(), 100, 1));
         }
-    }
 }

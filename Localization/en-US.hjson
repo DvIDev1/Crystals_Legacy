@@ -321,6 +321,11 @@ Mods: {
 				DisplayName: Crystal of the Forest
 				Tooltip: ""
 			}
+
+			CursedEnergy: {
+				DisplayName: Cursed Energy
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
@@ -367,6 +372,7 @@ Mods: {
 			SquashlerScary.DisplayName: Squashler Scary
 			ForestSpirit.DisplayName: Forest Spirit
 			Sunny.DisplayName: Sunny
+			CursedSpirit.DisplayName: Cursed Spirit
 		}
 
 		Tiles.Banners.MapEntry: Banner
