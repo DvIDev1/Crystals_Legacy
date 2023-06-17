@@ -390,6 +390,19 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 }
             }
 
+            public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+            {
+                if (target.HasBuff(ModContent.BuffType<GreenMark>()))
+                {
+                    modifiers.FinalDamage *= 1.5f;
+                }
+                else
+                {
+                    target.AddBuff(ModContent.BuffType<GreenMark>(), 60 * 7);
+                    Projectile.Kill();
+                }
+            }
+
             public override bool PreAI()
             {
                 time++;

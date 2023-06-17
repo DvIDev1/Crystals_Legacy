@@ -53,14 +53,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/ForestaRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/ForestaRecipes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/CursedSpirit/CursedSpirit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/CursedSpirit/CursedSpirit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Leafling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Leafling.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Slime/Nature_Slime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Slime/Nature_Slime.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +85,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/16/d9653d94/NPCID.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/1a/f7180b58/ModContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/29/f83cd3af/NPC.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/33/5e7ee5cb/ModProjectile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7e584c6425e49b4ecbb37645d90d799522422596e708598fcf881c111f8d1/Math.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/AutoCam/AutoCamSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/StateSystem/PlayerStatesSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -786,6 +784,7 @@
       <workItem from="1686513327253" duration="600000" />
       <workItem from="1686595058502" duration="2673000" />
       <workItem from="1686956148730" duration="8576000" />
+      <workItem from="1687020532565" duration="11982000" />
     </task>
     <servers />
   </component>

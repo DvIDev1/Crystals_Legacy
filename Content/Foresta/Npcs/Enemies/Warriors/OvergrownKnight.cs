@@ -96,7 +96,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             else
                 NPC.DiscourageDespawn(6 * 60);
 
-            if (stamina <= 100f) stamina += 0.1f;
+            if (stamina <= 100f) stamina += 0.5f;
 
 
             if (jumpcooldown >= 0) jumpcooldown -= 0.2f;

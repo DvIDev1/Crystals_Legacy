@@ -33,7 +33,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         {
             NPC.GivenName = "Overgrown Paladin";
             NPC.width = 50;
-            NPC.height = 73;
+            NPC.height = 54;
             NPC.defense = 14;
             NPC.damage = 30;
             NPC.lifeMax = 170;
@@ -62,12 +62,31 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             });
         }
 
+        private float MaxStamina = 200;
+        
+        private float stamina = 200;
+
+        private bool charging;
+
+        private float MaxChargeTime = 60*2.5f;
+
+        public float ChargeTime
+        {
+            get => NPC.ai[0];
+            set => NPC.ai[0] = value;
+        }
+
         public override void AI()
         {
             NPC.TargetClosest();
             var target = Main.player[NPC.target];
             if (!target.dead && target.active)
-                NPC.spriteDirection = NPC.direction = Math.Sign(target.Center.X - NPC.Center.X);
+            {
+                if (!charging)
+                {
+                    NPC.spriteDirection = NPC.direction = Math.Sign(target.Center.X - NPC.Center.X);
+                }
+            }
             else if (NPC.Distance(target.Center) >= 1000)
                 NPC.EncourageDespawn(5 * 60);
             else
@@ -76,17 +95,62 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
             grounded = NPC.velocity.Y == 0;
 
+            // ReSharper disable once CompareOfFloatsByEqualityOperator
+            if (stamina >= 0 && ChargeTime == 0 && NPC.Distance(target.Center) < 400)
+            {
+                charging = true;
+            }
+            // ReSharper disable once CompareOfFloatsByEqualityOperator
+            else if (stamina == 0 || ChargeTime >= MaxChargeTime)
+            {
+                charging = false;
+            }
+
+            if (stamina <= MaxStamina && !charging) stamina += 0.05f;
+
             if (!hitted)
             {
-                if (target.HasBuff<GreenMark>())
+                if (!charging)
                 {
-                    NPC.velocity.X += NPC.direction * 0.10f;
-                    NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, -2, 2);
+                    NPC.SuperArmor = false;
+                    if (ChargeTime - 1 >= 0)
+                    {
+                        ChargeTime--;
+                    }
+
+                    if (target.HasBuff<GreenMark>())
+                    {
+                        NPC.velocity.X += NPC.direction * 0.10f;
+                        NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, 2 * NPC.direction, 2 * NPC.direction);
+                    }
+                    else
+                    {
+                        NPC.velocity.X += NPC.direction * 0.10f;
+                        NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, 1 * NPC.direction, 1 * NPC.direction);
+                    }
                 }
                 else
                 {
-                    NPC.velocity.X += NPC.direction * 0.10f;
-                    NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, -1, 1);
+                    ChargeTime++;
+                    NPC.SuperArmor = true;
+                    if (stamina - 0.4f <= 0)
+                    {
+                        stamina = 0;
+                    }
+                    else
+                    {
+                        stamina -= 0.4f;
+                    }
+                    if (target.HasBuff<GreenMark>())
+                    {
+                        NPC.velocity.X += NPC.direction * 0.10f;
+                        NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, 7 * NPC.direction, 7 * NPC.direction);
+                    }
+                    else
+                    {
+                        NPC.velocity.X += NPC.direction * 0.10f;
+                        NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, 5 * NPC.direction, 5 * NPC.direction);
+                    }
                 }
 
 
@@ -98,7 +162,67 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             }
 
         }
+
+        public override void FindFrame(int frameHeight)
+        {
+            if (charging)
+            {
+                NPC.frameCounter++;
+                int frame = (int)(NPC.frameCounter / 8.0);
+                NPC.frame.Y = frame * frameHeight;
+                if (frame < 16 || frame > Main.npcFrameCount[NPC.type] - 1)
+                {
+                    NPC.frame.Y = 16 * frameHeight;
+                    NPC.frameCounter = 8 * 16;
+                }
+            }else {
+                if (grounded)
+                {
+                    NPC.frameCounter++;
+                    int frame = (int)(NPC.frameCounter / 8.0);
+                    NPC.frame.Y = frame * frameHeight;
+                    if (frame >= 15)
+                    {
+                        NPC.frame.Y = 2 * frameHeight;
+                        NPC.frameCounter = 8 * 2;
+                    }
+
+                }
+                else
+                {
+                    NPC.frame.Y = 0;
+                }
+            }
+        }
+
+        public void DisplayBlocked()
+        {
+            CombatText.NewText(NPC.Hitbox, Color.Gray, "Blocked", true);
+        }
+
+        public override void ModifyHitByItem(Player player, Item item, ref NPC.HitModifiers modifiers)
+        {
+            if (charging)
+            {
+                if (modifiers.CritDamage.Base == 0  || Main.rand.Next((int)modifiers.FinalDamage.Base) + 1 > 15)
+                {
+                    DisplayBlocked();
+                }
+            }
+        }
+
+        public override void ModifyHitByProjectile(Projectile projectile, ref NPC.HitModifiers modifiers)
+        {
+            if (charging)
+            {
+                if (modifiers.CritDamage.Base == 0 || Main.rand.Next((int)modifiers.FinalDamage.Base) + 1 > 15 || modifiers.DamageType == DamageClass.Magic || modifiers.DamageType == DamageClass.Summon)
+                {
+                    DisplayBlocked();
+                }
+            }
+        }
         
+
         public override void OnHitByItem(Player player, Item item, NPC.HitInfo hit, int damageDone)
         {
             hitted = true;
@@ -109,6 +233,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             hitted = true;
         }
         
+        
+
         public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
         {
             target.AddBuff(ModContent.BuffType<GreenMark>(), 5 * 60);
