@@ -52,16 +52,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/BrokenCrusoSet.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Gaia_ArmorSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Magic/Gaia/Gaia_ArmorSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/CursedEnergy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/CursedEnergy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/ForestaRecipes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/ForestaRecipes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/CrusoliumFragment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/CursedSpirit/CursedSpirit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/CursedSpirit/CursedSpirit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Leafling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Leafling/Leafling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Slime/Nature_Slime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Slime/Nature_Slime.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -786,7 +785,7 @@
       <workItem from="1685966084500" duration="3931000" />
       <workItem from="1686513327253" duration="600000" />
       <workItem from="1686595058502" duration="2673000" />
-      <workItem from="1686956148730" duration="6893000" />
+      <workItem from="1686956148730" duration="8576000" />
     </task>
     <servers />
   </component>

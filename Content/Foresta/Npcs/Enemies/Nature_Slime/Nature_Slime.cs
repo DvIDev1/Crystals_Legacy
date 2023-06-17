@@ -52,7 +52,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Slime
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestGel>(), 2, 1, 3));
-            npcLoot.Add(new CommonDrop(ModContent.ItemType<Leaf>(), 4, 1, 2));
         }
 
         public override void OnKill()

@@ -177,6 +177,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             npcLoot.Add(new CommonDrop(ModContent.ItemType<BrokenCrusoSet.BrokenHelmet>(), 500));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<BrokenCrusoSet.BrokenChest>(), 500));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<BrokenCrusoSet.BrokenBoots>(), 500));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<CrusoliumFragment>(), 10));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Crusolium_Bow>(), 19));
         }
         

@@ -19,7 +19,7 @@ public class CrusoliumFragment : ModItem
         
     public override void SetDefaults()
     {
-        Item.maxStack = 1;
+        Item.maxStack = 99;
         Item.width = 26;
         Item.height = 22;
         Item.rare = ItemRarityID.Green;

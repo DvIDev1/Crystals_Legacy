@@ -67,7 +67,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(new CommonDrop(ModContent.ItemType<Leaf>(), 3, 1, 4));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 3, 1, 4));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestShard>(), 40));
         }
 

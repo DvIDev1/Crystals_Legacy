@@ -1,5 +1,6 @@
 using System;
 using Crystals.Content.Foresta.Items;
+using Crystals.Content.Foresta.Items.Armors.Crusolium;
 using Crystals.Content.Foresta.Items.Armors.Magic.Gaia;
 using Crystals.Content.Foresta.Items.Weapons.Magic.Feracor;
 using Crystals.Content.Foresta.Items.Weapons.Magic.Incaen;
@@ -77,6 +78,7 @@ namespace Crystals.Content.Foresta
                .AddIngredient<Leaf>(30)
                .AddIngredient<ForestEnergy>(20)
                .AddIngredient<ForestGel>(5)
+               .AddIngredient(ItemID.WoodHelmet)
                .AddIngredient(ItemID.Silk, 10)
                .AddTile(TileID.LivingLoom)
                .Register();
@@ -86,6 +88,7 @@ namespace Crystals.Content.Foresta
                .AddIngredient<Leaf>(40)
                .AddIngredient<ForestEnergy>(25)
                .AddIngredient<ForestGel>(10)
+               .AddIngredient(ItemID.WoodBreastplate)
                .AddIngredient(ItemID.Silk, 15)
                .AddTile(TileID.LivingLoom)
                .Register();
@@ -95,9 +98,39 @@ namespace Crystals.Content.Foresta
                .AddIngredient<Leaf>(25)
                .AddIngredient<ForestEnergy>(15)
                .AddIngredient<ForestGel>(5)
+               .AddIngredient(ItemID.WoodGreaves)
                .AddIngredient(ItemID.Silk, 5)
                .AddTile(TileID.LivingLoom)
                .Register();
+           
+           //Crusolium Helmet
+           Recipe CrusoHelmet = Recipe.Create(ModContent.ItemType<Cruso_ArmorSet.CrusoHelmet>())
+               .AddIngredient<BrokenCrusoSet.BrokenHelmet>(1)
+               .AddIngredient<ForestGel>(5)
+               .AddIngredient<CrusoliumFragment>(2)
+               .AddIngredient<ForestEnergy>(15)
+               .AddTile(TileID.Anvils)
+               .Register();
+           
+           //Crusolium Chestplate
+           Recipe CrusoPlate = Recipe.Create(ModContent.ItemType<Cruso_ArmorSet.CrusoChestplate>())
+               .AddIngredient<BrokenCrusoSet.BrokenChest>(1)
+               .AddIngredient<ForestGel>(5)
+               .AddIngredient<CrusoliumFragment>(3)
+               .AddIngredient<ForestEnergy>(20)
+               .AddTile(TileID.Anvils)
+               .Register();
+           
+           //Crusolium Greaves
+           Recipe CrusoGreaves = Recipe.Create(ModContent.ItemType<Cruso_ArmorSet.CrusoGreaves>())
+               .AddIngredient<BrokenCrusoSet.BrokenBoots>(1)
+               .AddIngredient<ForestGel>(4)
+               .AddIngredient<CrusoliumFragment>(2)
+               .AddIngredient<ForestEnergy>(10)
+               .AddTile(TileID.Anvils)
+               .Register();
+
+
         }
 
         private bool Predicate()

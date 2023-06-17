@@ -123,7 +123,7 @@ public class CursedSpirit : ModNPC
         
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 2, 1, 4));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<CursedEnergy>(), 2, 1, 4));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<CursedSalad>(), 100, 1));
         }
 }
