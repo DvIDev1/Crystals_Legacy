@@ -374,6 +374,7 @@ Mods: {
 			CrusoliumArrow.DisplayName: Crusolium Arrow
 			CrusoliumBowHeldProj.DisplayName: Crusolium Bow Held Proj
 			CrystalVFX.DisplayName: Crystal V F X
+			HostilePetal.DisplayName: Hostile Petal
 		}
 
 		NPCs: {

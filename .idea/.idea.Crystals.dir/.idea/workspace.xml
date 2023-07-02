@@ -52,11 +52,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/HostilePetal.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownKnight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/SunnyPetals.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/SunnyPetals.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/TerrariaHooks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/TerrariaHooks.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Crystals.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Crystals.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -255,8 +270,8 @@
     </configuration>
     <configuration name="Crystals: TerrariaServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Crystals.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value=".NETFramework,Version=v6.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="TerrariaServer" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="Terraria" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -785,6 +800,11 @@
       <workItem from="1686595058502" duration="2673000" />
       <workItem from="1686956148730" duration="8576000" />
       <workItem from="1687020532565" duration="11982000" />
+      <workItem from="1687182216911" duration="1687000" />
+      <workItem from="1687196000090" duration="3022000" />
+      <workItem from="1688213409577" duration="7127000" />
+      <workItem from="1688233279570" duration="5755000" />
+      <workItem from="1688241466249" duration="4959000" />
     </task>
     <servers />
   </component>
