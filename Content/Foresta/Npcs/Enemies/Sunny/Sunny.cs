@@ -227,8 +227,35 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
             spriteBatch.Draw(textureFace, drawPos, FaceFrame, Lighting.GetColor(PetalPos.ToTileCoordinates()), FaceRot + NPC.rotation, drawOrigin, NPC.scale, effects, 0);
         }
-        
-        
+
+        public override void OnKill()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                Dust.NewDustPerfect(PetalPos, DustID.YellowStarDust , -NPC.velocity);
+            }
+        }
+
+        public class FlowerGore : ModGore { }
+
+        public class PetalGore : ModGore
+        {
+            public override bool Update(Gore gore)
+            {
+                gore.velocity.Y *= 0.80f;
+                return true;
+            }
+        }
+
+        public class PetalGore2 : ModGore 
+        {
+            public override bool Update(Gore gore)
+            {
+                gore.velocity.Y *= 0.60f;
+                return true;
+            }
+        }
+
         class HostilePetal : ModProjectile 
         {
             

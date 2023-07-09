@@ -3,6 +3,7 @@ using Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin;
 using Crystals.Content.Foresta.Npcs.Enemies.Leafling;
 using Crystals.Content.Foresta.Npcs.Enemies.Nature_Slime;
 using Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie;
+using Crystals.Content.Foresta.Npcs.Enemies.Sunny;
 using Crystals.Content.Foresta.Npcs.Enemies.Warriors;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -70,6 +71,10 @@ namespace Crystals.Content.Misc.Tiles
                     Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
                         ModContent.ItemType<EnemyPumpkinBanner>());
                     break;
+                case 8: 
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
+                        ModContent.ItemType<SunnyBanner>());
+                    break;
                 default:
                     return;
             }
@@ -109,6 +114,10 @@ namespace Crystals.Content.Misc.Tiles
                         break;
                     case 7:
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<EnemyPumpkin>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
+                        break;
+                    case 8:
+                        Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<Sunny>()] = true;
                         Main.SceneMetrics.hasBanner = true;
                         break;
                     default:

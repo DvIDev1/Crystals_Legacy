@@ -346,6 +346,11 @@ Mods: {
 				DisplayName: Crusolium Fragment
 				Tooltip: ""
 			}
+
+			SunnyBanner: {
+				DisplayName: Sunny Banner
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {

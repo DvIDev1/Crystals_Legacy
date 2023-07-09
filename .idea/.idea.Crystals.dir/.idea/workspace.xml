@@ -52,27 +52,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/HostilePetal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/Banners/SunnyBanner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/Banners/SunnyBanner.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/SunnyPetals.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/SunnyPetals.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Crystals.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/TerrariaHooks.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/TerrariaHooks.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModLoader.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/tModPorter.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Crystals.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Crystals.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Crystals.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -805,6 +791,12 @@
       <workItem from="1688213409577" duration="7127000" />
       <workItem from="1688233279570" duration="5755000" />
       <workItem from="1688241466249" duration="4959000" />
+      <workItem from="1688403242755" duration="635000" />
+      <workItem from="1688586968071" duration="1491000" />
+      <workItem from="1688676648956" duration="513000" />
+      <workItem from="1688751580316" duration="599000" />
+      <workItem from="1688775124773" duration="1502000" />
+      <workItem from="1688906573316" duration="682000" />
     </task>
     <servers />
   </component>
@@ -828,25 +820,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs</url>
-          <line>100</line>
-          <properties documentPath="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\Content\Misc\Tiles\Banners.cs" initialLine="96">
-            <startOffsets>
-              <option value="4531" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4537" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
