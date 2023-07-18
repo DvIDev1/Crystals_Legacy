@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
@@ -234,6 +235,22 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
             {
                 Dust.NewDustPerfect(PetalPos, DustID.YellowStarDust , -NPC.velocity);
             }
+            
+            Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                ModContent.GoreType<FlowerGore>());
+
+            for (int i = 0; i < 4; i++)
+            {
+                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                    ModContent.GoreType<PetalGore>());
+            }
+
+            for (int i = 0; i < 2; i++)
+            {
+                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                    ModContent.GoreType<PetalGore2>());
+            }
+            
         }
 
         public class FlowerGore : ModGore { }
@@ -251,7 +268,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
         {
             public override bool Update(Gore gore)
             {
-                gore.velocity.Y *= 0.60f;
+                gore.velocity.Y *= 0.75f;
                 return true;
             }
         }

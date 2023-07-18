@@ -126,6 +126,11 @@ namespace Crystals.Helpers
             {
                 return 1f - (float)Math.Pow(1f - x, 5f);
             }
+            
+            public static float easeInExpo(float x) {
+                return x == 0 ? 0 : (float) Math.Pow(2, 10 * x - 10);
+            }
+            
         }
         
         public class BezierCurve

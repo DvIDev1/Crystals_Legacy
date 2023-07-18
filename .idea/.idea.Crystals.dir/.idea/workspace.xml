@@ -52,13 +52,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/Banners/SunnyBanner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Items/Banners/SunnyBanner.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Misc/Tiles/Banners.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownArcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/MathFunctions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/MathFunctions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/NPCSets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/NPCSets.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/Pathfinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +88,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/1a/f7180b58/ModContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/29/f83cd3af/NPC.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a3b1e0c4b6a0447b971980c7814524fc144bc00/33/5e7ee5cb/ModProjectile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6ee7c1623ab4d3c85fa5b58b8720a0ac3200/0f/91eeda3e/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a6ee7c1623ab4d3c85fa5b58b8720a0ac3200/e3/7714ebd1/MathHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7e584c6425e49b4ecbb37645d90d799522422596e708598fcf881c111f8d1/Math.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/AutoCam/AutoCamSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../AutoCam/Core/Systems/StateSystem/PlayerStatesSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -796,7 +799,16 @@
       <workItem from="1688676648956" duration="513000" />
       <workItem from="1688751580316" duration="599000" />
       <workItem from="1688775124773" duration="1502000" />
-      <workItem from="1688906573316" duration="682000" />
+      <workItem from="1688906573316" duration="1780000" />
+      <workItem from="1688920588459" duration="2180000" />
+      <workItem from="1689102045763" duration="693000" />
+      <workItem from="1689249486555" duration="729000" />
+      <workItem from="1689256421559" duration="10741000" />
+      <workItem from="1689329899271" duration="6062000" />
+      <workItem from="1689424604104" duration="7285000" />
+      <workItem from="1689607992672" duration="7545000" />
+      <workItem from="1689637704976" duration="2863000" />
+      <workItem from="1689687809495" duration="8560000" />
     </task>
     <servers />
   </component>
@@ -820,6 +832,25 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs</url>
+          <line>253</line>
+          <properties documentPath="C:\Users\User\Documents\My Games\Terraria\tModLoader\ModSources\Crystals\Content\Foresta\Npcs\Enemies\Sunny\Sunny.cs" initialLine="253" containingFunctionPresentation="Method 'OnKill'">
+            <startOffsets>
+              <option value="8311" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8312" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

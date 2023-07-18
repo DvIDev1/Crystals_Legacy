@@ -15,5 +15,19 @@ namespace Crystals.Helpers
             return query.First();
         }
 
+        public static Entity GetNearestEntity(Entity entity, List<Entity> entities)
+        {
+            IEnumerable<Entity> query = entities.OrderBy(ent => ent.Distance(entity.Center));
+
+            return query.First();
+        }
+
+        public static NPC GetNearestNPC(NPC npc, List<NPC> npcs)
+        {
+            IEnumerable<NPC> query = npcs.OrderBy(np => np.Distance(npc.Center));
+
+            return query.First();
+        }
+
     }
 }
