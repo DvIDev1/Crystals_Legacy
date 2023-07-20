@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Crystals.Content.Foresta.Items.Weapons.Melee.Sunwirl;
 using Crystals.Core.Systems.TrailSystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
@@ -9,6 +10,7 @@ using ReLogic.Content;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Utilities;
@@ -120,12 +122,18 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (spawnInfo.SpawnTileType == TileID.Sunflower)
-            {
-                return SpawnCondition.OverworldDay.Chance;
-            }
 
+            if (spawnInfo.Player.ZoneForest)
+            {
+                return SpawnCondition.OverworldDay.Chance * 0.10f;
+            }
             return 0;
+        }
+        
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            npcLoot.Add(new CommonDrop(ItemID.Sunflower, 10));
+            npcLoot.Add(new CommonDrop(ModContent.ItemType<Sunwirl>(), 19));
         }
 
         private void Idle()

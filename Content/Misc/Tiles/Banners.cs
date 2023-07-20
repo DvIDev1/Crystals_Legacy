@@ -1,5 +1,7 @@
 using Crystals.Content.Foresta.Items.Banners;
+using Crystals.Content.Foresta.Npcs.Enemies.CursedSpirit;
 using Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin;
+using Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit;
 using Crystals.Content.Foresta.Npcs.Enemies.Leafling;
 using Crystals.Content.Foresta.Npcs.Enemies.Nature_Slime;
 using Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie;
@@ -67,11 +69,23 @@ namespace Crystals.Content.Misc.Tiles
                     Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
                         ModContent.ItemType<OvergrownArcherBanner>());
                     break;
+                case 6:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
+                        ModContent.ItemType<OvergrownPaladinBanner>());
+                    break;
                 case 7:
                     Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
                         ModContent.ItemType<EnemyPumpkinBanner>());
                     break;
-                case 8: 
+                case 8:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
+                        ModContent.ItemType<ForestSpiritBanner>());
+                    break;
+                case 9:
+                    Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
+                        ModContent.ItemType<CursedSpiritBanner>());
+                    break;
+                case 10: 
                     Item.NewItem(new EntitySource_TileBreak(i * 16, j * 16), i * 16, j * 16, 16, 48,
                         ModContent.ItemType<SunnyBanner>());
                     break;
@@ -112,11 +126,23 @@ namespace Crystals.Content.Misc.Tiles
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<OvergrownArcher>()] = true;
                         Main.SceneMetrics.hasBanner = true;
                         break;
+                    case 6:
+                        Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<OvergrownPaladin>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
+                        break;
                     case 7:
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<EnemyPumpkin>()] = true;
                         Main.SceneMetrics.hasBanner = true;
                         break;
                     case 8:
+                        Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<ForestSpirit>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
+                        break;
+                    case 9:
+                        Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<CursedSpirit>()] = true;
+                        Main.SceneMetrics.hasBanner = true;
+                        break;
+                    case 10:
                         Main.SceneMetrics.NPCBannerBuff[ModContent.NPCType<Sunny>()] = true;
                         Main.SceneMetrics.hasBanner = true;
                         break;

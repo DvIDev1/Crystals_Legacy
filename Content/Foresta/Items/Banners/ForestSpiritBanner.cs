@@ -4,17 +4,19 @@ using Terraria.ModLoader;
 
 namespace Crystals.Content.Foresta.Items.Banners;
 
-public class SunnyBanner : ModItem
+public class ForestSpiritBanner : ModItem
 {
+    
     public override void SetStaticDefaults()
     {
         // DisplayName.SetDefault("Nature Slime Banner");
         CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 2;
     }
-
+        
     public override void SetDefaults()
     {
-        Item.rare = ItemRarityID.Orange;
-        Item.DefaultToPlaceableTile(ModContent.TileType<Misc.Tiles.Banners>(), 10);
+        Item.rare = ItemRarityID.Green;
+        Item.DefaultToPlaceableTile(ModContent.TileType<Content.Misc.Tiles.Banners>() , 8);
     }
+    
 }

@@ -197,8 +197,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             SoundEngine.PlaySound(SoundID.Item5, NPC.Center);
             Projectile.NewProjectile(Terraria.Entity.GetSource_None(), NPC.Center,
                 NPC.DirectionTo(target.Top) * 8f,
-                ModContent.ProjectileType<HostileCrusolium_Arrow>(), NPC.damage / 2, KnockbackValue.Averageknockback);
+                ModContent.ProjectileType<HostileCrusolium_Arrow>(), NPC.damage * 2, KnockbackValue.Averageknockback);
             AimProgress = 0;
+
+            if (NPC.Distance(target.Center) > 600)
+            {
+                CancelAiming();
+            }
         }
 
         public void StartAiming()

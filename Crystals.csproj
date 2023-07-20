@@ -29,7 +29,7 @@
     <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\NaturaPower.png" />
     <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\NatureHeart.png" />
     <Content Include="Content\Foresta\Items\Armors\Magic\Gaia\Items\PickUps\StarNature.png" />
-    <Content Include="Content\Foresta\Items\Banners\image.png" />
+    <Content Include="Content\Foresta\Items\Banners\OvergrownPaladinBanner.png" />
     <Content Include="Content\Foresta\Items\Banners\OvergrownArcherBanner.png" />
     <Content Include="Content\Foresta\Items\Banners\OvergrownKnightBanner.png" />
     <Content Include="Content\Foresta\Items\Banners\OvergrownWarriorBanner.png" />
