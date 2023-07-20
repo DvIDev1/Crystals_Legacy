@@ -351,6 +351,21 @@ Mods: {
 				DisplayName: Sunny Banner
 				Tooltip: ""
 			}
+
+			CursedSpiritBanner: {
+				DisplayName: Cursed Spirit Banner
+				Tooltip: ""
+			}
+
+			ForestSpiritBanner: {
+				DisplayName: Forest Spirit Banner
+				Tooltip: ""
+			}
+
+			OvergrownPaladinBanner: {
+				DisplayName: Overgrown Paladin Banner
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
