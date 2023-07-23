@@ -125,7 +125,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
             if (spawnInfo.Player.ZoneForest)
             {
-                return SpawnCondition.OverworldDay.Chance * 0.10f;
+                return SpawnCondition.OverworldDay.Chance * 0.01f;
             }
             return 0;
         }
