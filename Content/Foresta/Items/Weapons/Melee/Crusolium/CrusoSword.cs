@@ -239,6 +239,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 Projectile.Center = Main.player[Projectile.owner].Center;
                 Projectile.ai[0] += 1f;
                 Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((20 - Projectile.ai[0])));
+                /*Projectile.rotation += MathHelper.Lerp(Projectile.rotation, MathHelper.ToRadians(20 - Projectile.ai[0]),
+                    40f / Projectile.ai[0]);*/ //Bad Lerp Attempt 
                 player.direction = Projectile.direction;
             }
             /*public override bool PreDraw(ref Color lightColor)

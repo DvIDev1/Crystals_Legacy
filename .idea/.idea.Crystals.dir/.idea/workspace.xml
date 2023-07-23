@@ -52,12 +52,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Friendly/PumpkinMan/PumpkinMan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Friendly/PumpkinMan/PumpkinMan_Shimmer.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Sunny/Sunny.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Friendly/PumpkinMan/PumpkinMan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Friendly/PumpkinMan/PumpkinMan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -811,7 +807,8 @@
       <workItem from="1689780301137" duration="6565000" />
       <workItem from="1689854967395" duration="6067000" />
       <workItem from="1689967357163" duration="3206000" />
-      <workItem from="1690046694236" duration="1642000" />
+      <workItem from="1690046694236" duration="2300000" />
+      <workItem from="1690075623236" duration="334000" />
     </task>
     <servers />
   </component>
