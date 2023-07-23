@@ -30,8 +30,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             Item.DamageType = DamageClass.Melee;
             Item.width = 54;
             Item.height = 64;
-            Item.useTime = 40;
-            Item.useAnimation = 40;
+            Item.useTime = 20;
+            Item.useAnimation = 20;
             Item.knockBack = 3;
             Item.value = 10000;
             Item.rare = ItemRarityID.Orange;
@@ -134,7 +134,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 Projectile.width = 120;
                 Projectile.height = 110;
                 Projectile.friendly = true;
-                Projectile.timeLeft = 40;
+                Projectile.timeLeft = 20;
                 Projectile.penetrate = -1;
                 Projectile.tileCollide = false;
                 Projectile.usesLocalNPCImmunity = true;
@@ -240,8 +240,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 Projectile.ai[0] += 1f;
                 Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((20 - Projectile.ai[0])));
                 /*Projectile.rotation += MathHelper.Lerp(Projectile.rotation, MathHelper.ToRadians(20 - Projectile.ai[0]),
-                    40f / Projectile.ai[0]);*/ //Bad Lerp Attempt 
-                player.direction = Projectile.direction;
+                    40f / Projectile.ai[0]);*/ //Bad Lerp Attempt , doesnt work
             }
             /*public override bool PreDraw(ref Color lightColor)
             {
