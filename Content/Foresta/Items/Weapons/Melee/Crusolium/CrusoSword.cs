@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Crystals.Helpers;
 using Humanizer;
@@ -43,17 +43,28 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             Item.channel = true;
             Item.noUseGraphic = true;
             Item.noMelee = true;
+            Item.useTurn = false;
         }
-
-        public int attackType = 0;
-        public int comboExpireTimer = 0;
-
-
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position,
-            Vector2 velocity, int type, int damage, float knockback)
+        public override bool CanUseItem(Player player)
         {
-            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, Main.myPlayer, attackType);
-            attackType = (attackType + 1) % 2;
+            // Ensures no more than one spear can be thrown out, use this when using autoReuse
+            return player.ownedProjectileCounts[ModContent.ProjectileType<CrusoSwordSwing>()] < 1;
+        }
+        bool notboollol = true;
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            int basic = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
+            if (notboollol == true)
+            {
+                Main.projectile[basic].ai[1] = -1;
+                notboollol = false;
+            }
+            else
+            {
+                Main.projectile[basic].ai[1] = 1;
+                notboollol = true;
+            }
+            Main.projectile[basic].rotation = Main.projectile[basic].DirectionTo(Main.MouseWorld).ToRotation();
             return false;
         }
 
@@ -82,7 +93,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 
         class CrusoSwordSwing : ModProjectile
         {
-            private enum AttackType
+            /*private enum AttackType
             {
                 Down,
                 Up,
@@ -94,9 +105,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             private float attackTime;
 
             private List<float> oldRotation = new List<float>();
-
-            public override string Texture =>
-                "Crystals/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword"; // Use texture of item as projectile texture
 
             private Player Owner => Main.player[Projectile.owner];
 
@@ -112,7 +120,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             {
                 get => Projectile.localAI[0];
                 set => Projectile.localAI[0] = value;
-            }
+            } */
 
             public override void SetStaticDefaults()
             {
@@ -123,10 +131,10 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 
             public override void SetDefaults()
             {
-                Projectile.width = 54;
-                Projectile.height = 64;
+                Projectile.width = 120;
+                Projectile.height = 110;
                 Projectile.friendly = true;
-                Projectile.timeLeft = 100;
+                Projectile.timeLeft = 40;
                 Projectile.penetrate = -1;
                 Projectile.tileCollide = false;
                 Projectile.usesLocalNPCImmunity = true;
@@ -135,7 +143,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 Projectile.DamageType = DamageClass.Melee;
             }
 
-            public override void OnSpawn(IEntitySource source)
+            /* public override void OnSpawn(IEntitySource source)
             {
                 var owner = Main.player[Projectile.owner];
 
@@ -180,9 +188,60 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                     Projectile.Kill();
                 }
                 
+            } */
+            Vector2 dir = Vector2.Zero;
+            Vector2 hlende = Vector2.Zero;
+            public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
+            {
+                float rotationFactor = Projectile.rotation + (float)Math.PI / 4f; // The rotation of the Jousting Lance.
+                float scaleFactor = 90f; // How far back the hit-line will be from the tip of the Jousting Lance. You will need to modify this if you have a longer or shorter Jousting Lance. Vanilla uses 95f
+                float widthMultiplier = 23f; // How thick the hit-line is. Increase or decrease this value if your Jousting Lance is thicker or thinner. Vanilla uses 23f
+                float collisionPoint = 0f; // collisionPoint is needed for CheckAABBvLineCollision(), but it isn't used for our collision here. Keep it at 0f.
+
+                // This Rectangle is the width and height of the Jousting Lance's hitbox which is used for the first step of collision.
+                // You will need to modify the last two numbers if you have a bigger or smaller Jousting Lance.
+                // Vanilla uses (0, 0, 300, 300) which that is quite large for the size of the Jousting Lance.
+                // The size doesn't matter too much because this rectangle is only a basic check for the collision (the hit-line is much more important).
+                Rectangle lanceHitboxBounds = new Rectangle(0, 0, 284, 284);
+
+                // Set the position of the large rectangle.
+                lanceHitboxBounds.X = (int)Projectile.position.X - lanceHitboxBounds.Width / 2;
+                lanceHitboxBounds.Y = (int)Projectile.position.Y - lanceHitboxBounds.Height / 2;
+
+                // This is the back of the hit-line with Projectile.Center being the tip of the Jousting Lance.
+                Vector2 hitLineEnd = Projectile.Center + rotationFactor.ToRotationVector2() * -scaleFactor;
+
+                hlende = hitLineEnd;
+                // First check that our large rectangle intersects with the target hitbox.
+                // Then we check to see if a line from the tip of the Jousting Lance to the "end" of the lance intersects with the target hitbox.
+                if (/*lanceHitboxBounds.Intersects(targetHitbox)
+                && */Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), Projectile.Center, hitLineEnd, widthMultiplier * Projectile.scale, ref collisionPoint))
+                {
+                    return true;
+                }
+                return false;
             }
-            
-            public override bool PreDraw(ref Color lightColor)
+
+            public override void AI()
+            {
+                // All Projectiles have timers that help to delay certain events
+                // Projectile.ai[0], Projectile.ai[1] � timers that are automatically synchronized on the client and server
+                // Projectile.localAI[0], Projectile.localAI[0] � only on the client
+                // In this example, a timer is used to control the fade in / out and despawn of the Projectile
+                //Projectile.ai[0] += 1f;
+                if (dir == Vector2.Zero)
+                {
+                    dir = Main.MouseWorld;
+                    Projectile.rotation = (MathHelper.PiOver2 * Projectile.ai[1]) - MathHelper.PiOver4 + Projectile.DirectionTo(Main.MouseWorld).ToRotation();
+                }
+                Player player = Main.player[Projectile.owner];
+                player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation + 90);
+                Projectile.Center = Main.player[Projectile.owner].Center;
+                Projectile.ai[0] += 1f;
+                Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((20 - Projectile.ai[0])));
+                player.direction = Projectile.direction;
+            }
+            /*public override bool PreDraw(ref Color lightColor)
             {
                 //DrawTrail(Main.spriteBatch);
                 Texture2D tex = ModContent.Request<Texture2D>(Texture).Value;
@@ -206,8 +265,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 
                 Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
                 return false;
-            }
+            } */
             
-        }
+        } 
     }
 }
