@@ -366,6 +366,16 @@ Mods: {
 				DisplayName: Overgrown Paladin Banner
 				Tooltip: ""
 			}
+
+			EnchantedTimber: {
+				DisplayName: Enchanted Timber
+				Tooltip: ""
+			}
+
+			EnchantedTimberAxe: {
+				DisplayName: Enchanted Timber Axe
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
