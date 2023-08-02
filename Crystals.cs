@@ -16,7 +16,6 @@ using Terraria.UI;
 
 namespace Crystals
 {
-	// test
 	public class Crystals : Mod
 	{
         //Todo Recode item Tooltips and Names 

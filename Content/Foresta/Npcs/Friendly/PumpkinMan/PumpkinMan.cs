@@ -1,15 +1,19 @@
+using Crystals.Common.Systems;
 using Terraria;
+using Terraria.Audio;
 using Terraria.GameContent;
 using Terraria.GameContent.Personalities;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 {
     public class PumpkinMan : ModNPC
-    {
-	    
-	    private static Profiles.StackedNPCProfile NPCProfile;
+	{
+		public const string name = "[c/5B33FF:Devastate]";
+
+        private static Profiles.StackedNPCProfile NPCProfile;
 	    
 	    private static int ShimmerHeadIndex;
         
@@ -53,7 +57,8 @@ namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 			);
 		}
 
-		public override void SetDefaults() {
+		public override void SetDefaults()
+		{
 			NPC.townNPC = true; // Sets NPC to be a Town NPC
 			NPC.friendly = true; // NPC Will not attack player
 			NPC.width = 18;
@@ -68,7 +73,30 @@ namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 
 			AnimationType = NPCID.Guide;
 		}
-		
+
+        public override void SetChatButtons(ref string button, ref string button2)
+		{
+            button = name;
+        }
+
+
+		public override void OnChatButtonClicked(bool firstButton, ref string shop)
+		{
+            if (firstButton)
+            {
+                if (Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse == false)
+                {
+					Main.CloseNPCChatOrSign();
+					Main.playerInventory = true;
+                    Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse = true;
+                    Main.craftingHide = true;
+
+                    return;
+                }
+            }
+
+        }
+
 		public override ITownNPCProfile TownNPCProfile() {
 			return NPCProfile;
 		}
