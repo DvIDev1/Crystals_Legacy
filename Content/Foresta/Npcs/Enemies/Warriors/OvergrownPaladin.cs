@@ -139,7 +139,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
             if (NPC.collideX && grounded)
             {
-                //Todo Change Jump Height depending on the Target and the distance of the Two 
                 NPC.velocity.Y -= 6;
             }
 

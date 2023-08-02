@@ -437,6 +437,8 @@ Mods: {
 					Princess_LovesNPC: I like {NPCName}.
 				}
 			}
+
+			OvergrownMage.DisplayName: Overgrown Mage
 		}
 
 		Tiles.Banners.MapEntry: Banner
@@ -447,5 +449,22 @@ Mods: {
 		SaladWarning1: This was on the Ground
 		SaladWarning: You shouldn't have done this
 		RecipeConditions.InForest: In Forest
+
+		Configs: {
+			MiscConfig: {
+				DisplayName: Misc Config
+				Headers.DiscordRPC: Discord R P C Header
+
+				DiscordRPCEnabled: {
+					Label: Discord R P C Enabled
+					Tooltip: ""
+				}
+
+				Enabled: {
+					Label: Enabled
+					Tooltip: ""
+				}
+			}
+		}
 	}
 }

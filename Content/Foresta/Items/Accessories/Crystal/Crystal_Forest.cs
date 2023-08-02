@@ -68,8 +68,6 @@ namespace Crystals.Content.Foresta.Items.Accessories.Crystal
                     DamageToTime /= 100f;
                     DamageToTime *= 5f;
                     DamageToTime *= 60f;
-                    
-                    //TODO Add animation
 
                     Projectile.NewProjectile(Player.GetSource_Death(null), Player.Center, Vector2.Zero, ModContent.ProjectileType<CrystalVFX>(), 0, 0 , Player.whoAmI);
                     

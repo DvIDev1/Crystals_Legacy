@@ -63,8 +63,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();
         }
-
-        //Todo Buff During Spiritual Night  
+        
         public override void AI()
         {
             NPC.TargetClosest();
@@ -255,8 +254,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();
         }
-
-        //Todo Buff During Spiritual Night  
+        
         public override void AI()
         {
             NPC.TargetClosest();
@@ -447,8 +445,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();
         }
-
-        //Todo Buff During Spiritual Night  
+        
         public override void AI()
         {
             NPC.TargetClosest();

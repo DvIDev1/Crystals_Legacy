@@ -1,4 +1,5 @@
 using System;
+using Crystals.Core.Configs;
 using DiscordRPC;
 using DiscordRPC.Logging;
 using Terraria.ModLoader;
@@ -13,7 +14,20 @@ namespace Crystals.Core.Systems.DiscordSystem
         private static int discordPipe = -1;
 
         public static DiscordRpcClient gloClient;
-        
+
+        public bool Enabled => ModContent.GetInstance<MiscConfig>().Enabled;
+
+        public override void PreUpdateTime()
+        {
+            if (!Enabled)
+            {
+                if (gloClient != null)
+                {
+                    gloClient.ClearPresence();
+                }
+            }
+        }
+
         public override void OnModLoad()
         {
             var client = new DiscordRpcClient("1021527593503166504", pipe: discordPipe)
@@ -37,21 +51,28 @@ namespace Crystals.Core.Systems.DiscordSystem
 
             // == Initialize
             client.Initialize();
-			
-            client.SetPresence(new RichPresence()
+
+            if (Enabled)
             {
-                State = "In Menu",
-                Assets = new Assets()
+                client.SetPresence(new RichPresence()
                 {
-                    LargeImageKey = "standartcrystal"
-                }
-            });
+                    State = "In Menu",
+                    Assets = new Assets()
+                    {
+                        LargeImageKey = "standartcrystal"
+                    }
+                });
+            }
+            else
+            {
+                client.ClearPresence();
+            }
         }
 
 
         public override void OnWorldLoad()
         {
-            if (gloClient != null)
+            if (gloClient != null && Enabled)
             {
                 gloClient.SetPresence(new RichPresence()
                 {
@@ -67,7 +88,7 @@ namespace Crystals.Core.Systems.DiscordSystem
 
         public override void OnWorldUnload()
         {
-            if (gloClient != null)
+            if (gloClient != null && Enabled)
             {
                 gloClient.SetPresence(new RichPresence()
                 {
@@ -83,7 +104,7 @@ namespace Crystals.Core.Systems.DiscordSystem
 
         public override void OnModUnload()
         {
-            if (gloClient != null)
+            if (gloClient != null && Enabled)
             {
                 gloClient.ClearPresence();
             }
