@@ -221,7 +221,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 }
                 return false;
             }
-
+            
             public override void AI()
             {
                 // All Projectiles have timers that help to delay certain events
@@ -238,9 +238,9 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation + 90);
                 Projectile.Center = Main.player[Projectile.owner].Center;
                 Projectile.ai[0] += 1f;
-                Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((20 - Projectile.ai[0])));
-                /*Projectile.rotation += MathHelper.Lerp(Projectile.rotation, MathHelper.ToRadians(20 - Projectile.ai[0]),
-                    40f / Projectile.ai[0]);*/ //Bad Lerp Attempt 
+                //Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((20 - Projectile.ai[0])));
+                Projectile.rotation = MathHelper.Lerp(Projectile.rotation, MathHelper.ToRadians(20 - Projectile.ai[0]),
+                    40f / Projectile.ai[0]); 
                 player.direction = Projectile.direction;
             }
             /*public override bool PreDraw(ref Color lightColor)

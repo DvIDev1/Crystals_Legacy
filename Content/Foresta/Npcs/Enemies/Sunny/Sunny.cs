@@ -74,6 +74,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
             FaceRot = NPC.AngleTo(target.Center);
 
+            if (target.dead)
+            {
+                NPC.EncourageDespawn(60);
+            }
+
             Timer++;
             switch (state)
             {
@@ -82,9 +87,20 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
                     Idle();
                     if (Timer >= 180f)
                     {
-                        Timer = 0;
-                        state = States.HalfCircle;
-                        NPC.ai[1] = 0;
+
+                        if (NPC.Distance(target.Center) >= 800)
+                        {
+                            Timer = 0;
+                            state = States.Idle;
+                            NPC.ai[1] = 0;
+                        }
+                        else
+                        {
+                            Timer = 0;
+                            state = States.HalfCircle;
+                            NPC.ai[1] = 0;
+                        }
+                        
                     }
                     break;
                 case States.HalfCircle:
@@ -267,7 +283,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
         {
             public override bool Update(Gore gore)
             {
-                gore.velocity.Y *= 0.80f;
+                gore.velocity.Y *= 0.90f;
                 return true;
             }
         }

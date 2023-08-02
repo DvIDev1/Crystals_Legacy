@@ -39,8 +39,7 @@ public class CursedSpirit : ModNPC
             NPC.knockBackResist = 1f;
         }
 
-
-        //Todo Beastiary 
+        
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
