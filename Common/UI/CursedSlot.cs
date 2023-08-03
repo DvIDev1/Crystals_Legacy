@@ -16,6 +16,8 @@ using System.Linq;
 using System;
 using Crystals.Common.Prefixes;
 using Crystals.Content.Foresta.Items;
+using Crystals.Common.Sfx;
+using ReLogic.Utilities;
 
 namespace Crystals.Common.UI
 {
@@ -27,6 +29,14 @@ namespace Crystals.Common.UI
         int gold;
         int gold1;
         int curse;
+        int timer = 0;
+        int sound;
+
+        Item item;
+
+        int active = 0;
+        int smallDelay = 0;
+
 
         public string Messag1e1;
 
@@ -83,6 +93,58 @@ namespace Crystals.Common.UI
 
         }
 
+        public override void Update(GameTime gameTime)
+        {
+
+
+            if (Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse == false && active == 1 && !slot.Item.IsAir)
+            {
+                active = 0;
+                Main.LocalPlayer.QuickSpawnItem(slot.Item.GetSource_FromThis(), slot.Item);
+                slot.Item.TurnToAir();
+
+                //SoundEngine.PlaySound(Audio. , player.position);
+            }
+
+            if (Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse == true)
+            {
+
+                if (Main.LocalPlayer.GetModPlayer<PPlayer>().screaming == 255)
+                {
+                    slot.MaxWidth = StyleDimension.FromPixels(0);
+                    slot.MaxHeight = StyleDimension.FromPixels(0);
+                }
+                else if (Main.LocalPlayer.GetModPlayer<PPlayer>().screaming == 1)
+                {
+                    slot.MaxWidth = StyleDimension.FromPixels(50);
+                    slot.MaxHeight = StyleDimension.FromPixels(50);
+                }
+
+                if (timer > 0)
+                {
+                    timer--;
+                }
+
+                if (timer == 0)
+                {
+                    timer = 500;
+                    sound = Main.rand.Next(1, 7);
+                    if (sound == 1)
+                    {
+                        //SoundEngine.PlaySound(Audio.Cursed, player.position);
+                    }
+                    if (sound == 2)
+                    {
+                        //SoundEngine.PlaySound(Audio., player.position);
+                    }
+                    if (sound == 3)
+                    {
+                        //SoundEngine.PlaySound(Audio. , player.position);
+                    }
+                }
+            }
+        }
+
         protected override void DrawSelf(SpriteBatch spriteBatch)
         {
             Main.hidePlayerCraftingMenu = true;
@@ -92,6 +154,7 @@ namespace Crystals.Common.UI
 
             if (slot.Item.IsAir)
             {
+                active = 0;
 
                 if (Main.LocalPlayer.GetModPlayer<PPlayer>().cursedcounter == 0)
                 {
@@ -109,12 +172,24 @@ namespace Crystals.Common.UI
             }
             else
             {
-                Main.LocalPlayer.GetModPlayer<PPlayer>().happened = true;
-                Main.LocalPlayer.GetModPlayer<PPlayer>().retract = true;
+                active = 1;
+                if (Main.LocalPlayer.GetModPlayer<PPlayer>().screaming == 0)
+                {
+                    Main.LocalPlayer.GetModPlayer<PPlayer>().happened = true;
+                    Main.LocalPlayer.GetModPlayer<PPlayer>().retract = true;
+                }
+
             }
 
-          
+            bool hoveringSlot = Main.mouseX > 960 - 22 && Main.mouseX < 960 + 22 && Main.mouseY > 530 - 26 && Main.mouseY < 530 + 22 && !PlayerInput.IgnoreMouseInterface;
             
+
+            if (Main.mouseLeft && hoveringSlot == true && !slot.Item.IsAir && !Main.mouseItem.IsAir)
+            {
+                Main.LocalPlayer.QuickSpawnItem(slot.Item.GetSource_FromThis(), slot.Item);
+            }
+            
+
             int price = Item.buyPrice(0, gold1, gold, 0);
             
 
@@ -146,9 +221,7 @@ namespace Crystals.Common.UI
             int refoY = SlotY + 85;
             bool hovering = Main.mouseX > refoX - 15 && Main.mouseX < refoX + 15 && Main.mouseY > refoY - 15 && Main.mouseY < refoY + 15 && !PlayerInput.IgnoreMouseInterface;
             Texture2D refotexture = TextureAssets.Reforge[hovering ? 1 : 0].Value;
-
             Main.spriteBatch.Draw(refotexture, new Vector2(refoX, refoY), null, Color.White, 0f, refotexture.Size() / 2f, 0.8f, SpriteEffects.None, 0f);
-
 
             if (!Main.mouseReforge)
             {
@@ -157,9 +230,16 @@ namespace Crystals.Common.UI
             int pricer = Item.buyPrice(0, gold1, gold, 0);
             Main.mouseReforge = true;
             Main.player[Main.myPlayer].mouseInterface = true;
+            
 
             if (Main.mouseLeftRelease && Main.mouseLeft && Main.player[Main.myPlayer].CanAfford(price) && ItemLoader.CanReforge(slot.Item) && hovering == true && Main.LocalPlayer.CountItem(ModContent.ItemType<CursedEnergy>(), curse) >= curse)
             {
+
+                Main.LocalPlayer.GetModPlayer<PPlayer>().screaming = 255;
+                Main.LocalPlayer.GetModPlayer<PPlayer>().happened = false;
+                Main.LocalPlayer.GetModPlayer<PPlayer>().happen = 0;
+                Main.LocalPlayer.GetModPlayer<PPlayer>().happens = 0;
+                Main.LocalPlayer.GetModPlayer<PPlayer>().cursedcounter = 1;
                 Main.player[Main.myPlayer].BuyItem(price);
                 var player = Main.LocalPlayer;
                 for (int i = 0; i < 58; i++)
@@ -261,7 +341,12 @@ namespace Crystals.Common.UI
                 slot.Item.stack = stack;
                 ItemLoader.PostReforge(slot.Item);
                 PopupText.NewText(PopupTextContext.RegularItemPickup, slot.Item, slot.Item.stack, true, false);
-                SoundEngine.PlaySound(in SoundID.Item37);
+                SoundEngine.PlaySound(Audio.Cursed, player.position);
+                if (Main.LocalPlayer.GetModPlayer<PPlayer>().screaming == 1)
+                {
+                    Main.LocalPlayer.GetModPlayer<PPlayer>().happened = true;
+                    Main.LocalPlayer.GetModPlayer<PPlayer>().retract = true;
+                }
             }
         }
 

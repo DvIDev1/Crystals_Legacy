@@ -18,6 +18,8 @@ namespace Crystals.Common.Systems
         public int happens = 0;
         public int cursedcounter = 0;
         public int CurseShake = 0;
+        public int screaming = 0;
+        public bool ShowSlot = false;
 
         public override void ModifyScreenPosition()
         {
@@ -30,6 +32,11 @@ namespace Crystals.Common.Systems
 
         public override void PostUpdate()
         {
+            if (screaming > 0)
+            {
+                screaming--;
+            }
+
             if (ShowCurse == true)
             {
                 Main.LocalPlayer.AddBuff(BuffID.Obstructed, 1 * 1);

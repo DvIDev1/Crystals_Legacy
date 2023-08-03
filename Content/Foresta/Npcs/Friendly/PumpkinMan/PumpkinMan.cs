@@ -6,12 +6,18 @@ using Terraria.GameContent.Personalities;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 {
     public class PumpkinMan : ModNPC
 	{
-		public const string name = "[c/5B33FF:Devastate]";
+        const int X = 958;
+		const int Y = 530;
+
+        Vector2 locc = new Vector2(X, Y);
+
+        public const string name = "[c/5B33FF:Devastate]";
 
         private static Profiles.StackedNPCProfile NPCProfile;
 	    
@@ -74,10 +80,28 @@ namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 			AnimationType = NPCID.Guide;
 		}
 
-        public override void SetChatButtons(ref string button, ref string button2)
+		public override void SetChatButtons(ref string button, ref string button2)
 		{
-            button = name;
-        }
+			button = name;
+		}
+
+		public override void AI()
+		{
+			if (Vector2.Distance(Main.LocalPlayer.Center, NPC.Center) > 128)
+			{
+				Main.playerInventory = true;
+				Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse = false;
+                Main.LocalPlayer.GetModPlayer<PPlayer>().ShowSlot = false;
+                Main.hidePlayerCraftingMenu = false;
+				Main.craftingHide = false;
+			}
+            if (Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse == true)
+			{
+				NPC.velocity.X = 0;
+				NPC.velocity.Y = 0;
+			}
+
+		}
 
 
 		public override void OnChatButtonClicked(bool firstButton, ref string shop)
@@ -88,9 +112,12 @@ namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
                 {
 					Main.CloseNPCChatOrSign();
 					Main.playerInventory = true;
-                    Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse = true;
+					Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse = true;
+                    Main.LocalPlayer.GetModPlayer<PPlayer>().ShowSlot = true;
                     Main.craftingHide = true;
 
+
+                    //SoundEngine.PlaySound(Audio. , player.position);
                     return;
                 }
             }

@@ -12,10 +12,10 @@ namespace Crystals.Common.Prefixes
 
         public override PrefixCategory Category => PrefixCategory.AnyWeapon;
 
-        
+
         public override float RollChance(Item item)
         {
-            return 5f;
+            return 0;
         }
 
         public override bool CanRoll(Item item)
