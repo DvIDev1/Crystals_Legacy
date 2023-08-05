@@ -1,21 +1,17 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using Terraria;
 using Terraria.ModLoader;
-using Crystals.Common.UI;
 
-namespace Crystals.Common.Prefixes
+namespace Crystals.Content.Other.Misc.Prefixes
 {
-    public class Bane : ModPrefix
+    public class Fulminated : ModPrefix
     {
 
         public override PrefixCategory Category => PrefixCategory.AnyWeapon;
 
-        /*public override float RollChance(Item item)
+        public override float RollChance(Item item)
         {
             return 0;
-        }*/
+        }
 
         public override bool CanRoll(Item item)
         {
@@ -25,10 +21,8 @@ namespace Crystals.Common.Prefixes
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            damageMult *= 1f + 1f;
-            critBonus -= 80;
-            useTimeMult -= 0.80f;
-            knockbackMult *= 1f - 0.80f;
+            useTimeMult -= 0.35f;
+            manaMult -= 0.35f;
         }
 
         public override void ModifyValue(ref float valueMult)

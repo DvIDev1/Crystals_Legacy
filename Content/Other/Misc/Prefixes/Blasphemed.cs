@@ -1,13 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using Terraria;
 using Terraria.ModLoader;
-using Crystals.Common.UI;
 
-namespace Crystals.Common.Prefixes
+namespace Crystals.Content.Other.Misc.Prefixes
 {
-    public class Whammy : ModPrefix
+    public class Blasphemed : ModPrefix
     {
 
         public override PrefixCategory Category => PrefixCategory.AnyWeapon;
@@ -25,8 +21,10 @@ namespace Crystals.Common.Prefixes
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            critBonus -= 100;
-            useTimeMult += 0.35f;
+            useTimeMult -= 30;
+            critBonus += 50;
+            damageMult += 0.15f;
+            shootSpeedMult += 0.20f;
         }
 
         public override void ModifyValue(ref float valueMult)

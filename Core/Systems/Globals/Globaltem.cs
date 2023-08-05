@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terraria.Localization;
 
-namespace Crystals.Common.Systems
+namespace Crystals.Core.Systems.Globals
 {
     public class GlobaItem : GlobalItem
     {

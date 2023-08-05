@@ -1,13 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using Terraria;
 using Terraria.ModLoader;
-using Crystals.Common.UI;
 
-namespace Crystals.Common.Prefixes
+namespace Crystals.Content.Other.Misc.Prefixes
 {
-    public class Overwhelming : ModPrefix
+    public class Cursed : ModPrefix
     {
 
         public override PrefixCategory Category => PrefixCategory.AnyWeapon;
@@ -26,20 +22,14 @@ namespace Crystals.Common.Prefixes
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            knockbackMult *= 1f + 0.50f;
-            critBonus -= 50;
+            damageMult *= 1f + 0.50f;
+            useTimeMult += 0.50f;
         }
 
         public override void ModifyValue(ref float valueMult)
         {
             valueMult *= 1f - 1f;
         }
-
-        public override void Apply(Item item)
-        {
-            //
-        }
-
-
+        
     }
 }

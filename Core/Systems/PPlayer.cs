@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.Audio;
 
-namespace Crystals.Common.Systems
+namespace Crystals.Core.Systems
 {
     public class PPlayer : ModPlayer
     {

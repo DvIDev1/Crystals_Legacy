@@ -8,10 +8,10 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.GameContent;
 using System.Collections.Generic;
-using Crystals.Common.Systems;
 using Terraria.ModLoader.Default;
 using ReLogic.Utilities;
 using Crystals.Content.Foresta.Items;
+using Crystals.Core.Systems;
 
 namespace Crystals.Common.UI
 {

@@ -5,7 +5,6 @@ using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
-using Crystals.Common.Systems;
 using System.Text;
 using Terraria.Audio;
 using Terraria.GameContent;
@@ -14,9 +13,10 @@ using Terraria.ID;
 using Terraria.UI.Chat;
 using System.Linq;
 using System;
-using Crystals.Common.Prefixes;
 using Crystals.Content.Foresta.Items;
-using Crystals.Common.Sfx;
+using Crystals.Content.Other.Misc.Prefixes;
+using Crystals.Core.Systems;
+using Crystals.Core.Systems.SoundSystem;
 using ReLogic.Utilities;
 
 namespace Crystals.Common.UI
@@ -341,7 +341,7 @@ namespace Crystals.Common.UI
                 slot.Item.stack = stack;
                 ItemLoader.PostReforge(slot.Item);
                 PopupText.NewText(PopupTextContext.RegularItemPickup, slot.Item, slot.Item.stack, true, false);
-                SoundEngine.PlaySound(Audio.Cursed, player.position);
+                SoundEngine.PlaySound(SoundSystem.Cursed, player.position);
                 if (Main.LocalPlayer.GetModPlayer<PPlayer>().screaming == 1)
                 {
                     Main.LocalPlayer.GetModPlayer<PPlayer>().happened = true;

@@ -1,13 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using Terraria;
-using Terraria.Localization;
+﻿using Terraria;
 using Terraria.ModLoader;
-using Crystals.Common.UI;
 
-namespace Crystals.Common.Prefixes
+namespace Crystals.Content.Other.Misc.Prefixes
 {
-    public class Maledicted : ModPrefix
+    public class Sacrileged : ModPrefix
     {
 
         public override PrefixCategory Category => PrefixCategory.AnyWeapon;
@@ -25,8 +21,9 @@ namespace Crystals.Common.Prefixes
 
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            scaleMult += 0.50f;
-            damageMult -= 0.20f;
+            damageMult *= 1f + 0.30f;
+            critBonus += 100;
+            useTimeMult -= 0.30f;
         }
 
         public override void ModifyValue(ref float valueMult)
