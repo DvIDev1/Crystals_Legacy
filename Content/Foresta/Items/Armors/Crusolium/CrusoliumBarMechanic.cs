@@ -21,7 +21,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
             panel.HAlign = panel.VAlign = 0.5f;
             panel.Width.Set(32, 0f);
             panel.Height.Set(8, 0f);
-            panel.Top.Set(50, 0f);
+            panel.Top.Set(40, 0f);
+            panel.Left.Set(-4, 0f);
 
             // SetRectangle(panel, left: 900f, top: 700f, width: 32, height: 8);
 
