@@ -17,7 +17,7 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
     {
 
         public static float charge = 0;
-        
+
         public override void PostUpdate()
         {
             if (hasCrusoSet())
