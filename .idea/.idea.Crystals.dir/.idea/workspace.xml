@@ -53,15 +53,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Common/Sfx/Audio.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/Sfx/Cursed.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/Sounds/UI/Cursed.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/Systems/Globals/Globaltem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Systems/Globals/Globaltem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/Systems/PPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Systems/PPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/UI/CursedSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/UI/CursedSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownMage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownMage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownPaladin.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Foresta/Npcs/Friendly/PumpkinMan/PumpkinMan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Npcs/Friendly/PumpkinMan/PumpkinMan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Systems/SoundSystem/SoundSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Systems/SoundSystem/SoundSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Systems/Globals/Globaltem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Globals/Globaltem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Crystals.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Crystals.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Localization/en-US.hjson" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/en-US.hjson" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,9 +99,9 @@
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Feracor/Feracor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Items/Weapons/Magic/Feracor/FeracorHeld.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/User/Documents/My Games/Terraria/tModLoader/ModSources/Crystals/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSword.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Nature_Slime/Nature_Slime.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Content/Foresta/Npcs/Enemies/Warriors/OvergrownWarrior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Globals/Globaltem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Buffs/Debuffs/Overgrown/Overgrown.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/Buffs/Resurrection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../CrystalsOld/CrystPlayer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -830,6 +831,9 @@
       <workItem from="1690574431941" duration="1864000" />
       <workItem from="1690880597166" duration="2638000" />
       <workItem from="1690965241121" duration="6968000" />
+      <workItem from="1691332312265" duration="6406000" />
+      <workItem from="1691687368238" duration="5082000" />
+      <workItem from="1691776191966" duration="1940000" />
     </task>
     <servers />
   </component>

@@ -81,6 +81,11 @@ Mods: {
 				DisplayName: Reanimate
 				Description: Mods.Crystals.Buffs.Reanimate.Description
 			}
+
+			Sagibuff: {
+				DisplayName: Sagibuff
+				Description: Mods.Crystals.Buffs.Sagibuff.Description
+			}
 		}
 
 		Items: {
@@ -376,6 +381,11 @@ Mods: {
 				DisplayName: Enchanted Timber Axe
 				Tooltip: ""
 			}
+
+			VoidEnergy: {
+				DisplayName: Void Energy
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
@@ -406,6 +416,7 @@ Mods: {
 			CrystalVFX.DisplayName: Crystal V F X
 			HostilePetal.DisplayName: Hostile Petal
 			CrusoSwordSwing2.DisplayName: Cruso Sword Swing2
+			Sagi.DisplayName: Sagi
 		}
 
 		NPCs: {

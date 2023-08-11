@@ -88,15 +88,14 @@ namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 
 		public override void AI()
 		{
-			if (Vector2.Distance(Main.LocalPlayer.Center, NPC.Center) > 128)
+
+			if (NPC.Distance(Main.LocalPlayer.Center) > 170)
 			{
-				Main.playerInventory = true;
 				Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse = false;
-                Main.LocalPlayer.GetModPlayer<PPlayer>().ShowSlot = false;
-                Main.hidePlayerCraftingMenu = false;
-				Main.craftingHide = false;
+				Main.LocalPlayer.GetModPlayer<PPlayer>().ShowSlot = false;
 			}
-            if (Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse == true)
+			
+			if (Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse == true)
 			{
 				NPC.velocity.X = 0;
 				NPC.velocity.Y = 0;
