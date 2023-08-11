@@ -452,7 +452,22 @@ Mods: {
 		}
 
 		Tiles.Banners.MapEntry: Banner
-		Prefixes.KratosPrefix.DisplayName: Kratos Prefix
+
+		Prefixes: {
+			KratosPrefix.DisplayName: Kratos Prefix
+			Bane.DisplayName: Bane
+			Blasphemed.DisplayName: Blasphemed
+			Cursed.DisplayName: Cursed
+			Devastating.DisplayName: Devastating
+			Fulminated.DisplayName: Fulminated
+			Hexed.DisplayName: Hexed
+			Maledicted.DisplayName: Maledicted
+			Obscenited.DisplayName: Obscenited
+			Overwhelming.DisplayName: Overwhelming
+			Sacrileged.DisplayName: Sacrileged
+			Whammy.DisplayName: Whammy
+		}
+
 		SaladWarning4: This salad doesn't belong to you, you will pay for that!
 		SaladWarning3: I Hope you choke on that
 		SaladWarning2: Someone's Kid Could have been in there
