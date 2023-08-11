@@ -10,7 +10,7 @@ using Terraria.UI;
 using Terraria.WorldBuilding;
 using static Terraria.ModLoader.ModContent;
 
-namespace Crystals
+namespace Crystals.Core.Systems.UIUpdate
 {
     public class UIUpdate : ModSystem
     {
