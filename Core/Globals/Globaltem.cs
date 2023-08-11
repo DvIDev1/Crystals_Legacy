@@ -1,12 +1,7 @@
-﻿using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
-using Terraria.ID;
-using System.Collections.Generic;
-using System.Linq;
-using Terraria.Localization;
 
-namespace Crystals.Core.Systems.Globals
+namespace Crystals.Core.Globals
 {
     public class GlobaItem : GlobalItem
     {
@@ -19,7 +14,5 @@ namespace Crystals.Core.Systems.Globals
 
             base.SetDefaults(item);
         }
-
-        
     }
 }

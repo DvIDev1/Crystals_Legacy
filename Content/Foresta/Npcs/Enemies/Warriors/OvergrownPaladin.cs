@@ -10,6 +10,7 @@ using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -472,6 +473,26 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             }
 
             return true;
+        }
+        
+        public override void OnKill()
+        {
+            Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                ModContent.GoreType<OvergrownWarriorsGore.WarriorHead>());
+            for (var i = 0; i < 2; i++)
+                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                    ModContent.GoreType<OvergrownWarriorsGore.WarriorLeg>());
+            Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                ModContent.GoreType<OvergrownWarriorsGore.WarriorArm>());
+            Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                ModContent.GoreType<OvergrownWarriorsGore.WarriorArm2>());
+            Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
+                ModContent.GoreType<OvergrownWarriorsGore.WarriorTorso>());
+            for (var i = 0; i < Main.rand.Next(10) + 1; i++)
+            {
+                var d = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, DustID.Bone, -NPC.velocity.X * 2);
+                d.noGravity = false;
+            }
         }
         
         public override void ModifyNPCLoot(NPCLoot npcLoot)
