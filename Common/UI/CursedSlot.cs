@@ -268,7 +268,61 @@ namespace Crystals.Common.UI
                 {
                     selection = Main.rand.Next(1, 9);
                 }
-                if (selection == 1)
+
+                switch (selection)
+                {
+                    case 1:
+                        slot.Item.Prefix(ModContent.PrefixType<Cursed>());
+                        break;
+                    
+                    case 2:
+                        slot.Item.Prefix(ModContent.PrefixType<Overwhelming>());
+                        break;
+                    
+                    case 3:
+                        slot.Item.Prefix(ModContent.PrefixType<Bane>());
+                        break;
+                    
+                    case 4:
+                        slot.Item.Prefix(ModContent.PrefixType<Devastating>());
+                        break;
+                    
+                    case 5:
+                        slot.Item.Prefix(ModContent.PrefixType<Hexed>());
+                        break;
+                    
+                    case 6:
+                        slot.Item.Prefix(ModContent.PrefixType<Obscenited>());
+                        break;
+                    
+                    case 7:
+                        slot.Item.Prefix(ModContent.PrefixType<Sacrileged>());
+                        break;
+                    
+                    case 8:
+                        slot.Item.Prefix(ModContent.PrefixType<Whammy>());
+                        break;
+                    
+                    case 9:
+                        if (slot.Item.DamageType == DamageClass.Melee)
+                        {
+                            slot.Item.Prefix(ModContent.PrefixType<Maledicted>());
+                        }
+
+                        if (slot.Item.DamageType == DamageClass.Magic)
+                        {
+                            slot.Item.Prefix(ModContent.PrefixType<Blasphemed>());
+                        }
+
+                        if (slot.Item.DamageType == DamageClass.Ranged)
+                        {
+                            slot.Item.Prefix(ModContent.PrefixType<Fulminated>());
+                        }
+                        
+                        break;
+                }
+                
+                /*if (selection == 1)
                 {
                     slot.Item.Prefix(ModContent.PrefixType<Cursed>());
                 }
@@ -311,7 +365,7 @@ namespace Crystals.Common.UI
                 if (selection == 9 && slot.Item.DamageType == DamageClass.Ranged)
                 {
                     slot.Item.Prefix(ModContent.PrefixType<Fulminated>());
-                }
+                }*/
                 gold = Main.rand.Next(0, 99);
                 if (Main.rand.NextBool(7))
                 {

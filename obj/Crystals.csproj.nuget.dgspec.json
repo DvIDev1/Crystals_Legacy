@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj": {}
+    "C:\\Users\\User\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj": {
+    "C:\\Users\\User\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
         "projectName": "Crystals",
-        "projectPath": "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
-        "packagesPath": "C:\\Users\\Thamy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
+        "packagesPath": "C:/Users/User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thamy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,12 +56,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.16, 6.0.16]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
