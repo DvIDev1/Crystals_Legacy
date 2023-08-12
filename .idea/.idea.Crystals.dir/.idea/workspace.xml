@@ -54,19 +54,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf9e5d5-4040-42fe-a1c0-dd1ba30ceab6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Crystals.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/UI/CursedSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/UI/CursedSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/CrusoChestplate_Body.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/CrusoChestplate_Body.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/CrusoGreaves_Legs.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/CrusoGreaves_Legs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/CrusoHelmet_Head.png" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/CrusoHelmet_Head.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Foresta/Items/Armors/Crusolium/Cruso_ArmorSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Crystals.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Crystals.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -839,7 +826,7 @@
       <workItem from="1691687368238" duration="5082000" />
       <workItem from="1691776191966" duration="1940000" />
       <workItem from="1691785679459" duration="3063000" />
-      <workItem from="1691858104857" duration="2032000" />
+      <workItem from="1691858104857" duration="2536000" />
     </task>
     <servers />
   </component>
