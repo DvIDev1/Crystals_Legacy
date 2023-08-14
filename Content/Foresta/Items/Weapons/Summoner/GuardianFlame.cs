@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,6 +15,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 {
     public class GuardianFlame : ModItem
     {
+        public override string Texture => AssetDirectory.Summoner + Name;
+
         public override void SetStaticDefaults() {
             ItemID.Sets.GamepadWholeScreenUseRange[Item.type] = true; // This lets the player target anywhere on the whole screen while using a controller.
             ItemID.Sets.LockOnIgnoresCollision[Item.type] = true;
@@ -52,6 +55,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
         class GuardianFlameBuff : ModBuff
         {
+            public override string Texture => AssetDirectory.Summoner + Name;
+
             public override void SetStaticDefaults()
             {
                 Main.buffNoSave[Type] = true;
@@ -72,7 +77,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
         class GuardianFlameSummon : ModProjectile
         {
-            
+            public override string Texture => AssetDirectory.Summoner + Name;
+
             public override void SetStaticDefaults() {
                 Main.projFrames[Projectile.type] = 7;
                 ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;

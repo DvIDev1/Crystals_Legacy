@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Crystals.Core;
 using Crystals.Helpers;
 using Humanizer;
 using Microsoft.Xna.Framework;
@@ -17,6 +18,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 {
     public class CrusoSword : ModItem
     {
+        public override string Texture => AssetDirectory.Melee + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Cruso Sword");
@@ -93,6 +96,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 
         class CrusoSwordSwing : ModProjectile
         {
+            public override string Texture => AssetDirectory.Melee + Name;
+
             /*private enum AttackType
             {
                 Down,

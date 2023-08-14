@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -9,6 +10,8 @@ namespace Crystals.Content.Foresta.Items
 {
     public class Leaf : ModItem
     {
+        public override string Texture => AssetDirectory.Items + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Essence of The Forest");

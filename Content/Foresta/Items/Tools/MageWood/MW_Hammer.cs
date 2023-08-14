@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -9,6 +10,8 @@ namespace Crystals.Content.Foresta.Items.Tools.MageWood
 {
     public class MW_Hammer : ModItem
     {
+        public override string Texture => AssetDirectory.Tools + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Mage Wood Axe");

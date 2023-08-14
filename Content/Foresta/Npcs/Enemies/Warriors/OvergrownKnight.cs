@@ -6,6 +6,7 @@ using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
 using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -20,6 +21,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 {
     public class OvergrownKnight : ModNPC
     {
+        public override string Texture => AssetDirectory.Warriors + Name;
+
         private bool charge;
 
         private bool chase;
@@ -154,9 +157,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 if (NPC.velocity != Vector2.Zero)
                 {
                     NPC.frameCounter += 1.0;
-                    var frame = (int) (NPC.frameCounter / 8.0);
+                    var frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = 1 + frame * frameHeight;
-                    if (frame >= Main.npcFrameCount[NPC.type] - 1 )
+                    if (frame >= Main.npcFrameCount[NPC.type] - 1)
                     {
                         NPC.frame.Y = 2 * frameHeight;
                         NPC.frameCounter = 8 * 2;
@@ -204,7 +207,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
         {
             if (target.direction == NPC.direction) target.AddBuff(BuffID.BrokenArmor, 60 * 10);
-            
+
             if (target.HasBuff<GreenMark>())
             {
                 modifiers.FinalDamage *= 1.20f;

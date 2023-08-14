@@ -1,4 +1,5 @@
 using Crystals.Content.Other.Misc.Rarity;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,6 +12,8 @@ namespace Crystals.Content.Foresta.Items
 {
     public class GoldenLeaf : ModItem
     {
+        public override string Texture => AssetDirectory.Items + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Golden Leaf");

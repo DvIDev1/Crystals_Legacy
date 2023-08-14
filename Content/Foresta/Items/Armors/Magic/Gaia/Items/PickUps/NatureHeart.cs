@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -9,6 +10,7 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia.Items.PickUps
 {
     public class NatureHeart : ModItem
     {
+        public override string Texture => AssetDirectory.GaiaItems + Name;
 
         public override void SetDefaults()
         {

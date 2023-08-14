@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Crystals.Core;
 using Crystals.Core.Systems.CameraShake;
 using Crystals.Core.Systems.TrailSystem;
 using Crystals.Helpers;
@@ -16,6 +17,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Photosynthesia
 {
     public class Photosynthesia : ModItem
     {
+        public override string Texture => AssetDirectory.Magic + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Photosynthesia");
@@ -119,7 +122,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Photosynthesia
 
         class MagicLeaves : ModProjectile
         {
-            
+            public override string Texture => AssetDirectory.Magic + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Magic Leaves");

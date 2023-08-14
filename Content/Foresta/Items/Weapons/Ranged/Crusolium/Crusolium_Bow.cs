@@ -8,12 +8,15 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
 using Crystals.Core.Systems.SoundSystem;
+using Crystals.Core;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 {
     //STOP USING UNDERSCORES
     public class Crusolium_Bow : ModItem
     {
+        public override string Texture => AssetDirectory.Ranged + Name;
+
         //Why did you still have this? -Photonic0
         //public static int hits;
         public override void SetStaticDefaults()
@@ -70,7 +73,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 
     class CrusoliumArrow : ModProjectile
     {
-        
+        public override string Texture => AssetDirectory.Ranged + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Crusolium Arrow");
@@ -152,6 +156,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 
     public class GreenMark : ModBuff
     {
+        public override string Texture => AssetDirectory.Ranged + Name;
+
         public override void Update(Player player, ref int buffIndex) => UpdateVFX(player);
         public override void Update(NPC npc, ref int buffIndex) => UpdateVFX(npc);
 

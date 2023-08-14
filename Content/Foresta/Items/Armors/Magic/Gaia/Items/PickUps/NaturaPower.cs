@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -11,6 +12,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia.Items.PickUps
 {
     public class NaturaPower : ModItem
     {
+        public override string Texture => AssetDirectory.GaiaItems + Name;
+
         public override void SetStaticDefaults()
         {
             Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(6, 4));
@@ -48,6 +51,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia.Items.PickUps
 
         public class NatureBoost : ModBuff
         {
+            public override string Texture => AssetDirectory.GaiaItems + Name;
+
             public override void Update(Player player, ref int buffIndex)
             {
                 player.GetCritChance(DamageClass.Magic) += 10f;

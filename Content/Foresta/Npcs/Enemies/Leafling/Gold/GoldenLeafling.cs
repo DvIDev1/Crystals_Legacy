@@ -1,4 +1,5 @@
 using Crystals.Content.Foresta.Items;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -13,6 +14,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling.Gold
 {
     public class GoldenLeafling : ModNPC
     {
+        public override string Texture => AssetDirectory.Gold_Leafling + Name;
+
         private bool fast;
 
         public override void SetStaticDefaults()
@@ -81,7 +84,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling.Gold
         {
             if (fast)
             {
-                modifiers.FinalDamage.Flat += (int) NPC.velocity.X;
+                modifiers.FinalDamage.Flat += (int)NPC.velocity.X;
             }
         }
 
@@ -116,6 +119,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling.Gold
 
         private class LeaflingGoldGore1 : ModGore
         {
+            public override string Texture => AssetDirectory.Gold_Leafling + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -129,6 +134,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling.Gold
 
         private class LeaflingGoldGore2 : ModGore
         {
+            public override string Texture => AssetDirectory.Gold_Leafling + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -142,6 +149,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling.Gold
 
         private class LeaflingGoldGore : ModGore
         {
+            public override string Texture => AssetDirectory.Gold_Leafling + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;

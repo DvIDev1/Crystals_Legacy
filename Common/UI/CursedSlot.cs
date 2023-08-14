@@ -25,7 +25,6 @@ namespace Crystals.Common.UI
     {
         private UIElement area;
         private Slot slot;
-
         int gold;
         int gold1;
         int curse;

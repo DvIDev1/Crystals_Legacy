@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Crystals.Content.Foresta.Items;
-using Crystals.Content.Foresta.Items.Accessories.Crusolium;
+using Crystals.Content.Foresta.Items.Accessories;
+using Crystals.Content.Foresta.Items.Armors.Crusolium;
 using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
 using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -21,6 +23,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 {
     public class OvergrownPaladin : ModNPC
     {
+        public override string Texture => AssetDirectory.Warriors + Name;
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 29;
@@ -187,8 +191,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                     target = player;
                     if (!bashing)
                     {
-                        StartBash(new Vector2(player.Center.X + 400 * Math.Sign(target.Center.X - NPC.Center.X) , player.Center.Y));
-                    }else Bash();
+                        StartBash(new Vector2(player.Center.X + 400 * Math.Sign(target.Center.X - NPC.Center.X), player.Center.Y));
+                    }
+                    else Bash();
                     if (Timer >= 120)
                     {
                         bashing = false;
@@ -232,7 +237,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                         if (NPC.Distance(target.Center) <= 200)
                         {
                             currentAttack = States.Bash;
-                        }else if (GetNearestWarrior().Distance(target.Center) >= 700)
+                        }
+                        else if (GetNearestWarrior().Distance(target.Center) >= 700)
                         {
                             currentAttack = States.Walk;
                         }
@@ -271,7 +277,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         private void Bash()
         {
-            
+
             NPC.spriteDirection = NPC.direction = Math.Sign(target.Center.X - NPC.Center.X);
             walkDir = Math.Sign(target.Center.X - NPC.Center.X);
 
@@ -290,23 +296,23 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
             NPC.SuperArmor = true;
             NPC.knockBackResist = 0.3f;
-            
+
             NPC.velocity.X += walkDir * 0.50f;
             NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, -1, 1);
         }
-        
+
         private void Guard()
         {
-            if (!GetNearestWarrior().Equals(new Vector2(0 ,0)))
+            if (!GetNearestWarrior().Equals(new Vector2(0, 0)))
             {
-                
+
                 NPC.SuperArmor = true;
                 NPC.knockBackResist = 0.3f;
                 NPC.spriteDirection = NPC.direction = Math.Sign(target.Center.X - NPC.Center.X);
                 int dir = Math.Sign(target.Center.X - GetNearestWarrior().X);
-                Vector2 dest = new Vector2(GetNearestWarrior().X + 100 * dir , GetNearestWarrior().Y);
+                Vector2 dest = new Vector2(GetNearestWarrior().X + 100 * dir, GetNearestWarrior().Y);
                 walkDir = Math.Sign(dest.X - NPC.Center.X);
-                    
+
                 NPC.velocity.X += walkDir * 0.10f;
                 if (NPC.Distance(dest) > 25)
                 {
@@ -316,7 +322,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 {
                     NPC.velocity.X = Vector2.Zero.X;
                 }
-                
+
             }
             else
             {
@@ -345,10 +351,10 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             {
                 if (NPC.velocity != Vector2.Zero)
                 {
-                    var frame = (int) (NPC.frameCounter / 8.0);
+                    var frame = (int)(NPC.frameCounter / 8.0);
                     switch (currentAttack)
                     {
-                        
+
                         case States.Walk:
                             NPC.frameCounter += 1.0;
                             NPC.frame.Y = 1 + frame * frameHeight;
@@ -388,7 +394,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                             break;
                     }
                 }
-            }else
+            }
+            else
             {
                 if (currentAttack != States.Guard)
                 {
@@ -397,7 +404,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 else
                 {
                     NPC.frame.Y = (Main.npcFrameCount[NPC.type] - 4) * frameHeight;
-                    NPC.frameCounter = 8*25;
+                    NPC.frameCounter = 8 * 25;
                 }
             }
         }
@@ -444,17 +451,17 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                     break;
             }
         }
-        
+
         public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            if (currentAttack is (States.Bash or States.Rush) && NPC.velocity != Vector2.Zero)
+            if (currentAttack is States.Bash or States.Rush && NPC.velocity != Vector2.Zero)
             {
-            
+
                 Main.instance.LoadNPC(NPC.type);
                 Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
-                
+
                 SpriteEffects effect = SpriteEffects.None;
-            
+
                 if (NPC.spriteDirection != -1)
                 {
                     effect = SpriteEffects.FlipHorizontally;
@@ -463,10 +470,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 {
                     effect = SpriteEffects.None;
                 }
-            
+
                 Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
-                for (int k = 0; k < NPC.oldPos.Length; k++) {
-                    Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
+                for (int k = 0; k < NPC.oldPos.Length; k++)
+                {
+                    Vector2 drawPos = NPC.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, NPC.gfxOffY);
                     Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
                     Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
                 }
@@ -474,7 +482,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
             return true;
         }
-        
+
         public override void OnKill()
         {
             Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
@@ -494,7 +502,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 d.noGravity = false;
             }
         }
-        
+
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 4, 1, 3));
@@ -506,7 +514,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             npcLoot.Add(new CommonDrop(ModContent.ItemType<CrusoliumFragment>(), 10));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<CrusoShield>(), 8));
         }
-        
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (NPC.downedBoss1)
@@ -514,6 +522,6 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                     return SpawnCondition.OverworldNight.Chance * 0.25f;
             return base.SpawnChance(spawnInfo);
         }
-        
+
     }
 }

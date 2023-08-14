@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -8,6 +9,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
     {
         public class WarriorHead : ModGore
         {
+            public override string Texture => AssetDirectory.Warriors + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -21,6 +24,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         public class WarriorLeg : ModGore
         {
+            public override string Texture => AssetDirectory.Warriors + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -34,6 +39,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         public class WarriorTorso : ModGore
         {
+            public override string Texture => AssetDirectory.Warriors + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -47,6 +54,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         public class WarriorArm : ModGore
         {
+            public override string Texture => AssetDirectory.Warriors + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -60,6 +69,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         public class WarriorArm2 : ModGore
         {
+            public override string Texture => AssetDirectory.Warriors + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -73,6 +84,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         public class WarriorSword : ModGore
         {
+            public override string Texture => AssetDirectory.Warriors + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;

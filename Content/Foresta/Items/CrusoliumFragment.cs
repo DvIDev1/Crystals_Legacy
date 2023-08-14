@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,12 +12,13 @@ namespace Crystals.Content.Foresta.Items;
 
 public class CrusoliumFragment : ModItem
 {
-    
+    public override string Texture => AssetDirectory.Items + Name;
+
     public override void SetStaticDefaults()
     {
         CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 10;
     }
-        
+
     public override void SetDefaults()
     {
         Item.maxStack = 99;
@@ -24,9 +26,9 @@ public class CrusoliumFragment : ModItem
         Item.height = 22;
         Item.rare = ItemRarityID.Green;
         Item.material = true;
-        Item.value = ValueHelper.GetCoinValue(0 ,0 , 1 , 25);
+        Item.value = ValueHelper.GetCoinValue(0, 0, 1, 25);
     }
-    
+
     public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor,
         float rotation, float scale, int whoAmI)
     {
@@ -49,5 +51,5 @@ public class CrusoliumFragment : ModItem
             0f
         );
     }
-    
+
 }

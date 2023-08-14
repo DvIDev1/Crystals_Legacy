@@ -1,5 +1,6 @@
 using Crystals.Content.Foresta.Items;
 using Crystals.Content.Foresta.Items.Banners;
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -12,6 +13,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Slime
 {
     public class Nature_Slime : ModNPC
     {
+        public override string Texture => AssetDirectory.NatureSlime + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Nature Slime");

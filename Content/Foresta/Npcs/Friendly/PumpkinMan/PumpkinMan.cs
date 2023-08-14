@@ -8,11 +8,14 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Crystals.Core;
 
 namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 {
     public class PumpkinMan : ModNPC
 	{
+        public override string Texture => AssetDirectory.PumpkinMan + Name;
+
         const int X = 958;
 		const int Y = 530;
 

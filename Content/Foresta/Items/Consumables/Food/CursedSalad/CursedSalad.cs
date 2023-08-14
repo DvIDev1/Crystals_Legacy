@@ -1,5 +1,6 @@
 
 using System;
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -10,6 +11,7 @@ namespace Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad
 {
     public class CursedSalad : ModItem
     {
+        public override string Texture => AssetDirectory.Consumables + Name; 
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Cursed Salad");

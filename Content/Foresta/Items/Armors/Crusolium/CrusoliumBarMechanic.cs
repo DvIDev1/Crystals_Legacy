@@ -16,7 +16,7 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
         private Color gradientC;
         public override void OnInitialize()
         {
-            panel = new UIImage(Request<Texture2D>("Crystals/Content/Foresta/Items/Armors/Crusolium/CrusoliumBarMechanic", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value);
+            panel = new UIImage(Request<Texture2D>("Crystals/Assets/Foresta/Items/Armors/Crusolium/CrusoliumBarMechanic", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value);
             panel.SetPadding(0);
             panel.HAlign = panel.VAlign = 0.5f;
             panel.Width.Set(32, 0f);

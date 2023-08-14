@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -7,6 +8,7 @@ namespace Crystals.Content.Foresta.Buffs.NaturePower
 {
     public class Reanimate : ModBuff
     {
+        public override string Texture => AssetDirectory.Buffs + Name;
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Crystal of the Forest");

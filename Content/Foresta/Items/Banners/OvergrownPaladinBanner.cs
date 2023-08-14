@@ -1,4 +1,5 @@
 using Crystals.Content.Other.Misc.Rarity;
+using Crystals.Core;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
@@ -6,6 +7,8 @@ namespace Crystals.Content.Foresta.Items.Banners;
 
 public class OvergrownPaladinBanner : ModItem
 {
+    public override string Texture => AssetDirectory.Banners + Name;
+
     public override void SetStaticDefaults()
     {
         // DisplayName.SetDefault("Nature Slime Banner");

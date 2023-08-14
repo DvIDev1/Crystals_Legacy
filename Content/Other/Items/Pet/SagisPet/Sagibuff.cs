@@ -1,4 +1,6 @@
-﻿using Terraria;
+﻿using Crystals.Content.Foresta.Items.Accessories;
+using Crystals.Core;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace Crystals.Content.Other.Items.Pet.SagisPet;
@@ -6,7 +8,9 @@ namespace Crystals.Content.Other.Items.Pet.SagisPet;
 // You can find a simple pet example in ExampleMod\Content\Pets\ExamplePet
 public class Sagibuff : ModBuff
 {
-	public override void SetStaticDefaults()
+    public override string Texture => AssetDirectory.Pet + Name;
+
+    public override void SetStaticDefaults()
 	{
 		Main.buffNoTimeDisplay[Type] = true;
 		Main.vanityPet[Type] = true;

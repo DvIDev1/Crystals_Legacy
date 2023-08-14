@@ -1,4 +1,5 @@
 using System;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -86,7 +87,7 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
         [AutoloadEquip(EquipType.Head)]
         public class CrusoHelmet : ModItem
         {
-            
+            public override string Texture =>AssetDirectory.CrusoliumArmor + Name; 
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Crusolium Helmet");
@@ -127,7 +128,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
         [AutoloadEquip(EquipType.Body)]
         public class CrusoChestplate: ModItem
         {
-            
+            public override string Texture => AssetDirectory.CrusoliumArmor + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Crusolium Chestplate");
@@ -166,7 +168,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
         [AutoloadEquip(EquipType.Legs)]
         public class CrusoGreaves : ModItem
         {
-            
+            public override string Texture => AssetDirectory.CrusoliumArmor + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Crusolium Greaves");
@@ -203,6 +206,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
 
         class Empowered : ModBuff
         {
+            public override string Texture => AssetDirectory.CrusoliumArmor + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Empowered");

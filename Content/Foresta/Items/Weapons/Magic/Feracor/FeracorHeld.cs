@@ -16,11 +16,14 @@ using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Crystals.Content.Foresta.Items.Weapons.Magic.Feracor;
+using Crystals.Core;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Magic.Feracor
 {
     public class FeracorHeld : ModProjectile
     {
+        public override string Texture => AssetDirectory.Magic + Name;
+
         private float AimResponsiveness = 1f;
         private bool timerUp = false;
 

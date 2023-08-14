@@ -7,6 +7,7 @@ using Crystals.Content.Foresta.Npcs.Enemies.Nature_Slime;
 using Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie;
 using Crystals.Content.Foresta.Npcs.Enemies.Sunny;
 using Crystals.Content.Foresta.Npcs.Enemies.Warriors;
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -19,6 +20,7 @@ namespace Crystals.Content.Misc.Tiles
 {
     public class Banners : ModTile
     {
+        public override string Texture => AssetDirectory.Tiles + Name;
         public override void SetStaticDefaults()
         {
             Main.tileFrameImportant[Type] = true;

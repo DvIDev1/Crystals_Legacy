@@ -1,5 +1,6 @@
 using Crystals.Content.Foresta.Items;
 using Crystals.Content.Foresta.Items.Banners;
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -14,6 +15,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling
     public class Leafling : ModNPC
     {
         private bool fast;
+        public override string Texture => AssetDirectory.Leafling + Name;
 
         public override void SetStaticDefaults()
         {
@@ -87,7 +89,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling
         {
             if (fast)
             {
-                modifiers.FinalDamage.Flat += (int) NPC.velocity.X;
+                modifiers.FinalDamage.Flat += (int)NPC.velocity.X;
                 target.AddBuff(BuffID.Poisoned, 60 * 10);
             }
         }
@@ -123,6 +125,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling
 
         private class LeaflingWoodGore1 : ModGore
         {
+            public override string Texture => AssetDirectory.Leafling + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -136,6 +140,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling
 
         private class LeaflingWoodGore2 : ModGore
         {
+            public override string Texture => AssetDirectory.Leafling + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;
@@ -149,6 +155,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling
 
         private class LeaflingLeafGore : ModGore
         {
+            public override string Texture => AssetDirectory.Leafling + Name;
+
             public override void OnSpawn(Gore gore, IEntitySource source)
             {
                 gore.behindTiles = false;

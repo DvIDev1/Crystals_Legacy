@@ -1,4 +1,3 @@
-
 using Crystals.Content.Foresta.Buffs.NaturePower;
 using Crystals.Content.Foresta.Items.Armors.Magic.Gaia.Items.PickUps;
 using Microsoft.Xna.Framework;

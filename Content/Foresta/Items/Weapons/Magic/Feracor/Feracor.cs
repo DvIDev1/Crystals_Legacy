@@ -1,4 +1,5 @@
 using System;
+using Crystals.Core;
 using Crystals.Core.Systems.SoundSystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
@@ -16,6 +17,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Feracor
 {
     public class Feracor : ModItem
     {
+        public override string Texture => AssetDirectory.Magic + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Feracor");
@@ -163,6 +166,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Feracor
 
         public class EnergyBlast : ModProjectile
         {
+            public override string Texture => AssetDirectory.Magic + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Energy Blast");
@@ -217,6 +222,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Feracor
 
         public class BigEnergyBlast : ModProjectile
         {
+            public override string Texture => AssetDirectory.Magic + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Big Energy Blast");

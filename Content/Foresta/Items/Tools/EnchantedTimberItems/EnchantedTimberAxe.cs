@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Crystals.Helpers;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -7,6 +8,8 @@ namespace Crystals.Content.Foresta.Items.Tools.EnchantedTimberItems
 {
     public class EnchantedTimberAxe : ModItem
     {
+
+        public override string Texture => AssetDirectory.Tools + Name;
         public override void SetStaticDefaults()
         {
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

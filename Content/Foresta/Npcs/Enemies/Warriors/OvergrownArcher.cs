@@ -8,6 +8,7 @@ using Crystals.Content.Foresta.Items.Banners;
 using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
 using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
+using Crystals.Core;
 using Crystals.Core.Systems.SoundSystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
@@ -27,6 +28,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 {
     public class OvergrownArcher : ModNPC
     {
+        public override string Texture => AssetDirectory.Warriors + Name;
+
         private bool aiming;
 
         public float AimTime = 2 * 60;
@@ -40,7 +43,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             get => NPC.ai[1];
             set => NPC.ai[1] = value;
         }
-        
+
         public float FleeTime
         {
             get => NPC.ai[0];
@@ -112,7 +115,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             {
                 CancelAiming();
             }
-            
+
             if (!target.dead && target.active)
             {
                 NPC.spriteDirection = NPC.direction = Math.Sign(target.Center.X - NPC.Center.X);
@@ -129,9 +132,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
             grounded = NPC.velocity.Y == 0;
 
-            
-            
-            if (NPC.Distance(target.Center + target.velocity) <= 750 
+
+
+            if (NPC.Distance(target.Center + target.velocity) <= 750
                 && NPC.Distance(target.Center + target.velocity) >= 250 && grounded && !Fleeing && !target.dead)
             {
                 StartAiming();
@@ -143,7 +146,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             }
 
             if (FleeTime >= 0) { FleeTime--; }
-            
+
 
             if (aiming) UpdateAiming();
 
@@ -180,11 +183,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             npcLoot.Add(new CommonDrop(ModContent.ItemType<CrusoliumFragment>(), 10));
             npcLoot.Add(new CommonDrop(ModContent.ItemType<Crusolium_Bow>(), 19));
         }
-        
+
         public void UpdateAiming()
         {
             AimProgress++;
-            if (AimProgress == 60f) 
+            if (AimProgress == 60f)
             {
                 SoundEngine.PlaySound(SoundSystem.ChargeBow);
             }
@@ -275,32 +278,36 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             else
             {
                 List<Vector2> positions = new List<Vector2>();
-                positions.AddRange(new[] { NPC.Top , NPC.TopLeft , NPC.TopRight , NPC.BottomLeft , 
+                positions.AddRange(new[] { NPC.Top , NPC.TopLeft , NPC.TopRight , NPC.BottomLeft ,
                     NPC.BottomRight , NPC.Left , NPC.Right , NPC.Bottom});
                 Player target = Main.player[NPC.target];
                 Vector2 targetHittingPoint = NPC.DirectionTo(target.Top) * 32f;
-                if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint , positions).Equals(NPC.Top))
+                if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.Top))
                 {
                     NPC.frame.Y = 19 * frameHeight;
-                }else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint  , positions).Equals(NPC.TopRight) 
-                          || Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint  , positions).Equals(NPC.TopLeft))
+                }
+                else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.TopRight)
+                          || Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.TopLeft))
                 {
                     NPC.frame.Y = 18 * frameHeight;
-                }else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint  , positions).Equals(NPC.Left) 
-                          || Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint  , positions).Equals(NPC.Right))
+                }
+                else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.Left)
+                          || Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.Right))
                 {
                     NPC.frame.Y = 17 * frameHeight;
-                }else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint , positions).Equals(NPC.BottomLeft)
-                          || Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint , positions).Equals(NPC.BottomRight))
+                }
+                else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.BottomLeft)
+                          || Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.BottomRight))
                 {
                     NPC.frame.Y = 16 * frameHeight;
-                }else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint , positions).Equals(NPC.Bottom))
+                }
+                else if (Pathfinding.GetNearestPos(NPC.Center + targetHittingPoint, positions).Equals(NPC.Bottom))
                 {
                     NPC.frame.Y = 15 * frameHeight;
                 }
             }
         }
-        
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (NPC.downedBoss1)
@@ -337,7 +344,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 modifiers.FinalDamage *= 1.20f;
             }
         }
-        
+
         public override void OnKill()
         {
             Gore.NewGore(new EntitySource_Death(NPC), NPC.position, -NPC.velocity,
@@ -360,6 +367,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
         private class HostileCrusolium_Arrow : ModProjectile
         {
+            public override string Texture => AssetDirectory.Warriors + Name;
+
             public int time;
 
             public override void SetStaticDefaults()
@@ -383,7 +392,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 
             public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
             {
-                
+
                 if (target.HasBuff(ModContent.BuffType<GreenMark>()))
                 {
                     modifiers.FinalDamage *= 1.5f;
@@ -429,7 +438,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                     var drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin +
                                   new Vector2(0f, Projectile.gfxOffY);
                     var color = Projectile.GetAlpha(lightColor) *
-                                ((Projectile.oldPos.Length - k) / (float) Projectile.oldPos.Length);
+                                ((Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
                     Main.EntitySpriteDraw(texture, drawPos, null, color, Projectile.rotation, drawOrigin,
                         Projectile.scale, SpriteEffects.None, 0);
                 }

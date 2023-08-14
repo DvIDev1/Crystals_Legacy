@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Crystals.Content.Foresta.Items.Armors.Magic.Gaia.Items.PickUps;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -100,6 +101,7 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
         [AutoloadEquip(EquipType.Head)]
         public class Gaia_Hat : ModItem
         {
+            public override string Texture => AssetDirectory.GaiaArmor + Name; 
             public float armorPen = 0.03f; //Armor Penetration the Player gets when this Armor Piece gets Equipped
             public float MagicDamage = 0.02f; //Increased Magic damage by Percent
             public int manaIncrease = 10; //Increased Mana when Armor is Equipped
@@ -156,6 +158,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
         [AutoloadEquip(EquipType.Body)]
         public class Gaia_Robe : ModItem
         {
+            public override string Texture => AssetDirectory.GaiaArmor + Name;
+
             public float armorPen = 0.05f; //Armor Penetration the Player gets when this Armor Piece gets Equipped
             public float MagicDamage = 0.05f; //Increased Magic damage by Percent
             public int manaIncrease = 15; //Increased Mana when Armor is Equipped
@@ -214,6 +218,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
         [AutoloadEquip(EquipType.Legs)]
         public class Gaia_Skirt : ModItem
         {
+            public override string Texture => AssetDirectory.GaiaArmor + Name;
+
             public float armorPen = 0.05f; //Armor Penetration the Player gets when this Armor Piece gets Equipped
             public float MagicDamage = 0.03f; //Increased Magic damage by Percent
             public int manaIncrease = 15; //Increased Mana when Armor is Equipped
@@ -271,6 +277,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
 
         private class LeafCooldown : ModBuff
         {
+            public override string Texture => AssetDirectory.GaiaArmor + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Gaia Passive Cooldown");
@@ -282,6 +290,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
 
         private class LeafActive : ModBuff
         {
+            public override string Texture => AssetDirectory.GaiaArmor + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Gaia Passive");
@@ -292,6 +302,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia
 
         private class Flore : ModProjectile
         {
+            public override string Texture => AssetDirectory.GaiaArmor + Name;
+
             public override void SetStaticDefaults()
             {
                 Main.projFrames[Projectile.type] = 6;

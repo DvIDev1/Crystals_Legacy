@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -13,6 +14,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Sunwirl
 {
     public class Sunwirl : ModItem
     {
+        public override string Texture => AssetDirectory.Melee + Name;
+
         public override void SetStaticDefaults() {
             // DisplayName.SetDefault("Sunwirl");
             // Tooltip.SetDefault("An Yo-Yo infused with Sun Energy ignites enemies");
@@ -61,7 +64,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Sunwirl
 
         class SunwirlYoyo : ModProjectile
         {
-            public override string Texture => "Crystals/Content/Foresta/Items/Weapons/Melee/Sunwirl/Sunwirl";
+            public override string Texture => AssetDirectory.Melee + "Sunwirl";
 
             public override void SetStaticDefaults() {
                 ProjectileID.Sets.TrailingMode[Type] = 2; 
@@ -146,6 +149,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Sunwirl
 
             class Flammable : ModBuff
             {
+                public override string Texture => AssetDirectory.Melee + Name;
+
                 public override void SetStaticDefaults()
                 {
                     // DisplayName.SetDefault("Flammable");
@@ -192,7 +197,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Sunwirl
 
                 class Smoke : ModProjectile
                 {
-                    
+                    public override string Texture => AssetDirectory.Melee + Name;
+
                     public override void SetStaticDefaults()
                     {
                         Main.projFrames[Projectile.type] = 4;
@@ -240,6 +246,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Sunwirl
                 
                 class White_Smoke : ModProjectile
                 {
+                    public override string Texture => AssetDirectory.Melee + Name;
+
                     public override void SetStaticDefaults()
                     {
                         Main.projFrames[Projectile.type] = 4;

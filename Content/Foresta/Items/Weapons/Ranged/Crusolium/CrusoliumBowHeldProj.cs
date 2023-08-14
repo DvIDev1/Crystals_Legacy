@@ -12,6 +12,7 @@ using System.IO;
 using Crystals.Core.Systems.CameraShake;
 using Crystals.Helpers;
 using Terraria.Audio;
+using Crystals.Core;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 {
@@ -24,6 +25,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
     /// </summary>
     public class CrusoliumBowHeldProj : ModProjectile
     {
+        public override string Texture => AssetDirectory.Ranged + Name;
+
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI) => overPlayers.Add(index);
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox) => false;
         //public override string Texture => "Crystals/Content/Foresta/Items/Weapons/Ranged/CrusoliumbowHeldProj";

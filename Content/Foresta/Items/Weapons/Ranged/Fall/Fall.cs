@@ -1,4 +1,5 @@
 using System;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,6 +15,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Fall
 {
     public class Fall : ModItem
     {
+        public override string Texture => AssetDirectory.Ranged + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Fall");
@@ -123,6 +126,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Fall
 
         class NeonArrow : ModProjectile
         {
+            public override string Texture => AssetDirectory.Ranged + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Neon Arrow");
@@ -193,6 +198,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Fall
 
         class LeafArrow : ModProjectile
         {
+            public override string Texture => AssetDirectory.Ranged + Name;
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Leaf Arrow");

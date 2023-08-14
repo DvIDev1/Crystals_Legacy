@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Crystals.Content.Foresta.Items.Banners;
+using Crystals.Core;
 using Crystals.Core.Systems.CameraShake;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
@@ -23,13 +24,15 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 {
     public class EnemyPumpkin : ModNPC
     {
-        
+        public override string Texture => AssetDirectory.EnemyPumpkin + Name;
+
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 21;
-            
+
             NPCID.Sets.SpawnsWithCustomName[Type] = true;
-                
+
             NPCID.Sets.TrailCacheLength[NPC.type] = 6;
             NPCID.Sets.TrailingMode[NPC.type] = 3;
         }
@@ -48,27 +51,27 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             NPC.noGravity = false;
             NPC.noTileCollide = false;
             NPC.knockBackResist = 0.8f;
-            
+
             Banner = Type;
             BannerItem = ModContent.ItemType<EnemyPumpkinBanner>();
         }
-        
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
             {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.NightTime,
                 new FlavorTextBestiaryInfoElement(
-                    "An Friendly Ally go near so it will help you!")
+                    "A Friendly Ally! go near so it will help you!")
             });
         }
-        
-        
-        
+
+
+
         public override List<string> SetNPCNameList()
         {
             List<string> names = new List<string>();
-            names.AddRange( new []{ "Pumk" , "Pumpkin Patroller" , "Gerald" , "Walter"  , "Hugh" ,  
+            names.AddRange(new[]{ "Pumk" , "Pumpkin Patroller" , "Gerald" , "Walter"  , "Hugh" ,
                 "Hughie" ,  "Highie" , "Laboo" , "Pumpkin Grimace" , "Hap" , "Robert" , "Pumpkin Pal" ,  "Crawler pumpkin" ,
                 "Foxy the Pirate Pumpkin" ,  "Squashler" ,  "Gex" ,  "Baleful Crop" ,  "Pimpnaut" , "Pumpkin" ,
                 "Pummie" ,  "Pumpky Pie" , "Puma" , "S(cream)" , "Biden the Biteful Bait"
@@ -83,7 +86,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
         private bool hostile = false;
 
         private bool attacking = false;
-        
+
         private Vector2 targetPos = Vector2.Zero;
 
         private Vector2 attackStartPos = Vector2.Zero;
@@ -94,7 +97,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
         public override void AI()
         {
-            
+
             #region Player Detection
 
             NPC.TargetClosest();
@@ -129,8 +132,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 }
 
             }
-            
-            
+
+
             #endregion
 
             #region Behaviour
@@ -140,21 +143,21 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
                 if (!attacking)
                 {
-                    StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 1.5f));
+                    StartAttack(new Vector2(target.Center.X + target.velocity.X, target.Center.Y - 200 + target.velocity.Y / 1.5f));
                 }
                 else
                 {
                     if (!stomp)
                     {
                         targetPos = new Vector2(target.Center.X + target.velocity.X,
-                            (target.Center.Y - 200) + target.velocity.Y);
+                            target.Center.Y - 200 + target.velocity.Y);
                         FloatAttack();
                     }
                     else
                     {
                         if (!isFalling)
                         {
-                            StartStompAttack(new Vector2(target.Center.X , NPC.Center.Y + 2000f));
+                            StartStompAttack(new Vector2(target.Center.X, NPC.Center.Y + 2000f));
                         }
                         else
                         {
@@ -164,7 +167,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                 isFalling = false;
                                 NPC.noGravity = false;
                                 stomp = false;
-                                StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 1.5f));
+                                StartAttack(new Vector2(target.Center.X + target.velocity.X, target.Center.Y - 200 + target.velocity.Y / 1.5f));
                                 NPC.ai[0] = 0;
                             }
 
@@ -176,14 +179,14 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                     Shake.power = 10;
                                     Shake.time = 10;
                                 }
-                                VisualHelper.CreateGroundExplosion(NPC , 7 , 20, 20 , 0 ,10 , 5);
+                                VisualHelper.CreateGroundExplosion(NPC, 7, 20, 20, 0, 10, 5);
                                 SoundEngine.PlaySound(SoundID.DD2_MonkStaffGroundImpact, NPC.Center);
                             }
-                            
+
                         }
                     }
                 }
-                
+
             }
 
             #endregion
@@ -222,9 +225,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, MathFunctions.EaseFunctions.EaseInBack(NPC.ai[0]))) * 2.5f; 
+                        Vector2.Lerp(attackStartPos, targetPos, MathFunctions.EaseFunctions.EaseInBack(NPC.ai[0]))) * 2.5f;
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
-                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, Single.MaxValue);
+                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, float.MaxValue);
             }
             else
             {
@@ -240,7 +243,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             isFalling = true;
             targetPos = Position;
             NPC.ai[0] = 0;
-            attackStartPos = NPC.Center; 
+            attackStartPos = NPC.Center;
         }
 
         public void FloatAttack()
@@ -250,8 +253,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = NPC.velocity.X * 0.10f;
                 NPC.ai[0] += 0.0075f;
                 NPC.velocity +=
-                    NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos, 
-                            (float) MathFunctions.EaseFunctions.EaseOutBack(NPC.ai[0])));
+                    NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos,
+                            (float)MathFunctions.EaseFunctions.EaseOutBack(NPC.ai[0])));
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, -15f, 15f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -15f, 15f);
             }
@@ -280,7 +283,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
                 AssetRequestMode.ImmediateLoad).Value;
             SpriteEffects effect = SpriteEffects.None;
-            
+
             if (NPC.spriteDirection != -1)
             {
                 effect = SpriteEffects.FlipHorizontally;
@@ -289,7 +292,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             {
                 effect = SpriteEffects.None;
             }
-            
+
             spriteBatch.Draw
             (
                 texture,
@@ -316,15 +319,15 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             
             Main.NewText(frame);*/
 
-            
+
             if (isFalling && NPC.velocity != Vector2.Zero)
             {
-            
+
                 Main.instance.LoadNPC(NPC.type);
                 Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
-                
+
                 SpriteEffects effect = SpriteEffects.None;
-            
+
                 if (NPC.spriteDirection != -1)
                 {
                     effect = SpriteEffects.FlipHorizontally;
@@ -333,10 +336,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 {
                     effect = SpriteEffects.None;
                 }
-            
+
                 Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
-                for (int k = 0; k < NPC.oldPos.Length; k++) {
-                    Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
+                for (int k = 0; k < NPC.oldPos.Length; k++)
+                {
+                    Vector2 drawPos = NPC.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, NPC.gfxOffY);
                     Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
                     Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
                 }
@@ -362,27 +366,29 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 if (transforming)
                 {
                     NPC.frameCounter += 6.0;
-                    float frame = (float) (NPC.frameCounter / 8.0);
-                    NPC.frame.Y = (int) frame * frameHeight;
+                    float frame = (float)(NPC.frameCounter / 8.0);
+                    NPC.frame.Y = (int)frame * frameHeight;
                     if (frame >= 13)
                     {
                         transforming = false;
                         hostile = true;
                     }
-                }else if (hostile && !stomp && !isFalling)
+                }
+                else if (hostile && !stomp && !isFalling)
                 {
                     NPC.frameCounter++;
-                    int frame = (int) (NPC.frameCounter / 8.0);
+                    int frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = frame * frameHeight;
                     if (frame <= 13 || frame >= 18)
                     {
                         NPC.frame.Y = 14 * frameHeight;
                         NPC.frameCounter = 8 * 14;
                     }
-                }else if (isFalling)
+                }
+                else if (isFalling)
                 {
                     NPC.frameCounter++;
-                    int frame = (int) (NPC.frameCounter / 8.0);
+                    int frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = frame * frameHeight;
                     if (frame <= 18 || frame >= 21)
                     {
@@ -393,28 +399,30 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             }
             else
             {
-                NPC.frame.Y =  frameHeight;
+                NPC.frame.Y = frameHeight;
                 NPC.frameCounter = 8;
             }
         }
-        
+
         public override void OnKill()
         {
             for (var i = 0; i < Main.rand.Next(4) + 1; i++)
-                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, Main.rand.NextVector2Circular(-4 , 4),
+                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, Main.rand.NextVector2Circular(-4, 4),
                     GoreID.Smoke2);
         }
-        
+
     }
 
     public class SquashlerAggresive : ModNPC
     {
+        public override string Texture => AssetDirectory.EnemyPumpkin + Name;
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 21;
-            
+
             NPCID.Sets.SpawnsWithCustomName[Type] = true;
-                
+
             NPCID.Sets.TrailCacheLength[NPC.type] = 6;
             NPCID.Sets.TrailingMode[NPC.type] = 3;
         }
@@ -426,18 +434,18 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             NPC.defense = 6;
             NPC.damage = 26;
             NPC.lifeMax = 70;
-            NPC.value = ValueHelper.GetCoinValue(0, 1,8, 7);
+            NPC.value = ValueHelper.GetCoinValue(0, 1, 8, 7);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath2;
             NPC.noGravity = false;
             NPC.noTileCollide = false;
             NPC.knockBackResist = 0.8f;
-            
+
             Banner = Type;
             BannerItem = ModContent.ItemType<EnemyPumpkinBanner>();
         }
-        
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
@@ -447,13 +455,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                     "An Friendly Ally go near so it will help you!")
             });
         }
-        
-        
-        
+
+
+
         public override List<string> SetNPCNameList()
         {
             List<string> names = new List<string>();
-            names.AddRange( new []{ "Pumk" , "Pumpkin Patroller" , "Gerald" , "Walter"  , "Hugh" ,  
+            names.AddRange(new[]{ "Pumk" , "Pumpkin Patroller" , "Gerald" , "Walter"  , "Hugh" ,
                 "Hughie" ,  "Highie" , "Laboo" , "Pumpkin Grimace" , "Hap" , "Robert" , "Pumpkin Pal" ,  "Crawler pumpkin" ,
                 "Foxy the Pirate Pumpkin" ,  "Squashler" ,  "Gex" ,  "Baleful Crop" ,  "Pimpnaut" , "Pumpkin" ,
                 "Pummie" ,  "Pumpky Pie" , "Puma" , "S(cream)" , "Biden the Biteful Bait"
@@ -468,7 +476,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
         private bool hostile = false;
 
         private bool attacking = false;
-        
+
         private Vector2 targetPos = Vector2.Zero;
 
         private Vector2 attackStartPos = Vector2.Zero;
@@ -479,7 +487,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
         public override void AI()
         {
-            
+
             #region Player Detection
 
             NPC.TargetClosest();
@@ -514,8 +522,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 }
 
             }
-            
-            
+
+
             #endregion
 
             #region Behaviour
@@ -525,21 +533,21 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
                 if (!attacking)
                 {
-                    StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y));
+                    StartAttack(new Vector2(target.Center.X + target.velocity.X, target.Center.Y - 200 + target.velocity.Y));
                 }
                 else
                 {
                     if (!stomp)
                     {
                         targetPos = new Vector2(target.Center.X + target.velocity.X,
-                            (target.Center.Y - 200) + target.velocity.Y);
+                            target.Center.Y - 200 + target.velocity.Y);
                         FloatAttack();
                     }
                     else
                     {
                         if (!isFalling)
                         {
-                            StartStompAttack(new Vector2(target.Center.X , NPC.Center.Y + 2000f));
+                            StartStompAttack(new Vector2(target.Center.X, NPC.Center.Y + 2000f));
                         }
                         else
                         {
@@ -549,7 +557,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                 isFalling = false;
                                 NPC.noGravity = false;
                                 stomp = false;
-                                StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y));
+                                StartAttack(new Vector2(target.Center.X + target.velocity.X, target.Center.Y - 200 + target.velocity.Y));
                                 NPC.ai[0] = 0;
                             }
 
@@ -561,14 +569,14 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                     Shake.power = 20;
                                     Shake.time = 10;
                                 }
-                                VisualHelper.CreateGroundExplosion(NPC , 14 , 40, 40 , 0 ,20 , 10);
+                                VisualHelper.CreateGroundExplosion(NPC, 14, 40, 40, 0, 20, 10);
                                 SoundEngine.PlaySound(SoundID.DD2_MonkStaffGroundImpact, NPC.Center);
                             }
-                            
+
                         }
                     }
                 }
-                
+
             }
 
             #endregion
@@ -585,13 +593,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             StartTransformation();
             attacking = true;
         }
-        
+
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
                 AssetRequestMode.ImmediateLoad).Value;
             SpriteEffects effect = SpriteEffects.None;
-            
+
             if (NPC.spriteDirection != -1)
             {
                 effect = SpriteEffects.FlipHorizontally;
@@ -600,7 +608,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             {
                 effect = SpriteEffects.None;
             }
-            
+
             spriteBatch.Draw
             (
                 texture,
@@ -640,9 +648,9 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, MathFunctions.EaseFunctions.EaseInBack(NPC.ai[0]))) * 2.5f; 
+                        Vector2.Lerp(attackStartPos, targetPos, MathFunctions.EaseFunctions.EaseInBack(NPC.ai[0]))) * 2.5f;
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
-                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, Single.MaxValue);
+                NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, float.MaxValue);
             }
             else
             {
@@ -658,7 +666,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             isFalling = true;
             targetPos = Position;
             NPC.ai[0] = 0;
-            attackStartPos = NPC.Center; 
+            attackStartPos = NPC.Center;
         }
 
         public void FloatAttack()
@@ -668,8 +676,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = NPC.velocity.X * 0.10f;
                 NPC.ai[0] += 0.0075f;
                 NPC.velocity +=
-                    NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos, 
-                            (float) MathFunctions.EaseFunctions.EaseOutBack(NPC.ai[0])));
+                    NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos,
+                            (float)MathFunctions.EaseFunctions.EaseOutBack(NPC.ai[0])));
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, -10f, 10f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -10f, 10f);
             }
@@ -700,15 +708,15 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             
             Main.NewText(frame);*/
 
-            
+
             if (isFalling && NPC.velocity != Vector2.Zero)
             {
-            
+
                 Main.instance.LoadNPC(NPC.type);
                 Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
-                
+
                 SpriteEffects effect = SpriteEffects.None;
-            
+
                 if (NPC.spriteDirection != -1)
                 {
                     effect = SpriteEffects.FlipHorizontally;
@@ -717,10 +725,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 {
                     effect = SpriteEffects.None;
                 }
-            
+
                 Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
-                for (int k = 0; k < NPC.oldPos.Length; k++) {
-                    Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
+                for (int k = 0; k < NPC.oldPos.Length; k++)
+                {
+                    Vector2 drawPos = NPC.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, NPC.gfxOffY);
                     Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
                     Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
                 }
@@ -746,27 +755,29 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 if (transforming)
                 {
                     NPC.frameCounter += 6.0;
-                    float frame = (float) (NPC.frameCounter / 8.0);
-                    NPC.frame.Y = (int) frame * frameHeight;
+                    float frame = (float)(NPC.frameCounter / 8.0);
+                    NPC.frame.Y = (int)frame * frameHeight;
                     if (frame >= 13)
                     {
                         transforming = false;
                         hostile = true;
                     }
-                }else if (hostile && !stomp && !isFalling)
+                }
+                else if (hostile && !stomp && !isFalling)
                 {
                     NPC.frameCounter++;
-                    int frame = (int) (NPC.frameCounter / 8.0);
+                    int frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = frame * frameHeight;
                     if (frame <= 13 || frame >= 18)
                     {
                         NPC.frame.Y = 14 * frameHeight;
                         NPC.frameCounter = 8 * 14;
                     }
-                }else if (isFalling)
+                }
+                else if (isFalling)
                 {
                     NPC.frameCounter++;
-                    int frame = (int) (NPC.frameCounter / 8.0);
+                    int frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = frame * frameHeight;
                     if (frame <= 18 || frame >= 21)
                     {
@@ -777,27 +788,29 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             }
             else
             {
-                NPC.frame.Y =  frameHeight;
+                NPC.frame.Y = frameHeight;
                 NPC.frameCounter = 8;
             }
         }
-        
+
         public override void OnKill()
         {
             for (var i = 0; i < Main.rand.Next(4) + 1; i++)
-                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, Main.rand.NextVector2Circular(-4 , 4),
+                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, Main.rand.NextVector2Circular(-4, 4),
                     GoreID.Smoke2);
         }
     }
 
     public class SquashlerScary : ModNPC
     {
+        public override string Texture => AssetDirectory.EnemyPumpkin + Name;
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 21;
-            
+
             NPCID.Sets.SpawnsWithCustomName[Type] = true;
-                
+
             NPCID.Sets.TrailCacheLength[NPC.type] = 6;
             NPCID.Sets.TrailingMode[NPC.type] = 3;
         }
@@ -809,18 +822,18 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             NPC.defense = 2;
             NPC.damage = 26;
             NPC.lifeMax = 50;
-            NPC.value = ValueHelper.GetCoinValue(0, 6,9, 0);
+            NPC.value = ValueHelper.GetCoinValue(0, 6, 9, 0);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath2;
             NPC.noGravity = false;
             NPC.noTileCollide = false;
             NPC.knockBackResist = 0.8f;
-            
+
             Banner = Type;
             BannerItem = ModContent.ItemType<EnemyPumpkinBanner>();
         }
-        
+
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
@@ -830,13 +843,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                     "An Friendly Ally go near so it will help you!")
             });
         }
-        
-        
-        
+
+
+
         public override List<string> SetNPCNameList()
         {
             List<string> names = new List<string>();
-            names.AddRange( new []{ "Pumk" , "Pumpkin Patroller" , "Gerald" , "Walter"  , "Hugh" ,  
+            names.AddRange(new[]{ "Pumk" , "Pumpkin Patroller" , "Gerald" , "Walter"  , "Hugh" ,
                 "Hughie" ,  "Highie" , "Laboo" , "Pumpkin Grimace" , "Hap" , "Robert" , "Pumpkin Pal" ,  "Crawler pumpkin" ,
                 "Foxy the Pirate Pumpkin" ,  "Squashler" ,  "Gex" ,  "Baleful Crop" ,  "Pimpnaut" , "Pumpkin" ,
                 "Pummie" ,  "Pumpky Pie" , "Puma" , "S(cream)" , "Biden the Biteful Bait"
@@ -851,7 +864,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
         private bool hostile = false;
 
         private bool attacking = false;
-        
+
         private Vector2 targetPos = Vector2.Zero;
 
         private Vector2 attackStartPos = Vector2.Zero;
@@ -862,7 +875,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
         public override void AI()
         {
-            
+
             #region Player Detection
 
             NPC.TargetClosest();
@@ -897,8 +910,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 }
 
             }
-            
-            
+
+
             #endregion
 
             #region Behaviour
@@ -908,21 +921,21 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
 
                 if (!attacking)
                 {
-                    StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 2f));
+                    StartAttack(new Vector2(target.Center.X + target.velocity.X, target.Center.Y - 200 + target.velocity.Y / 2f));
                 }
                 else
                 {
                     if (!stomp)
                     {
                         targetPos = new Vector2(target.Center.X + target.velocity.X,
-                            (target.Center.Y - 200) + target.velocity.Y);
+                            target.Center.Y - 200 + target.velocity.Y);
                         FloatAttack();
                     }
                     else
                     {
                         if (!isFalling)
                         {
-                            StartStompAttack(new Vector2(target.Center.X , NPC.Center.Y + 2000f));
+                            StartStompAttack(new Vector2(target.Center.X, NPC.Center.Y + 2000f));
                         }
                         else
                         {
@@ -932,7 +945,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                 isFalling = false;
                                 NPC.noGravity = false;
                                 stomp = false;
-                                StartAttack(new Vector2( target.Center.X + target.velocity.X , (target.Center.Y - 200) + target.velocity.Y / 2f));
+                                StartAttack(new Vector2(target.Center.X + target.velocity.X, target.Center.Y - 200 + target.velocity.Y / 2f));
                                 NPC.ai[0] = 0;
                             }
 
@@ -944,14 +957,14 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                                     Shake.power = 5;
                                     Shake.time = 10;
                                 }
-                                VisualHelper.CreateGroundExplosion(NPC , 4 , 10, 10 , 0 ,5 , 5);
+                                VisualHelper.CreateGroundExplosion(NPC, 4, 10, 10, 0, 5, 5);
                                 SoundEngine.PlaySound(SoundID.DD2_MonkStaffGroundImpact, NPC.Center);
                             }
-                            
+
                         }
                     }
                 }
-                
+
             }
 
             #endregion
@@ -990,7 +1003,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = MathHelper.Lerp(NPC.rotation, 0, NPC.ai[0]);
                 NPC.velocity +=
                     NPC.DirectionTo(
-                        Vector2.Lerp(attackStartPos, targetPos, MathFunctions.EaseFunctions.EaseInBack(NPC.ai[0]))) * 4f; 
+                        Vector2.Lerp(attackStartPos, targetPos, MathFunctions.EaseFunctions.EaseInBack(NPC.ai[0]))) * 4f;
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, 0f, 0f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -5f, 55f);
             }
@@ -1008,7 +1021,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             isFalling = true;
             targetPos = Position;
             NPC.ai[0] = 0;
-            attackStartPos = NPC.Center; 
+            attackStartPos = NPC.Center;
         }
 
         public void FloatAttack()
@@ -1018,8 +1031,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 NPC.rotation = NPC.velocity.X * 0.10f;
                 NPC.ai[0] += 0.0075f;
                 NPC.velocity +=
-                    NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos, 
-                            (float) MathFunctions.EaseFunctions.EaseOutBack(NPC.ai[0])));
+                    NPC.DirectionTo(Vector2.Lerp(attackStartPos, targetPos,
+                            (float)MathFunctions.EaseFunctions.EaseOutBack(NPC.ai[0])));
                 NPC.velocity.X = Math.Clamp(NPC.velocity.X, -20f, 20f);
                 NPC.velocity.Y = Math.Clamp(NPC.velocity.Y, -20f, 20f);
             }
@@ -1029,13 +1042,13 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             }
 
         }
-        
+
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow",
                 AssetRequestMode.ImmediateLoad).Value;
             SpriteEffects effect = SpriteEffects.None;
-            
+
             if (NPC.spriteDirection != -1)
             {
                 effect = SpriteEffects.FlipHorizontally;
@@ -1044,7 +1057,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             {
                 effect = SpriteEffects.None;
             }
-            
+
             spriteBatch.Draw
             (
                 texture,
@@ -1083,15 +1096,15 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             
             Main.NewText(frame);*/
 
-            
+
             if (isFalling && NPC.velocity != Vector2.Zero)
             {
-            
+
                 Main.instance.LoadNPC(NPC.type);
                 Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
-                
+
                 SpriteEffects effect = SpriteEffects.None;
-            
+
                 if (NPC.spriteDirection != -1)
                 {
                     effect = SpriteEffects.FlipHorizontally;
@@ -1100,10 +1113,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 {
                     effect = SpriteEffects.None;
                 }
-            
+
                 Vector2 drawOrigin = new Vector2(NPC.frame.Width * 0.5f, NPC.frame.Height * 0.5f);
-                for (int k = 0; k < NPC.oldPos.Length; k++) {
-                    Vector2 drawPos = (NPC.oldPos[k] - Main.screenPosition) + drawOrigin + new Vector2(0f, NPC.gfxOffY);
+                for (int k = 0; k < NPC.oldPos.Length; k++)
+                {
+                    Vector2 drawPos = NPC.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, NPC.gfxOffY);
                     Color color = NPC.GetAlpha(drawColor) * ((NPC.oldPos.Length - k) / (float)NPC.oldPos.Length);
                     Main.EntitySpriteDraw(texture, drawPos, NPC.frame, color, NPC.rotation, drawOrigin, NPC.scale, effect, 0);
                 }
@@ -1129,27 +1143,29 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
                 if (transforming)
                 {
                     NPC.frameCounter += 6.0;
-                    float frame = (float) (NPC.frameCounter / 8.0);
-                    NPC.frame.Y = (int) frame * frameHeight;
+                    float frame = (float)(NPC.frameCounter / 8.0);
+                    NPC.frame.Y = (int)frame * frameHeight;
                     if (frame >= 13)
                     {
                         transforming = false;
                         hostile = true;
                     }
-                }else if (hostile && !stomp && !isFalling)
+                }
+                else if (hostile && !stomp && !isFalling)
                 {
                     NPC.frameCounter++;
-                    int frame = (int) (NPC.frameCounter / 8.0);
+                    int frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = frame * frameHeight;
                     if (frame <= 13 || frame >= 18)
                     {
                         NPC.frame.Y = 14 * frameHeight;
                         NPC.frameCounter = 8 * 14;
                     }
-                }else if (isFalling)
+                }
+                else if (isFalling)
                 {
                     NPC.frameCounter++;
-                    int frame = (int) (NPC.frameCounter / 8.0);
+                    int frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = frame * frameHeight;
                     if (frame <= 18 || frame >= 21)
                     {
@@ -1160,15 +1176,15 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.EnemyPumpkin
             }
             else
             {
-                NPC.frame.Y =  frameHeight;
+                NPC.frame.Y = frameHeight;
                 NPC.frameCounter = 8;
             }
         }
-        
+
         public override void OnKill()
         {
             for (var i = 0; i < Main.rand.Next(4) + 1; i++)
-                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, Main.rand.NextVector2Circular(-4 , 4),
+                Gore.NewGore(new EntitySource_Death(NPC), NPC.position, Main.rand.NextVector2Circular(-4, 4),
                     GoreID.Smoke2);
         }
     }

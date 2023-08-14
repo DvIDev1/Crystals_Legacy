@@ -2,6 +2,7 @@ using System;
 using Crystals.Content.Foresta.Items;
 using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
 using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -15,6 +16,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit
 {
     public class ForestSpirit : ModNPC
     {
+        public override string Texture => AssetDirectory.Forest_Spirit + Name;
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 6;

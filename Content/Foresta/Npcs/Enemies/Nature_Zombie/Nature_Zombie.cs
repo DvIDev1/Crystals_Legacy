@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Crystals.Content.Foresta.Items.Banners;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -19,6 +20,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
         private bool grounded;
 
         private bool hitted;
+        public override string Texture => AssetDirectory.NatureZombie + Name;
 
         public override void SetStaticDefaults()
         {
@@ -63,7 +65,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();
         }
-        
+
         public override void AI()
         {
             NPC.TargetClosest();
@@ -160,7 +162,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
                         d.noGravity = false;
                         d.scale = 2;
                     }
-                    
+
                     Heal();
                 }
         }
@@ -177,7 +179,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
                         d.noGravity = false;
                         d.scale = 2;
                     }
-                    
+
                     modifiers.SetCrit();
                     Heal();
                 }
@@ -206,6 +208,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
 
     public class Nature_Zombie2 : ModNPC
     {
+        public override string Texture => AssetDirectory.NatureZombie + Name;
+
         private bool grounded;
 
         private bool hitted;
@@ -214,7 +218,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
         {
             // DisplayName.SetDefault("Nature Zombie");
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Zombie];
-            
+
             NPCID.Sets.Zombies[Type] = true;
 
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
@@ -254,7 +258,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();
         }
-        
+
         public override void AI()
         {
             NPC.TargetClosest();
@@ -351,7 +355,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
                         d.noGravity = false;
                         d.scale = 2;
                     }
-                    
+
                     Heal();
                 }
         }
@@ -368,7 +372,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
                         d.noGravity = false;
                         d.scale = 2;
                     }
-                    
+
                     modifiers.SetCrit();
                     Heal();
                 }
@@ -397,6 +401,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
 
     public class Nature_Zombie3 : ModNPC
     {
+        public override string Texture => AssetDirectory.NatureZombie + Name;
+
         private bool grounded;
 
         private bool hitted;
@@ -407,7 +413,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             Main.npcFrameCount[Type] = Main.npcFrameCount[NPCID.Zombie];
 
             NPCID.Sets.Zombies[Type] = true;
-            
+
             var value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 // Influences how the NPC looks in the Bestiary
@@ -445,7 +451,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();
         }
-        
+
         public override void AI()
         {
             NPC.TargetClosest();
@@ -542,7 +548,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
                         d.noGravity = false;
                         d.scale = 2;
                     }
-                    
+
                     Heal();
                 }
         }
@@ -559,7 +565,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
                         d.noGravity = false;
                         d.scale = 2;
                     }
-                    
+
                     modifiers.SetCrit();
                     Heal();
                 }

@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,6 +11,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Magic.Gaia.Items.PickUps
 {
     public class StarNature : ModItem
     {
+        public override string Texture => AssetDirectory.GaiaItems + Name;
+
         public override void SetDefaults()
         {
             Item.width = 28;

@@ -1,4 +1,5 @@
-﻿using Crystals.Helpers;
+﻿using Crystals.Core;
+using Crystals.Helpers;
 using MasterMasterMode.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,6 +12,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Carmine
 {
     internal class Carmine : ModItem
     {
+        public override string Texture => AssetDirectory.Magic + Name;
+
         public override void SetStaticDefaults()
         {
             Item.staff[Type] = true;

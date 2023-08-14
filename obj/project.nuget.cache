@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IkvUaeCSHJMiUDO9m1wk2cyA8llJiStL/2Lb4Ir9OQrmi5HvdgJk5wQm8rNH8COR/wqoRDmnBLexBK/3SSvBtA==",
+  "dgSpecHash": "x50HQo0RB2WE3BRnDx3y5aIxZCDD2GuHG6jsGmmnxzi3AYgTbX77o8y2KQGj6MPkx1TUtJWupMqq5YLRXsv1dQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
+  "projectFilePath": "C:\\Users\\Unknown\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Thamy\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+    "C:\\Users\\Unknown\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
   ],
   "logs": []
 }

@@ -5,6 +5,7 @@ using Crystals.Content.Foresta.Items.Banners;
 using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
 using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium;
+using Crystals.Core;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -21,6 +22,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
 {
     public class OvergrownWarrior : ModNPC
     {
+        public override string Texture => AssetDirectory.Warriors + Name;
+
         private bool chase;
 
         private bool grounded;
@@ -71,7 +74,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                     "And his attacks on the innocent came with a terrible cost.")
             });
         }
-        
+
         public override void AI()
         {
             NPC.TargetClosest();
@@ -108,7 +111,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 if (NPC.collideX || NPC.collideY) hitted = false;
             }
         }
-        
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
             if (NPC.downedBoss1)
@@ -149,7 +152,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 0f
             );
         }*/
-        
+
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 4, 1, 3));
@@ -168,7 +171,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 if (NPC.velocity != Vector2.Zero)
                 {
                     NPC.frameCounter += 1.0;
-                    var frame = (int) (NPC.frameCounter / 8.0);
+                    var frame = (int)(NPC.frameCounter / 8.0);
                     NPC.frame.Y = 1 + frame * frameHeight;
                     if (frame >= Main.npcFrameCount[NPC.type] - 1)
                     {

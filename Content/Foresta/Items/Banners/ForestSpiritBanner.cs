@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,7 +7,8 @@ namespace Crystals.Content.Foresta.Items.Banners;
 
 public class ForestSpiritBanner : ModItem
 {
-    
+    public override string Texture => AssetDirectory.Banners + Name;
+
     public override void SetStaticDefaults()
     {
         // DisplayName.SetDefault("Nature Slime Banner");

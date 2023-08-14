@@ -1,3 +1,5 @@
+using Crystals.Core;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -9,6 +11,7 @@ namespace Crystals.Content.Other.Items.Vanity.Maid
         [AutoloadEquip(EquipType.Head)]
         private class MaidHat : ModItem
         {
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Dragon Maid Bonnet");
@@ -48,6 +51,7 @@ namespace Crystals.Content.Other.Items.Vanity.Maid
         [AutoloadEquip(EquipType.Legs)]
         private class MaidSkirt : ModItem
         {
+
             public override void SetStaticDefaults()
             {
                 // DisplayName.SetDefault("Dragon Maid Skirt");

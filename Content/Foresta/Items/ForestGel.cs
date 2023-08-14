@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,6 +7,8 @@ namespace Crystals.Content.Foresta.Items
 {
     public class ForestGel : ModItem
     {
+        public override string Texture => AssetDirectory.Items + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Forest Gel");

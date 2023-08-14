@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -10,7 +11,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Incaen
 {
     public class Incaen : ModItem
     {
-        
+        public override string Texture => AssetDirectory.Magic + Name;
+
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Incaen");
@@ -54,6 +56,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Incaen
 
         class FireLeaves : ModProjectile
         {
+            public override string Texture => AssetDirectory.Magic + Name;
+
             private int hitcount = 1; 
             
             public override void SetStaticDefaults()

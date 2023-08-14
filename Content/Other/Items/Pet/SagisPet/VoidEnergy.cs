@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Crystals.Content.Foresta.Items.Accessories;
+using Crystals.Core;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -6,9 +8,11 @@ using Terraria.ModLoader;
 
 namespace Crystals.Content.Other.Items.Pet.SagisPet;
 
-	public class VoidEnergy : ModItem
+public class VoidEnergy : ModItem
 	{
-		public override void SetDefaults()
+    public override string Texture => AssetDirectory.Pet + Name;
+
+    public override void SetDefaults()
         {
 			Item.DefaultToVanitypet(ModContent.ProjectileType<Sagi>(), ModContent.BuffType<Sagibuff>()); // Vanilla has many useful methods like these, use them! It sets rarity and value aswell, so we have to overwrite those after
 

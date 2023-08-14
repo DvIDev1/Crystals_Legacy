@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Crystals.Helpers;
 using Terraria.GameContent.Creative;
 using Terraria.ID;
@@ -7,6 +8,8 @@ namespace Crystals.Content.Foresta.Items;
 
 public class CursedEnergy : ModItem
 {
+    public override string Texture => AssetDirectory.Items + Name;
+
     public override void SetStaticDefaults()
     {
         CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 10;

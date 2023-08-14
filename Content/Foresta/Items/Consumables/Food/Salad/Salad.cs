@@ -1,3 +1,4 @@
+using Crystals.Core;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -5,7 +6,7 @@ namespace Crystals.Content.Foresta.Items.Consumables.Food.Salad
 {
     public class Salad : ModItem
     {
-        
+        public override string Texture => AssetDirectory.Consumables + Name;
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Forest Salad");
