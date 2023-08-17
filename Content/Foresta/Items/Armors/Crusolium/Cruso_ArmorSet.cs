@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using Crystals.Core;
+using Crystals.Core.Systems.TrailSystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -18,19 +20,13 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
     {
 
         public static float charge = 0;
+        
+        public List<Vector2> oldPositions = new List<Vector2>();
 
         public override void PostUpdate()
         {
             if (hasCrusoSet())
             {
-                if (Main.rand.NextFloat() < charge / 100f)
-                {
-                    Dust dust;
-                    Vector2 position = Player.Center - new Vector2(charge *4 , charge *4) /2;
-                    dust = Main.dust[Dust.NewDust(position, (int)charge*4, (int)charge*4, 107, 0f, -10f, 0, new Color(255,255,255), 0.5f)];
-                    dust.shader = GameShaders.Armor.GetSecondaryShader(5 , Player);
-                    dust.fadeIn = 0.5f;
-                }
                 if (charge >= 200f)
                 {
                     charge = 200f;

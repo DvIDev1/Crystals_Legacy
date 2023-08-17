@@ -44,6 +44,8 @@ public class OvergrownMage : ModNPC
 
     private int walkDir;
 
+    private bool castedSwords;
+
     public override void SetDefaults()
     {
         NPC.width = 60;
@@ -76,18 +78,17 @@ public class OvergrownMage : ModNPC
     {
         int frameWidth = 60;
         NPC.frame = new Rectangle(frameWidth * xFrame, frameHeight * yFrame, frameWidth, frameHeight);
-        Main.NewText(yFrame);
 
         if (grounded)
         {
-            if (NPC.velocity != Vector2.Zero)
+            switch (xFrame)
             {
-                switch (xFrame)
-                {
-                    case 0:
+                case 0:
+                    if (NPC.velocity != Vector2.Zero)
+                    {
                         NPC.frameCounter++;
 
-                        if (NPC.frameCounter % 4 == 0)
+                        if (NPC.frameCounter % 5 == 0)
                             yFrame++;
 
                         if (yFrame == 15)
@@ -96,8 +97,24 @@ public class OvergrownMage : ModNPC
                             xFrame = 0;
                             NPC.frameCounter = 0;
                         }
-                        break;
-                }
+                    }
+
+                    break;
+                case 1:
+                    NPC.frameCounter++;
+
+                    if (NPC.frameCounter % 5 == 0)
+                        yFrame++;
+
+                    if (yFrame == 15)
+                    {
+                        yFrame = 0;
+                        xFrame = 0;
+                        NPC.frameCounter = 0;
+                        currentAttack = States.Idle;
+                    }
+
+                    break;
             }
         }
         else yFrame = 0;
@@ -115,7 +132,8 @@ public class OvergrownMage : ModNPC
             effect = SpriteEffects.FlipHorizontally;
         }
 
-        spriteBatch.Draw(tex, NPC.Center - screenPos, NPC.frame, drawColor, NPC.rotation, origin, NPC.scale, effect, 0f);
+        spriteBatch.Draw(tex, NPC.Center - screenPos, NPC.frame, drawColor, NPC.rotation, origin, NPC.scale, effect,
+            0f);
 
         return false;
     }
@@ -130,8 +148,15 @@ public class OvergrownMage : ModNPC
         #endregion
 
         #region Behaviour
-
-        NPC.spriteDirection = NPC.direction = NPC.velocity.X > 0 ? 1 : -1;
+ 
+        if (target != null)
+        {
+            NPC.direction = NPC.spriteDirection = Math.Sign(target.Center.X - NPC.Center.X);
+        }
+        else
+        {
+            NPC.direction = NPC.spriteDirection = Math.Sign(NPC.velocity.X - NPC.Center.X);
+        }
 
         #region Jumping
 
@@ -144,21 +169,28 @@ public class OvergrownMage : ModNPC
 
         #endregion
 
+
         Timer++;
         switch (currentAttack)
         {
-
             case States.Idle:
-                xFrame = 0;
                 target = player;
+                xFrame = 0;
                 Walk();
-                if (Timer >= 180)
+                if (Timer >= 360)
                 {
                     Timer = 0;
-                    currentAttack = States.Idle;
+                    currentAttack = States.Attack;
+                    yFrame = 0;
+                    NPC.frameCounter = 0;
                 }
-                break;
 
+                break;
+            case States.Attack:
+                xFrame = 1;
+                target = player;
+                NPC.velocity.X = 0;
+                break;
         }
 
         #endregion
@@ -172,4 +204,17 @@ public class OvergrownMage : ModNPC
         NPC.velocity.X = MathHelper.Clamp(NPC.velocity.X, -2, 2);
     }
 
+    private void CastSwords()
+    {
+    }
+
+    class MageSword : ModProjectile
+    {
+        public override string Texture => AssetDirectory.Warriors + Name;
+
+        public override void SetDefaults()
+        {
+            Projectile.Size = new Vector2(22, 48);
+        }
+    }
 }
