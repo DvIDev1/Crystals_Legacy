@@ -23,7 +23,7 @@ namespace Crystals.Core.Systems.ParticleSystem
         public override void Load()
         {
 
-            Ref<Effect> screenRef = new Ref<Effect>(ModContent.Request<Effect>("Crystals/Assets/Foresta/Shaders/Misc/compiler/CursedFlames", AssetRequestMode.ImmediateLoad).Value);
+            Ref<Effect> screenRef = new Ref<Effect>(ModContent.Request<Effect>("Crystals/Assets/Foresta/Shaders/Misc/CursedFlames", AssetRequestMode.ImmediateLoad).Value);
             GameShaders.Misc["CursedFlamesPass"] = new MiscShaderData(screenRef, "CursedFlamesPass");
 
         }
