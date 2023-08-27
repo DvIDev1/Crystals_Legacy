@@ -4,6 +4,8 @@ using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -37,7 +39,8 @@ public class OvergrownMage : ModNPC
     {
         Idle,
         Attack,
-        Support
+        Support,
+        Retreat
     }
 
     private States currentAttack = States.Idle;
@@ -112,6 +115,7 @@ public class OvergrownMage : ModNPC
                         xFrame = 0;
                         NPC.frameCounter = 0;
                         currentAttack = States.Idle;
+                        CastSwords();
                     }
 
                     break;
@@ -177,12 +181,16 @@ public class OvergrownMage : ModNPC
                 target = player;
                 xFrame = 0;
                 Walk();
-                if (Timer >= 360)
+                if (Timer >= 90)
                 {
                     Timer = 0;
-                    currentAttack = States.Attack;
                     yFrame = 0;
                     NPC.frameCounter = 0;
+                    if (NPC.Distance(target.Center) <= 500f)
+                    {
+                        currentAttack = States.Attack;
+                    }
+                    else currentAttack = States.Idle;
                 }
 
                 break;
@@ -206,6 +214,9 @@ public class OvergrownMage : ModNPC
 
     private void CastSwords()
     {
+        Projectile.NewProjectile(NPC.GetSource_FromAI(null),
+            new Vector2(target.Center.X + Main.rand.NextFloat(-50, 50), target.Center.Y - 500),
+            Vector2.Zero, ModContent.ProjectileType<MageSword>(), NPC.damage * 2, 0.0f, -1);
     }
 
     class MageSword : ModProjectile
@@ -215,6 +226,31 @@ public class OvergrownMage : ModNPC
         public override void SetDefaults()
         {
             Projectile.Size = new Vector2(22, 48);
+            Projectile.hostile = true;
+            Projectile.tileCollide = true;
+            Projectile.timeLeft = 125;
+        }
+
+        private Vector2 startPos;
+
+        public override void OnSpawn(IEntitySource source)
+        {
+            startPos = Projectile.Center;
+        }
+
+        public override void AI()
+        {
+            Projectile.ai[0] += 1f / 125f;
+            
+            Lighting.AddLight(Projectile.Center , TorchID.Green);
+            
+            Projectile.velocity.Y = MathHelper.Lerp(-6f, 50f, Projectile.ai[0]);
+        }
+
+        public override void Kill(int timeLeft)
+        {
+            VisualHelper.CreateGroundExplosion(Projectile, 7, 20, 20, 0, 10, 5);
+            SoundEngine.PlaySound(SoundID.DD2_PhantomPhoenixShot, Projectile.Center);
         }
     }
 }

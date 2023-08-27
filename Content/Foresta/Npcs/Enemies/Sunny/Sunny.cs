@@ -235,7 +235,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            Texture2D texture = ModContent.Request<Texture2D>("Crystals/Content/Foresta/Npcs/Enemies/Sunny/SunnyPetals").Value;
+            Texture2D texture = ModContent.Request<Texture2D>(AssetDirectory.Sunny + "SunnyPetals").Value;
 
             Vector2 drawOrigin = new Vector2(PetalFrame.Width * 0.5f, PetalFrame.Height * 0.5f);
             Vector2 drawPos = NPC.Center - Main.screenPosition + new Vector2(0f, NPC.gfxOffY + 4);
@@ -251,7 +251,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
             spriteBatch.Draw(texture, drawPos, PetalFrame, Lighting.GetColor(PetalPos.ToTileCoordinates()), PetalRot, drawOrigin, NPC.scale - 0.20f, effects, 0);
 
-            Texture2D textureFace = ModContent.Request<Texture2D>("Crystals/Content/Foresta/Npcs/Enemies/Sunny/SunnyFace").Value;
+            Texture2D textureFace = ModContent.Request<Texture2D>(AssetDirectory.Sunny + "SunnyFace").Value;
 
             spriteBatch.Draw(textureFace, drawPos, FaceFrame, Lighting.GetColor(PetalPos.ToTileCoordinates()), FaceRot + NPC.rotation, drawOrigin, NPC.scale, effects, 0);
         }

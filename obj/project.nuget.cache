@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "x50HQo0RB2WE3BRnDx3y5aIxZCDD2GuHG6jsGmmnxzi3AYgTbX77o8y2KQGj6MPkx1TUtJWupMqq5YLRXsv1dQ==",
+  "dgSpecHash": "A2RIiObiVZ9hsQelx/uGHlY6SSfMF5C5Y5IuQy4xzl0V8cIu2L8iPAlPbJwbk5JiheqH9FiaYkcy6e/OAaMP7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Unknown\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Unknown\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+    "C:/Users/User\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512",
+    "C:/Users/User\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:/Users/User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:/Users/User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }
