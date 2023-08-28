@@ -23,6 +23,10 @@ float2 uZoom;
 float2 uShaderSpecificData;
 float2 uWorldPosition;
 
+float R_value;
+float G_value;
+float B_value;
+
 float4 PixelShaderFunction(float4 sampleColor : COLOR0, float2 coords : TEXCOORD0) : COLOR0
 {
     float2 uv = coords;
@@ -30,11 +34,13 @@ float4 PixelShaderFunction(float4 sampleColor : COLOR0, float2 coords : TEXCOORD
     float4 bg = tex2D(uImage0, coords);
     float4 colors = tex2D(uImage1, coords);
     float4 Fire = tex2D(uImage2, uv);
+    colors.rgb = uColor;
+    /*
     colors.r = 0;
-    colors.g = 0.5;
-    colors.b = 0.25;
-    bg.rgb = ((Fire - colors) * bg);
-
+    colors.b = 0.5;
+    colors.g = 1;*/
+    //colors.rgb = Fire - colors * bg;
+    bg.rgb = (Fire - colors) * bg;
     return bg;
 
 }
