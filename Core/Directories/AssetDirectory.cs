@@ -58,5 +58,9 @@ namespace Crystals.Core
         #region Buffs
         public const string Buffs = ForestaAssets + "Buffs/";
         #endregion
+
+        #region misc
+        public const string Shader = Assets + "shader/Misc/";
+        #endregion
     }
 }

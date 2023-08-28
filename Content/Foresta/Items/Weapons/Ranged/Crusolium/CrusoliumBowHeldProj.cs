@@ -13,6 +13,7 @@ using Crystals.Core.Systems.CameraShake;
 using Crystals.Helpers;
 using Terraria.Audio;
 using Crystals.Core;
+using Terraria.DataStructures;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
 {
@@ -44,6 +45,12 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
         public float ChargeProgressWithEasing { get => MathFunctions.EaseFunctions.EaseOutBack(Projectile.ai[1] / Projectile.ai[0]); }
 
         public List<short> pierceExceptions = new List<short>();
+
+        public override void OnSpawn(IEntitySource source)
+        {
+            if(Main.netMode != NetmodeID.Server)
+                Main.instance.LoadProjectile(ProjectileID.CultistBossLightningOrbArc);
+        }
 
         public override void AI()
         {
