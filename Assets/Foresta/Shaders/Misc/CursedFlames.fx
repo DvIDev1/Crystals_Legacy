@@ -30,13 +30,12 @@ float4 PixelShaderFunction(float4 sampleColor : COLOR0, float2 coords : TEXCOORD
     float4 bg = tex2D(uImage0, coords);
     float4 colors = tex2D(uImage1, coords);
     float4 Fire = tex2D(uImage2, uv);
-    bg.a = 0;
     colors.r = 0;
     colors.g = 0.5;
     colors.b = 0.25;
-    colors.rgb = ((Fire - colors) * bg);
+    bg.rgb = ((Fire - colors) * bg);
 
-    return colors;
+    return bg;
 
 }
 
