@@ -20,12 +20,13 @@ namespace Crystals.Core.Systems.ParticleSystem
 {
     internal class CursedItemParticleSys : GlobalItem
     {
+        /*the shader uses 3 values for colors,i called these values R_value;G_value;B_value (Red,Green,Blue) these values are float so you can use anything ranging from 0 to 1 i left this note so if enyone wants to add more prefixes they can do it without my intervention 
+        fuck around and find out what color u need :skull:
+        TODO add a color for each prefix */
         public override void Load()
         {
-
             Ref<Effect> screenRef = new Ref<Effect>(ModContent.Request<Effect>("Crystals/Assets/Foresta/Shaders/Misc/CursedFlames", AssetRequestMode.ImmediateLoad).Value);
             GameShaders.Misc["CursedFlamesPass"] = new MiscShaderData(screenRef, "CursedFlamesPass");
-
         }
         public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
@@ -34,6 +35,7 @@ namespace Crystals.Core.Systems.ParticleSystem
                 spriteBatch.End();
                 spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.UIScaleMatrix);
                 var Pulse = GameShaders.Misc["CursedFlamesPass"];
+                Pulse.UseColor(new Vector3(0, 0, 0));
                 Pulse.UseImage2(ModContent.Request<Texture2D>("Crystals/Assets/Foresta/Shaders/Misc/PerlinNoise"));
                 Pulse.Apply(null);
             }
