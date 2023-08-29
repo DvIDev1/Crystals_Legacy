@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Crystals.Core;
+using Crystals.Core.Systems.SoundSystem;
+using Crystals.Core.Systems.TrailSystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -142,6 +145,10 @@ public class OvergrownMage : ModNPC
         return false;
     }
 
+    private int charge;
+
+    private int maxCharge = 600;
+
     public override void AI()
     {
         #region Targeting
@@ -173,6 +180,28 @@ public class OvergrownMage : ModNPC
 
         #endregion
 
+        if (charge == 300 || charge == 599)
+        {
+            SoundEngine.PlaySound(SoundID.DD2_DarkMageCastHeal , NPC.Center);
+        }
+
+
+        if (Main.rand.NextFloat() < 0.23f)
+        {
+            for (int i = 0; i < charge / (maxCharge / 2); i++)
+            {
+                Vector2 pos = (NPC.Center - new Vector2(0 , 75)) + Vector2.One.RotatedBy((MathHelper.TwoPi / 2 * i) + 40f) *
+                    (NPC.width + NPC.height) / 2;
+                Dust dust;
+                Vector2 position = pos;
+                dust = Dust.NewDustPerfect(pos, 107);
+            }
+        }
+        
+        if (charge <= maxCharge)
+        {
+            charge++;
+        }
 
         Timer++;
         switch (currentAttack)
@@ -186,7 +215,7 @@ public class OvergrownMage : ModNPC
                     Timer = 0;
                     yFrame = 0;
                     NPC.frameCounter = 0;
-                    if (NPC.Distance(target.Center) <= 500f)
+                    if (NPC.Distance(target.Center) <= 500f && charge >= maxCharge / 2f)
                     {
                         currentAttack = States.Attack;
                     }
@@ -198,6 +227,8 @@ public class OvergrownMage : ModNPC
                 xFrame = 1;
                 target = player;
                 NPC.velocity.X = 0;
+                break;
+            case States.Support:
                 break;
         }
 
@@ -214,9 +245,13 @@ public class OvergrownMage : ModNPC
 
     private void CastSwords()
     {
+        SoundEngine.PlaySound(SoundID.DD2_BookStaffCast, NPC.Center);
+        Vector2 pos = NPC.Center - Vector2.One.RotatedBy((MathHelper.TwoPi / 2 * charge / (maxCharge / 2)) + 40f) *
+            (NPC.width + NPC.height) / 2;
         Projectile.NewProjectile(NPC.GetSource_FromAI(null),
-            new Vector2(target.Center.X + Main.rand.NextFloat(-50, 50), target.Center.Y - 500),
-            Vector2.Zero, ModContent.ProjectileType<MageSword>(), NPC.damage * 2, 0.0f, -1);
+            pos,
+            pos.DirectionTo(target.Center) * 16f, ModContent.ProjectileType<MageSword>(), NPC.damage, 0.0f, -1);
+        charge -= maxCharge / 2;
     }
 
     class MageSword : ModProjectile
@@ -233,24 +268,48 @@ public class OvergrownMage : ModNPC
 
         private Vector2 startPos;
 
-        public override void OnSpawn(IEntitySource source)
-        {
-            startPos = Projectile.Center;
-        }
-
         public override void AI()
         {
             Projectile.ai[0] += 1f / 125f;
             
             Lighting.AddLight(Projectile.Center , TorchID.Green);
             
-            Projectile.velocity.Y = MathHelper.Lerp(-6f, 50f, Projectile.ai[0]);
+            Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
+            
         }
+        
+        public PrimitiveTrail trail = new PrimitiveTrail();
+        public List<Vector2> oldPositions = new List<Vector2>();
+        public override bool PreDraw(ref Color lightColor)
+        {
+                
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin(SpriteSortMode.Deferred, null , null, null, null, null, Main.GameViewMatrix.ZoomMatrix);
 
+            lightColor = Color.White;
+
+            Color color = Color.LightGreen;
+
+            Vector2 pos = (Projectile.Center).RotatedBy(Projectile.rotation, Projectile.Center);
+
+            oldPositions.Add(pos);
+            while (oldPositions.Count > 30)
+                oldPositions.RemoveAt(0);
+
+            trail.Draw(color, pos, oldPositions, 1.4f);
+
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, Main.GameViewMatrix.ZoomMatrix);
+            return true;
+        }
+        
         public override void Kill(int timeLeft)
         {
-            VisualHelper.CreateGroundExplosion(Projectile, 7, 20, 20, 0, 10, 5);
-            SoundEngine.PlaySound(SoundID.DD2_PhantomPhoenixShot, Projectile.Center);
+            for (int i = 0; i < Main.rand.Next(5 , 12); i++)
+            {
+                Dust.NewDustPerfect(Projectile.Center, DustID.GreenTorch, Main.rand.NextVector2Circular(-4 , 4));
+            }
+            SoundEngine.PlaySound(SoundID.DD2_PhantomPhoenixShot with {Volume = 2.5f}, Projectile.Center);
         }
     }
 }
