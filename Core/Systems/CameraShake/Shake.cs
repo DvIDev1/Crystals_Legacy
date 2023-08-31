@@ -35,6 +35,7 @@ namespace Crystals.Core.Systems.CameraShake
             if (!active)
             {
                 time = 10;
+                power = 6;
             }
         }
     }
