@@ -386,6 +386,31 @@ Mods: {
 				DisplayName: Void Energy
 				Tooltip: ""
 			}
+
+			EnchantedTimberChestplate: {
+				DisplayName: Enchanted Timber Chestplate
+				Tooltip: ""
+			}
+
+			EnchantedTimberGreaves: {
+				DisplayName: Enchanted Timber Greaves
+				Tooltip: ""
+			}
+
+			EnchantedTimberHelmet: {
+				DisplayName: Enchanted Timber Helmet
+				Tooltip: ""
+			}
+
+			EnchantedTimberHammer: {
+				DisplayName: Enchanted Timber Hammer
+				Tooltip: ""
+			}
+
+			EnchantedTimberPickaxe: {
+				DisplayName: Enchanted Timber Pickaxe
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {

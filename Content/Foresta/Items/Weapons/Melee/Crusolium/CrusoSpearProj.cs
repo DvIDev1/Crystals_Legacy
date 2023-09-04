@@ -1,12 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
 using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.PlayerDrawLayer;
 
 namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 {
@@ -32,7 +27,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             Vector2 HitboxSize = new(88 * Projectile.scale, 88 * Projectile.scale);
             Vector2 HitboxCenter = Projectile.Center + (Projectile.velocity * (Projectile.Size.Length() / 2f - HitboxSize.Length() / 2f));
             hitbox = new Rectangle((int)(HitboxCenter.X - HitboxSize.X / 2f), (int)(HitboxCenter.Y - HitboxSize.Y / 2f), (int)(HitboxSize.X), (int)(HitboxSize.Y));
-            
+
             /*hitbox = default(Rectangle);
             Player player = Main.player[Projectile.owner];
             int itemAnimationMax = player.itemAnimationMax;
@@ -49,7 +44,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             float f = Projectile.velocity.ToRotation();
             Vector2 center = Projectile.Center + f.ToRotationVector2() * num7;
             hitbox = Utils.CenteredRectangle(center, new Vector2(num8, num8));*/
-            
+
         }
         public int SwingDirection = 1;
         public float Extension = 0;
