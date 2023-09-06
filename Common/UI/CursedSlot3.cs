@@ -134,7 +134,6 @@ namespace Crystals.Common.UI
                 }
             }
 
-
             base.Update(gameTime);
         }
     }

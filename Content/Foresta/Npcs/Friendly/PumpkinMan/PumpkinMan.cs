@@ -117,7 +117,8 @@ namespace Crystals.Content.Foresta.Npcs.Friendly.PumpkinMan
 					Main.playerInventory = true;
 					Main.LocalPlayer.GetModPlayer<PPlayer>().ShowCurse = true;
                     Main.LocalPlayer.GetModPlayer<PPlayer>().ShowSlot = true;
-                    Main.craftingHide = true;
+                    Main.hidePlayerCraftingMenu = false;
+                    Main.craftingHide = false;
 
 
                     //SoundEngine.PlaySound(Audio. , player.position);

@@ -147,7 +147,7 @@ public class OvergrownMage : ModNPC
 
     private int charge;
 
-    private int maxCharge = 600;
+    private int maxCharge = 300;
 
     public override void AI()
     {
@@ -180,22 +180,18 @@ public class OvergrownMage : ModNPC
 
         #endregion
 
-        if (charge == 300 || charge == 599)
+        if (charge >= maxCharge)
         {
             SoundEngine.PlaySound(SoundID.DD2_DarkMageCastHeal , NPC.Center);
         }
 
 
-        if (Main.rand.NextFloat() < 0.23f)
+        if (Main.rand.NextFloat() < 0.23f && charge >= maxCharge)
         {
-            for (int i = 0; i < charge / (maxCharge / 2); i++)
-            {
-                Vector2 pos = (NPC.Center - new Vector2(0 , 75)) + Vector2.One.RotatedBy((MathHelper.TwoPi / 2 * i) + 40f) *
-                    (NPC.width + NPC.height) / 2;
-                Dust dust;
-                Vector2 position = pos;
-                dust = Dust.NewDustPerfect(pos, 107);
-            }
+            Vector2 pos = NPC.Center - new Vector2(0 , 75);
+            Dust dust;
+            Vector2 position = pos;
+            dust = Dust.NewDustPerfect(pos, 107);
         }
         
         if (charge <= maxCharge)
@@ -215,7 +211,7 @@ public class OvergrownMage : ModNPC
                     Timer = 0;
                     yFrame = 0;
                     NPC.frameCounter = 0;
-                    if (NPC.Distance(target.Center) <= 500f && charge >= maxCharge / 2f)
+                    if (NPC.Distance(target.Center) <= 500f && charge >= maxCharge )
                     {
                         currentAttack = States.Attack;
                     }
@@ -229,6 +225,10 @@ public class OvergrownMage : ModNPC
                 NPC.velocity.X = 0;
                 break;
             case States.Support:
+                xFrame = 2;
+                target = player;
+                
+
                 break;
         }
 
@@ -246,12 +246,16 @@ public class OvergrownMage : ModNPC
     private void CastSwords()
     {
         SoundEngine.PlaySound(SoundID.DD2_BookStaffCast, NPC.Center);
-        Vector2 pos = NPC.Center - Vector2.One.RotatedBy((MathHelper.TwoPi / 2 * charge / (maxCharge / 2)) + 40f) *
-            (NPC.width + NPC.height) / 2;
+        Vector2 pos =  NPC.Center - new Vector2(0 , 75);
         Projectile.NewProjectile(NPC.GetSource_FromAI(null),
             pos,
             pos.DirectionTo(target.Center) * 16f, ModContent.ProjectileType<MageSword>(), NPC.damage, 0.0f, -1);
-        charge -= maxCharge / 2;
+        charge = 0;
+    }
+
+    private void Support()
+    {
+        
     }
 
     class MageSword : ModProjectile
