@@ -251,8 +251,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Feracor
                 Player owner = Main.player[Projectile.owner];
                 for (int i = 0; i < 4; i++)
                 {
-                    Vector2 pos = owner.Center + Vector2.One.RotatedBy((MathHelper.TwoPi / 4 * i) + 90f) *
-                        (owner.width + owner.height);
+                        Vector2 pos = owner.Center + Vector2.One.RotatedBy((MathHelper.TwoPi / 4 * i) + 90f) *
+                            (owner.width + owner.height);
                     pos.Y -= owner.height;
                     Terraria.Projectile proj = Terraria.Projectile.NewProjectileDirect(owner.GetSource_OnHit(target),
                         pos, Projectile.oldVelocity,

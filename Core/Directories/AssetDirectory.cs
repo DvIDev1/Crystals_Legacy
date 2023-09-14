@@ -15,7 +15,8 @@ namespace Crystals.Core
 		public const string Accessories = Items + "Accessories/";
 		public const string Armors = Items + "Armors/";
 		public const string CrusoliumArmor = Armors + "Crusolium/";
-		public const string GaiaArmor = Armors + "Gaia/";
+        public const string EnchantedTimberArmor = Armors + "ETimber/";
+        public const string GaiaArmor = Armors + "Gaia/";
 		public const string GaiaItems = GaiaArmor + "Items/";
 		public const string Banners = Items + "Banners/";
 		public const string Consumables = Items + "Consumables/";

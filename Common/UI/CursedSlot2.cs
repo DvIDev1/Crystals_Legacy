@@ -65,8 +65,8 @@ namespace Crystals.Common.UI
 
                 framecount = 5;
             }
+        
 
-            
 
             base.Update(gameTime);
         }
