@@ -503,5 +503,7 @@ Mods: {
 				}
 			}
 		}
+
+		Core.CursedSystem.StupidDropRule: Mods.Crystals.Core.CursedSystem.StupidDropRule
 	}
 }
