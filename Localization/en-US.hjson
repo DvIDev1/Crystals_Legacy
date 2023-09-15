@@ -529,6 +529,6 @@ Mods: {
 			}
 		}
 
-		Core.CursedSystem.StupidDropRule: Mods.Crystals.Core.CursedSystem.StupidDropRule
+		Conditions.InForest: Mods.Crystals.Conditions.InForest
 	}
 }

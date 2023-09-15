@@ -9,6 +9,7 @@ namespace Crystals.Core
 		public const string ForestaAssets = Assets + "Foresta/";
 		public const string MiscAssets = Assets + "Misc/";
 		public const string OtherAssets = Assets + "Other/";
+		public const string Shaders = MiscAssets + "Shaders/";
 
         #region Items
         public const string Items = ForestaAssets + "Items/";
@@ -60,8 +61,11 @@ namespace Crystals.Core
         public const string Buffs = ForestaAssets + "Buffs/";
         #endregion
 
-        #region misc
-        public const string Shader = Assets + "shader/Misc/";
+        #region Misc
+
+        public const string ForestaShadersMisc = ForestaAssets + "Shaders/Misc/";
+
         #endregion
-    }
+
+	}
 }
