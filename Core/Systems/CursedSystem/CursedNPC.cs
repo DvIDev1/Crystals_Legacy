@@ -32,7 +32,6 @@ namespace Crystals.Core.Systems.CursedSystem
                 npc.lifeMax *= 2;
                 npc.defense *= 2;
                 npc.damage *= 2;
-                Main.NewText("CURSED");
             }
         }
 
