@@ -31,6 +31,7 @@ float4 PixelShaderFunction(float4 sampleColor : COLOR0, float2 coords : TEXCOORD
     d.g = 1;
     d.r = 0.5;
     d.b = 0.5;
+    d.a = uOpacity;
     col *= d.rgba;
 
     
