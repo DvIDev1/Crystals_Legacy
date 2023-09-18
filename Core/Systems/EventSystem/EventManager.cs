@@ -146,6 +146,7 @@ public class EventManager : ModSystem
                             for (float opacity = 0; opacity < 1; opacity++)
                             {
                                 Filters.Scene.Activate(CurrentEvent.eventShader).GetShader().UseOpacity(opacity);
+
                             }
                         }
                     }
