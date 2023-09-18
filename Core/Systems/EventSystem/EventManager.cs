@@ -62,11 +62,6 @@ public class EventManager : ModSystem
                             }
                         }
                     }
-                    else if (CurrentEvent == e && !e.StartDay)
-                    {
-                        Main.NewText(e.EndMessage, e.color);
-                        CurrentEvent = null;
-                    }
                 }
                 else if (Main.time == 0 && !Main.dayTime)
                 {
@@ -115,11 +110,6 @@ public class EventManager : ModSystem
 
     class EventShader : ModSceneEffect
     {
-        public EventShader(string mapBackground)
-        {
-            MapBackground = mapBackground;
-        }
-
         public override bool IsSceneEffectActive(Player player)
         {
             if (CurrentEvent != null)
@@ -131,6 +121,8 @@ public class EventManager : ModSystem
             }
             return false;
         }
+        
+        public float opti = 0;
 
         public override void SpecialVisuals(Player player, bool isActive)
         {
@@ -142,7 +134,23 @@ public class EventManager : ModSystem
                     {
                         if (Main.netMode != NetmodeID.Server)
                         {
-                            Filters.Scene.Activate(CurrentEvent.eventShader);
+                            if (!Filters.Scene[CurrentEvent.eventShader].Active)
+                            {
+                                Filters.Scene.Activate(CurrentEvent.eventShader).GetShader().UseOpacity(opti);
+                            }
+                            else
+                            {
+                                
+                                // ReSharper disable once CompareOfFloatsByEqualityOperator
+                                if (opti < 1f)
+                                {
+                                    opti += 0.01f;
+                                }
+
+                                opti = 0;
+                                Filters.Scene.Activate(CurrentEvent.eventShader).GetShader().UseOpacity(opti);
+                                Main.NewText(opti);
+                            }
                         }
                     }
                     else
