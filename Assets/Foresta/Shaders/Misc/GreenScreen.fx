@@ -28,10 +28,9 @@ float4 PixelShaderFunction(float4 sampleColor : COLOR0, float2 coords : TEXCOORD
     float2 centreCoords = (coords - uv) * (uScreenResolution / uScreenResolution.y);
     float4 d = length(centreCoords);
     d = d - uTime;
-    d.g = 1;
+    d.g = uOpacity;
     d.r = 0.5;
     d.b = 0.5;
-    d.a = uOpacity;
     col *= d.rgba;
 
     
