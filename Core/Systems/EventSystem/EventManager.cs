@@ -134,6 +134,7 @@ public class EventManager : ModSystem
 
         public override void SpecialVisuals(Player player, bool isActive)
         {
+            
             if (CurrentEvent != null)
             {
                 if (CurrentEvent.eventShader != null)
@@ -142,7 +143,10 @@ public class EventManager : ModSystem
                     {
                         if (Main.netMode != NetmodeID.Server)
                         {
-                            Filters.Scene.Activate(CurrentEvent.eventShader);
+                            for (float opacity = 0; opacity < 1; opacity++)
+                            {
+                                Filters.Scene.Activate(CurrentEvent.eventShader).GetShader().UseOpacity(opacity);
+                            }
                         }
                     }
                     else
