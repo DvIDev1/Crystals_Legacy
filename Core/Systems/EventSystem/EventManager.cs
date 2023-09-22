@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
+using Terraria.Audio;
 using Terraria.Graphics.Capture;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
@@ -100,6 +101,7 @@ public class EventManager : ModSystem
 
     public override void OnModLoad()
     {
+        Event e;
         List<Condition> conditions = new List<Condition>();
         conditions.AddRange(new[] { Condition.DownedEyeOfCthulhu });
         List<Condition> activeConditions = new List<Condition>();
@@ -107,7 +109,8 @@ public class EventManager : ModSystem
         EventRegister.CreateEvent(false, "The Spiritual Night has Started", "The Spiritual Night has Ended",
             Color.Green, 1f, conditions , "GreenScreen" , MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Opening") , activeConditions);
     }
-
+    
+    
     class EventShader : ModSceneEffect
     {
         public override bool IsSceneEffectActive(Player player)
@@ -146,10 +149,8 @@ public class EventManager : ModSystem
                                 {
                                     opti += 0.01f;
                                 }
-
-                                opti = 0;
+                                
                                 Filters.Scene.Activate(CurrentEvent.eventShader).GetShader().UseOpacity(opti);
-                                Main.NewText(opti);
                             }
                         }
                     }
@@ -165,7 +166,8 @@ public class EventManager : ModSystem
         public override ModWaterStyle WaterStyle { get; }
         public override ModSurfaceBackgroundStyle SurfaceBackgroundStyle { get; }
         public override ModUndergroundBackgroundStyle UndergroundBackgroundStyle { get; }
-        public override int Music => PickMusic();
+        public override int Music => CurrentEvent.MusicID;
+
         public override string MapBackground { get; }
         public override CaptureBiome.TileColorStyle TileColorStyle { get; }
 
@@ -175,7 +177,6 @@ public class EventManager : ModSystem
             {
                 return CurrentEvent.MusicID;
             }
-
             return 0;
         }
         

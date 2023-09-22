@@ -65,3 +65,9 @@ obj/Crystals.csproj.nuget.dgspec.json
 /obj/Debug/net6.0/Crystals.csproj.CoreCompileInputs.cache
 /obj/Debug/net6.0/Crystals.dll
 /obj/Debug/net6.0/Crystals.pdb
+obj/Crystals.csproj.nuget.dgspec.json
+obj/Crystals.csproj.nuget.g.props
+obj/Debug/net6.0/Crystals.assets.cache
+obj/Debug/net6.0/Crystals.GeneratedMSBuildEditorConfig.editorconfig
+obj/project.assets.json
+obj/project.nuget.cache
