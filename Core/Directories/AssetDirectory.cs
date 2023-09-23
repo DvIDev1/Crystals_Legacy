@@ -64,6 +64,7 @@ namespace Crystals.Core
         #region Misc
 
         public const string ForestaShadersMisc = ForestaAssets + "Shaders/Misc/";
+        public const string FX = OtherAssets + "FX/";
 
         #endregion
 
