@@ -25,25 +25,24 @@ namespace Crystals.Core.Systems.CursedSystem
 
         public override void OnSpawn(NPC npc, IEntitySource source)
         {
-            if (npc.friendly != true)
+            if (npc.friendly != true && npc.dontTakeDamage == false)
             {
-                IsNPCCursed = Main.rand.NextBool(1, 10);
+                IsNPCCursed = Main.rand.NextBool(1, 20);
             }
 
             if (IsNPCCursed)
             {
-                npc.life *= 2;
-                npc.lifeMax *= 2;
-                npc.defense *= 2;
-                npc.damage *= 2;
+                npc.life += npc.life / 4;
+                npc.lifeMax += npc.lifeMax / 4;
+                npc.defense += npc.defense / 4;
+                npc.damage += npc.damage / 4;
             }
         }
 
         public override bool PreDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
             spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp,
-                DepthStencilState.None, RasterizerState.CullCounterClockwise, null);
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend , SamplerState.LinearClamp, null, null, null, Main.GameViewMatrix.ZoomMatrix);
 
             if (IsNPCCursed)
             {
@@ -80,8 +79,7 @@ namespace Crystals.Core.Systems.CursedSystem
             }
             
             Main.spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp,
-                DepthStencilState.None, RasterizerState.CullCounterClockwise, null, Main.UIScaleMatrix);
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp, null, null, null, Main.GameViewMatrix.ZoomMatrix);
         }
 
         public override void OnKill(NPC npc)

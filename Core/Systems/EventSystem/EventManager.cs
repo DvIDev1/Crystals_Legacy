@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Crystals.Core.Systems.TitleSystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -12,6 +13,7 @@ using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace Crystals.Core.Systems.EventSystem;
 
@@ -24,32 +26,36 @@ public class EventManager : ModSystem
         Filters.Scene["GreenScreen"].Load();
     }
 
-    public override void PreUpdateInvasions()
-    {
-        /*if (EventRegister.events.Count != 0)
-        {
-            foreach (var e in EventRegister.events)
-            {   
-                if (e.conditions.All( b => b.IsMet()))
-                {
-                    e.Active = true;
-                }
-                else
-                {
-                    e.Active = false;
-                }
-            }
-        }*/
-    }
-
     public static Event? CurrentEvent = null;
 
     public override void PreUpdateTime()
     {
         if (EventRegister.events.Count != 0)
         {
+
             foreach (var e in EventRegister.events)
             {
+
+
+                // ReSharper disable once CompareOfFloatsByEqualityOperator
+                if (CurrentEvent != null && e.StartDay && !Main.dayTime)
+                {
+                    Title.color = e.color;
+                    Title.subtext = "Has Ended";
+                    Title.text = "The " + e.name;
+                    Title.ActiveTime = 180;
+                    CurrentEvent = null;
+                    // ReSharper disable once CompareOfFloatsByEqualityOperator
+                }else if (CurrentEvent != null && !e.StartDay && Main.dayTime)
+                {
+                    Title.color = e.color;
+                    Title.subtext = "Has Ended";
+                    Title.text = "The " + e.name;
+                    Title.ActiveTime = 180;
+                    CurrentEvent = null;
+                }
+                
+                
                 if (Main.time == 0 && Main.dayTime)
                 {
                     if (e.StartDay)
@@ -58,10 +64,21 @@ public class EventManager : ModSystem
                         {
                             if (e.Conditions.All(b => b.IsMet()) && Main.rand.NextFloat() <= e.Chance)
                             {
-                                Main.NewText(e.StartMessage, e.color);
+                                Title.color = e.color;
+                                Title.subtext = "Has started";
+                                Title.text = "The " + e.name;
+                                Title.ActiveTime = 180;
                                 CurrentEvent = e;
                             }
                         }
+                    }
+                    else if (CurrentEvent == e && !e.StartDay)
+                    {
+                        Title.color = e.color;
+                        Title.subtext = "Has Ended";
+                        Title.text = "The " + e.name;
+                        Title.ActiveTime = 180;
+                        CurrentEvent = null;
                     }
                 }
                 else if (Main.time == 0 && !Main.dayTime)
@@ -72,14 +89,20 @@ public class EventManager : ModSystem
                         {
                             if (e.Conditions.All(b => b.IsMet()) && Main.rand.NextFloat() <= e.Chance)
                             {
-                                Main.NewText(e.StartMessage, e.color);
+                                Title.color = e.color;
+                                Title.subtext = "Has started";
+                                Title.text = "The " + e.name;
+                                Title.ActiveTime = 180;
                                 CurrentEvent = e;
                             }
                         }
                     }
                     else if (CurrentEvent == e && e.StartDay)
                     {
-                        Main.NewText(e.EndMessage, e.color);
+                        Title.color = e.color;
+                        Title.subtext = "Has Ended";
+                        Title.text = "The " + e.name;
+                        Title.ActiveTime = 180;
                         CurrentEvent = null;
                     }
                 }
@@ -99,6 +122,27 @@ public class EventManager : ModSystem
         }
     }
 
+    /*public override void SaveWorldData(TagCompound tag)
+    {
+        if (CurrentEvent != null)
+        {
+            tag.Set(CurrentEvent.name.Replace(" " , "_"), CurrentEvent, true);
+        }
+    }
+
+    
+    
+    public override void LoadWorldData(TagCompound tag)
+    {
+        foreach (var save in tag)
+        {
+            if (save.Key.StartsWith("Crystals/Events"))
+            {
+                CurrentEvent = (Event)save.Value;
+            }
+        }
+    }*/
+
     public override void OnModLoad()
     {
         Event e;
@@ -106,11 +150,25 @@ public class EventManager : ModSystem
         conditions.AddRange(new[] { Condition.DownedEyeOfCthulhu });
         List<Condition> activeConditions = new List<Condition>();
         activeConditions.AddRange(new []{Condition.TimeNight , ConditionHelper.InForest});
-        EventRegister.CreateEvent(false, "The Spiritual Night has Started", "The Spiritual Night has Ended",
-            Color.Green, 1f, conditions , "GreenScreen" , MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Opening") , activeConditions);
+        EventRegister.CreateEvent(false, "Spiritual Night",
+            Color.Green, 1f, conditions , "GreenScreen" , MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Event") , activeConditions ,  1.5f);
     }
-    
-    
+
+    class SpawnRate : GlobalNPC 
+    {
+        public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
+        {
+            if (CurrentEvent != null)
+            {
+                if (CurrentEvent.ActiveConditions.All(condition => condition.IsMet()))
+                {
+                    spawnRate = (int)(spawnRate / CurrentEvent.SpawnRateMultiplier);
+                    maxSpawns = (int)(maxSpawns * CurrentEvent.SpawnRateMultiplier);   
+                }
+            }
+        }
+    }
+
     class EventShader : ModSceneEffect
     {
         public override bool IsSceneEffectActive(Player player)
@@ -140,6 +198,7 @@ public class EventManager : ModSystem
                             if (!Filters.Scene[CurrentEvent.eventShader].Active)
                             {
                                 Filters.Scene.Activate(CurrentEvent.eventShader).GetShader().UseOpacity(opti);
+                                //Main.curMusic = CurrentEvent.MusicID;
                             }
                             else
                             {
@@ -156,6 +215,8 @@ public class EventManager : ModSystem
                     }
                     else
                     {
+                        
+                        //Main.curMusic = -1;
                         Filters.Scene.Deactivate(CurrentEvent.eventShader);
                     }
                     
@@ -166,10 +227,12 @@ public class EventManager : ModSystem
         public override ModWaterStyle WaterStyle { get; }
         public override ModSurfaceBackgroundStyle SurfaceBackgroundStyle { get; }
         public override ModUndergroundBackgroundStyle UndergroundBackgroundStyle { get; }
-        public override int Music => CurrentEvent.MusicID;
+        public override int Music => PickMusic();
 
         public override string MapBackground { get; }
-        public override CaptureBiome.TileColorStyle TileColorStyle { get; }
+        public override CaptureBiome.TileColorStyle TileColorStyle => CaptureBiome.TileColorStyle.Jungle;
+
+        public override SceneEffectPriority Priority => SceneEffectPriority.Event;
 
         private int PickMusic()
         {
@@ -177,7 +240,7 @@ public class EventManager : ModSystem
             {
                 return CurrentEvent.MusicID;
             }
-            return 0;
+            return -1;
         }
         
     }

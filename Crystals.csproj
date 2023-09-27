@@ -63,7 +63,6 @@
     <Folder Include="Content\Foresta\Npcs\Friendly\ShroomMan" />
     <Folder Include="Content\Other\Items\Pet\" />
     <Folder Include="Core\Systems\BuffShakeSystem" />
-    <Folder Include="Core\Systems\TitleSystem\" />
     <Folder Include="Sounds\Items\Feracor" />
   </ItemGroup>
 </Project>

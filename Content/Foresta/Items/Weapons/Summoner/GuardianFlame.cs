@@ -49,8 +49,13 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
             int damage, float knockback)
         {
             player.AddBuff(Item.buffType, 2, true);
-            position = Main.MouseWorld;
             return true;
+        }
+
+        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage,
+            ref float knockback)
+        {
+            position = Main.MouseWorld;
         }
 
         class GuardianFlameBuff : ModBuff
@@ -95,7 +100,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
                 Projectile.friendly = true;
                 Projectile.minion = true;
-                Projectile.minionSlots = 1f;
+                Projectile.minionSlots = 2f;
                 Projectile.penetrate = -1;
             }
 
@@ -108,9 +113,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
             private int hits;
 
-            private float targetYdd;
-
-            private enum Attack : int
+            private enum Attack
             {
                 Chase = 0,
                 FireShots = 1,
@@ -136,7 +139,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
             {
                 Player player = Main.player[Projectile.owner];
 
-                #region Detection Behaviour
+                #region Detection Behavior
 
                 float detectionRadius = 750f;
                 Vector2 targetCenter = Projectile.position;
@@ -187,7 +190,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
                 #endregion
                 
-                #region Attacking Behaviour
+                #region Attacking Behavior
 
                 if (foundTarget)
                 {
@@ -280,11 +283,10 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
                 #endregion
 
-                #region Passive Behaviour
+                #region Passive Behavior
                 
                 Projectile.ai[2]++;
                 
-                bool inIdleRangePlayer = Projectile.Distance(player.Center) < 500;
                 if (!foundTarget)
                 {
                     Timer = 0;
@@ -316,7 +318,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                 }
                 #endregion
                 
-                #region General Behaviour
+                #region General Behavior
                 Projectile.rotation = Projectile.velocity.X * 0.05f;
                 
                 float lightMultiplier = (float) MathFunctions.SineWave(0.25f, 0.5f, (int) Projectile.ai[2] / 20f) + 0.5f;
@@ -337,7 +339,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                     player.ClearBuff(ModContent.BuffType<GuardianFlameBuff>());
                 }
                 if (player.HasBuff(ModContent.BuffType<GuardianFlameBuff>())) {
-                    Projectile.timeLeft = 10;
+                    Projectile.timeLeft = 2;
                 }
                 #endregion
             }

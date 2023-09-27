@@ -14,9 +14,8 @@ public class Event
 
     public List<Condition> Conditions = new List<Condition>();
 
-    public String StartMessage;
-
-    public String EndMessage;
+    public String name;
+    
 
     public Color color;
 
@@ -28,18 +27,20 @@ public class Event
 
     public List<Condition> ActiveConditions = new List<Condition>();
 
-    public Event(bool startDay, int id, string startMessage, string endMessage, Color color, float chance,
-        List<Condition> conditions, string eventShader, int musicId, List<Condition> activeConditions)
+    public float SpawnRateMultiplier;
+
+    public Event(bool startDay, int id, string name, Color color, float chance,
+        List<Condition> conditions, string eventShader, int musicId, List<Condition> activeConditions , float spawnRateMultiplier)
     {
         StartDay = startDay;
         ID = id;
-        StartMessage = startMessage;
-        EndMessage = endMessage;
+        this.name = name;
         this.color = color;
         Chance = chance;
         Conditions = conditions;
         this.eventShader = eventShader;
         MusicID = musicId;
         ActiveConditions = activeConditions;
+        SpawnRateMultiplier = spawnRateMultiplier;
     }
 }
