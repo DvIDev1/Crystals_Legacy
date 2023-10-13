@@ -41,11 +41,13 @@ namespace Crystals.Core.Systems.CursedSystem
 
         public override bool PreDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend , SamplerState.LinearClamp, null, null, null, Main.GameViewMatrix.ZoomMatrix);
-
+            
             if (IsNPCCursed)
             {
+                spriteBatch.End();
+                spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend , SamplerState.LinearClamp, null, null, null, Main.GameViewMatrix.ZoomMatrix);
+
+                
                 var Pulse = GameShaders.Misc["Edge"];
                 npc.color = Lighting.GetColor(screenPos.ToPoint());
 
@@ -76,10 +78,11 @@ namespace Crystals.Core.Systems.CursedSystem
                     dust.noGravity = true;
                 }
                 
+                Main.spriteBatch.End();
+                spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp, null, null, null, Main.GameViewMatrix.ZoomMatrix);
+                
             }
-            
-            Main.spriteBatch.End();
-            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.LinearClamp, null, null, null, Main.GameViewMatrix.ZoomMatrix);
+
         }
 
         public override void OnKill(NPC npc)

@@ -122,6 +122,20 @@ public class OvergrownMage : ModNPC
                     }
 
                     break;
+                
+                case 2: 
+                    NPC.frameCounter++;
+
+                    if (NPC.frameCounter % 5 == 0)
+                        yFrame++;
+
+                    if (yFrame == 15)
+                    {
+                        yFrame = 7;
+                        xFrame = 2;
+                        NPC.frameCounter = 0;
+                    }
+                    break;
             }
         }
         else yFrame = 0;
@@ -227,7 +241,11 @@ public class OvergrownMage : ModNPC
             case States.Support:
                 xFrame = 2;
                 target = player;
-                
+                Support();
+                if (Timer >= 180)
+                {
+                    
+                }
 
                 break;
         }
