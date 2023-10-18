@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Foresta\Textures\NPCs\Gores" />
+    <Folder Include="Assets\Misc\Shaders\" />
     <Folder Include="Assets\Other\OtherItems\Vanity\Maid\" />
     <Folder Include="Content\Foresta\Npcs\Friendly\ShroomMan" />
     <Folder Include="Content\Other\Items\Pet\" />

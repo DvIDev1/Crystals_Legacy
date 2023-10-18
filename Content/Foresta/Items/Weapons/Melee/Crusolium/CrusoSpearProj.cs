@@ -113,22 +113,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 Projectile.rotation += MathHelper.ToRadians(-135f) + (float)Math.PI;
             }
 
-            if (CrusoSpear.CrusoAbility.HitCount == 5)
-            {
-                Vector2 vector = Projectile.velocity.SafeNormalize(Vector2.UnitY);
-                float num = Projectile.ai[1] / 60f;
-                float num2 = 2f;
-                for (int i = 0; (float)i < num2; i++)
-                {
-                    Dust dust = Dust.NewDustDirect(Projectile.Center, 14, 14, 228, 0f, 0f, 110);
-                    dust.velocity = vector * 2f;
-                    dust.position = Projectile.Center + vector.RotatedBy(num * ((float)Math.PI * 2f) * 2f + (float)i / num2 * ((float)Math.PI * 2f)) * 7f;
-                    dust.scale = 1f + 0.6f * Main.rand.NextFloat();
-                    dust.velocity += vector * 3f;
-                    dust.noGravity = true;
-                }
-            }
-
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

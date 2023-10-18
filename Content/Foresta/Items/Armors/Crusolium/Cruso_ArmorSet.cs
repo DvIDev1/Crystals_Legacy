@@ -103,8 +103,8 @@ namespace Crystals.Content.Foresta.Items.Armors.Crusolium
             
             public override void UpdateEquip(Player player)
             {
-                player.GetCritChance(DamageClass.Melee) += 0.05f;
-                player.GetCritChance(DamageClass.Ranged) += 0.05f;
+                player.GetCritChance(DamageClass.Melee) += 3f;
+                player.GetCritChance(DamageClass.Ranged) += 3f;
                 player.GetArmorPenetration(DamageClass.Default) += 0.05f;
             }
             

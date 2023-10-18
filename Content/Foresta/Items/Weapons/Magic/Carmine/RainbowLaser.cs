@@ -90,7 +90,7 @@ namespace MasterMasterMode.Projectiles
         {
             Projectile.ai[0]+= 1f;
             Player owner = Main.player[Projectile.owner];
-            if (owner.dead || !owner.channel)
+            if (owner.dead || !owner.channel || Projectile.ai[0] >= 1200) 
             {
                 owner.itemTime = owner.itemAnimation = 0;
                 Projectile.Kill();

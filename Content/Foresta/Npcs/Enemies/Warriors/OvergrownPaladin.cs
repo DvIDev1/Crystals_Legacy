@@ -25,6 +25,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
     {
         public override string Texture => AssetDirectory.Warriors + Name;
 
+        [Obsolete("Obsolete")]
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 29;
