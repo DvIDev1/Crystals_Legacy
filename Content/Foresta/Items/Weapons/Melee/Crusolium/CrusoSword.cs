@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Crystals.Core;
 using Crystals.Helpers;
 using Humanizer;
@@ -38,7 +39,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             Item.knockBack = 3;
             Item.value = 10000;
             Item.rare = ItemRarityID.Orange;
-            Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.crit = 4;
             Item.useStyle = ItemUseStyleID.Shoot;
@@ -59,12 +59,12 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             int basic = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
             if (notboollol == true)
             {
-                Main.projectile[basic].ai[1] = -1;
+                Main.projectile[basic].ai[2] = -1;
                 notboollol = false;
             }
             else
             {
-                Main.projectile[basic].ai[1] = 1;
+                Main.projectile[basic].ai[2] = 1;
                 notboollol = true;
             }
             Main.projectile[basic].rotation = Main.projectile[basic].DirectionTo(Main.MouseWorld).ToRotation();
@@ -98,35 +98,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
         {
             public override string Texture => AssetDirectory.Melee + Name;
 
-            /*private enum AttackType
-            {
-                Down,
-                Up,
-                Empowered
-            }
-
-            private float startRotation = 0f;
-            private float endRotation = 0f;
-            private float attackTime;
-
-            private List<float> oldRotation = new List<float>();
-
-            private Player Owner => Main.player[Projectile.owner];
-
-            private bool FacingRight;
-
-            private AttackType CurrentAttack
-            {
-                get => (AttackType)Projectile.ai[0];
-                set => Projectile.ai[0] = (float)value;
-            }
-
-            private float Timer
-            {
-                get => Projectile.localAI[0];
-                set => Projectile.localAI[0] = value;
-            } */
-
             public override void SetStaticDefaults()
             {
                 ProjectileID.Sets.HeldProjDoesNotUsePlayerGfxOffY[Type] = true;
@@ -147,53 +118,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 Projectile.ownerHitCheck = true;
                 Projectile.DamageType = DamageClass.Melee;
             }
-
-            /* public override void OnSpawn(IEntitySource source)
-            {
-                var owner = Main.player[Projectile.owner];
-
-                startRotation = Projectile.rotation = Owner.DirectionTo(Main.MouseWorld).ToRotation();
-                
-                switch (CurrentAttack)
-                {
-                    case AttackType.Down:
-                        endRotation = startRotation + 2f * Owner.direction;
-                        attackTime = 60;
-                        break;
-                    case AttackType.Up:
-                        endRotation = startRotation - 2f * Owner.direction;
-                        attackTime = 60;
-                        break;
-                    case AttackType.Empowered: 
-                        endRotation = startRotation + 2f * Owner.direction;
-                        attackTime = 15;
-                        break;
-                }
-                
-            }
-
-            public override void AI()
-            {
-                var owner = Main.player[Projectile.owner];
-
-                Timer += 1f / attackTime;
-                
-                owner.direction =
-                    (Projectile.rotation > -MathHelper.PiOver2 && Projectile.rotation < MathHelper.PiOver2) ? 1 : -1;
-                Projectile.Center = owner.Center - new Vector2(owner.direction * 3, 2) +
-                                    new Vector2(23, 0).RotatedBy(Projectile.rotation);
-                Projectile.position.Y += owner.gfxOffY;
-                owner.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full,
-                    Projectile.rotation - MathF.PI / 2);
-
-                Projectile.rotation = MathHelper.Lerp(startRotation, endRotation, MathFunctions.EaseFunctions.EaseInOutQuad(Timer));
-
-                if (Timer >= 1f)
-                {
-                    Projectile.Kill();
-                }
-                
-            } */
             Vector2 dir = Vector2.Zero;
             Vector2 hlende = Vector2.Zero;
             public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
@@ -226,53 +150,58 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
                 }
                 return false;
             }
-
+            public override bool PreDraw(ref Color lightColor)
+            {
+                Main.instance.LoadProjectile(Projectile.type);
+                Texture2D proj = TextureAssets.Projectile[Type].Value;
+                if (Projectile.ai[2] == 1)
+                    Main.EntitySpriteDraw(proj, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation - 0.78f, proj.Size() / 2, Projectile.scale, SpriteEffects.None, 0);
+                if (Projectile.ai[2] == -1)
+                    Main.EntitySpriteDraw(proj, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation - 0.78f, proj.Size() / 2, Projectile.scale, SpriteEffects.FlipHorizontally, 0);
+                return false;
+            }
+            int a;
+            public override void SendExtraAI(BinaryWriter writer)
+            {
+                writer.Write(a);
+            }
+            public override void ReceiveExtraAI(BinaryReader reader)
+            {
+                a = reader.ReadInt32();
+            }
             public override void AI()
             {
-                // All Projectiles have timers that help to delay certain events
-                // Projectile.ai[0], Projectile.ai[1] � timers that are automatically synchronized on the client and server
-                // Projectile.localAI[0], Projectile.localAI[0] � only on the client
-                // In this example, a timer is used to control the fade in / out and despawn of the Projectile
-                //Projectile.ai[0] += 1f;
                 if (dir == Vector2.Zero)
                 {
                     dir = Main.MouseWorld;
-                    Projectile.rotation = (MathHelper.PiOver2 * Projectile.ai[1]) - MathHelper.PiOver4 + Projectile.DirectionTo(Main.MouseWorld).ToRotation();
+                    Projectile.rotation = (MathHelper.PiOver2 * Projectile.ai[2]) - MathHelper.PiOver4 + Projectile.DirectionTo(Main.MouseWorld).ToRotation();
                 }
+                //FadeInAndOut();
+                Projectile.Center = Main.player[Projectile.owner].Center;
+                a++;
                 Player player = Main.player[Projectile.owner];
                 player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, Projectile.rotation + 90);
-                Projectile.Center = Main.player[Projectile.owner].Center;
-                Projectile.ai[0] += 1f;
-                Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((20 - Projectile.ai[0])));
-                /*Projectile.rotation += MathHelper.Lerp(Projectile.rotation, MathHelper.ToRadians(20 - Projectile.ai[0]),
-                    40f / Projectile.ai[0]);*/ //Bad Lerp Attempt , doesnt work
-            }
-            /*public override bool PreDraw(ref Color lightColor)
-            {
-                //DrawTrail(Main.spriteBatch);
-                Texture2D tex = ModContent.Request<Texture2D>(Texture).Value;
-
-                SpriteEffects effect = SpriteEffects.None;
-
-                bool flip = false;
-                SpriteEffects effects = SpriteEffects.None;
-
-                var origin = new Vector2(0, tex.Height);
-
-                Vector2 scaleVec = Vector2.One;
-                for (int k = 16; k > 0; k--)
+                if (Projectile.ai[2] <= 8)
                 {
-
-                    float progress = 1 - (float)((16 - k) / (float)16);
-                    Color color = lightColor * MathFunctions.EaseFunctions.EaseInOutQuad(progress) * 0.1f;
-                    if (k > 0 && k < oldRotation.Count)
-                        Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, color, oldRotation[k] + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
+                    Projectile.ai[0] += 0.1f;
+                    Projectile.ai[1] += 0.1f;
                 }
-
-                Main.spriteBatch.Draw(tex, Projectile.Center - Main.screenPosition, null, lightColor, Projectile.rotation + 0.78f, origin, Projectile.scale * scaleVec, effects, 0f);
-                return false;
-            } */
-            
+                else
+                {
+                    Projectile.ai[0] += 0.2f;
+                    Projectile.ai[1] += 0.2f;
+                }
+                if (a >= 9 && a <= 15)
+                    Projectile.scale += 0.1f;
+                if (a >= 15 && a <= 20)
+                    Projectile.scale -= 0.2f;
+                if (a == 10) 
+                    SoundEngine.PlaySound(SoundID.Item1, Projectile.Center);
+                if (Projectile.ai[2] == 1)
+                    Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((10 - Projectile.ai[0])));
+                if (Projectile.ai[2] == -1)
+                    Projectile.rotation += (Projectile.ai[1] * MathHelper.ToRadians((-10 - Projectile.ai[0])));
+            }
         } 
     }
 }
