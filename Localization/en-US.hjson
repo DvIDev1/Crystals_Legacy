@@ -443,6 +443,7 @@ Mods: {
 			CrusoSwordSwing2.DisplayName: Cruso Sword Swing2
 			Sagi.DisplayName: Sagi
 			MageSword.DisplayName: Mage Sword
+			CrusoMagicSword.DisplayName: Cruso Magic Sword
 		}
 
 		NPCs: {
