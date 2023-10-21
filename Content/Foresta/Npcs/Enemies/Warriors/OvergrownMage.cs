@@ -169,6 +169,23 @@ public class OvergrownMage : ModNPC
 
         NPC.TargetClosest();
         var player = Main.player[NPC.target];
+        
+        foreach (var npcs in Main.npc)
+        {
+            if (npcs.Distance(NPC.Center) <= 1000)
+            {
+                if (NPCSets.OvergrownWarrior[npcs.type])
+                {
+                    if (npcs.type != NPC.type)
+                    {
+                        warriors.Add(npcs);
+                        warriorPositions.Add(npcs.Center);
+                    }
+                }
+            }
+        }
+
+        warriors.RemoveAll(npc => !npc.active);
 
         #endregion
 
@@ -228,6 +245,15 @@ public class OvergrownMage : ModNPC
                     if (NPC.Distance(target.Center) <= 500f && charge >= maxCharge )
                     {
                         currentAttack = States.Attack;
+                    }else if(HasNearAllies())
+                    {
+                        if (GetNearestWarrior().life < GetNearestWarrior().lifeMax / 2)
+                        {
+                            if (NPC.Distance(GetNearestWarriorPos()) <= 500f)
+                            {
+                                currentAttack = States.Support;
+                            }
+                        }
                     }
                     else currentAttack = States.Idle;
                 }
@@ -242,9 +268,12 @@ public class OvergrownMage : ModNPC
                 xFrame = 2;
                 target = player;
                 Support();
-                if (Timer >= 180)
+                if (Timer >= 360)
                 {
-                    
+                    Timer = 0;
+                    yFrame = 0;
+                    NPC.frameCounter = 0;
+                    currentAttack = States.Idle;
                 }
 
                 break;
@@ -253,6 +282,41 @@ public class OvergrownMage : ModNPC
         #endregion
     }
 
+    private readonly List<NPC> warriors = new List<NPC>();
+
+    private List<Vector2> warriorPositions = new List<Vector2>();
+    
+    private Vector2 GetNearestWarriorPos()
+    {
+        if (warriors.Count != 0)
+        {
+            if (warriorPositions.Count != 0)
+            {
+                return Pathfinding.GetNearestNPC(NPC, warriors).Center;
+            }
+        }
+        return new Vector2(0, 0);
+    }
+
+    
+    private NPC GetNearestWarrior()
+    {
+        if (warriors.Count != 0)
+        {
+            if (warriorPositions.Count != 0)
+            {
+                return Pathfinding.GetNearestNPC(NPC, warriors);
+            }
+        }
+
+        return null;
+    }
+    
+    public bool HasNearAllies()
+    {
+        return !GetNearestWarriorPos().Equals(new Vector2(0, 0));
+    }
+    
     private void Walk()
     {
         walkDir = Math.Sign(target.Center.X - NPC.Center.X);
@@ -273,7 +337,25 @@ public class OvergrownMage : ModNPC
 
     private void Support()
     {
-        
+        NPC.velocity.X = 0; 
+        if (Timer % 60 == 0 && !Main.dedServ)
+        {
+            foreach (var npcs in Main.npc)
+            {
+                if (NPCSets.OvergrownWarrior[npcs.type])
+                {
+                    if (NPC.Distance(npcs.Center) <= 500f)
+                    {
+                        npcs.life += 5;
+                        npcs.HealEffect(5);
+                        for (int i = 0; i < Main.rand.Next(5 , 12); i++)
+                        {
+                            Dust.NewDustPerfect(npcs.Center, DustID.GreenTorch, Main.rand.NextVector2Circular(2 , 2));
+                        }
+                    }
+                }
+            }
+        }
     }
 
     class MageSword : ModProjectile
@@ -329,7 +411,7 @@ public class OvergrownMage : ModNPC
         {
             for (int i = 0; i < Main.rand.Next(5 , 12); i++)
             {
-                Dust.NewDustPerfect(Projectile.Center, DustID.GreenTorch, Main.rand.NextVector2Circular(-4 , 4));
+                Dust.NewDustPerfect(Projectile.Center, DustID.GreenTorch, Main.rand.NextVector2Circular(2 , 4));
             }
             SoundEngine.PlaySound(SoundID.DD2_PhantomPhoenixShot with {Volume = 2.5f}, Projectile.Center);
         }
