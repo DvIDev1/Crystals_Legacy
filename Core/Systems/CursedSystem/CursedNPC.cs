@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.Graphics.Light;
 using Terraria.Graphics.Shaders;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Crystals.Core.Systems.CursedSystem
@@ -25,7 +26,7 @@ namespace Crystals.Core.Systems.CursedSystem
 
         public override void OnSpawn(NPC npc, IEntitySource source)
         {
-            if (npc.friendly != true && npc.dontTakeDamage == false)
+            if (npc.friendly != true && npc.dontTakeDamage == false && npc.type != NPCID.TargetDummy)
             {
                 IsNPCCursed = Main.rand.NextBool(1, 20);
             }
