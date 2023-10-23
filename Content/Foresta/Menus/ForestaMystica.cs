@@ -31,7 +31,7 @@ namespace Crystals.Content.Foresta.Menus
 
         public override void Load()
         {
-            Particles = new MenuParticleSystem("Crystals/Assets/Foresta/Dust/Test",ParticleLogic);
+            Particles = new MenuParticleSystem("Crystals/Assets/Foresta/Dust/MenuDust",ParticleLogic);
 
         }
 
