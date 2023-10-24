@@ -19,6 +19,9 @@ namespace Crystals.Core.Systems.EventSystem;
 
 public class EventManager : ModSystem
 {
+    
+    //Todo Witch Summon
+    //Todo Save on world
     public override void Load()
     {
         Ref<Effect> screenRef = new Ref<Effect>(ModContent.Request<Effect>(AssetDirectory.ForestaShadersMisc + "GreenScreen", AssetRequestMode.ImmediateLoad).Value);
@@ -27,6 +30,16 @@ public class EventManager : ModSystem
     }
 
     public static Event? CurrentEvent = null;
+
+    public override void SaveWorldData(TagCompound tag)
+    {
+        base.SaveWorldData(tag);
+    }
+
+    public override void LoadWorldData(TagCompound tag)
+    {
+        base.LoadWorldData(tag);
+    }
 
     public override void PreUpdateTime()
     {
@@ -230,7 +243,6 @@ public class EventManager : ModSystem
         public override int Music => PickMusic();
 
         public override string MapBackground { get; }
-        public override CaptureBiome.TileColorStyle TileColorStyle => CaptureBiome.TileColorStyle.Jungle;
 
         public override SceneEffectPriority Priority => SceneEffectPriority.Event;
 
