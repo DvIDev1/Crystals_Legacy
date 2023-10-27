@@ -33,12 +33,23 @@ public class EventManager : ModSystem
 
     public override void SaveWorldData(TagCompound tag)
     {
-        base.SaveWorldData(tag);
+        if (CurrentEvent != null)
+        {
+            tag.Set(CurrentEvent.ID.ToString() , CurrentEvent.name , true);
+        }
+    }
+
+    public override void ClearWorld()
+    {
+        CurrentEvent = null;
     }
 
     public override void LoadWorldData(TagCompound tag)
     {
-        base.LoadWorldData(tag);
+        if (CurrentEvent == null && tag.Any(pair => pair.Key == Main.worldID.ToString()))
+        {
+            CurrentEvent = EventRegister.events.Find(@event => @event.name == tag.Get<string>(Main.worldID.ToString()));
+        }
     }
 
     public override void PreUpdateTime()
