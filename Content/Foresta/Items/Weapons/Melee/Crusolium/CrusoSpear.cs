@@ -74,7 +74,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 
 			return null;
 		}
-
+		
 		/*public override bool CanShoot(Player player)
 		{
 			return player.altFunctionUse != 2;
