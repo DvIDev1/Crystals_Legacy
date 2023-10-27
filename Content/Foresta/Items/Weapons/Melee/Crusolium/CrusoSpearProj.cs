@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using Crystals.Core;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -7,7 +8,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 {
     public class CrusoSpearProj : ModProjectile
     {
-        public override string Texture => "Crystals/Content/Foresta/Items/Weapons/Melee/Crusolium/CrusoSpear";
+        public override string Texture => AssetDirectory.Melee + "CrusoSpear";
         public override void SetDefaults()
         {
             Projectile.damage = 75;

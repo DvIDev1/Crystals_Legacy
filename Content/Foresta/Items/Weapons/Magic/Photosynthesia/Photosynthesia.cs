@@ -29,14 +29,13 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Photosynthesia
         public override void SetDefaults()
         {
             Item.Size = new Vector2(64,64);Item.noMelee = true;
-            Item.crit = 13;
             Item.DamageType = DamageClass.Magic;
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.damage = 16;
+            Item.damage = 15;
             Item.useTime = 12;
             Item.useAnimation = 12;
-            Item.knockBack = KnockbackValue.LowVeryweakknockback;
-            Item.mana = 14;
+            Item.knockBack = KnockbackValue.HighVeryweakknockback;
+            Item.mana = 16;
             Item.rare = ItemRarityID.Green;
             Item.UseSound = SoundID.DD2_BookStaffCast;
             Item.scale = 1f;
@@ -49,8 +48,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Photosynthesia
         }
 
         public int projcount = 2; // The amount of Projectiles shot
-        public int spread = 11; //The spread from 0 to *(The value you inserted)* when the Projectile is shot 
-        public int maxProjs = 24; // Maximal amount of Projectiles the Owner of the Weapon is allowed to shoot/ is allowed to be in the world fot he Owner
+        public int spread = 4; //The spread from 0 to *(The value you inserted)* when the Projectile is shot 
+        public int maxProjs = 16; // Maximal amount of Projectiles the Owner of the Weapon is allowed to shoot/ is allowed to be in the world fot he Owner
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale,
             int whoAmI)
@@ -136,7 +135,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Photosynthesia
                 Projectile.ignoreWater = true;
                 Projectile.tileCollide = true;
                 Projectile.friendly = true;
-                Projectile.penetrate = 3; //Maximal amount of times the Projectiles can damage anything (If t)
+                Projectile.penetrate = 2; //Maximal amount of times the Projectiles can damage anything (If t)
             }
             
             private bool collided;
@@ -170,11 +169,11 @@ namespace Crystals.Content.Foresta.Items.Weapons.Magic.Photosynthesia
                         Projectile.velocity.Y = 16f;
                     }
                 }
-                else if(deadleaf != true)
+                else if(!deadleaf)
                 {
                     Player owner = Main.player[Projectile.owner];
                     Projectile.tileCollide = false;
-                    Projectile.penetrate = -1;
+                    Projectile.penetrate = 4;
                     Projectile.knockBack = KnockbackValue.Averageknockback;
                     if (Projectile.Distance(owner.Center) <= Distance)
                     {
