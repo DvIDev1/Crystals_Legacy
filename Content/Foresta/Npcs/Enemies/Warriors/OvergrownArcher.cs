@@ -50,6 +50,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             set => NPC.ai[0] = value;
         }
 
+        [Obsolete("Obsolete")]
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[NPC.type] = 20;
@@ -194,14 +195,27 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             if (AimProgress >= AimTime) Shoot();
         }
 
+        private int shootCounter;
+
         public void Shoot()
         {
             var target = Main.player[NPC.target];
             SoundEngine.PlaySound(SoundID.Item5, NPC.Center);
-            Projectile.NewProjectile(Terraria.Entity.GetSource_None(), NPC.Center,
-                NPC.DirectionTo(target.Top) * 8f,
-                ModContent.ProjectileType<HostileCrusolium_Arrow>(), NPC.damage * 2, KnockbackValue.Averageknockback);
+            if (shootCounter <= 3)
+            {
+                Projectile.NewProjectile(Terraria.Entity.GetSource_None(), NPC.Center,
+                    NPC.DirectionTo(target.Top) * 8f,
+                    ProjectileID.WoodenArrowHostile, NPC.damage, KnockbackValue.Averageknockback);
+            }
+            else
+            {
+                Projectile.NewProjectile(Terraria.Entity.GetSource_None(), NPC.Center,
+                    NPC.DirectionTo(target.Top) * 8f,
+                    ModContent.ProjectileType<HostileCrusolium_Arrow>(), NPC.damage * 2, KnockbackValue.Averageknockback);
+                shootCounter = 0;
+            }
             AimProgress = 0;
+            shootCounter++;
 
             if (NPC.Distance(target.Center) > 600)
             {
@@ -363,6 +377,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
                 var d = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, DustID.Bone, -NPC.velocity.X * 2);
                 d.noGravity = false;
             }
+        }
+
+        public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)
+        {
+            NPC.damage = (int)(NPC.damage * (bossAdjustment * 0.5f));
         }
 
         private class HostileCrusolium_Arrow : ModProjectile

@@ -30,9 +30,16 @@ public class PlayerSliceDash : ModPlayer
         
         if (timer >= time)
         {
-            VisualHelper.DrawDustLine(startPos , dest , 8 , 107);
-            Player.Teleport(dest , TeleportationStyleID.DebugTeleport , 0);
-
+            Tile tile = Framing.GetTileSafely(Main.mouseX, Main.mouseY);
+            if (!tile.HasTile)
+            {
+                VisualHelper.DrawDustLine(startPos, dest, 8, 107);
+                Player.Teleport(dest, TeleportationStyleID.DebugTeleport, 0);
+            }
+            else
+            {
+                VisualHelper.DrawDustLine(startPos, Player.Center, 8, 107);
+            }
             foreach (var npcs in Main.npc)
             {
                 if (Collision.CheckAABBvLineCollision(npcs.TopLeft , npcs.Size , startPos , dest))

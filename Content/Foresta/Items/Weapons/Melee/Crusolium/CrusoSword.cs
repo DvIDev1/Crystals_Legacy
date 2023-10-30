@@ -36,7 +36,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
             Item.height = 64;
             Item.useTime = 20;
             Item.useAnimation = 20;
-            Item.knockBack = 3;
+            Item.knockBack = KnockbackValue.Averageknockback;
             Item.value = 10000;
             Item.rare = ItemRarityID.Orange;
             Item.autoReuse = true;

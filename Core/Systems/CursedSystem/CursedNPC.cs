@@ -1,5 +1,10 @@
-﻿using Crystals.Content.Foresta.Items;
+﻿using System.Linq;
+using Crystals.Content.Foresta.Items;
+using Crystals.Content.Foresta.Npcs.Enemies.CursedSpirit;
+using Crystals.Content.Foresta.Npcs.Enemies.Forest_Spirit;
 using Crystals.Content.Other.Dust;
+using Crystals.Core.Systems.EventSystem;
+using Crystals.Helpers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
@@ -26,7 +31,7 @@ namespace Crystals.Core.Systems.CursedSystem
 
         public override void OnSpawn(NPC npc, IEntitySource source)
         {
-            if (npc.friendly != true && npc.dontTakeDamage == false && npc.type != NPCID.TargetDummy)
+            if (npc.friendly != true && npc.dontTakeDamage == false && npc.type != NPCID.TargetDummy && !NPCSets.Spirit[npc.type])
             {
                 IsNPCCursed = Main.rand.NextBool(1, 20);
             }
@@ -92,6 +97,22 @@ namespace Crystals.Core.Systems.CursedSystem
             {
                 npc.DropItemInstanced(npc.position, Vector2.Zero, ModContent.ItemType<CursedEnergy>(),
                     Main.rand.Next(1, 6));
+            }
+
+            if (IsNPCCursed && Main.rand.NextBool(1, 5))
+            {
+                if (EventManager.CurrentEvent != null)
+                {
+                    if (EventManager.CurrentEvent.name == "Spiritual Night" && EventManager.CurrentEvent.ActiveConditions.All(condition => condition.IsMet()) )
+                    {
+                        NPC.NewNPC(new EntitySource_Death(npc), (int)npc.Center.X, (int)npc.Center.Y,
+                            ModContent.NPCType<ForestSpirit>());
+                        return;
+                    }
+                }
+                
+                NPC.NewNPC(new EntitySource_Death(npc), (int)npc.Center.X, (int)npc.Center.Y,
+                    ModContent.NPCType<CursedSpirit>());
             }
         }
     }

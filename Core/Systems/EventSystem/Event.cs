@@ -10,7 +10,7 @@ public class Event
 {
     public bool StartDay = false;
 
-    protected int ID;
+    public int ID;
 
     public List<Condition> Conditions = new List<Condition>();
 

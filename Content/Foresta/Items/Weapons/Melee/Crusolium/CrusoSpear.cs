@@ -1,4 +1,5 @@
 ﻿using System.Threading.Channels;
+using Crystals.Core;
 using Crystals.Core.Systems.PlayerAbilitySystem;
 using Crystals.Helpers;
 using Microsoft.Xna.Framework;
@@ -17,6 +18,8 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 			ItemID.Sets.SkipsInitialUseSound[Item.type] = true; // This skips use animation-tied sound playback, so that we're able to make it be tied to use time instead in the UseItem() hook.
 			ItemID.Sets.Spears[Item.type] = true; // This allows the game to recognize our new item as a spear.
 		}
+		
+		public override string Texture => AssetDirectory.Melee + "CrusoSpear";
 
 		public override void SetDefaults()
 		{
@@ -74,7 +77,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Melee.Crusolium
 
 			return null;
 		}
-
+		
 		/*public override bool CanShoot(Player player)
 		{
 			return player.altFunctionUse != 2;

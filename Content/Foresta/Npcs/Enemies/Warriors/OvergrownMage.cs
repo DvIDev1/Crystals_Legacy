@@ -21,7 +21,7 @@ public class OvergrownMage : ModNPC
 
     public override void SetStaticDefaults()
     {
-        Main.npcFrameCount[NPC.type] = 15;
+        Main.npcFrameCount[NPC.type] = 20;
     }
 
     private int xFrame = 0;
@@ -43,7 +43,6 @@ public class OvergrownMage : ModNPC
         Idle,
         Attack,
         Support,
-        Retreat
     }
 
     private States currentAttack = States.Idle;
@@ -126,12 +125,12 @@ public class OvergrownMage : ModNPC
                 case 2: 
                     NPC.frameCounter++;
 
-                    if (NPC.frameCounter % 5 == 0)
+                    if (NPC.frameCounter % 10 == 0)
                         yFrame++;
 
                     if (yFrame == 15)
                     {
-                        yFrame = 7;
+                        yFrame = 12;
                         xFrame = 2;
                         NPC.frameCounter = 0;
                     }
@@ -247,7 +246,7 @@ public class OvergrownMage : ModNPC
                         currentAttack = States.Attack;
                     }else if(HasNearAllies())
                     {
-                        if (GetNearestWarrior().life < GetNearestWarrior().lifeMax / 2)
+                        if (GetNearestWarrior().life < GetNearestWarrior().lifeMax / 2 && GetNearestWarrior().active)
                         {
                             if (NPC.Distance(GetNearestWarriorPos()) <= 500f)
                             {
@@ -346,8 +345,8 @@ public class OvergrownMage : ModNPC
                 {
                     if (NPC.Distance(npcs.Center) <= 500f)
                     {
-                        npcs.life += 5;
-                        npcs.HealEffect(5);
+                        npcs.life += 10;
+                        npcs.HealEffect(10);
                         for (int i = 0; i < Main.rand.Next(5 , 12); i++)
                         {
                             Dust.NewDustPerfect(npcs.Center, DustID.GreenTorch, Main.rand.NextVector2Circular(2 , 2));
