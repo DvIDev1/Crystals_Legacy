@@ -411,6 +411,11 @@ Mods: {
 				DisplayName: Enchanted Timber Pickaxe
 				Tooltip: ""
 			}
+
+			ETimberBow: {
+				DisplayName: E Timber Bow
+				Tooltip: ""
+			}
 		}
 
 		Projectiles: {
@@ -444,6 +449,9 @@ Mods: {
 			Sagi.DisplayName: Sagi
 			MageSword.DisplayName: Mage Sword
 			CrusoMagicSword.DisplayName: Cruso Magic Sword
+			ETimberBowHeldProj.DisplayName: E Timber Bow Held Proj
+			ETimberSplinter.DisplayName: E Timber Splinter
+			SplinterArrow.DisplayName: Splinter Arrow
 		}
 
 		NPCs: {

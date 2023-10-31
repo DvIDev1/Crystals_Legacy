@@ -29,6 +29,7 @@ namespace Crystals.Content.Foresta
                 .Register();
 
             //Photosynthesia Recipe
+            //Todo Change Witch Drop Recipes 
             Recipe Photosynthesia = Recipe.Create(ModContent.ItemType<Photosynthesia>())
                 .AddTile(TileID.LivingLoom)
                 .AddIngredient<ForestEnergy>(15)

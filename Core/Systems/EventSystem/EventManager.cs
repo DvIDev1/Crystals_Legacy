@@ -171,11 +171,11 @@ public class EventManager : ModSystem
     {
         Event e;
         List<Condition> conditions = new List<Condition>();
-        conditions.AddRange(new[] { Condition.DownedEyeOfCthulhu });
+        conditions.AddRange(new[] { Condition.DownedEyeOfCthulhu , Condition.NotBloodMoon});
         List<Condition> activeConditions = new List<Condition>();
         activeConditions.AddRange(new []{Condition.TimeNight , ConditionHelper.InForest});
         EventRegister.CreateEvent(false, "Spiritual Night",
-            Color.Green, 1f, conditions , "GreenScreen" , MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Event") , activeConditions ,  1.5f);
+            Color.Green, 0.3f, conditions , "GreenScreen" , MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Event") , activeConditions ,  1.5f);
     }
 
     class SpawnRate : GlobalNPC 

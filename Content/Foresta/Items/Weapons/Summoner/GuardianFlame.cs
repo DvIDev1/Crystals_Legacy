@@ -141,7 +141,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
                 #region Detection Behavior
 
-                float detectionRadius = 750f;
+                float detectionRadius =450f;
                 Vector2 targetCenter = Projectile.position;
                 Vector2 targetPosition = Projectile.position;
                 Vector2 targetVelocity = Projectile.velocity;
@@ -246,7 +246,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                     {
                         Projectile.NewProjectile(Projectile.GetSource_FromAI(null),
                             Projectile.Top, Projectile.Top.DirectionTo(Pos + Velocity / 2f) * 16, 15,
-                            (int) (Projectile.damage * 1.5f), KnockbackValue.Averageknockback);
+                            (int) (Projectile.damage * 1.2f), KnockbackValue.Averageknockback);
                     }
 
                     Projectile.velocity = Projectile.DirectionTo(targetCenter) * 2;
@@ -266,7 +266,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                     if (!hasAura)
                     {
                         aura = Projectile.NewProjectileDirect(Projectile.GetSource_FromAI(null), Projectile.position, Vector2.Zero,
-                            ModContent.ProjectileType<FireAura>(), Projectile.damage * 2, 0, Projectile.owner);
+                            ModContent.ProjectileType<FireAura>(), (int) (Projectile.damage * 0.8f), 0, Projectile.owner);
                         hasAura = true;
                     }
                     else
@@ -366,7 +366,7 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
                 if (CurrentAttack == Attack.FireDash)
                 {
                     dashHit.Add(target);
-                    modifiers.SourceDamage *= 2;
+                    modifiers.SourceDamage *= 0.6f;
                 }
                 else 
                 {
@@ -425,7 +425,12 @@ namespace Crystals.Content.Foresta.Items.Weapons.Summoner
 
                 public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
                 {
-                    target.AddBuff(BuffID.OnFire3 , 60*10);
+                    target.AddBuff(BuffID.OnFire , 60*3);
+                }
+
+                public override bool? CanCutTiles()
+                {
+                    return false;
                 }
             }
             
