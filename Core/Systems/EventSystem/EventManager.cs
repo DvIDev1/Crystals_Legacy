@@ -177,7 +177,7 @@ public class EventManager : ModSystem
         EventRegister.CreateEvent(false, "Spiritual Night",
             Color.Green, 0.3f, conditions , "GreenScreen" , MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Event") , activeConditions ,  1.5f);
     }
-
+    
     class SpawnRate : GlobalNPC 
     {
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)

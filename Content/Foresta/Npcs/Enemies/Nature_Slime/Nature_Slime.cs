@@ -27,7 +27,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Slime
             NPC.width = 16;
             NPC.height = 15;
             NPC.defense = 3;
-            NPC.damage = 25;
+            NPC.damage = 11;
             NPC.lifeMax = 60;
             NPC.value = 120.00f;
             NPC.HitSound = SoundID.NPCHit1;

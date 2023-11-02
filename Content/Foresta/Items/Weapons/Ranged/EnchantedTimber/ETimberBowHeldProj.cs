@@ -298,20 +298,6 @@ public class ETimberBowHeldProj : ModProjectile
                     target.AddBuff(BuffID.Poisoned , 60);
                 }
             }
-            
-            public override void OnKill(int timeLeft)
-            {
-                for (int i = 0; i < 8; i++)
-                {
-                    Dust.NewDust(Projectile.Center, Projectile.width, Projectile.height, DustID.WoodFurniture);
-                }
-                for (int i = 0; i < 3; i++)
-                {
-                    Terraria.Projectile.NewProjectile(Projectile.GetSource_FromAI(), Projectile.Center,
-                        Projectile.velocity.RotatedByRandom(5) * 0.8f,
-                        ModContent.ProjectileType<ETimberSplinter>(), (int)(Projectile.damage * 0.60f), Projectile.knockBack);
-                }
-            }
         }
     
 }
