@@ -1,10 +1,9 @@
 Name : [c/6ec61b:Crystals]
-Version : 0.1
+Version : 0.0.1
 Tags : Fantasy, Rpg
 - - -
 Crystals is a Story orientated content mod for a brand-new terraria experience.
 Reality and what you know as Existence was created by an ancient being when it created your world  it also left on sources of power so-called crystals that helped to shape the world.
 After a really long time, humans settled around the world building empires and kingdoms and the only thing they wanted was power.
 When they Discovered the Crystals, they exploited them and put the world in chaos and destroyed almost everything on the surface.
-Humans were going into hiding and Crystals were disappearing but now it just a matter of time when the powers would be exploited again, so now it
-is your time to protect them.
+But the mistakes of the past weren't fully gone the old evils still lurk around ready to come out so its your time to prevent their doings.

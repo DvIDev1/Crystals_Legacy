@@ -38,6 +38,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, value);
             NPCID.Sets.TrailCacheLength[NPC.type] = 3;
             NPCID.Sets.TrailingMode[NPC.type] = 1;
+            
         }
 
         public override void SetDefaults()

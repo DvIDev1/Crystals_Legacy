@@ -93,7 +93,6 @@ namespace Crystals.Content.Foresta.Items.Weapons.Ranged.Crusolium
             Projectile.tileCollide = true;
             Projectile.penetrate = 2;
 
-            //my brother in christ please actuallly remember to make your piercing projectiles have local iframes - Photonic0
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 10;
         }
