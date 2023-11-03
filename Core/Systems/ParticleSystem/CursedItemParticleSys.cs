@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ID;
-using Terraria;
-using Terraria.ModLoader;
-using Microsoft.Xna.Framework.Graphics;
-using System.Security.Cryptography.X509Certificates;
+﻿using Crystals.Content.Other.Misc.Prefixes;
 using Microsoft.Xna.Framework;
-using Crystals.Common.UI;
-using Crystals.Content.Other.Misc.Prefixes;
+using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using System.Linq;
+using Terraria;
 using Terraria.Graphics.Shaders;
-using DiscordRPC;
-using Terraria.WorldBuilding;
+using Terraria.ModLoader;
 
 namespace Crystals.Core.Systems.ParticleSystem
 {
@@ -30,7 +21,12 @@ namespace Crystals.Core.Systems.ParticleSystem
         }
         public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            if (item.prefix == ModContent.PrefixType<Cursed>() || item.prefix == ModContent.PrefixType<Bane>() || item.prefix == ModContent.PrefixType<Blasphemed>() || item.prefix == ModContent.PrefixType<Devastating>() || item.prefix == ModContent.PrefixType<Fulminated>() || item.prefix == ModContent.PrefixType<Hexed>() || item.prefix == ModContent.PrefixType<Maledicted>() || item.prefix == ModContent.PrefixType<Obscenited>() || item.prefix == ModContent.PrefixType<Overwhelming>() || item.prefix == ModContent.PrefixType<Sacrileged>() || item.prefix == ModContent.PrefixType<Whammy>())
+            int[] Prefixes = { ModContent.PrefixType<Cursed>(), ModContent.PrefixType<Bane>(), ModContent.PrefixType<Blasphemed>(),
+                               ModContent.PrefixType<Devastating>(), ModContent.PrefixType<Fulminated>(), ModContent.PrefixType<Hexed>(), 
+                               ModContent.PrefixType<Maledicted>(), ModContent.PrefixType<Obscenited>(), ModContent.PrefixType<Overwhelming>(), 
+                               ModContent.PrefixType<Sacrileged>(), ModContent.PrefixType<Whammy>() };
+
+            if (Prefixes.Contains(item.prefix))
             {
                 spriteBatch.End();
                 spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.LinearClamp, DepthStencilState.None, RasterizerState.CullNone, null, Main.UIScaleMatrix);
@@ -45,7 +41,7 @@ namespace Crystals.Core.Systems.ParticleSystem
         {
             Main.spriteBatch.End();
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.LinearClamp, DepthStencilState.None, RasterizerState.CullNone, null, Main.UIScaleMatrix);
-        
+
         }
 
 

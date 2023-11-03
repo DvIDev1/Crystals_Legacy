@@ -31,19 +31,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Thamy\\.nuget\\packages\\": {}
+    "C:\\Users\\itali\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
+      "projectUniqueName": "C:\\Users\\itali\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
       "projectName": "Crystals",
-      "projectPath": "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
-      "packagesPath": "C:\\Users\\Thamy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thamy\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\obj\\",
+      "projectPath": "C:\\Users\\itali\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\Crystals.csproj",
+      "packagesPath": "C:\\Users\\itali\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\itali\\OneDrive\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\Crystals\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Thamy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\itali\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -90,7 +90,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
