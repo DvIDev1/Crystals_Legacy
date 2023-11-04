@@ -1,5 +1,5 @@
 Name : [c/6ec61b:Crystals]
-Version : 0.0.1
+Version : 0.0.2
 Tags : Fantasy, Rpg
 - - -
 Crystals is a Story orientated content mod for a brand-new terraria experience.

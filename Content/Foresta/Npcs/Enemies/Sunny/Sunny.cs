@@ -31,8 +31,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
         public override void SetDefaults()
         {
             NPC.Size = new Vector2(30, 30);
-            NPC.damage = 32;
-            NPC.lifeMax = 80;
+            NPC.damage = 21;
+            NPC.lifeMax = 50;
             NPC.aiStyle = -1;
             NPC.noGravity = true;
             NPC.noTileCollide = false;
@@ -217,7 +217,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
                 Projectile.NewProjectile(Terraria.Entity.GetSource_None(), PetalPos,
                     PetalPos.DirectionTo(target.Center) * 16f,
-                    ModContent.ProjectileType<HostilePetal>(), NPC.damage / 2, 0);
+                    ModContent.ProjectileType<HostilePetal>(), NPC.damage / 4, 0);
 
                 SoundEngine.PlaySound(SoundID.Item63 with { MaxInstances = 2 });
             }

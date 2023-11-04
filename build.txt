@@ -1,6 +1,6 @@
 displayName = [i/p1525:1525] [c/6ec61b:Crystals] [i/p1525:1525]
 author = DvlUp
-version = 0.0.1
+version = 0.0.2
 dllReferences = DiscordRPC
 homepage = https://discord.gg/9UCaDSmVdx
 noCompile = true;
