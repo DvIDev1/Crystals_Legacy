@@ -22,16 +22,17 @@ float2 uZoom;
 
 float4 PixelShaderFunction(float4 sampleColor : COLOR0, float2 coords : TEXCOORD0) : COLOR0
 {
+    float4 color = tex2D(uImage0, coords);
     float4 col = tex2D(uImage0, coords);
-
-    float2 uv = (uTargetPosition - uScreenPosition) / uScreenResolution;
-    float2 centreCoords = (coords - uv) * (uScreenResolution / uScreenResolution.y);
-    float4 d = length(centreCoords);
+    float4 d = length(coords);
+    float time = sin(uTime) / 2;
     
+    d = cos(d - uTime);
+    d = smoothstep(0, 0.1, d);
+    d.g = 1;
+    col *= d.rgba;
 
-    d.rb = sin(d.rb - uTime);
-    d.g = 1.5f + uOpacity;
-    col.rgb *= d.rgb;
+    
     return col;
 }
 
