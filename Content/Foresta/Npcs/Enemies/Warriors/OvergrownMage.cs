@@ -1,5 +1,9 @@
 using System;
 using System.Collections.Generic;
+using Crystals.Content.Foresta.Items;
+using Crystals.Content.Foresta.Items.Armors.Crusolium;
+using Crystals.Content.Foresta.Items.Consumables.Food.CursedSalad;
+using Crystals.Content.Foresta.Items.Consumables.Food.Salad;
 using Crystals.Core;
 using Crystals.Core.Systems.SoundSystem;
 using Crystals.Core.Systems.TrailSystem;
@@ -10,6 +14,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -57,14 +62,14 @@ public class OvergrownMage : ModNPC
         NPC.height = 50;
         NPC.defense = 4;
         NPC.damage = 21;
-        NPC.lifeMax = 120;
+        NPC.lifeMax = 50;
         NPC.value = ValueHelper.GetCoinValue(0, 0, 15, 89);
         NPC.aiStyle = -1;
         NPC.HitSound = SoundID.NPCHit1;
         NPC.DeathSound = SoundID.NPCDeath2;
         NPC.noGravity = false;
         NPC.noTileCollide = false;
-        NPC.knockBackResist = 0.6f;
+        NPC.knockBackResist = 0.2f;
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -355,6 +360,17 @@ public class OvergrownMage : ModNPC
                 }
             }
         }
+    }
+    
+    public override void ModifyNPCLoot(NPCLoot npcLoot)
+    {
+        npcLoot.Add(new CommonDrop(ModContent.ItemType<ForestEnergy>(), 4, 1, 3));
+        npcLoot.Add(new CommonDrop(ModContent.ItemType<Salad>(), 100, 1));
+        npcLoot.Add(new CommonDrop(ModContent.ItemType<CursedSalad>(), 100, 1));
+        npcLoot.Add(new CommonDrop(ModContent.ItemType<BrokenCrusoSet.BrokenHelmet>(), 500));
+        npcLoot.Add(new CommonDrop(ModContent.ItemType<BrokenCrusoSet.BrokenChest>(), 500));
+        npcLoot.Add(new CommonDrop(ModContent.ItemType<BrokenCrusoSet.BrokenBoots>(), 500));
+        npcLoot.Add(new CommonDrop(ModContent.ItemType<CrusoliumFragment>(), 10));
     }
 
     class MageSword : ModProjectile

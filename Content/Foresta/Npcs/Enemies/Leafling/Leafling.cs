@@ -36,12 +36,12 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Leafling
             NPC.height = 38;
             NPC.defense = 7;
             NPC.damage = 30;
-            NPC.lifeMax = 120;
+            NPC.lifeMax = 60;
             NPC.value = 63;
             NPC.value = 63.0f;
             NPC.noGravity = false;
             NPC.noTileCollide = false;
-            NPC.knockBackResist = 0.50f;
+            NPC.knockBackResist = 0.5f;
             NPC.friendly = false;
             NPC.HitSound = SoundID.NPCDeath7;
             NPC.DeathSound = SoundID.NPCDeath2;

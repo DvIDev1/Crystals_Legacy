@@ -75,7 +75,7 @@ namespace Crystals.Core.Systems.CursedSystem
 
         public override void PostDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-
+            
             if (IsNPCCursed)
             {
                 if (Main.rand.NextFloat() < 0.24f)

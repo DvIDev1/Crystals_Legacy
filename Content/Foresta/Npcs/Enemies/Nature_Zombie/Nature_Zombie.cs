@@ -53,7 +53,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             NPC.height = 50;
             NPC.defense = 3;
             NPC.damage = 13;
-            NPC.lifeMax = 90;
+            NPC.lifeMax = 45;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 6, 24);
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath2;
@@ -245,7 +245,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             NPC.height = 50;
             NPC.defense = 6;
             NPC.damage = 10;
-            NPC.lifeMax = 120;
+            NPC.lifeMax = 55;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 5, 9);
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath2;
@@ -437,8 +437,8 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             NPC.width = 40;
             NPC.height = 50;
             NPC.defense = 3;
-            NPC.damage = 19;
-            NPC.lifeMax = 85;
+            NPC.damage = 18;
+            NPC.lifeMax = 40;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 3, 13);
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath2;
@@ -446,7 +446,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Zombie
             AnimationType = NPCID.Zombie;
             NPC.noGravity = false;
             NPC.noTileCollide = false;
-            NPC.knockBackResist = 0.7f;
+            NPC.knockBackResist = 0.4f;
 
             Banner = Type;
             BannerItem = ModContent.ItemType<NatureZombieBanner>();

@@ -47,15 +47,15 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
             NPC.width = 50;
             NPC.height = 54;
             NPC.defense = 14;
-            NPC.damage = 30;
-            NPC.lifeMax = 170;
+            NPC.damage = 22;
+            NPC.lifeMax = 120;
             NPC.value = ValueHelper.GetCoinValue(0, 0, 14, 7);
             NPC.aiStyle = -1;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath2;
             NPC.noGravity = false;
             NPC.noTileCollide = false;
-            NPC.knockBackResist = 0.6f;
+            NPC.knockBackResist = 0.4f;
 
             //Banner = Type;
             //BannerItem = ModContent.ItemType<OvergrownWarriorBanner>();
