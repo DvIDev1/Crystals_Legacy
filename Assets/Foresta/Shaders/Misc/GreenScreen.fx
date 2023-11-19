@@ -22,15 +22,17 @@ float2 uZoom;
 
 float4 PixelShaderFunction(float4 sampleColor : COLOR0, float2 coords : TEXCOORD0) : COLOR0
 {
+    float4 color = tex2D(uImage0, coords);
     float4 col = tex2D(uImage0, coords);
-    float4 d = tex2D(uImage0, coords);
-    d = d - uTime;
+    float4 d = length(coords);
+    float time = sin(uTime) / 2;
     
-
-    d.g = 0.5 + uOpacity;
-    d.r = 0.5;
-    d.b = 0.5;
+    d = cos(d - uTime);
+    d = smoothstep(0, 0.1, d);
+    d.g = 1;
     col *= d.rgba;
+
+    
     return col;
 }
 

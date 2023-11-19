@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.GameContent.RGB;
 using Terraria.Graphics.Light;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
@@ -31,7 +32,7 @@ namespace Crystals.Core.Systems.CursedSystem
 
         public override void OnSpawn(NPC npc, IEntitySource source)
         {
-            if (npc.friendly != true && npc.dontTakeDamage == false && npc.type != NPCID.TargetDummy && !NPCSets.Spirit[npc.type])
+            if (npc.friendly != true && npc.dontTakeDamage == false && npc.type != NPCID.TargetDummy && !NPCSets.Spirit[npc.type] )
             {
                 IsNPCCursed = Main.rand.NextBool(1, 20);
             }
