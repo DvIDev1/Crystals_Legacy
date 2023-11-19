@@ -17,6 +17,7 @@ using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.Utilities;
 
 namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors;
 
@@ -302,6 +303,13 @@ public class OvergrownMage : ModNPC
         return new Vector2(0, 0);
     }
 
+    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    {
+        if (NPC.downedBoss1)
+            if (spawnInfo.Player.ZoneForest)
+                return SpawnCondition.OverworldNight.Chance;
+        return base.SpawnChance(spawnInfo);
+    }
     
     private NPC GetNearestWarrior()
     {

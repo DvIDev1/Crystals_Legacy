@@ -68,7 +68,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Nature_Slime
         {
             if (NPC.downedBoss1)
                 if (spawnInfo.Player.ZoneForest)
-                    return SpawnCondition.OverworldDaySlime.Chance * 0.50f;
+                    return SpawnCondition.OverworldDaySlime.Chance * 0.75f;
 
             return 0;
         }

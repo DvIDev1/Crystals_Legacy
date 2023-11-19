@@ -38,6 +38,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
             NPC.noTileCollide = false;
             NPC.defense = 2;
             NPC.knockBackResist = 0.0f;
+            NPC.value = ValueHelper.GetCoinValue(0, 0, 12, 50);
 
             NPC.HitSound = SoundID.NPCDeath7;
             NPC.DeathSound = SoundID.NPCDeath2;
@@ -110,6 +111,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
                     FaceFrame.Y = 62;
                     if (!charging)
                     {
+                        NPC.noTileCollide = false;
                         StartCharge(NPC.Center, new Vector2(target.Bottom.X, target.Bottom.Y + target.height * 2), new Vector2(target.Bottom.X, target.Bottom.Y + target.height * 2), new Vector2(target.Center.X + NPC.direction * 150, target.Center.Y - 125));
                     }
                     else
@@ -118,6 +120,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
                     }
                     if (Timer >= 120f)
                     {
+                        NPC.noTileCollide = true;
                         charging = false;
                         Timer = 0;
                         state = States.SpinShot;
@@ -141,12 +144,10 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-
-            if (spawnInfo.Player.ZoneForest)
-            {
-                return SpawnCondition.OverworldDay.Chance * 0.01f;
-            }
-            return 0;
+            if (NPC.downedBoss1)
+                if (spawnInfo.Player.ZoneForest)
+                    return SpawnCondition.OverworldDay.Chance * 0.25f;
+            return base.SpawnChance(spawnInfo);
         }
 
         public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -249,11 +250,11 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Sunny
                 effects = SpriteEffects.FlipVertically;
             }
 
-            spriteBatch.Draw(texture, drawPos, PetalFrame, Lighting.GetColor(PetalPos.ToTileCoordinates()), PetalRot, drawOrigin, NPC.scale - 0.20f, effects, 0);
+            spriteBatch.Draw(texture, drawPos, PetalFrame, new Color(Lighting.GetColor(PetalPos.ToTileCoordinates()).ToVector4() + NPC.color.ToVector4()), PetalRot, drawOrigin, NPC.scale - 0.20f, effects, 0);
 
             Texture2D textureFace = ModContent.Request<Texture2D>(AssetDirectory.Sunny + "SunnyFace").Value;
 
-            spriteBatch.Draw(textureFace, drawPos, FaceFrame, Lighting.GetColor(PetalPos.ToTileCoordinates()), FaceRot + NPC.rotation, drawOrigin, NPC.scale, effects, 0);
+            spriteBatch.Draw(textureFace, drawPos, FaceFrame, new Color(Lighting.GetColor(PetalPos.ToTileCoordinates()).ToVector4() + NPC.color.ToVector4()), FaceRot + NPC.rotation, drawOrigin, NPC.scale, effects, 0);
         }
 
         public override void OnKill()

@@ -416,6 +416,11 @@ Mods: {
 				DisplayName: E Timber Bow
 				Tooltip: ""
 			}
+
+			Forest_Orb: {
+				Tooltip: Throw this at night in a forest for a Nice Surprise
+				DisplayName: Forest Orb
+			}
 		}
 
 		Projectiles: {

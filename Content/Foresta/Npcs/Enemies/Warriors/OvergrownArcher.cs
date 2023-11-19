@@ -326,7 +326,7 @@ namespace Crystals.Content.Foresta.Npcs.Enemies.Warriors
         {
             if (NPC.downedBoss1)
                 if (spawnInfo.Player.ZoneForest)
-                    return SpawnCondition.OverworldNight.Chance * 0.25f;
+                    return SpawnCondition.OverworldNight.Chance;
             return base.SpawnChance(spawnInfo);
         }
 
